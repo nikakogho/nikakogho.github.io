@@ -1,126 +1,232 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap');
+
+/* --- CSS Variables (Theme) --- */
+:root {
+  --bg-color: #f8f9fa;         /* Light grey background */
+  --container-bg: #ffffff;    /* White content background */
+  --text-color: #212529;       /* Dark text */
+  --text-muted: #6c757d;     /* Grey for subtle text */
+  --primary-color: #0077b6;    /* A nice blue for links/accents */
+  --primary-hover: #023e8a;   /* Darker blue for hover */
+  --header-bg: #e9ecef;       /* Lighter grey for header */
+  --border-color: #dee2e6;     /* Subtle border color */
+
+  --font-primary: 'Poppins', sans-serif; /* For headings */
+  --font-secondary: 'Lato', sans-serif;   /* For body text */
+
+  --container-max-width: 960px;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Base Styles --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  .app-container {
-    max-width: 960px;
-    margin: 20px auto;
-    padding: 0 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  header {
-    background-color: #eee;
-    padding: 15px 20px;
-    border-bottom: 1px solid #ddd;
-    margin: -0px -20px 20px -20px; /* Extend to edges */
-    border-radius: 8px 8px 0 0;
-  }
-  
-  header nav a {
-    margin-right: 10px;
-    text-decoration: none;
-    color: #007bff;
-  }
-  
-  header nav a.active {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-  
-  .content-container {
-    padding: 20px 0;
-  }
-  
-  /* Markdown specific styles */
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    line-height: 1.3;
-  }
-  
-  p {
-    margin-bottom: 1em;
-  }
-  
-  ul, ol {
-    margin-bottom: 1em;
-    padding-left: 1.5em;
-  }
-  
-  code {
-    background-color: #e8e8e8;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-size: 0.9em;
-  }
-  
-  pre code {
-    display: block;
+  font-family: var(--font-secondary);
+  line-height: 1.7;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 16px; /* Base font size */
+}
+
+/* --- Layout Container --- */
+.app-container {
+  max-width: var(--container-max-width);
+  margin: 40px auto; /* More space top/bottom */
+  padding: 0 20px; /* Sideways padding for smaller screens */
+}
+
+main.content-container {
+  background-color: var(--container-bg);
+  padding: 30px 40px; /* More internal padding */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  min-height: 60vh; /* Ensure it takes up some space */
+}
+
+/* --- Header / Navigation --- */
+header {
+  background-color: var(--header-bg);
+  padding: 15px 40px; /* Match content padding */
+  border-bottom: 1px solid var(--border-color);
+  margin: 0 auto 30px auto; /* Center header, add space below */
+  max-width: var(--container-max-width); /* Match content width */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  position: sticky; /* Make header sticky */
+  top: 20px; /* Add space above sticky header */
+  z-index: 10; /* Keep header above content */
+}
+
+header nav {
+    display: flex; /* Align nav items */
+    align-items: center;
+    gap: 15px; /* Space between nav items */
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding: 5px 0; /* Add padding for easier clicking */
+  border-bottom: 2px solid transparent; /* Prepare for active state underline */
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--primary-hover);
+}
+
+header nav a.active {
+  /* Style for the currently active page link */
+  color: var(--primary-hover);
+  border-bottom-color: var(--primary-hover);
+}
+
+header nav span { /* Style for the "Vaults:" text */
+    color: var(--text-muted);
+    margin-right: -5px; /* Adjust spacing near vault links */
+}
+
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  margin-top: 1.8em;
+  margin-bottom: 0.8em;
+  line-height: 1.4;
+  font-weight: 600; /* Slightly lighter than default bold */
+  color: var(--text-color);
+}
+h1 { font-size: 2.2rem; font-weight: 700; margin-top: 0.5em; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
+
+p {
+  margin-bottom: 1.2em;
+}
+
+ul, ol {
+  margin-bottom: 1.2em;
+  padding-left: 1.5em;
+}
+ul li::marker { /* Slightly nicer bullet points */
+    color: var(--primary-color);
+}
+
+/* --- Links --- */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* --- Social Icon Links (Enhanced) --- */
+.social-links {
+  margin-top: 1.5em;
+  display: flex;
+  gap: 1.2em; /* Slightly more space */
+}
+
+.icon-link svg {
+  width: 28px; /* Slightly larger icons */
+  height: 28px;
+  color: var(--text-muted); /* Start with muted color */
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.icon-link:hover svg {
+  color: var(--primary-color); /* Use primary color on hover */
+  transform: scale(1.1); /* Subtle scale effect */
+}
+.icon-link:hover {
+    text-decoration: none; /* Prevent underline on icons */
+}
+
+
+/* --- Markdown Specific Styles --- */
+code {
+  background-color: var(--header-bg); /* Use header bg for consistency */
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  color: var(--text-color);
+}
+
+pre {
+    background-color: var(--header-bg);
     padding: 1em;
     overflow-x: auto;
-  }
-  
-  blockquote {
-    border-left: 4px solid #ccc;
-    padding-left: 1em;
-    margin-left: 0;
-    color: #666;
-  }
-  
-  table {
-    border-collapse: collapse;
-    margin-bottom: 1em;
-    width: auto; /* Or 100% */
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f0f0f0;
-  }
-  
-  /* Style for internal wiki-links */
-  .internal-link {
-    color: #2a9d8f; /* Example color */
-    text-decoration: none;
-    border-bottom: 1px dashed #2a9d8f;
-  }
-  
-  .internal-link:hover {
-      color: #264653;
-      border-bottom-style: solid;
-  }
-  
-  /* Optional: Style for links to non-existent notes */
-  .new-link {
-      color: #e76f51;
-      font-style: italic;
-  }
+    border-radius: var(--border-radius);
+    margin-bottom: 1.2em;
+}
+pre code {
+  background-color: transparent; /* Code inside pre doesn't need its own bg */
+  padding: 0;
+}
 
-  .social-links {
-    margin-top: 1em; /* Add some space above the icons */
-    display: flex; /* Arrange icons horizontally */
-    gap: 1em; /* Add space between icons */
-  }
-  
-  .icon-link svg {
-    width: 24px; /* Set icon size */
-    height: 24px; /* Set icon size */
-    color: #333; /* Initial icon color */
-    transition: color 0.2s ease-in-out; /* Smooth transition for hover */
-  }
-  
-  .icon-link:hover svg {
-    color: #007bff; /* Change color on hover - we'll use variables later */
-  }
+blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1.5em;
+  margin-left: 0;
+  margin-bottom: 1.2em;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+  width: 100%; /* Make tables take full width */
+  border: 1px solid var(--border-color);
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--header-bg);
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+/* Style for internal Obsidian-style wiki-links */
+.internal-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--primary-color);
+  font-weight: 600; /* Make them stand out a bit */
+  transition: background-color 0.2s ease, color 0.2s ease;
+  padding: 0.1em 0; /* Add tiny padding for bg hover effect */
+}
+
+.internal-link:hover {
+    color: var(--container-bg); /* White text on hover */
+    background-color: var(--primary-hover); /* Darker blue bg */
+    border-bottom-style: solid;
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Optional: Style for links to non-existent notes */
+.new-link {
+    color: #e76f51; /* Example color */
+    font-style: italic;
+    border-bottom: 1px dashed #e76f51;
+}
