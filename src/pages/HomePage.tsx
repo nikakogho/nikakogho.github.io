@@ -15,7 +15,7 @@ const AboutPage: React.FC = () => {
 
   return (
     <div>
-      <h1>About Me</h1>
+      <h1>Nika Koghuashvili</h1>
       <p>
         {aboutMeText}
         <br />
@@ -24,7 +24,7 @@ const AboutPage: React.FC = () => {
       <h2>Some Fun Projects</h2>
       <ul>
         {projects.map(project => (
-          <li><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a></li>
+          <li key={project.url}><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a></li>
         ))}
       </ul>
       <h2>Links</h2>

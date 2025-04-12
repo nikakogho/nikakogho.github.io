@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { getVaultNotePaths } from '../utils/markdownHelper';
+import { getVaultNotePathsForSidebar } from '../utils/markdownHelper';
 
 // Import modules to get the list of files
 const markdownModules = import.meta.glob('/vaults/**/*.md');
@@ -11,7 +11,7 @@ interface VaultIndexPageProps {
 
 const VaultIndexPage: React.FC<VaultIndexPageProps> = ({ vaultId }) => {
   // useMemo avoids recalculating the list on every render
-  const notes = useMemo(() => getVaultNotePaths(vaultId, markdownModules), [vaultId]);
+  const notes = useMemo(() => getVaultNotePathsForSidebar(vaultId, markdownModules), [vaultId]);
 
   return (
     <div>

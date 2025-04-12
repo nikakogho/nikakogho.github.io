@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import MarkdownRenderer from '../components/MarkdownRenderer';
-import { findNoteModuleKey } from '../utils/markdownHelper';
+import { findNoteModuleKey, getStructuredVaultNotes } from '../utils/markdownHelper';
 
 // Import all markdown files using Vite's glob import
 // Use eager: false for dynamic imports
@@ -13,6 +13,8 @@ const NotePage: React.FC = () => {
   const [content, setContent] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  const notes = getStructuredVaultNotes(vaultId!, markdownModules);
 
   useEffect(() => {
     const loadContent = async () => {
@@ -70,7 +72,7 @@ const NotePage: React.FC = () => {
         {/* Optional: Breadcrumbs or Back link */}
         <Link to={`/vaults/${vaultId}`}>Back to {vaultId}</Link>
         <hr/>
-        <MarkdownRenderer markdown={content} vaultId={vaultId!} />
+        <MarkdownRenderer markdown={content} vaultId={vaultId!} notePath={notePath!} allVaultNotes={notes} />
      </div>
   );
 };
