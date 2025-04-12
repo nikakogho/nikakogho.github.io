@@ -20,7 +20,6 @@ interface MarkdownRendererProps {
  * using a helper function from markdownHelper.ts.
  */
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, notePath, allVaultNotes }) => {
-
   // --- WikiLink Configuration ---
 
   // This wrapper function is passed to remark-wiki-link.
@@ -59,6 +58,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
           },
         ],
       ]}
+
       // --- Custom Rendering for Specific HTML Elements ---
       components={{
         // Override the default rendering for anchor `<a>` tags
@@ -87,10 +87,12 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
         // Logic remains the same as before.
         img: ({ node, src, alt, ...props }) => {
           let resolvedSrc = src || '';
+          console.log('About to resolve for image:', resolvedSrc); // Debugging
           // If src is not an absolute URL, resolve it using the image helper
           if (src && !src.startsWith('http')) {
             resolvedSrc = getImageUrl(src);
           }
+          console.log('Resolved for image:', resolvedSrc); // Debugging
           // Render the image tag with lazy loading
           return <img src={resolvedSrc} alt={alt || ''} {...props} loading="lazy" />;
         }

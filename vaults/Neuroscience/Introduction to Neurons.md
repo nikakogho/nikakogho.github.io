@@ -10,7 +10,8 @@ A typical neuron consists of:
 * **Axon:** A long projection that transmits signals away from the soma.
 * **Axon Terminal:** The end of the axon, where signals are passed to other neurons.
 
-![Basic Neuron Diagram](images/neuron sample.png)
+![Basic Neuron Diagram](neuron_sample_txui6y.png)
+
 *Image: A simple diagram showing neuron components.*
 
 ## Communication

@@ -14,7 +14,6 @@ const s3UrlPrefix = import.meta.env.VITE_S3_URL_PREFIX;
 export function getImageUrl(imagePath: string): string {
     // Basic cleanup: remove leading slash if present
     const cleanImagePath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
-
     if (imageProvider === 'cloudinary') {
         if (!cloudinaryCloudName) {
             console.warn("VITE_CLOUDINARY_CLOUD_NAME is not set.");

@@ -230,3 +230,18 @@ th {
     font-style: italic;
     border-bottom: 1px dashed #e76f51;
 }
+
+/* --- Responsive Images in Content --- */
+
+/* Target images within the main markdown rendering area */
+/* Adjust the parent selector (.vault-content-area or main etc.) if needed */
+.vault-content-area img,
+main img { /* Apply to images in vault content OR general main area */
+  max-width: 100%; /* Ensures image never overflows its container */
+  height: auto;    /* Maintains aspect ratio when width is adjusted */
+  display: block;  /* Prevents extra space below the image */
+  margin-top: 1em; /* Optional: Add some space above images */
+  margin-bottom: 1em; /* Optional: Add some space below images */
+  border-radius: var(--border-radius, 8px); /* Optional: Add rounded corners like other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Optional: Subtle shadow */
+}
