@@ -82,22 +82,25 @@ async function saveManifest(uploadedPaths) {
  */
 async function uploadToCloudinary(localImagePath, publicId) {
     try {
-        console.log(`Uploading "${localImagePath}" with public_id "${publicId}"...`);
+        // Log the public ID being used for upload
+        console.log(`Uploading "${path.relative(projectRoot, localImagePath)}" with public_id "${publicId}"...`);
         const result = await cloudinary.uploader.upload(localImagePath, {
             public_id: publicId,
-            overwrite: false, // Don't overwrite if already exists (idempotency)
-            // Add other options like folder, tags, optimization if needed
-            // folder: path.dirname(publicId) // Automatically put in folders matching path
+            overwrite: false,
+            // Cloudinary uses the public_id for folder structure if it contains '/'
+            // So setting folder explicitly might be redundant but doesn't hurt
+            folder: path.dirname(publicId) === '.' ? undefined : path.dirname(publicId),
+            use_filename: true, // Use the filename part of the public_id
+            unique_filename: false // Prevent Cloudinary from adding random chars if public_id is exact
         });
         console.log(`  -> Upload successful: ${result.secure_url}`);
         return true;
     } catch (error) {
-        // Handle specific error types if needed (e.g., already exists might not be a failure)
-        if (error.http_code === 409) { // Example: Conflict/Already Exists
+        if (error.http_code === 409) { // Conflict means it likely already exists with this public_id
              console.warn(`  -> Image already exists on Cloudinary (or conflict): ${publicId}`);
              return true; // Treat as success if it's already there
         }
-        console.error(`  -> Upload failed for "${localImagePath}":`, error.message || error);
+        console.error(`  -> Upload failed for "${localImagePath}" (public_id: ${publicId}):`, error.message || error);
         return false;
     }
 }
@@ -264,121 +267,136 @@ async function findMarkdownFiles() {
 }
 
 /**
- * Processes a single markdown file: finds local images, uploads new ones, updates links.
+ * Processes a single markdown file: finds local images (standard or converted wikilink),
+ * uploads new ones, updates links to vault-ID-prefixed vault-relative paths in standard format.
+ * Assumes images no longer have spaces in names due to pre-processing.
  * @param {string} mdFilePath - Absolute path to the markdown file.
  * @param {Set<string>} uploadedImagesManifest - The Set of already uploaded images.
- * @returns {Promise<boolean>} True if the file was modified, false otherwise.
+ * @returns {Promise<boolean>} True if the file content was effectively changed and saved.
  */
 async function processMarkdownFile(mdFilePath, uploadedImagesManifest) {
-    console.log(`Processing file: ${path.relative(projectRoot, mdFilePath)}`);
-    const mdContent = await fs.readFile(mdFilePath, 'utf-8');
-    let fileModified = false;
+    const originalMdContent = await fs.readFile(mdFilePath, 'utf-8');
+    let currentMdContent = originalMdContent;
+    let astModified = false; // Tracks if AST image nodes were modified
+    let wikiLinksConverted = false; // Tracks if initial ![[ -> ![]( conversion happened
 
-    // --- Determine Vault ID and Path for this file ---
+    // --- Determine Vault ID and Path ---
     let vaultId = null;
-    let vaultAbsPath = null; // Absolute path to the vault root dir
-
+    let vaultAbsPath = null;
     for (const baseDir of vaultBaseDirs) {
         const fullBaseDir = path.resolve(projectRoot, baseDir);
-        if (mdFilePath.startsWith(fullBaseDir)) {
-            vaultId = path.basename(baseDir); // e.g., Neuroscience
-            vaultAbsPath = fullBaseDir;       // e.g., /path/to/project/vaults/Neuroscience
-            containingVaultDir = baseDir;     // e.g., vaults/Neuroscience
+        if (mdFilePath.startsWith(fullBaseDir + path.sep) || mdFilePath === fullBaseDir) {
+            // Use the *last part* of the baseDir as the ID (e.g., "Neuroscience" from "vaults/Neuroscience")
+            // This assumes vaultBaseDirs are like 'vaults/VaultName'
+            vaultId = path.basename(baseDir);
+            vaultAbsPath = fullBaseDir;
             break;
         }
     }
-
     if (!vaultId || !vaultAbsPath) {
         console.error(`Could not determine vault context for file: ${mdFilePath}`);
-        return false; // Cannot process without vault context
+        return false;
     }
     // --- End Vault ID Determination ---
 
-
-    const processor = unified().use(remarkParse);
-    const tree = processor.parse(mdContent);
-    const uploadPromises = []; // Collect upload promises
-
-    // Use visit with an async callback pattern if needed, or collect nodes to process after visit
-    const nodesToProcess = [];
-    visit(tree, 'image', (node) => {
-        nodesToProcess.push(node);
+    // --- Step 1: Convert ![[...]] to standard ![](...) format ---
+    const wikiEmbedPattern = /!\[\[([^\]\n]+?\.(?:png|jpg|jpeg|gif|svg|webp))\]\]/gi;
+    let tempContent = currentMdContent.replace(wikiEmbedPattern, (match, imageName) => {
+        // Replace ![[image_name.ext]] with ![image_name.ext](image_name.ext)
+        const standardLink = `![${imageName}](${imageName})`; // Alt text defaults to filename
+        if (match !== standardLink) {
+            // console.log(`  Converting WikiEmbed in ${path.basename(mdFilePath)}: "${match}" -> "${standardLink}"`); // Less verbose
+            wikiLinksConverted = true;
+        }
+        return standardLink;
     });
+    currentMdContent = tempContent;
+    // --- End Step 1 ---
 
-    // Process nodes asynchronously after traversal
+
+    // --- Step 2: Process all standard image links via AST ---
+    const processor = unified().use(remarkParse);
+    const tree = processor.parse(currentMdContent); // Parse the content *after* wikilink conversion
+    const uploadPromises = [];
+    const nodesToProcess = [];
+    visit(tree, 'image', (node) => { nodesToProcess.push(node); });
+
     for (const node of nodesToProcess) {
-        const imageUrl = node.url; // This might be "image.png" or "relative/path/image.png"
+        const imageUrl = node.url; // This is now always in ![](...) format
 
-        // Skip absolute URLs and data URIs
-        if (!imageUrl || imageUrl.startsWith('http') || imageUrl.startsWith('data:')) {
+        if (!imageUrl || imageUrl.startsWith('http') || imageUrl.startsWith('data:')) { continue; }
+
+        const imageName = path.basename(imageUrl); // Should have underscores if renamed
+        const localImagePathFull = await findImageFullPath(imageName, vaultAbsPath);
+
+        if (!localImagePathFull) {
+            console.warn(`  - Image skipped (sync phase): Cannot find local file for "${imageName}" in vault "${vaultId}" (referenced as "${imageUrl}" in ${path.basename(mdFilePath)})`);
             continue;
         }
 
-        // --- Find the full local path using the new helper ---
-        // Extract the base filename from the potentially relative path in Markdown
-        const imageName = path.basename(imageUrl);
-        const localImagePathFull = await findImageFullPath(imageName, vaultAbsPath);
-        // --- End Find Path ---
+        // Calculate path relative to the specific vault's root directory
+        const vaultRelativePath = path.relative(vaultAbsPath, localImagePathFull).replace(/\\/g, '/');
 
-        if (!localImagePathFull) {
-            console.warn(`  - Image skipped: Cannot find local file for "${imageName}" in vault "${vaultId}" (referenced in ${path.basename(mdFilePath)})`);
-            continue; // Skip if local file wasn't found in the vault
-        }
+        // --- Create the Cloudinary Public ID (VaultID Prefix) ---
+        // Prepend the vaultId to make it unique across vaults
+        const cloudinaryPublicId = `${vaultId}/${vaultRelativePath}`.replace(/\\/g, '/'); // Ensure forward slashes
+        // --- End Public ID Creation ---
 
-        // Determine the vault-relative path (used as Cloudinary Public ID)
-        // Use the found absolute path and the vault's absolute path
-        const vaultRelativePath = path.relative(vaultAbsPath, localImagePathFull)
-                                    .replace(/\\/g, '/'); // Normalize to forward slashes
-
-        // Check if image needs processing
-        const alreadyUploaded = uploadedImagesManifest.has(vaultRelativePath);
-        // Link needs update if the URL in markdown doesn't match the vault-relative path
-        const linkNeedsUpdate = node.url !== vaultRelativePath;
+        // Check manifest using the *prefixed* ID
+        const alreadyUploaded = uploadedImagesManifest.has(cloudinaryPublicId);
+        // Check if the node URL needs updating to the *prefixed* ID
+        const linkNeedsUpdate = node.url !== cloudinaryPublicId;
 
         if (!alreadyUploaded) {
-            // Queue upload and potential link update
-            const uploadPromise = uploadToCloudinary(localImagePathFull, vaultRelativePath)
+            // Upload using the *prefixed* ID
+            const uploadPromise = uploadToCloudinary(localImagePathFull, cloudinaryPublicId)
                 .then(success => {
                     if (success) {
-                        uploadedImagesManifest.add(vaultRelativePath);
-                        if (node.url !== vaultRelativePath) { // Check again in case it was already correct
-                            node.url = vaultRelativePath;
-                            fileModified = true;
-                            console.log(`  - Link updated for newly uploaded image: ${vaultRelativePath}`);
+                        // Add the *prefixed* ID to the manifest
+                        uploadedImagesManifest.add(cloudinaryPublicId);
+                        // Update AST node URL to the *prefixed* ID
+                        if (node.url !== cloudinaryPublicId) { // Check again
+                            node.url = cloudinaryPublicId;
+                            astModified = true; // Mark AST as modified
+                            console.log(`  - Link updated post-upload: ${cloudinaryPublicId} in ${path.basename(mdFilePath)}`);
                         }
                     }
                 });
-            uploadPromises.push(uploadPromise); // Add promise to the list
+            uploadPromises.push(uploadPromise);
         } else if (linkNeedsUpdate) {
-            // Already uploaded, just update the link
-            console.log(`  - Link update needed for already uploaded image: ${imageUrl} -> ${vaultRelativePath}`);
-            node.url = vaultRelativePath;
-            fileModified = true;
-        } else {
-            // console.log(`  - Image link already correct: ${node.url}`);
+            // Already uploaded, just update the AST node URL to the *prefixed* ID
+            console.log(`  - Link update needed (already uploaded): ${imageUrl} -> ${cloudinaryPublicId} in ${path.basename(mdFilePath)}`);
+            node.url = cloudinaryPublicId;
+            astModified = true; // Mark AST as modified
         }
-    } // End loop through nodes
+    } // End loop through image nodes
 
-    // Wait for all uploads for this file to complete
     if (uploadPromises.length > 0) {
         console.log(`Waiting for ${uploadPromises.length} image upload(s) for ${path.basename(mdFilePath)}...`);
         await Promise.all(uploadPromises);
     }
+    // --- End Step 2 ---
 
-    // If any modifications were made, stringify the AST back to Markdown
-    if (fileModified) {
-        const newMdContent = unified().use(remarkStringify).stringify(tree);
-        try {
-            await fs.writeFile(mdFilePath, newMdContent, 'utf-8');
-            console.log(`  -> File updated: ${path.relative(projectRoot, mdFilePath)}`);
-            return true;
-        } catch (error) {
-            console.error(`  -> Error writing updated file ${mdFilePath}:`, error);
-            return false;
+
+    // --- Step 3: Final Write Check ---
+    const fileNeedsSaving = wikiLinksConverted || astModified;
+
+    if (fileNeedsSaving) {
+        const finalContentToWrite = unified().use(remarkStringify).stringify(tree);
+        if (finalContentToWrite !== originalMdContent) {
+             try {
+                await fs.writeFile(mdFilePath, finalContentToWrite, 'utf-8');
+                console.log(`  -> File updated (Sync Phase): ${path.relative(projectRoot, mdFilePath)}`);
+                return true;
+            } catch (error) {
+                console.error(`  -> Error writing updated file ${mdFilePath}:`, error);
+                return false;
+            }
+        } else {
+             return false;
         }
     }
-
-    return false; // No modifications needed
+    return false;
 }
 
 /**
@@ -467,13 +485,12 @@ async function main() {
         console.log('No new images were uploaded. Manifest not saved.');
     }
 
-    console.log('Done I guess')
     // --- Run Git Commands Unconditionally ---
     // The runGitCommands function will now check the actual Git status after staging.
-    //await runGitCommands();
+    await runGitCommands();
     // --- End Run Git Commands ---
 
-    //console.log('Vault sync process finished.');
+    console.log('Vault sync process finished.');
 }
 
 // Execute the main function
