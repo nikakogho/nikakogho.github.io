@@ -5,20 +5,21 @@ Neurons are the fundamental units of the brain and nervous system. They are resp
 ## Basic Structure
 
 A typical neuron consists of:
+
 * **Soma (Cell Body):** Contains the nucleus and organelles.
 * **Dendrites:** Branch-like structures that receive signals.
 * **Axon:** A long projection that transmits signals away from the soma.
 * **Axon Terminal:** The end of the axon, where signals are passed to other neurons.
 
-![Basic Neuron Diagram](neuron_sample_txui6y.png)
+![Basic Neuron Diagram](images/neuron_sample_txui6y.png)
 
 *Image: A simple diagram showing neuron components.*
 
 ## Communication
 
-Neurons communicate via electrochemical signals. This involves action potentials traveling down the axon and the release of neurotransmitters at the synapse. See [[Synaptic Transmission]] for details.
+Neurons communicate via electrochemical signals. This involves action potentials traveling down the axon and the release of neurotransmitters at the synapse. See \[\[Synaptic Transmission]] for details.
 
-We also discuss related concepts in [[Brain Regions]].
+We also discuss related concepts in \[\[Brain Regions]].
 
 ### Key Neurotransmitters
 
@@ -31,5 +32,5 @@ We also discuss related concepts in [[Brain Regions]].
 
 Check the [Wikipedia page](https://en.wikipedia.org/wiki/Neuron) for more info.
 
-* [ ] Review action potential section.
-* [x] Add neurotransmitter table.
+* \[ ] Review action potential section.
+* \[x] Add neurotransmitter table.
