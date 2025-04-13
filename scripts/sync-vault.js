@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url'; // Import necessary function for ES modules
 import { glob } from 'glob';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -8,6 +9,22 @@ import remarkStringify from 'remark-stringify';
 import { visit } from 'unist-util-visit';
 import { v2 as cloudinary } from 'cloudinary';
 import simpleGit from 'simple-git';
+import dotenv from 'dotenv';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// --- Explicitly Load .env from Project Root ---
+// Calculate the path to the .env file in the parent directory (project root)
+const envPath = path.resolve(__dirname, '..', '.env');
+// Load the .env file
+const dotenvResult = dotenv.config({ path: envPath });
+
+if (dotenvResult.error) {
+    console.warn(`Warning: Could not load .env file from ${envPath}:`, dotenvResult.error.message);
+} else {
+    console.log(`Loaded environment variables from ${envPath}`);
+}
 
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -115,6 +132,123 @@ async function findImageFullPath(imageName, vaultAbsPath) {
     }
 }
 
+function escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+
+/**
+ * Scans vaults for images with spaces in names, renames them (space -> underscore),
+ * and updates Markdown links `![](...)` and `![[...]]` embeds in all markdown files.
+ */
+async function preprocessRenameImagesAndLinks() {
+    console.log('\n--- Starting Pre-processing: Renaming images with spaces ---');
+    const imagePatterns = vaultBaseDirs.map(dir => path.join(dir, '**/*.{png,jpg,jpeg,gif,svg,webp}').replace(/\\/g, '/'));
+    const allImageFiles = await glob(imagePatterns, { cwd: projectRoot, absolute: true });
+
+    // Map<oldBasename, newBasename> - only store basenames for easier lookup
+    const renamedFilesMap = new Map();
+    let filesRenamedCount = 0;
+
+    // 1. Rename image files with spaces
+    console.log('Scanning for image files with spaces...');
+    for (const oldPath of allImageFiles) {
+        const oldBaseName = path.basename(oldPath);
+        if (oldBaseName.includes(' ')) {
+            const newBaseName = oldBaseName.replace(/\s+/g, '_'); // Replace spaces with underscores
+            const newPath = path.join(path.dirname(oldPath), newBaseName);
+            // Check if target already exists (e.g., my_image.png exists when renaming my image.png)
+            try {
+                 await fs.access(newPath);
+                 console.warn(`  Skipping rename: Target file "${path.relative(projectRoot, newPath)}" already exists.`);
+                 continue; // Skip rename if target exists
+            } catch (accessError) {
+                 // Target doesn't exist, proceed with rename
+            }
+
+            try {
+                await fs.rename(oldPath, newPath);
+                console.log(`  Renamed: "${path.relative(projectRoot, oldPath)}" -> "${path.relative(projectRoot, newPath)}"`);
+                renamedFilesMap.set(oldBaseName, newBaseName); // Store mapping using base names
+                filesRenamedCount++;
+            } catch (error) {
+                console.error(`  Error renaming "${path.relative(projectRoot, oldPath)}":`, error);
+            }
+        }
+    }
+    console.log(`Finished renaming ${filesRenamedCount} image file(s).`);
+
+    // 2. Update links in Markdown files if any files were renamed
+    if (renamedFilesMap.size === 0) {
+        console.log('No files were renamed, skipping link updates.');
+        console.log('--- Finished Pre-processing ---');
+        return;
+    }
+
+    console.log('Scanning Markdown files to update links...');
+    const markdownFiles = await findMarkdownFiles();
+    let linksUpdatedCount = 0;
+    let filesContentChangedCount = 0;
+
+    for (const mdFilePath of markdownFiles) {
+        let mdContent = await fs.readFile(mdFilePath, 'utf-8');
+        let originalContent = mdContent; // Keep original to check if changes occurred
+        let fileContentChanged = false;
+
+        // Iterate through the map of renamed files
+        for (const [oldBaseName, newBaseName] of renamedFilesMap.entries()) {
+            // --- Update standard Markdown links: ![alt](path/old name.png) ---
+            // Need a regex that captures the path part and the old name
+            // This regex is complex: finds ![...]( potentially/relative/path/ içeren/old name.png )
+            // It tries to handle relative paths before the filename within the parentheses.
+            const standardLinkPattern = new RegExp(`\\!\\[([^\\]]*)\\]\\(([^\\)\\n]*?)${escapeRegex(oldBaseName)}\\)`, 'g');
+            let standardMatch;
+            let tempMdContent = mdContent; // Work on a temp copy for this pattern
+            let standardLinkUpdated = false;
+            while ((standardMatch = standardLinkPattern.exec(tempMdContent)) !== null) {
+                const altText = standardMatch[1];
+                const pathPart = standardMatch[2]; // Path before the filename
+                const newLink = `![${altText}](${pathPart}${newBaseName})`;
+                console.log(`  Updating standard link in ${path.basename(mdFilePath)}: "${standardMatch[0]}" -> "${newLink}"`);
+                // Replace directly in the main content string - CAUTION with multiple replaces
+                mdContent = mdContent.replace(standardMatch[0], newLink);
+                fileContentChanged = true;
+                standardLinkUpdated = true;
+            }
+            if (standardLinkUpdated) linksUpdatedCount++; // Count updates per file pattern
+
+            // --- Update wikilink embeds: ![[old name.png]] ---
+            // Simpler regex for this specific pattern
+            const wikiEmbedPattern = new RegExp(`\\!\\[\\[${escapeRegex(oldBaseName)}\\]\\]`, 'g');
+            const wikiReplacement = `![[${newBaseName}]]`;
+            let wikiLinkUpdated = false;
+            if (mdContent.includes(`![[${oldBaseName}]]`)) { // Quick check before regex replace
+                 const updatedContent = mdContent.replace(wikiEmbedPattern, wikiReplacement);
+                 if (updatedContent !== mdContent) {
+                    console.log(`  Updating wikilink embed in ${path.basename(mdFilePath)}: "![[${oldBaseName}]]" -> "${wikiReplacement}"`);
+                    mdContent = updatedContent;
+                    fileContentChanged = true;
+                    wikiLinkUpdated = true;
+                 }
+            }
+            if (wikiLinkUpdated) linksUpdatedCount++; // Count updates per file pattern
+        } // End loop through renamedFilesMap
+
+        // Write file only if content actually changed
+        if (fileContentChanged && mdContent !== originalContent) {
+            try {
+                await fs.writeFile(mdFilePath, mdContent, 'utf-8');
+                console.log(`  -> Updated links in: ${path.relative(projectRoot, mdFilePath)}`);
+                filesContentChangedCount++;
+            } catch (error) {
+                console.error(`  -> Error writing updated file ${mdFilePath}:`, error);
+            }
+        }
+    } // End loop through markdownFiles
+
+    console.log(`Finished scanning ${markdownFiles.length} Markdown files. Found/Updated ${linksUpdatedCount} link occurrences in ${filesContentChangedCount} files.`);
+    console.log('--- Finished Pre-processing ---');
+}
+
 // --- Main Processing Logic ---
 
 /**
@@ -143,7 +277,6 @@ async function processMarkdownFile(mdFilePath, uploadedImagesManifest) {
     // --- Determine Vault ID and Path for this file ---
     let vaultId = null;
     let vaultAbsPath = null; // Absolute path to the vault root dir
-    let containingVaultDir = null; // Vault path relative to project root
 
     for (const baseDir of vaultBaseDirs) {
         const fullBaseDir = path.resolve(projectRoot, baseDir);
@@ -303,39 +436,44 @@ async function main() {
         console.error('Error: No VAULT_DIRS configured in .env file. Exiting.');
         process.exit(1);
     }
-     if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
-         console.error('Error: Cloudinary credentials missing in .env file (CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET). Exiting.');
-         process.exit(1);
-     }
-     // --- End Configuration Checks ---
+    if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
+        console.error('Error: Cloudinary credentials missing in .env file (CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET). Exiting.');
+        process.exit(1);
+    }
+    // --- End Configuration Checks ---
+
+    await preprocessRenameImagesAndLinks();
 
     const uploadedImagesManifest = await loadManifest();
     const initialManifestSize = uploadedImagesManifest.size;
     const markdownFiles = await findMarkdownFiles();
     // let overallFilesModified = false; // No longer needed to track this separately
 
+    let imageUploaded = false;
+
     console.log(`Processing ${markdownFiles.length} Markdown files...`);
     for (const mdFile of markdownFiles) {
         // Await processing, but we don't strictly need the boolean return value here anymore
-        await processMarkdownFile(mdFile, uploadedImagesManifest);
+        imageUploaded |= await processMarkdownFile(mdFile, uploadedImagesManifest);
         // if (modified) { overallFilesModified = true; } // Tracking no longer needed here
     }
     console.log('Finished processing Markdown files.');
 
     // Save manifest only if new images were added
     const finalManifestSize = uploadedImagesManifest.size;
-    if (finalManifestSize > initialManifestSize) {
+    if (imageUploaded || finalManifestSize !== initialManifestSize) {
         await saveManifest(uploadedImagesManifest);
     } else {
         console.log('No new images were uploaded. Manifest not saved.');
     }
 
+    console.log('Done I guess')
     // --- Run Git Commands Unconditionally ---
     // The runGitCommands function will now check the actual Git status after staging.
-    await runGitCommands();
+    //await runGitCommands();
     // --- End Run Git Commands ---
 
-    console.log('Vault sync process finished.');
+    //console.log('Vault sync process finished.');
 }
 
 // Execute the main function

@@ -26,4 +26,11 @@ dist-ssr
 .env
 
 # Vaults
-vaults/*images/*
+vaults/*/images
+vaults/*/images/*
+vaults/*.png
+vaults/*.jpg
+vaults/*.jpeg
+vaults/*.gif
+vaults/*.webp
+vaults/*.svg
