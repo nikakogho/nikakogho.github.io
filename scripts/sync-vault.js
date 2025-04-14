@@ -96,25 +96,28 @@ async function saveManifest(uploadedPathsLower) {
  * @param {string} publicId - The desired Cloudinary Public ID (original case, vaultId-prefixed vault-relative path).
  * @returns {Promise<boolean>} True if upload was successful or image already exists, false otherwise.
  */
-async function uploadToCloudinary(localImagePath, publicId) {
+async function uploadToCloudinary(localImagePath, imageName, vaultId) {
     try {
-        console.log(`Uploading "${path.relative(projectRoot, localImagePath)}" with public_id "${publicId}"...`);
+        const imageNameWithoutSuffix = path.basename(imageName, path.extname(imageName));
+
+        const folder = `${vaultId}/images`;
+        console.log(`Uploading "${path.relative(projectRoot, localImagePath)}" with public_id "${imageName}"...`);
         const result = await cloudinary.uploader.upload(localImagePath, {
-            public_id: publicId, // Use original case for Cloudinary Public ID
+            public_id: imageNameWithoutSuffix, // Use original case for Cloudinary Public ID
             overwrite: false,    // Don't overwrite existing
-            folder: path.dirname(publicId) === '.' ? undefined : path.dirname(publicId), // Set folder based on path
+            folder: folder, // Set folder based on path
             use_filename: true,  // Use the filename part of the public_id
-            unique_filename: false // Prevent Cloudinary from adding random chars
+            unique_filename: false, // Prevent Cloudinary from adding random chars
         });
         console.log(`  -> Upload successful: ${result.secure_url}`);
         return true;
     } catch (error) {
         if (error.http_code === 409) { // 409 Conflict usually means already exists with this public_id
-             console.warn(`  -> Image already exists on Cloudinary (or conflict): ${publicId}`);
+             console.warn(`  -> Image already exists on Cloudinary (or conflict): ${imageName}`);
              return true; // Treat as success for manifest update purposes
         }
         // Log other errors
-        console.error(`  -> Upload failed for "${localImagePath}" (public_id: ${publicId}):`, error.message || error);
+        console.error(`  -> Upload failed for "${localImagePath}" (image: ${imageName}) (vault: ${vaultId}):`, error.message || error);
         return false;
     }
 }
@@ -334,38 +337,37 @@ async function processMarkdownFile(mdFilePath, uploadedImagesManifest) {
             continue;
         }
 
-        // Path relative to the specific vault's root directory (original case)
-        const vaultRelativePath = path.relative(vaultAbsPath, localImagePathFull).replace(/\\/g, '/');
-        // Cloudinary Public ID: VaultID/VaultRelativePath (original case)
-        const cloudinaryPublicId = `${vaultId}/${vaultRelativePath}`.replace(/\\/g, '/');
         // Lowercase version for manifest checking/storage
-        const cloudinaryPublicIdLower = cloudinaryPublicId.toLowerCase();
+        const cloudinaryPublicIdLower = imageName.toLowerCase();
+        const manifestKey = `${vaultId.toLowerCase()}/images/${cloudinaryPublicIdLower}`;
 
         // Check manifest using the LOWERCASE prefixed ID
-        const alreadyUploaded = uploadedImagesManifest.has(cloudinaryPublicIdLower);
+        const alreadyUploaded = uploadedImagesManifest.has(manifestKey);
         // Check if the node URL needs updating to the ORIGINAL CASE prefixed ID
-        const linkNeedsUpdate = node.url !== cloudinaryPublicId;
+        const linkNeedsUpdate = node.url !== cloudinaryPublicIdLower;
 
         if (!alreadyUploaded) {
+            console.log('Manifest key not found, uploading:', manifestKey);
+
             // Upload using the ORIGINAL CASE prefixed ID
-            const uploadPromise = uploadToCloudinary(localImagePathFull, cloudinaryPublicId)
+            const uploadPromise = uploadToCloudinary(localImagePathFull, cloudinaryPublicIdLower, vaultId)
                 .then(success => {
                     if (success) {
                         // Add the LOWERCASE prefixed ID to the manifest
-                        uploadedImagesManifest.add(cloudinaryPublicIdLower);
+                        uploadedImagesManifest.add(manifestKey);
                         // Update AST node URL to the ORIGINAL CASE prefixed ID
-                        if (node.url !== cloudinaryPublicId) {
-                            node.url = cloudinaryPublicId;
+                        if (node.url !== cloudinaryPublicIdLower) {
+                            node.url = cloudinaryPublicIdLower;
                             astModified = true;
-                            console.log(`  - Link updated post-upload: ${cloudinaryPublicId} in ${path.basename(mdFilePath)}`);
+                            console.log(`  - Link updated post-upload: ${cloudinaryPublicIdLower} in ${path.basename(mdFilePath)}`);
                         }
                     }
                 });
             uploadPromises.push(uploadPromise);
         } else if (linkNeedsUpdate) {
             // Already uploaded, just update the AST node URL to the ORIGINAL CASE prefixed ID
-            console.log(`  - Link update needed (already uploaded): ${imageUrl} -> ${cloudinaryPublicId} in ${path.basename(mdFilePath)}`);
-            node.url = cloudinaryPublicId;
+            console.log(`  - Link update needed (already uploaded): ${imageUrl} -> ${cloudinaryPublicIdLower} in ${path.basename(mdFilePath)}`);
+            node.url = cloudinaryPublicIdLower;
             astModified = true;
         }
     } // End loop through image nodes
@@ -457,12 +459,14 @@ async function main() {
     const initialManifestSize = uploadedImagesManifest.size;
     const markdownFiles = await findMarkdownFiles();
 
+    console.log('Manifest Content:', uploadedImagesManifest); // Debugging: Show manifest content
+
     console.log(`Processing ${markdownFiles.length} Markdown files for Cloudinary sync...`);
     for (const mdFile of markdownFiles) {
         await processMarkdownFile(mdFile, uploadedImagesManifest); // Uses/adds lowercase paths to manifest Set
     }
     console.log('Finished processing Markdown files.');
-
+    
     // Save manifest only if new images were added
     const finalManifestSize = uploadedImagesManifest.size;
     if (finalManifestSize > initialManifestSize) {
