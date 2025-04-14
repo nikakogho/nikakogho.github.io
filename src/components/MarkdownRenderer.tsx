@@ -35,7 +35,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
   // This part remains the same.
   const wikiHrefTemplate = (permalink: string): string => {
     // Constructs the path based on the application's routing structure
-    return `/vaults/${vaultId}/notes/${permalink}`;
+    return `/#/vaults/${vaultId}/notes/${permalink}`;
   };
   // --- End WikiLink Configuration ---
 
