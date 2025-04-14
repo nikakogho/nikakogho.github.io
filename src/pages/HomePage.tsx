@@ -19,7 +19,7 @@ const AboutPage: React.FC = () => {
       <p>
         {aboutMeText}
         <br />
-        This is my personal website where I share my projects and interests.
+        This is my personal website where I share my projects and interests about various topics.
       </p>
       <h2>Some Fun Projects</h2>
       <ul>
