@@ -15,7 +15,7 @@ In total
 * J = 3 \* 3 = 9
 * joints total DOF = 5 \* 3 = 15
 * Total DOF = 6 \* (N - 1 - J) + joints total DOF = -12 + 15 = 3
-  ![Pasted\_image\_20250327145344.png](Robots/images/Pasted_image_20250327145344.png)
+  ![Pasted\_image\_20250327145344.png](pasted_image_20250327145344.png)
 
 ## Example 2
 
@@ -37,7 +37,7 @@ Total
 * J = 3 \* 2 + 2 = 8
 * Joint total DOF = 6 \* 2 + 5 = 17
 * Total DOF = 6 \* (N - 1 - J) + joint total DOF = 5
-  ![Pasted\_image\_20250327145600.png](Robots/images/Pasted_image_20250327145600.png)
+  ![Pasted\_image\_20250327145600.png](pasted_image_20250327145600.png)
 
 ## Example 3
 
@@ -50,7 +50,7 @@ J = 3
 Total joint DOF = 3 \* 5 = 15
 
 Robot DOF = 6 \* (N - 1 - J) + total joint DOF = 3
-![Pasted\_image\_20250327145910.png](Robots/images/Pasted_image_20250327145910.png)
+![Pasted\_image\_20250327145910.png](pasted_image_20250327145910.png)
 
 ## Example 4
 
@@ -64,7 +64,7 @@ Total joint DOF = 4 + 6 + 6 = 16
 Treat each leg as 1 joint => N = 2 and J = 3
 
 DOF = 6 \* (2 - 1 - 3) + 16 = 4
-![Pasted\_image\_20250327151542.png](Robots/images/Pasted_image_20250327151542.png)
+![Pasted\_image\_20250327151542.png](pasted_image_20250327151542.png)
 
 ## Dual-Arm Robot
 
@@ -73,7 +73,7 @@ N = ground + torso + 2 \* (upper arm + lower arm) + end-effector-with-hands = 7
 J DOF = 3 + 4 \* 3 + 3 = 18
 
 DOF = 6 \* (N - 1 - J) + J DOF = 6
-![Pasted\_image\_20250327161245.png](Robots/images/Pasted_image_20250327161245.png)
+![Pasted\_image\_20250327161245.png](pasted_image_20250327161245.png)
 
 ## Dragonfly
 
@@ -86,14 +86,14 @@ Total J = 4R (wings) + 4R (legs) + 4USP (leg connectors) = 20
 Total J DOF = 4 + 4 + 24 = 32
 
 Total DOF = 6 \* (N - 1 - J) + Total J DOF = 6 \* (-3) + 32 = 14
-![Pasted\_image\_20250327161535.png](Robots/images/Pasted_image_20250327161535.png)
+![Pasted\_image\_20250327161535.png](pasted_image_20250327161535.png)
 
 ## Planar vs Spatial Shape
 
 ### Refrigerator
 
 Here both have 6R joints and 5 links + ground (N = 6) but a) is planar (all move in one plane) so uses 2D formula and gets DOF = 3 while b) uses 3D formula and gets DOF = 0
-![Pasted\_image\_20250327144316.png](Robots/images/Pasted_image_20250327144316.png)
+![Pasted\_image\_20250327144316.png](pasted_image_20250327144316.png)
 
 ### Spherical 4-bar linkage
 
@@ -103,10 +103,10 @@ J total DOF = 4
 All move on surface of sphere so motion is planar => m = 3
 
 DOF = 3 \* (N - 1 - J) + J total DOF = 1
-![Pasted\_image\_20250327150833.png](Robots/images/Pasted_image_20250327150833.png)
+![Pasted\_image\_20250327150833.png](pasted_image_20250327150833.png)
 
 Workspace for this guy looks like this
-![Pasted\_image\_20250327150946.png](Robots/images/Pasted_image_20250327150946.png)
+![Pasted\_image\_20250327150946.png](pasted_image_20250327150946.png)
 
 ### Surgical tool from before
 
@@ -117,4 +117,4 @@ J = 4R \* 3 = 12
 J total DOF = 12 = J<sub>1</sub>
 
 DOF = 3 \* (N - 1) - 2J<sub>1</sub> = 6
-![Pasted\_image\_20250327152750.png](Robots/images/Pasted_image_20250327152750.png)
+![Pasted\_image\_20250327152750.png](pasted_image_20250327152750.png)

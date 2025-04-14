@@ -25,8 +25,8 @@ g(θ) = 0 is **integral constraint**
 
 ## Non-Holonomic Constraints
 
-![IMG\_5166.jpeg](Robots/images/IMG_5166.jpeg)
-![IMG\_5165.jpeg](Robots/images/IMG_5165.jpeg)
+![IMG\_5166.jpeg](img_5166.jpeg)
+![IMG\_5165.jpeg](img_5165.jpeg)
 Since g(θ) = 0
 d/dt g(θ(t)) = 0
 so dg/dθ (θ) θ‘ = 0

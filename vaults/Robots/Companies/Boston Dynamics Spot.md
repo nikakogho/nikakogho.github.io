@@ -23,7 +23,7 @@ Charges in 2 hours
 Can carry max 14kg
 Cool video about him [here](https://youtu.be/bmNaLtC6vkU?si=n8i39vJmJDtMWuU0)
 
-![IMG\_5228.jpeg](Robots/images/IMG_5228.jpeg)
+![IMG\_5228.jpeg](img_5228.jpeg)
 
 Supports wifi
 Has [SDK](https://dev.bostondynamics.com/)

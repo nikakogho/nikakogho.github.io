@@ -13,7 +13,7 @@ Sensors
 * Force sensors
 
 Very agile as seen [here](https://youtu.be/tF4DML7FIWk?si=5iFZM2LkinRfbAIr)
-![IMG\_5243.jpeg](Robots/images/IMG_5243.jpeg)
+![IMG\_5243.jpeg](img_5243.jpeg)
 
 ## New Atlas
 
@@ -29,4 +29,4 @@ Sensors
 
 More flexible and quieter
 
-![IMG\_5244.jpeg](Robots/images/IMG_5244.jpeg)
+![IMG\_5244.jpeg](img_5244.jpeg)

@@ -35,7 +35,7 @@ Synthetic human
 
 ## Hand
 
-![clone\_robotics\_hand.webp](Robots/images/clone_robotics_hand.webp)
+![clone\_robotics\_hand.webp](clone_robotics_hand.webp)
 
 ## Clone Alpha
 
@@ -44,7 +44,7 @@ Planned to make 279
 Expected to eventually cost $20k
 183cm tall
 
-![clone-robotics-protoclone-jan-2025.gif](Robots/images/clone-robotics-protoclone-jan-2025.gif)
+![clone-robotics-protoclone-jan-2025.gif](clone-robotics-protoclone-jan-2025.gif)
 
 * Memorizes your clean home layout
 * Memorizes your kitchen inventory

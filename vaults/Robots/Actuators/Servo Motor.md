@@ -1,5 +1,5 @@
 Moves in 1 DOF
-![IMG\_5210.jpeg](Robots/images/IMG_5210.jpeg)
+![IMG\_5210.jpeg](img_5210.jpeg)
 
 * Stator makes rotating magnetic field for torque
 * Rotor - magnet interacting with stator for motion
@@ -16,5 +16,5 @@ DC motors for cheap use. Need more upkeep
 DC better for precision at low speeds
 
 DC typically has brushes
-![IMG\_5212.jpeg](Robots/images/IMG_5212.jpeg)
-![IMG\_5211.jpeg](Robots/images/IMG_5211.jpeg)
+![IMG\_5212.jpeg](img_5212.jpeg)
+![IMG\_5211.jpeg](img_5211.jpeg)

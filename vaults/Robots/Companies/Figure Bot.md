@@ -4,18 +4,18 @@ Expected cost $30k - $150k
 60kg
 170cm tall
 
-![Pasted\_image\_20250402133637.png](Robots/images/Pasted_image_20250402133637.png)
+![Pasted\_image\_20250402133637.png](pasted_image_20250402133637.png)
 
 Currently works in BMW factory as seen [here](https://www.youtube.com/watch?v=WoXCHr1IaTM\&pp=ygUKZmlndXJlIGJtdw%3D%3D)
 
 ## Figure 01
 
 Older gen, 16 DOF in hands, can lift up to 25 kg
-![Pasted\_image\_20250402134556.png](Robots/images/Pasted_image_20250402134556.png)
+![Pasted\_image\_20250402134556.png](pasted_image_20250402134556.png)
 
 ## Figure 02
 
-![Pasted\_image\_20250402134626.png](Robots/images/Pasted_image_20250402134626.png)
+![Pasted\_image\_20250402134626.png](pasted_image_20250402134626.png)
 
 * Sensors
   * 6 RGB Cameras

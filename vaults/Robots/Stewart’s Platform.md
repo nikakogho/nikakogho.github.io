@@ -8,4 +8,4 @@ Each leg has 1 prismatic joint that moves, and one universal joint for top plate
 
 Only prismatic joints are actuated
 
-![IMG\_5158.gif](Robots/images/IMG_5158.gif)
+![IMG\_5158.gif](img_5158.gif)

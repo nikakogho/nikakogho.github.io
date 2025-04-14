@@ -20,7 +20,7 @@ A circle: represented as S<sup>1</sup> to say its angle
 A closed interval of line as start and end points a, b ⊂ R<sup>1</sup>
 
 Note: open interval of line doesn't include endpoints so is topologically equal to a line
-![Pasted\_image\_20250322163022.png](Robots/images/Pasted_image_20250322163022.png)
+![Pasted\_image\_20250322163022.png](pasted_image_20250322163022.png)
 
 ## Higher dimensions
 

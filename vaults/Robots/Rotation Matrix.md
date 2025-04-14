@@ -1,5 +1,5 @@
 In 2D a 2x2 matrix that fits into \[\[Homogenous Transform]] like this
-![Pasted\_image\_20250318180757.png](Robots/images/Pasted_image_20250318180757.png)
+![Pasted\_image\_20250318180757.png](pasted_image_20250318180757.png)
 
 In 3D a bit more complex 3x3 matrix
 
@@ -22,7 +22,7 @@ for higher n SO(n) is not commutative
 ## PreRotate and PostRotate
 
 If we have these 3 frames of reference
-![Pasted\_image\_20250403004436.png](Robots/images/Pasted_image_20250403004436.png)
+![Pasted\_image\_20250403004436.png](pasted_image_20250403004436.png)
 Rotation of b from s is R<sub>sb</sub> which let's say is equal to rotation operation expressed as matrix R
 
 If we rotate some vector v in c frame by R we will get it rotated and equal to new position of
