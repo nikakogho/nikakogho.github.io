@@ -1,5 +1,3 @@
-// src/utils/imageHelper.ts
-
 const imageProvider = import.meta.env.VITE_IMAGE_PROVIDER?.toLowerCase();
 const cloudinaryCloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
 const cloudinaryTransformations = import.meta.env.VITE_CLOUDINARY_TRANSFORMATIONS || 'f_auto,q_auto'; // Default transformations
