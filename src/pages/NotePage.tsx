@@ -78,7 +78,7 @@ const NotePage: React.FC = () => {
                 <hr/>
             </>
         )}
-        <MarkdownRenderer markdown={content} vaultId={vaultId!} notePath={notePath!} allVaultNotes={notes} />
+        <MarkdownRenderer markdown={content} vaultId={vaultId!} allVaultNotes={notes} />
      </div>
   );
 };

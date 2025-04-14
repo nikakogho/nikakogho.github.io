@@ -19,7 +19,7 @@ interface MarkdownRendererProps {
  * React component to render Markdown content with enhanced WikiLink resolution
  * using a helper function from markdownHelper.ts.
  */
-const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, notePath, allVaultNotes }) => {
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, allVaultNotes }) => {
   // --- WikiLink Configuration ---
 
   // This wrapper function is passed to remark-wiki-link.

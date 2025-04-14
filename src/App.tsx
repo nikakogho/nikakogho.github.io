@@ -5,9 +5,6 @@ import VaultHomeRedirect from './components/VaultHomeRedirectComponent';
 import NotePage from './pages/NotePage';
 import NotFoundPage from './pages/NotFoundPage';
 
-// Function to generate vault IDs from your vault folders
-const VAULT_IDS = ['Neuroscience', 'Space', 'Bioengineering', 'Robots'];
-
 function App() {
   return (
     <Layout>
