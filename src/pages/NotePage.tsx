@@ -65,13 +65,19 @@ const NotePage: React.FC = () => {
   if (!content) {
     return <div>Note content not available. <Link to={`/vaults/${vaultId}`}>Back to vault</Link></div>;
   }
+  
+  const homePagePath = 'home';
+  const isHomePage = notePath === homePagePath;
 
   // Pass vaultId to renderer for link generation context
   return (
      <div>
-        {/* Optional: Breadcrumbs or Back link */}
-        <Link to={`/vaults/${vaultId}`}>Back to {vaultId}</Link>
-        <hr/>
+        {!isHomePage && (
+            <>
+                <Link to={`/vaults/${vaultId}`}>Back to {vaultId} Vault</Link>
+                <hr/>
+            </>
+        )}
         <MarkdownRenderer markdown={content} vaultId={vaultId!} notePath={notePath!} allVaultNotes={notes} />
      </div>
   );
