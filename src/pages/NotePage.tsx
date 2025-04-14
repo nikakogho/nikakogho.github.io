@@ -59,11 +59,11 @@ const NotePage: React.FC = () => {
   }
 
   if (error) {
-    return <div>Error: {error} <Link to={`/#/vaults/${vaultId}`}>Back to vault</Link></div>;
+    return <div>Error: {error} <Link to={`/vaults/${vaultId}`}>Back to vault</Link></div>;
   }
 
   if (!content) {
-    return <div>Note content not available. <Link to={`/#/vaults/${vaultId}`}>Back to vault</Link></div>;
+    return <div>Note content not available. <Link to={`/vaults/${vaultId}`}>Back to vault</Link></div>;
   }
   
   const homePagePath = 'home';
@@ -74,7 +74,7 @@ const NotePage: React.FC = () => {
      <div>
         {!isHomePage && (
             <>
-                <Link to={`/#/vaults/${vaultId}`}>Back to {vaultId}</Link>
+                <Link to={`/vaults/${vaultId}`}>Back to {vaultId}</Link>
                 <hr/>
             </>
         )}
