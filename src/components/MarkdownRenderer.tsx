@@ -11,7 +11,6 @@ import { getImageUrl } from '../utils/imageHelper'; // Helper to generate extern
 interface MarkdownRendererProps {
   markdown: string; // The raw Markdown content
   vaultId: string; // The ID of the current vault (for URL generation)
-  notePath: string; // The path of the current note (potentially needed for relative path context)
   allVaultNotes: VaultNote[]; // The list of all notes in the current vault, needed for link resolution
 }
 
