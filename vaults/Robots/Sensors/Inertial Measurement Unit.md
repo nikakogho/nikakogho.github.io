@@ -1,8 +1,8 @@
 Measures motion-related things. Made of:
 
 * Accelerometer - linear acceleration
-* \[\[Gyroscope]] - angular velocity
+* [[Gyroscope]] - angular velocity
 * (optional) Magnetometer - measures earth’s magnetic field in 3D, similar to compass but more complex
 * (optional) Barometer - pressure
 
-![IMG\_5229.png](img_5229.png)
+![IMG_5229.png](img_5229.png)

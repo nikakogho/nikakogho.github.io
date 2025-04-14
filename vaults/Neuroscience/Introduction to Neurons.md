@@ -17,9 +17,9 @@ A typical neuron consists of:
 
 ## Communication
 
-Neurons communicate via electrochemical signals. This involves action potentials traveling down the axon and the release of neurotransmitters at the synapse. See \[\[Synaptic Transmission]] for details.
+Neurons communicate via electrochemical signals. This involves action potentials traveling down the axon and the release of neurotransmitters at the synapse. See [[Synaptic Transmission]] for details.
 
-We also discuss related concepts in \[\[Brain Regions]].
+We also discuss related concepts in [[Brain Regions]].
 
 ### Key Neurotransmitters
 
@@ -32,5 +32,5 @@ We also discuss related concepts in \[\[Brain Regions]].
 
 Check the [Wikipedia page](https://en.wikipedia.org/wiki/Neuron) for more info.
 
-* \[ ] Review action potential section.
-* \[x] Add neurotransmitter table.
+* [ ] Review action potential section.
+* [x] Add neurotransmitter table.

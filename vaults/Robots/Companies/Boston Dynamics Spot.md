@@ -1,5 +1,5 @@
 Good dog
-Made by \[\[Boston Dynamics]]
+Made by [[Boston Dynamics]]
 [Website](https://bostondynamics.com/products/spot/)
 
 Price $75k
@@ -14,7 +14,7 @@ Height
 * 61cm walking default
 * 52cm to 72cm ranging during walking
 
-12 \[\[Degrees of Freedom]], 3 for each joint
+12 [[Degrees of Freedom]], 3 for each joint
 
 Max speed 5.8 km/h
 Battery lasts 90 minutes active or 3 hours standby
@@ -23,7 +23,7 @@ Charges in 2 hours
 Can carry max 14kg
 Cool video about him [here](https://youtu.be/bmNaLtC6vkU?si=n8i39vJmJDtMWuU0)
 
-![IMG\_5228.jpeg](img_5228.jpeg)
+![IMG_5228.jpeg](img_5228.jpeg)
 
 Supports wifi
 Has [SDK](https://dev.bostondynamics.com/)
@@ -36,11 +36,11 @@ Stereo cameras for 360° field of view
 
 ### Touch
 
-\[\[Inertial Measurement Unit]] in each leg for balance and understanding terrain
+[[Inertial Measurement Unit]] in each leg for balance and understanding terrain
 
 ### Optional
 
-Can add \[\[LiDaR]] or other things
+Can add [[LiDaR]] or other things
 
 ## Actuators
 

@@ -2,8 +2,8 @@ Configuration = state
 
 Configuration space has:
 
-* \[\[Degrees of Freedom]]
-* \[\[Configuration Space Topology]] - 2D plane vs 2D surface of 3D sphere
+* [[Degrees of Freedom]]
+* [[Configuration Space Topology]] - 2D plane vs 2D surface of 3D sphere
 * Representation by parametrization
   * explicit (simple but not flexible): specific params like x, y and angle
   * implicit (more flexible to change): relation between parameters like x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> = 1
@@ -25,8 +25,8 @@ g(θ) = 0 is **integral constraint**
 
 ## Non-Holonomic Constraints
 
-![IMG\_5166.jpeg](img_5166.jpeg)
-![IMG\_5165.jpeg](img_5165.jpeg)
+![IMG_5166.jpeg](img_5166.jpeg)
+![IMG_5165.jpeg](img_5165.jpeg)
 Since g(θ) = 0
 d/dt g(θ(t)) = 0
 so dg/dθ (θ) θ‘ = 0

@@ -2,7 +2,7 @@ Synthetic human
 
 * Skeletal system: 206 bones like in humans
   * Doesn't replicate bone marrow and calcium
-* Muscular system: 1000+ \[\[Myofiber artificial muscles]]
+* Muscular system: 1000+ [[Myofiber artificial muscles]]
   * Humans have about 639 skeletal muscles so this is more
   * 1 kg force per 3 grams
 * Power source
@@ -35,7 +35,7 @@ Synthetic human
 
 ## Hand
 
-![clone\_robotics\_hand.webp](clone_robotics_hand.webp)
+![clone_robotics_hand.webp](clone_robotics_hand.webp)
 
 ## Clone Alpha
 

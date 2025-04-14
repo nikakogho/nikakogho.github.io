@@ -9,14 +9,14 @@ DOF: total 23
 
 Site [here](https://www.unitree.com/mobile/g1)
 Base cost $16k
-![IMG\_5249.jpeg](img_5249.jpeg)
+![IMG_5249.jpeg](img_5249.jpeg)
 [Flexible](https://youtu.be/29xLWhqME2Q?si=WACqVF6F-sMOlFHm)
 
 Hollow electrical routing for power
 Sensors
 
 * Intel RealSense D435 depth camera
-* LIVOX-MID360 3D \[\[LiDaR]] with 360 to 59 angle
+* LIVOX-MID360 3D [[LiDaR]] with 360 to 59 angle
 * 4 microphone array
 * optional tactile sensors on hands
 * wifi and bluetooth

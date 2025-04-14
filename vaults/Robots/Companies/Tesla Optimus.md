@@ -3,7 +3,7 @@ Targeting 57 kg
 173cm tall
 Expected price of $20k - $30k
 
-![Pasted\_image\_20250402142102.png](pasted_image_20250402142102.png)
+![Pasted_image_20250402142102.png](pasted_image_20250402142102.png)
 
 * Actuators
   * 40 electric motors probably

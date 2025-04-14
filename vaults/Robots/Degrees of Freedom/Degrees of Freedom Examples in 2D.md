@@ -8,7 +8,7 @@ J<sub>1</sub> = 27
 Links are N = 20 links + ground = 21
 
 DOF = 3 \* (N - 1) - 2 J<sub>1</sub> = 60 - 54 = 6
-![Pasted\_image\_20250327144738.png](pasted_image_20250327144738.png)
+![Pasted_image_20250327144738.png](pasted_image_20250327144738.png)
 
 ## Example 2
 
@@ -16,4 +16,4 @@ J = 4P + 2R = 6 = J<sub>1</sub>
 N = 4 legs + 1 square + 1 ground = 6
 
 DOF = 3 \* (N - 1) - 2 J<sub>1</sub> = 3
-![Pasted\_image\_20250327145155.png](pasted_image_20250327145155.png)
+![Pasted_image_20250327145155.png](pasted_image_20250327145155.png)
