@@ -90,7 +90,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
           console.log('About to resolve for image:', resolvedSrc); // Debugging
           // If src is not an absolute URL, resolve it using the image helper
           if (src && !src.startsWith('http')) {
-            resolvedSrc = getImageUrl(src);
+            resolvedSrc = getImageUrl(src, vaultId!);
           }
           console.log('Resolved for image:', resolvedSrc); // Debugging
           // Render the image tag with lazy loading

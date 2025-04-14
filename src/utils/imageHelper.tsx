@@ -11,7 +11,7 @@ const s3UrlPrefix = import.meta.env.VITE_S3_URL_PREFIX;
  * which should correspond to the public ID in Cloudinary or the key in S3.
  * Example: "Neuroscience/assets/neuron.jpg"
  */
-export function getImageUrl(imagePath: string): string {
+export function getImageUrl(imagePath: string, vaultId: string): string {
     // Basic cleanup: remove leading slash if present
     const cleanImagePath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
     if (imageProvider === 'cloudinary') {
@@ -19,15 +19,10 @@ export function getImageUrl(imagePath: string): string {
             console.warn("VITE_CLOUDINARY_CLOUD_NAME is not set.");
             return cleanImagePath; // Fallback or return placeholder
         }
-        // Construct Cloudinary URL: https://res.cloudinary.com/<cloud_name>/image/upload/<transformations>/<public_id>
-        // We need to encode the image path to make it URL-safe for the public_id part
-        const encodedImagePath = encodeURIComponent(cleanImagePath);
-         // Note: Cloudinary might replace '/' with ':' in public IDs depending on upload settings.
-         // If your public IDs use folders, encoding might be enough. Test this.
-         // A common pattern is to replace '/' with a different separator like '--' during upload
-         // and then replace it back here, OR ensure Cloudinary preserves folder structure.
-         // Let's assume encoding works for now.
-        return `https://res.cloudinary.com/${cloudinaryCloudName}/image/upload/${cloudinaryTransformations}/${encodedImagePath}`;
+        
+        const publicIdPlusVault = `${vaultId}/images/${cleanImagePath}`; // Prepend vaultId to the image path
+
+        return `https://res.cloudinary.com/${cloudinaryCloudName}/image/upload/${cloudinaryTransformations}/${publicIdPlusVault}`;
 
     } else if (imageProvider === 's3') {
         if (!s3UrlPrefix) {
