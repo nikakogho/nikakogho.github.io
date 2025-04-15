@@ -1,0 +1,72 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"Scanning Methods\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "path:\"Brain Parts/Lobes/Frontal lobe\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    },
+    {
+      "query": "path:\"Brain Parts/Lobes/Temporal lobe\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 25086
+      }
+    },
+    {
+      "query": "path:\"Brain Parts/Lobes/Parietal lobe\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "path:\"Brain Parts/Lobes/Occipital lobe\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16728734
+      }
+    },
+    {
+      "query": "path:\"Brain Parts\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 12466419
+      }
+    },
+    {
+      "query": "path:Cellular  ",
+      "color": {
+        "a": 1,
+        "rgb": 16755457
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 0.797817047817048,
+  "lineSizeMultiplier": 0.92006237006237,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 2.4198175425027535,
+  "close": true
+}
