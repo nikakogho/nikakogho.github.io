@@ -8,7 +8,7 @@ Made of **tectum** (right) and **tegmentum** (left)
 ![IMG_3211.png](img_3211.png)
 ![Pasted_image_20250116194200.png](pasted_image_20250116194200.png)
 
-![IMG_4633\_1.png](img_4633_1.png)
+![IMG_4633_1.png](img_4633_1.png)
 
 ## Tectum (roof)
 

@@ -3,7 +3,7 @@ Glial cells
 Insulation, protection, nourishment for [[Neuron]]
 90% of cells in brain are glia
 
-![IMG_4287\_1.webp](img_4287_1.webp)
+![IMG_4287_1.webp](img_4287_1.webp)
 In CNS
 
 * Astrocytes

@@ -15,7 +15,7 @@ All vertebrate gap junctions are voltage-gated
 ## Chemical Synapse
 
 Point of contact
-![IMG_4315\_1.jpeg](img_4315_1.jpeg)
+![IMG_4315_1.jpeg](img_4315_1.jpeg)
 
 * Presynaptic axon terminal
 * Synaptic cleft - space between

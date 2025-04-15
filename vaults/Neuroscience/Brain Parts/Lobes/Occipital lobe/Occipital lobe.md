@@ -18,4 +18,4 @@ Language, reading, storing memories, recognizing faces and objects
 *Parieto-occipital sulcus* separates it from [[Parietal lobe]]
 *Lateral parieto-occipital line* separates it from [[Temporal lobe]]
 ![IMG_3363.jpeg](img_3363.jpeg)
-![IMG_5083\_1.jpeg](img_5083_1.jpeg)
+![IMG_5083_1.jpeg](img_5083_1.jpeg)

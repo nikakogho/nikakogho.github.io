@@ -19,7 +19,7 @@ P(a | b) = P (b | a) \* P(a) / P(b)
 Each variable depends on some amount of variables before
 Acyclic
 
-![Pasted\_image\_20250410221708.png](pasted_image_20250410221708.png)
+![Pasted_image_20250410221708.png](pasted_image_20250410221708.png)
 
 ### Sampling
 
@@ -40,6 +40,6 @@ We say that current state depends on a fixed amount of previous states
 
 Suppose one event influences the second
 We only observe a chain of seconds, but we know that first is a Markov chain
-![Pasted\_image\_20250410224227.png](pasted_image_20250410224227.png)
+![Pasted_image_20250410224227.png](pasted_image_20250410224227.png)
 
 We may be asked to predict the entire chain, or to predict a future state in a chain, or a current state or some past state at a specific point

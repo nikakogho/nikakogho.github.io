@@ -3,4 +3,4 @@ Helped assemble [[International Space Station]]
 
 ![IMG_3019.jpeg](img_3019.jpeg)
 
-https://youtu.be/ee5KMhCgcho?si=AxwfXESebHyq8\_JD
+https://youtu.be/ee5KMhCgcho?si=AxwfXESebHyq8_JD

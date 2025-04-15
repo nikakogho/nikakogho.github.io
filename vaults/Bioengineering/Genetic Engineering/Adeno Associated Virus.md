@@ -31,5 +31,5 @@ Low cytotoxicity (low damage to cell)
 
 ## Production
 
-![production\_diagram\_upstream.png](production_diagram_upstream.png)
-![production\_diagram\_downstream.png](production_diagram_downstream.png)
+![production_diagram_upstream.png](production_diagram_upstream.png)
+![production_diagram_downstream.png](production_diagram_downstream.png)

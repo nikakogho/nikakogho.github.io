@@ -105,7 +105,7 @@ https://www.youtube.com/watch?v=tl1KPjxKVqk
 
 ## Return Steps
 
-https://www.youtube.com/watch?v=qt\_xoCXLXnI
+https://www.youtube.com/watch?v=qt_xoCXLXnI
 
 0. 2 astronauts on the moon with Lunar Module, 1 waiting in lunar orbit with command and service modules
 1. Astronauts get in ascent stage

@@ -7,7 +7,7 @@ Bundles of [[Neuron|neurons]] that transmit signals to and from brain-body
 
 **Dorsal roots** = axons from body to spinal cord
 **Ventral roots** = axons from spinal cord to body
-![IMG_4576\_1.jpeg](img_4576_1.jpeg)
+![IMG_4576_1.jpeg](img_4576_1.jpeg)
 ![IMG_4639.jpeg](img_4639.jpeg)
 **Lateral column** - both
 **Dorsal columns** - sensory

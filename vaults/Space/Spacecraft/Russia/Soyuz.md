@@ -21,7 +21,7 @@ Fuel: kerosene and LOX
 Most engines at bottom. Large ones fixed, small ones (vernier engines) rotate.
 2 verniers on each side booster, 4 on central block
 
-https://www.youtube.com/watch?v=\_v7YgDum2Sg
+https://www.youtube.com/watch?v=_v7YgDum2Sg
 
 ## Assembly
 

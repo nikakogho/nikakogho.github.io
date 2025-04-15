@@ -31,7 +31,7 @@ Retina to LGN is called **optic radiation**
 
 in fact V1 sends much more data to LGN than retina does
 
-![IMG_4811\_1.jpeg](img_4811_1.jpeg)
+![IMG_4811_1.jpeg](img_4811_1.jpeg)
 
 ## [[Visual Cortex]]
 
@@ -128,7 +128,7 @@ ON-center and OFF-center ganglions exist, each do nothing if center and surround
 Ganglions always fire.
 ON-center ones fire more when light on center.
 OFF-center opposite
-![IMG_5067\_1.jpeg](img_5067_1.jpeg)
+![IMG_5067_1.jpeg](img_5067_1.jpeg)
 ![IMG_5067.jpeg](img_5067.jpeg)
 
 ### P and M ganglion cells

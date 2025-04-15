@@ -24,7 +24,7 @@ Glucose + Galactose -> [[Lactose]]
 
 Many sugar molecules together
 Example: amylose
-![a\_cool\_polysaccharide\_image.png](a_cool_polysaccharide_image.png)
+![a_cool_polysaccharide_image.png](a_cool_polysaccharide_image.png)
 
 ## Types
 
