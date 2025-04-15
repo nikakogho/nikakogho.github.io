@@ -53,33 +53,40 @@ main.content-container {
   min-height: 60vh; /* Ensure it takes up some space */
 }
 
-/* --- Header / Navigation --- */
 header {
   background-color: var(--header-bg);
-  padding: 15px 40px; /* Match content padding */
+  /* Reduce padding slightly on smaller screens */
+  padding: 15px 20px; /* Adjusted default padding */
   border-bottom: 1px solid var(--border-color);
-  margin: 0 auto 30px auto; /* Center header, add space below */
-  max-width: var(--container-max-width); /* Match content width */
+  margin: 0 auto 30px auto;
+  max-width: var(--container-max-width);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  position: sticky; /* Make header sticky */
-  top: 20px; /* Add space above sticky header */
-  z-index: 10; /* Keep header above content */
+  position: sticky;
+  top: 10px; /* Adjusted top slightly */
+  z-index: 10;
 }
 
 header nav {
-    display: flex; /* Align nav items */
+    display: flex;
     align-items: center;
-    gap: 15px; /* Space between nav items */
+    /* Allow items to wrap onto the next line */
+    flex-wrap: wrap;
+    /* Adjust gap for better wrapping */
+    column-gap: 15px; /* Horizontal gap */
+    row-gap: 5px; /* Vertical gap when wrapped */
+    /* Center items when wrapped (optional) */
+    justify-content: flex-start; /* Or 'center' if you prefer */
 }
 
 header nav a {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: bold;
-  padding: 5px 0; /* Add padding for easier clicking */
-  border-bottom: 2px solid transparent; /* Prepare for active state underline */
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap; /* Prevent link text itself from breaking */
 }
 
 header nav a:hover {
@@ -87,14 +94,40 @@ header nav a:hover {
 }
 
 header nav a.active {
-  /* Style for the currently active page link */
   color: var(--primary-hover);
   border-bottom-color: var(--primary-hover);
 }
 
-header nav span { /* Style for the "Vaults:" text */
-    color: var(--text-muted);
-    margin-right: -5px; /* Adjust spacing near vault links */
+/* Remove the span rule if you don't have a "Vaults:" span anymore */
+/* header nav span { ... } */
+
+
+/* --- Media Query for Smaller Screens (e.g., < 600px) --- */
+@media (max-width: 600px) {
+    header {
+        padding: 10px 15px; /* Further reduce padding */
+        top: 5px; /* Adjust sticky position */
+        margin-bottom: 20px;
+    }
+
+    header nav {
+        column-gap: 10px; /* Slightly smaller horizontal gap */
+        row-gap: 8px; /* Slightly larger vertical gap */
+        justify-content: center; /* Center links on mobile */
+    }
+
+    /* Optional: Reduce font size slightly on mobile */
+    /* header nav a {
+        font-size: 0.95em;
+    } */
+
+    main.content-container {
+        padding: 20px 15px; /* Reduce padding */
+    }
+
+     h1 { font-size: 1.8rem; }
+     h2 { font-size: 1.5rem; }
+     h3 { font-size: 1.2rem; }
 }
 
 

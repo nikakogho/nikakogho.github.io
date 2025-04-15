@@ -8,6 +8,7 @@ const Header: React.FC = () => {
     <header>
       <nav>
         <NavLink to="/">Home</NavLink>
+        <div style={{ flexGrow: 1 }}></div>
         {VAULT_IDS.map(id => (
           <NavLink key={id} to={`/vaults/${id}`} style={{ marginLeft: '8px' }}>
             {id.charAt(0).toUpperCase() + id.slice(1)} {}
