@@ -1,15 +1,15 @@
-Light hits retina -> specific wavelength sensors turn that light into \[\[Spike|spikes]] and send them through \[\[Cranial Nerves|optic nerve]] to \[\[Thalamus]] and then to \[\[Visual Cortex]]
+Light hits retina -> specific wavelength sensors turn that light into [[Spike|spikes]] and send them through [[Cranial Nerves|optic nerve]] to [[Thalamus]] and then to [[Visual Cortex]]
 
-Happens with \[\[Eye]]
-For motion detection and \[\[Object Detection]]
+Happens with [[Eye]]
+For motion detection and [[Object Detection]]
 
-![IMG\_4776.jpeg](img_4776.jpeg)
+![IMG_4776.jpeg](img_4776.jpeg)
 
 Retina detects differences in intensity in different places where light hits it
 
 Right visual cortex processes left view of both eyes
 Left visual cortex processes right view of both eyes
-![Pasted\_image\_20250206171533.png](pasted_image_20250206171533.png)
+![Pasted_image_20250206171533.png](pasted_image_20250206171533.png)
 
 ## Rods
 
@@ -25,34 +25,34 @@ Red Green Blue by wavelength
 Lateral Geniculate Nucleus
 In Thalamus, figures out how to relay to visual cortex
 
-Retina -> LGN <---> \[\[Primary Visual Cortex|V1]]
+Retina -> LGN <---> [[Primary Visual Cortex|V1]]
 
 Retina to LGN is called **optic radiation**
 
 in fact V1 sends much more data to LGN than retina does
 
-![IMG\_4811\_1.jpeg](img_4811_1.jpeg)
+![IMG_4811\_1.jpeg](img_4811_1.jpeg)
 
-## \[\[Visual Cortex]]
+## [[Visual Cortex]]
 
-## \[\[Face Recognition]]
+## [[Face Recognition]]
 
 ## Saccade
 
-Rapid eye movement to adjust gaze, works together with \[\[Vestibular System]]
+Rapid eye movement to adjust gaze, works together with [[Vestibular System]]
 Ballistic: once it starts, it ends where it was meant
 Target is picked, then 200ms later saccade triggers to bring eye there and keep it there
 
-Horizontal gaze center in \[\[Pons]] moves lateral rectus of both eyes to renew focus point
-Vertical gaze center in \[\[Midbrain]] moves eyes vertically
+Horizontal gaze center in [[Pons]] moves lateral rectus of both eyes to renew focus point
+Vertical gaze center in [[Midbrain]] moves eyes vertically
 **Vergence** (moving eyes together or apart for near/far vision) also in midbrain
 **Superior colliculus** in midbrain is automatic gaze adjustment toward some action
 
-Movements are decided in **Frontal Eye Fields** in \[\[Frontal lobe]]
+Movements are decided in **Frontal Eye Fields** in [[Frontal lobe]]
 
 ## Eye Muscles
 
-![Pasted\_image\_20250215153231.png](pasted_image_20250215153231.png)
+![Pasted_image_20250215153231.png](pasted_image_20250215153231.png)
 
 ## Color Vision
 
@@ -100,7 +100,7 @@ This process stimulates a G-protein **transducin** that makes **phosphodiesteras
 7. Na<sup>+</sup> channels close
 8. Hyperpolarization
 
-![Pasted\_image\_20250305141601.png](pasted_image_20250305141601.png)
+![Pasted_image_20250305141601.png](pasted_image_20250305141601.png)
 
 ## Photoreceptors to Ganglions
 
@@ -111,12 +111,12 @@ Bipolar cells are ON or OFF cells: ON cells depolarize (spike) in light, while o
 
 Rod bipolar cells only stimulate ganglions indirectly through amacrine cells.
 
-![Pasted\_image\_20250305124209.png](pasted_image_20250305124209.png)
+![Pasted_image_20250305124209.png](pasted_image_20250305124209.png)
 
 ### Center-Surround Receptive Field
 
 Horizontal cells give surrounding bipolar cells opposite effect to that of center bipolar cell
-![IMG\_5058.jpeg](img_5058.jpeg)
+![IMG_5058.jpeg](img_5058.jpeg)
 
 ## Ganglions
 
@@ -128,8 +128,8 @@ ON-center and OFF-center ganglions exist, each do nothing if center and surround
 Ganglions always fire.
 ON-center ones fire more when light on center.
 OFF-center opposite
-![IMG\_5067\_1.jpeg](img_5067_1.jpeg)
-![IMG\_5067.jpeg](img_5067.jpeg)
+![IMG_5067\_1.jpeg](img_5067_1.jpeg)
+![IMG_5067.jpeg](img_5067.jpeg)
 
 ### P and M ganglion cells
 
@@ -143,13 +143,13 @@ P does constant discharge while stimulus is on.
 5% are M cells
 5% are other nonM-nonP cells
 
-![IMG\_5069.jpeg](img_5069.jpeg)
+![IMG_5069.jpeg](img_5069.jpeg)
 
 ### Color opponency
 
 Some P and nonM-nonP ganglions can be ON center for one color and OFF surround for another,
 like ON center red and OFF surround green is written as R<sup>+</sup>G<sup>-</sup>
-![IMG\_5070.png](img_5070.png)
+![IMG_5070.png](img_5070.png)
 M ganglions don’t distinguish color, only light vs dark
 
 Overall ganglions tell optic nerve about:
@@ -164,7 +164,7 @@ intrinsically photosensitive Retinal Ganglion Cells (ipRGC) have **melanopsin** 
 
 Unlike with rods and cones, ipRGCs depolarize with light
 
-For \[\[Circadyan Rhythm]]
+For [[Circadyan Rhythm]]
 
 ## Retinofugal Projection
 
@@ -172,18 +172,18 @@ For \[\[Circadyan Rhythm]]
 
 Retinofugal projection - neural pathway coming from retina
 
-Path: optic nerve -> optic chiasm -> optic tract -> \[\[Brain Stem]] or LGN -> \[\[Primary Visual Cortex]]
+Path: optic nerve -> optic chiasm -> optic tract -> [[Brain Stem]] or LGN -> [[Primary Visual Cortex]]
 
 Optic nerve exists eye at **optic disk**
-![Pasted\_image\_20250309064402.png](pasted_image_20250309064402.png)
+![Pasted_image_20250309064402.png](pasted_image_20250309064402.png)
 
-**Retinotectal projection** - part of optic tract (10% in humans) goes to **superior colliculus** in \[\[Midbrain]] and is used for adjusting eyes while reading or adjusting eyes while looking at potential danger
+**Retinotectal projection** - part of optic tract (10% in humans) goes to **superior colliculus** in [[Midbrain]] and is used for adjusting eyes while reading or adjusting eyes while looking at potential danger
 
-## \[\[Optic chiasm]]
+## [[Optic chiasm]]
 
 Nasal retina goes through optic chiasm and undergoes "decussation" to cross over to other side.
 Temporal retina remains as is.
-![Pasted\_image\_20250309065835.png](pasted_image_20250309065835.png)
+![Pasted_image_20250309065835.png](pasted_image_20250309065835.png)
 
 ## Retinotopy
 

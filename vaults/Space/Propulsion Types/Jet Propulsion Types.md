@@ -3,4 +3,4 @@
 [[Duct Jet Propulsion]] - fuel inside rocket reacts with air in atmosphere for thrust
 
 Air-augmented rocket - hybrid of rocket and ramjet with higher effective thrust
-![IMG\_2754.jpeg](img_2754.jpeg)
+![IMG_2754.jpeg](img_2754.jpeg)

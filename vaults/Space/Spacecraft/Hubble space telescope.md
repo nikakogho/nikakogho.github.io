@@ -1,4 +1,4 @@
-![IMG\_3039.webp](img_3039.webp)
+![IMG_3039.webp](img_3039.webp)
 Launched in 1990
 Still in operation
 
@@ -58,16 +58,16 @@ Observing empty area of sky long enough to detect faint objects like galaxies
 ## Images
 
 Hubble Superbubble
-![IMG\_3040.webp](img_3040.webp)
+![IMG_3040.webp](img_3040.webp)
 
 Stellar Sword
-![IMG\_3041.webp](img_3041.webp)
+![IMG_3041.webp](img_3041.webp)
 
 Southern Crab Nebula
-![IMG\_3042.webp](img_3042.webp)
+![IMG_3042.webp](img_3042.webp)
 
 Prawn Nebula
-![IMG\_3043.webp](img_3043.webp)
+![IMG_3043.webp](img_3043.webp)
 
 Hubble Deep Field - 10 000 galaxies 10 billion light years away from Earth
-![IMG\_3044.webp](img_3044.webp)
+![IMG_3044.webp](img_3044.webp)

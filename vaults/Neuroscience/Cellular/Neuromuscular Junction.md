@@ -1,13 +1,13 @@
-\[\[Synapse#Chemical Synapse|Chemical synapse]] to \[\[Muscles]]
+[[Synapse#Chemical Synapse|Chemical synapse]] to [[Muscles]]
 
 Presynaptic terminal has many active zones
-Postsynaptic membrane **motor end-plate** has shallow folds packed with many \[\[Neurotransmitter]] receptors to receive many of them
+Postsynaptic membrane **motor end-plate** has shallow folds packed with many [[Neurotransmitter]] receptors to receive many of them
 
-Each motor \[\[Neuron]] can innervate many muscle fibers
+Each motor [[Neuron]] can innervate many muscle fibers
 Each muscle fiber gets input from only 1 motor neuron
 
-![IMG\_4405.webp](img_4405.webp)
-![IMG\_4406.jpeg](img_4406.jpeg)
+![IMG_4405.webp](img_4405.webp)
+![IMG_4406.jpeg](img_4406.jpeg)
 
 ## Motoneuron Types
 

@@ -1,9 +1,9 @@
-At base of brain below \[\[Hypothalamus]]
+At base of brain below [[Hypothalamus]]
 
 Releases hormones, controls endocrine system
 
 Sits in chamber called *Sella turcica*
-![IMG\_3232.jpeg](img_3232.jpeg)
+![IMG_3232.jpeg](img_3232.jpeg)
 
 ## Anterior Lobe
 

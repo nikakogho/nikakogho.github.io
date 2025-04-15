@@ -10,11 +10,11 @@ At 550 km in [[Earth Orbits|Low Earth Orbit]]
 
 Average download speed 100 Mbps
 Average upload speed 10-20 Mbps
-![IMG\_3021.jpeg](img_3021.jpeg)
-![IMG\_3023.jpeg](img_3023.jpeg)
+![IMG_3021.jpeg](img_3021.jpeg)
+![IMG_3023.jpeg](img_3023.jpeg)
 Connects to satellite dish on ground.
 Each dish always points to nearest starlink then to next nearest and such
-![IMG\_3022.webp](img_3022.webp)
+![IMG_3022.webp](img_3022.webp)
 
 2023 profit = $4.2 billion
 2024 estimated profit = $6.6 billion

@@ -4,7 +4,7 @@ Transmits data in brain
 
 Any cell that can do this has **excitable membrane**
 
-By default cell at **resting membrane potential**, changing when \[\[Ion channel]] opens or closes
+By default cell at **resting membrane potential**, changing when [[Ion channel]] opens or closes
 
 Resting membrane potential is made by Na<sup>+</sup> and K<sup>+</sup>
 
@@ -36,7 +36,7 @@ Myelinated areas speed up travel, with **nodes of Ranvier** in-between being pla
 5. Undershoot
 6. Absolute refractory period
 7. Relative refractory period
-   ![IMG\_4370.gif](img_4370.gif)
+   ![IMG_4370.gif](img_4370.gif)
 
 ## Spike-initiation zone
 

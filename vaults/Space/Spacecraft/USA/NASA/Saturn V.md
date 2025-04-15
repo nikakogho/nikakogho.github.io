@@ -52,7 +52,7 @@ Split in ascent and descent stages: both land, only ascent stage leaves.
 
 #### Descent Stage
 
-![IMG\_2852.jpeg](img_2852.jpeg)
+![IMG_2852.jpeg](img_2852.jpeg)
 Descent stage has liquid fuel engine called **Lunar Module Descent Engine** (max 43.6 kN thrust, used at 4.67 kN) powered by 2 fuel tanks and 2 oxidizer tanks.
 Descent stage also has 4 quadrants for carrying stuff:
 
@@ -111,7 +111,7 @@ https://www.youtube.com/watch?v=qt\_xoCXLXnI
 1. Astronauts get in ascent stage
 2. Ascent stage’s engine fires up for 7:30, gets back in linar orbit, descent stage left behind
 3. Several short engine burns for next 3.5 hours to get ascent stage closer to CSM. Takes almost 2 orbits to get close enough for docking (later Apollo missions did in less than 1 orbit)
-4. **Docking** ![IMG\_2853.jpeg](img_2853.jpeg)
+4. **Docking** ![IMG_2853.jpeg](img_2853.jpeg)
 5. Information, materials and crew transfer to command module, ascent stage left behind in lunar orbit on smashed on moon
 6. **Trans-Earth Injection** - on far side of moon, service module engine fires up for 2:30
 7. 3 day journey, all crew in command module

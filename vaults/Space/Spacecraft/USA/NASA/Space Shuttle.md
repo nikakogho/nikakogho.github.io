@@ -2,8 +2,8 @@
 First reusable spacecraft that can glide and land on runway
 Crew of 5-7 (max 8)
 
-![IMG\_2946.jpeg](img_2946.jpeg)
-![IMG\_2760.jpeg](img_2760.jpeg)
+![IMG_2946.jpeg](img_2946.jpeg)
+![IMG_2760.jpeg](img_2760.jpeg)
 67 propulsion systems
 3 main engines [[RS-25 Engine]]
 2 orbital maneuvering engines

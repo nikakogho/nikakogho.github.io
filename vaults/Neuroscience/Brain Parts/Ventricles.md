@@ -1,24 +1,24 @@
 Cerebrospinal fluid flows in ventricles, working as a cooler, damage absorber, nourishment and waste removal
 
 2 lateral ventricles, third ventricle and fourth ventricle
-![IMG\_3355.jpeg](img_3355.jpeg)
+![IMG_3355.jpeg](img_3355.jpeg)
 
 Produced by **Choroid plexus**
-![Pasted\_image\_20250113040234.png](pasted_image_20250113040234.png)
+![Pasted_image_20250113040234.png](pasted_image_20250113040234.png)
 
 ## Location
 
 * Lateral ventricles
-  * \[\[Corpus Callosum]] runs over them
-  * \[\[Septum pallucidum]] is between them
-  * Under them are \[\[Thalamus]], \[\[Caudate Nucleus]] and \[\[Hippocampus]]
+  * [[Corpus Callosum]] runs over them
+  * [[Septum pallucidum]] is between them
+  * Under them are [[Thalamus]], [[Caudate Nucleus]] and [[Hippocampus]]
 * Third ventricle
-  * In front of it is \[\[Hypothalamus]]
-  * Behind it is \[\[Pineal gland]]
-  * Hole inside it is \[\[Massa Intermedia]]
+  * In front of it is [[Hypothalamus]]
+  * Behind it is [[Pineal gland]]
+  * Hole inside it is [[Massa Intermedia]]
 * Fourth ventricle
-  * Goes into \[\[Cerebellum]]
-  * In front of it is \[\[Pons]]
+  * Goes into [[Cerebellum]]
+  * In front of it is [[Pons]]
 
 ## Cerebrospinal fluid flow
 

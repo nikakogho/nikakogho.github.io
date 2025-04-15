@@ -1,15 +1,15 @@
 Small
-Contains some \[\[Nucleus|nuclei]] with different functions
+Contains some [[Nucleus|nuclei]] with different functions
 
-Below \[\[Thalamus]]
-Part of \[\[Limbic System]]
-Part of \[\[Diencephalon]]
+Below [[Thalamus]]
+Part of [[Limbic System]]
+Part of [[Diencephalon]]
 
-![IMG\_3214.webp](img_3214.webp)
+![IMG_3214.webp](img_3214.webp)
 
 ## Functions
 
-* Link nervous and endocrine systems with \[\[Pituitary Gland]], secretes hormones to control endocrine system
+* Link nervous and endocrine systems with [[Pituitary Gland]], secretes hormones to control endocrine system
 * Maintains homeostasis, fight or flight responses, rest-and-digest functions
 * Energy balance
 * Water balance
@@ -17,7 +17,7 @@ Part of \[\[Diencephalon]]
 * Emotion/behavior regulation
 * Releases **GnRH** that releases sex hormones (estrogen or testosterone) from gonads
 * Processing pain and pleasure
-* Plays part in memory together with \[\[Hippocampus]] via \[\[Mamillary bodies]]
+* Plays part in memory together with [[Hippocampus]] via [[Mamillary bodies]]
 
 ## Problems
 

@@ -1,4 +1,4 @@
-![IMG\_2670.jpeg](img_2670.jpeg)
+![IMG_2670.jpeg](img_2670.jpeg)
 
 **Karman Line** - Start of space, 80-100km
 **Low Earth Orbit** - 800-2000 km

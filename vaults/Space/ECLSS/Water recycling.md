@@ -14,8 +14,8 @@ urea -> ammonia + CO<sub>2</sub>
 
 [[International Space Station]] Urine Processor turns urine into water + brine (highly concentrated waste)
 
-![IMG\_4680.png](img_4680.png)
-![IMG\_4679.png](img_4679.png)
+![IMG_4680.png](img_4680.png)
+![IMG_4679.png](img_4679.png)
 
 ## Gas-liquid separation
 
@@ -31,7 +31,7 @@ Russian part of ISS uses diffusion instead such that water is diffused away from
 
 **Equivalent mass** = mass of system + additional mass needed on solar panels to power this + additional mass needed in thermal pipes for regulating heat on this device
 
-![IMG\_4678.jpeg](img_4678.jpeg)
+![IMG_4678.jpeg](img_4678.jpeg)
 
 * top-left = ventillation
 * bottomest left = distillation assembly
@@ -43,6 +43,6 @@ Russian part of ISS uses diffusion instead such that water is diffused away from
 * below particulate filter = volatile removal
 * bottom-right = water storage tank
 * left to it = water delivery tank. Adding iodine or silver as antibacterial here as from here it goes for drinking or electrolysis
-  ![IMG\_4681.jpeg](img_4681.jpeg)
+  ![IMG_4681.jpeg](img_4681.jpeg)
 * Urine system = pretreatment and storage -> distillation assembly -> recycle filter -> waste water storage
 * Water system = waste water storage -> particulate dilter -> multi-filtration beds -> volatile removal -> water storage tank -> water delivery tank

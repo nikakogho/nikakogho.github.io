@@ -6,7 +6,7 @@ Rocket typicall has 8 degrees of movement
 
 ## Control Types
 
-![IMG\_2712.png](img_2712.png)
+![IMG_2712.png](img_2712.png)
 
 * Movable fins - like on airplane, wings
 * Nozzle itself moves

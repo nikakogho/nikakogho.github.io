@@ -3,7 +3,7 @@ Crew of 7
 Orbits Earth every 90 minutes
 Uses [[ECLSS]]
 
-![IMG\_3017.jpeg](img_3017.jpeg)
+![IMG_3017.jpeg](img_3017.jpeg)
 
 Done by NASA, Roscosmos, ESA, JAXA and Canadian Space Agency
 
@@ -12,7 +12,7 @@ Will be decommissioned max early 2030s
 
 ## Parts
 
-![IMG\_3018.webp](img_3018.webp)
+![IMG_3018.webp](img_3018.webp)
 
 * Pressurized modules where life goes
 * **Integrated Truss Structure (ITS)** - internal and external trusses that act as support beams for solar panels and heat shields and everything

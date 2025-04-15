@@ -9,4 +9,4 @@ Must:
 5. Build small city
 6. Build full colony
 
-![IMG\_2918.webp](img_2918.webp)
+![IMG_2918.webp](img_2918.webp)

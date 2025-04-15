@@ -1,5 +1,5 @@
 Structure
-![IMG\_4311.jpeg](img_4311.jpeg)
+![IMG_4311.jpeg](img_4311.jpeg)
 
 ## Microtubule
 

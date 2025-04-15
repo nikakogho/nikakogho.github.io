@@ -2,7 +2,7 @@ Partially reusable
 70 meters tall
 2 stages
 Thrust 7607 kN at sea level
-![IMG\_2882.jpeg](img_2882.jpeg)
+![IMG_2882.jpeg](img_2882.jpeg)
 
 Can carry max 22 800 kg to low earth orbit and supports crewed missions with [[Crew Dragon]] or payload with Cargo Dragon
 
@@ -13,7 +13,7 @@ Equipped with Inertian Navigation System (INS) and GPS
 Assembled horizontally and then rolled out and rotated upward like [[Soyuz]].
 **Fixed service structure** allows access to rocket with its elevator.
 Connects to rocket with **Crew Access Arm**
-![IMG\_2893.jpeg](img_2893.jpeg)
+![IMG_2893.jpeg](img_2893.jpeg)
 
 ## First Stage
 

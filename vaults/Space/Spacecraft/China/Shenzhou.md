@@ -4,7 +4,7 @@ Carrying capacity of 500 tonnes
 Crew of 3
 2 stages and then spacecraft
 
-![IMG\_2935.jpeg](img_2935.jpeg)
+![IMG_2935.jpeg](img_2935.jpeg)
 
 ## First Stage
 

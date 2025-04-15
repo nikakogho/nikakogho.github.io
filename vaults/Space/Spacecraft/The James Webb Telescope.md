@@ -1,6 +1,6 @@
 Best telescope to this day
 Sees in infrared
-![IMG\_3034.jpeg](img_3034.jpeg)
+![IMG_3034.jpeg](img_3034.jpeg)
 Launched on 25 December 2021 with [[Ariane 5]] rocket
 Made together by NASA, ESA and CSA
 Cost $10 billion
@@ -62,13 +62,13 @@ Receives data with **S-band system**
 ## Images
 
 Neptune’s Rings
-![IMG\_3035.webp](img_3035.webp)
+![IMG_3035.webp](img_3035.webp)
 
 Tarantula Nebula
-![IMG\_3036.webp](img_3036.webp)
+![IMG_3036.webp](img_3036.webp)
 
 Phantom Galaxy
-![IMG\_3037.webp](img_3037.webp)
+![IMG_3037.webp](img_3037.webp)
 
 Jupiter’s Aurora
-![IMG\_3038.webp](img_3038.webp)
+![IMG_3038.webp](img_3038.webp)

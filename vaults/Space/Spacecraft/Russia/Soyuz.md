@@ -93,18 +93,18 @@ Has 2 antennas, 1 window in front to look out, 1 docking camera, 1 LED light sys
 On top there is a satellite communications antenna, solar panels, thrusters on side and back, and covered main engine in middle
 
 Periscope for crew to look out on lower side
-![IMG\_2875.png](img_2875.png)
+![IMG_2875.png](img_2875.png)
 
 Docked with [[Saturn V|Apollo Spacecraft]] for Apollo-Soyuz Test Project (ASTP) on July 1975
-![IMG\_2873.png](img_2873.png)
+![IMG_2873.png](img_2873.png)
 
 ### Modules
 
-![IMG\_2876.png](img_2876.png)
+![IMG_2876.png](img_2876.png)
 
-* Orbital - “Habitation Module”. Pressurized. More comfortable and where crew mostly live. Closed hatch opens between orbital and descent modules. ![IMG\_2878.png](img_2878.png)
-* Descent - pressurized, 3 seats, emergency life support system, and survival gear for after landing back. Only this module returns on earth ![IMG\_2877.png](img_2877.png)
-* Service - AKA “instrument module” or “propulsion module” - fuel tanks, oxygen tanks, extra batteries and truss structure (metal diagonals above green balls)  ![IMG\_2880.png](img_2880.png)
+* Orbital - “Habitation Module”. Pressurized. More comfortable and where crew mostly live. Closed hatch opens between orbital and descent modules. ![IMG_2878.png](img_2878.png)
+* Descent - pressurized, 3 seats, emergency life support system, and survival gear for after landing back. Only this module returns on earth ![IMG_2877.png](img_2877.png)
+* Service - AKA “instrument module” or “propulsion module” - fuel tanks, oxygen tanks, extra batteries and truss structure (metal diagonals above green balls)  ![IMG_2880.png](img_2880.png)
 
 After slowly raising apogee then perigee then again apogee and so till it gets to same orbit, Soyuz docks with ISS at one of these locations. There can be multiple Soyuz/[[Progress Spacecraft]] attached at the same time. US segment of ISS is incompatible with Russian docking system SSVP (translates to "System for docking and internal transfer").
 Ducking: probe of Soyuz attaches to Drobe of ISS, making airtight seal and then opening and astronauts pass through it
@@ -112,4 +112,4 @@ Ducking: probe of Soyuz attaches to Drobe of ISS, making airtight seal and then 
 
 ### Versions
 
-![IMG\_2874.png](img_2874.png)Current: Soyuz MS with modernized communication and navigation systems
+![IMG_2874.png](img_2874.png)Current: Soyuz MS with modernized communication and navigation systems

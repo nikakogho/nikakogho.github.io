@@ -1,7 +1,7 @@
 Crew of 4
-![IMG\_3049.jpeg](img_3049.jpeg)
-![IMG\_3050.webp](img_3050.webp)
-![IMG\_3051.webp](img_3051.webp)
+![IMG_3049.jpeg](img_3049.jpeg)
+![IMG_3050.webp](img_3050.webp)
+![IMG_3051.webp](img_3051.webp)
 
 Meant for 21 day long missions
 Meant for moon and mars

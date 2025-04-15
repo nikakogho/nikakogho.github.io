@@ -5,4 +5,4 @@ Measures [[Volume Flow Rate|fluid flow velocity]] by measuring pressure differen
 **Static pressure** - pressure that fluid exerts on an object when it’s at rest relative to it
 
 Stagnation = total =  static + dynamic
-![IMG\_2953.png](img_2953.png)
+![IMG_2953.png](img_2953.png)

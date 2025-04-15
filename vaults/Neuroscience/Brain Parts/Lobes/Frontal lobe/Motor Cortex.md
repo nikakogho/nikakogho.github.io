@@ -1,18 +1,18 @@
 Planning, control and execution of voluntary movement.
-Located in \[\[Frontal lobe]] in *precentral gyrus*.
+Located in [[Frontal lobe]] in *precentral gyrus*.
 
-![IMG\_3178.jpeg](img_3178.jpeg)
+![IMG_3178.jpeg](img_3178.jpeg)
 
 ## Primary Motor Cortex (M1)
 
-Anterior to \[\[Central sulcus]]
-Controls movement by sending signals to motor neurons in \[\[Spinal Cord]] via \[\[Corticospinal Tract]]
+Anterior to [[Central sulcus]]
+Controls movement by sending signals to motor neurons in [[Spinal Cord]] via [[Corticospinal Tract]]
 
 ### Motor Homonculus
 
 Each part of primary motor cortex corresponds to controlling a specific body part
 **Somatotopic map** - neighboring body parts mapped next to each other in primary motor cortex
-![IMG\_3198.png](img_3198.png)
+![IMG_3198.png](img_3198.png)
 
 ## Premotor Cortex
 
@@ -33,7 +33,7 @@ For mental rehearsal of movements
 
 ## Cingulate Motor Area
 
-Medial surface of cerebral cortex in \[\[Cingulate gyrus]]
+Medial surface of cerebral cortex in [[Cingulate gyrus]]
 
 Involved in motivation to perform movement
 Role in goal-directed movements and reinforcement learning
@@ -44,7 +44,7 @@ Connects to:
 * Prefrontal cortex for connecting executive functions and decision making with motor planning
 * Posterior Parietal Cortex to incorporate sensory data into motor plans
 
-Interacts with \[\[Basal Ganglia]] and \[\[Cerebellum]] for motor coordination, timing and learning
+Interacts with [[Basal Ganglia]] and [[Cerebellum]] for motor coordination, timing and learning
 Sends output to spinal cord for motor commands
 
 Damage here can affect movement and emotions

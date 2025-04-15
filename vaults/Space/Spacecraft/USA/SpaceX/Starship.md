@@ -26,7 +26,7 @@ Roadmap:
 * [ ] Return from mars
 * [ ] Build mars colony
 
-![IMG\_2916.jpeg](img_2916.jpeg)
+![IMG_2916.jpeg](img_2916.jpeg)
 
 ## Super Heavy booster
 
@@ -40,7 +40,7 @@ Vented interstage allows hot staging (second stage starts before first is detach
 ### Booster catch with chopsticks
 
 On 5th test flight in October 13, 2024
-![IMG\_2917.jpeg](img_2917.jpeg)
+![IMG_2917.jpeg](img_2917.jpeg)
 
 ## Starship spacecraft
 
@@ -55,7 +55,7 @@ Fully reusable
 Planned to be refueled by tanker variants of Starship (almost same ship just without windows)
 Uses body flaps for control in atmosphere
 
-![IMG\_2919.webp](img_2919.webp)
+![IMG_2919.webp](img_2919.webp)
 
 ### Types
 

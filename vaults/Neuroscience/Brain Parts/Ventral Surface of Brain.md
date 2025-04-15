@@ -1,9 +1,9 @@
-![IMG\_4630.jpeg](img_4630.jpeg)
+![IMG_4630.jpeg](img_4630.jpeg)
 
-* \[\[Optic chiasm]]
-* \[\[Hypothalamus]]
-* \[\[Mamillary bodies]]
-* \[\[Midbrain]]
-* \[\[Pons]]
-* \[\[Medulla oblongata]]
-* \[\[Cranial Nerves]]
+* [[Optic chiasm]]
+* [[Hypothalamus]]
+* [[Mamillary bodies]]
+* [[Midbrain]]
+* [[Pons]]
+* [[Medulla oblongata]]
+* [[Cranial Nerves]]

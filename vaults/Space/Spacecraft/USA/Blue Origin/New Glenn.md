@@ -4,7 +4,7 @@ Weighs 1800 tons
 Carries 45 tons to LEO or 13 tons to Geostationary Transfer Orbit
 2 stages
 
-![IMG\_4642.webp](img_4642.webp)
+![IMG_4642.webp](img_4642.webp)
 
 ## Booster
 

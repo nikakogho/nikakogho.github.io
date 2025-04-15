@@ -8,7 +8,7 @@ E<sub>kinetic</sub> = E<sub>mechanical</sub> - E<sub>potential</sub> = k/2 \* (x
 
 ## Oscillation
 
-![IMG\_2816.png](img_2816.png)
+![IMG_2816.png](img_2816.png)
 
 T = 2π \* sqrt (m/k) for spring and 2π \* sqrt(L / g) for pendulum
 L = g \* T<sup>2</sup> / (4π<sup>2</sup>)

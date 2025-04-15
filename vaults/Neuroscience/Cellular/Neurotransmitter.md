@@ -1,26 +1,26 @@
-Sent in \[\[Synapse#Chemical Synapse|chemical synapse]]
+Sent in [[Synapse#Chemical Synapse|chemical synapse]]
 Categorized as *amino acids*, *amines* or *peptides*
 
 Amino acids and amines carried in synaptic vesicles
 Peptides in secretory granules
 
-Neurotransmitter that opens \[\[Ion channel]] that brings brings action potential toward higher than threshold is **excitatory**, lower is **inhibitory**
+Neurotransmitter that opens [[Ion channel]] that brings brings action potential toward higher than threshold is **excitatory**, lower is **inhibitory**
 Na<sup>+</sup> is generally excitatory
 Cl<sup>-</sup> mostly inhibitory
 
 ## Examples
 
-* \[\[Dopamine]]
-* \[\[Serotonin]]
-* \[\[Glutamate]]
-* \[\[Oxytocin]]
-* \[\[Melatonin]]
-* \[\[Acetylcholine]]
-* \[\[GABA]]
-* \[\[Norepinephrine]]
-* \[\[Beta-Endorphin]]
-* \[\[Epinephrine (Adrenaline)]]
-* \[\[Glycine]]
+* [[Dopamine]]
+* [[Serotonin]]
+* [[Glutamate]]
+* [[Oxytocin]]
+* [[Melatonin]]
+* [[Acetylcholine]]
+* [[GABA]]
+* [[Norepinephrine]]
+* [[Beta-Endorphin]]
+* [[Epinephrine (Adrenaline)]]
+* [[Glycine]]
 * ATP
 
 ## Synthesis
@@ -73,7 +73,7 @@ Steps:
 1. Neurotransmitter binds to receptor in postsynaptic membrane
 2. Receptor activates small **G-proteins**, free to move inside face of postsynaptic membrane
 3. G-proteins stimulate or inhibit “effector" proteins: G-protein-gated ion channels (**Shortcut Pathway**, called **membrane-delimited pathway** since all action is on membrane) or **second messengers** that activate other enzymes
-   ![Pasted\_image\_20241228145819.png](pasted_image_20241228145819.png)
+   ![Pasted_image_20241228145819.png](pasted_image_20241228145819.png)
 
 #### G-protein steps
 
@@ -82,7 +82,7 @@ b) if right neurotransmitter binds to receptor and G-protein binds to it, 𝛼 r
 c) G-protein splits into G<sub>𝛼</sub> and G<sub>βγ</sub> parts, each can affect some effector protein
 d) G<sub>𝛼</sub> eventually breaks down GTP into GDP, ending its activity
 e) subunits returb and merge to restart cycle
-![IMG\_4567.jpeg](img_4567.jpeg)
+![IMG_4567.jpeg](img_4567.jpeg)
 
 #### Second Messenger Cascades
 
@@ -102,12 +102,12 @@ They transfer phosphate (PO<sub>4</sub>) from ATP to to proteins - phosphorylati
 ##### Signal Amplification
 
 Cascade can eventually affect many channels.
-Connected to how \[\[Memory|memories]] are made
-![IMG\_4568.jpeg](img_4568.jpeg)
+Connected to how [[Memory|memories]] are made
+![IMG_4568.jpeg](img_4568.jpeg)
 
 ### Divergence and convergence
 
-![IMG\_4569.jpeg](img_4569.jpeg)
+![IMG_4569.jpeg](img_4569.jpeg)
 
 ### Autoreceptors
 
@@ -169,6 +169,6 @@ To find out if cell makes a polypeptide/protein, fluorescent or radiactive versi
 ### Microiontophoresis
 
 Checking effect of neurotransmitter/drug by injecting it directly into postsynaptic area with a pipette
-![Pasted\_image\_20241231171008.png](pasted_image_20241231171008.png)
+![Pasted_image_20241231171008.png](pasted_image_20241231171008.png)
 
-## \[\[Neurons by neurotransmitter synthesized]]
+## [[Neurons by neurotransmitter synthesized]]

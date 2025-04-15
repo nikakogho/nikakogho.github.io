@@ -12,6 +12,6 @@ r(t) = for i from 0 to n -> sum of s<sub>t-i</sub> \* w<sub>i</sub>
 
 ### Integral version
 
-![Pasted\_image\_20250217175154.png](pasted_image_20250217175154.png)
+![Pasted_image_20250217175154.png](pasted_image_20250217175154.png)
 
-## \[\[Poisson Spiking]]
+## [[Poisson Spiking]]

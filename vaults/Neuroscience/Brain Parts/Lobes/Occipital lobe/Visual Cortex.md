@@ -1,25 +1,25 @@
-In \[\[Occipital lobe]]
-For \[\[Vision]]
-Visual data goes from eye to optic nerve to Lateral Geniculate Nucleus in \[\[Thalamus]] to visual cortex
+In [[Occipital lobe]]
+For [[Vision]]
+Visual data goes from eye to optic nerve to Lateral Geniculate Nucleus in [[Thalamus]] to visual cortex
 
-![IMG\_4811.jpeg](img_4811.jpeg)
-![IMG\_4804.jpeg](img_4804.jpeg)
+![IMG_4811.jpeg](img_4811.jpeg)
+![IMG_4804.jpeg](img_4804.jpeg)
 
 After receiving in V1, it is moved through ventral pathway for "what" and dorsal pathway for "where" understanding
-![Pasted\_image\_20250207190432.png](pasted_image_20250207190432.png)
+![Pasted_image_20250207190432.png](pasted_image_20250207190432.png)
 
-![Pasted\_image\_20250320142527.png](pasted_image_20250320142527.png)
-![Pasted\_image\_20250320142603.png](pasted_image_20250320142603.png)
+![Pasted_image_20250320142527.png](pasted_image_20250320142527.png)
+![Pasted_image_20250320142603.png](pasted_image_20250320142603.png)
 
 If dorsal fails, can cause **visual agnosia** - person sees every piece but can't assemble into full form to say if he's looking at a person or what
 **Prosopagnosia** - can't tell faces
 
 ## Oriented Receptive Field
 
-![Pasted\_image\_20250211033429.png](pasted_image_20250211033429.png)
-![Pasted\_image\_20250211033543.png](pasted_image_20250211033543.png)
+![Pasted_image_20250211033429.png](pasted_image_20250211033429.png)
+![Pasted_image_20250211033543.png](pasted_image_20250211033543.png)
 
-## V1 - \[\[Primary Visual Cortex]]
+## V1 - [[Primary Visual Cortex]]
 
 AKA **striate cortex**
 Takes input from LGN, and sends back even more than retina does

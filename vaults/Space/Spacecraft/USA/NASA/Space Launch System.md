@@ -7,7 +7,7 @@ Height max 119m
 
 Block 2 total thrust at liftoff: 42 800 kN
 
-![IMG\_3047.jpeg](IMG_3047.jpeg)
+![IMG_3047.jpeg](IMG_3047.jpeg)
 
 Carries [[Orion Spacecraft]] with crew of 4
 
@@ -25,7 +25,7 @@ Carries [[Orion Spacecraft]] with crew of 4
 
 ## Design
 
-![IMG\_3048.webp](img_3048.webp)
+![IMG_3048.webp](img_3048.webp)
 
 4 [[RS-25 Engine|RS-25 Engines]] from [[Space Shuttle]]
 

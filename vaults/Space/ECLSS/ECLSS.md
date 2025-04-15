@@ -20,7 +20,7 @@ Environment Control and Life Support Systems
 https://youtu.be/MB68LeUOvZI?si=mrUJIMsWJTm3Ox7u
 
 On Node 3
-![IMG\_4682.jpeg](img_4682.jpeg)
+![IMG_4682.jpeg](img_4682.jpeg)
 
 3 main parts:
 
