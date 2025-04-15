@@ -1,8 +1,8 @@
-Protein Y controlled by \[\[Transcription Factor]] X in its active form X\*
-![Pasted\_image\_20240330163922.png](pasted_image_20240330163922.png)
+Protein Y controlled by [[Transcription Factor]] X in its active form X\*
+![Pasted_image_20240330163922.png](pasted_image_20240330163922.png)
 Y = f(X\*)
 Expressed as hill function
-![Pasted\_image\_20240330164035.png](pasted_image_20240330164035.png)
+![Pasted_image_20240330164035.png](pasted_image_20240330164035.png)
 K = **activation coefficient**, concentration of active X needed to significantly activate
 β = **maximal promoter activity**, reached at high activator concentrations (when X\* ≫ K)
 As n increases, it looks more and more like a step function
@@ -13,7 +13,7 @@ Typically n between 1 and 4
 
 ## For repressor
 
-![Pasted\_image\_20240330164501.png](pasted_image_20240330164501.png)
+![Pasted_image_20240330164501.png](pasted_image_20240330164501.png)
 K = **repression coefficient**
 β = promoter does not bind at all
 
@@ -53,7 +53,7 @@ Steady state = Y<sub>st</sub> => dY/dt = 0 => Y<sub>st</sub> = β / α
 
 if β = 0 then Y starts being removed at
 Y(t) = Y<sub>st</sub> \* e<sup>−αt</sup>
-![Pasted\_image\_20240330172414.png](pasted_image_20240330172414.png)
+![Pasted_image_20240330172414.png](pasted_image_20240330172414.png)
 
 **T<sub>1/2</sub>** = **Response time** = time to reach Y = Y<sub>st</sub>/2
 **T<sub>1/2</sub>** = ln(2) / α

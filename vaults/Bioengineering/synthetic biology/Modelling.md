@@ -8,7 +8,7 @@ Based on:
 
 ## Design cycle
 
-![Pasted\_image\_20240324063826.png](pasted_image_20240324063826.png)
+![Pasted_image_20240324063826.png](pasted_image_20240324063826.png)
 
 ## Information needed for modelling
 

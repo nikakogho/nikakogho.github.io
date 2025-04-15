@@ -1,4 +1,4 @@
-Segments of \[\[DNA]] are used as templates to form \[\[RNA#messenger RNA (mRNA)|mRNA]].
+Segments of [[DNA]] are used as templates to form [[RNA#messenger RNA (mRNA)|mRNA]].
 Same segment of DNA can create mRNA repeatedly.
 
 ![transcription.PNG](transcription.png)
@@ -18,7 +18,7 @@ RNA is used to produce DNA.
 Enzyme reverse transcriptase uses RNA to make complementary DNA (cDNA).
 Enzyme polymerase converts cDNA into double-stranded DNA
 
-\[\[Viruses|Retroviruses]] use reverse transcription to copy viral genomes.
+[[Viruses|Retroviruses]] use reverse transcription to copy viral genomes.
 
 ## Transcriptional read through
 

@@ -2,4 +2,4 @@
 
 <b>Tail Polymerization</b> is when next monomer comes with its own tail that it uses to attach to last monomer
 
-![Pasted\_image\_20230209203628.png](pasted_image_20230209203628.png)
+![Pasted_image_20230209203628.png](pasted_image_20230209203628.png)

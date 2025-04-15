@@ -1,4 +1,4 @@
-Two strands of \[\[DNA]] break up and serve as templates to create complementary strands.
+Two strands of [[DNA]] break up and serve as templates to create complementary strands.
 
 ![DNA\_replication.png](dna_replication.png)
-![Pasted\_image\_20230225173054.png](pasted_image_20230225173054.png)
+![Pasted_image_20230225173054.png](pasted_image_20230225173054.png)

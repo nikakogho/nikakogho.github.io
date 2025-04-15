@@ -1,30 +1,30 @@
-Smallest unit of \[\[Life|life]].
+Smallest unit of [[Life|life]].
 
 Surrounded by plasma membrane that is hydrophobic on outside and hydrophilic on inside.
 Outside is chain of -CH2.
 
-Has \[\[DNA]] inside, in a nucleus for \[\[Eukaryotes]] or just floating around for \[\[Prokaryotes]].
+Has [[DNA]] inside, in a nucleus for [[Eukaryotes]] or just floating around for [[Prokaryotes]].
 
 Content is in <b>cytoplasm</b>, mostly liquid named <b>cytosol</b> fills it.
 Inside cytoplasm we find parts that make the cell work.
 
-![Pasted\_image\_20230223054936.png](pasted_image_20230223054936.png)
+![Pasted_image_20230223054936.png](pasted_image_20230223054936.png)
 
 ## Parts:
 
-* \[\[Ribosome|Ribosomes]]
-* \[\[Mitochondria]]
-* \[\[Golgi apparatus]]
-* \[\[Endoplasmic Reticulum]]
-* \[\[Centrosome]]
-* \[\[Peroxisome]]
-* \[\[Cell Nucleus]]
-* \[\[Cytoskeleton]]
+* [[Ribosome|Ribosomes]]
+* [[Mitochondria]]
+* [[Golgi apparatus]]
+* [[Endoplasmic Reticulum]]
+* [[Centrosome]]
+* [[Peroxisome]]
+* [[Cell Nucleus]]
+* [[Cytoskeleton]]
 
-## \[\[Metabolism|Cell Metabolism]]
+## [[Metabolism|Cell Metabolism]]
 
-Follows the process of \[\[Cell Cycle]].
-Inserts external materials and exerts them out throgh processes of \[\[Endocytosis and Exocytosis]].
+Follows the process of [[Cell Cycle]].
+Inserts external materials and exerts them out throgh processes of [[Endocytosis and Exocytosis]].
 
 ## Death
 

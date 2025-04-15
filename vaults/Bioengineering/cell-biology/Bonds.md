@@ -2,7 +2,7 @@ Subunits (sugars, amino acids, nucleotids) bond with covalent bonds (shared elec
 
 Macromolecules use weak noncovalent bonds to gather into larger structures like robosomes.
 
-![Pasted\_image\_20230202193207.png](pasted_image_20230202193207.png)
+![Pasted_image_20230202193207.png](pasted_image_20230202193207.png)
 
 ## Types of noncovalent bonds:
 

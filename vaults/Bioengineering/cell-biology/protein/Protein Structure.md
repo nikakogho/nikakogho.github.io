@@ -1,6 +1,6 @@
 Primary, Secondary, Tertiary, Quaternary
 
-![Pasted\_image\_20240701154441.png](pasted_image_20240701154441.png)
+![Pasted_image_20240701154441.png](pasted_image_20240701154441.png)
 
 ## Primary
 

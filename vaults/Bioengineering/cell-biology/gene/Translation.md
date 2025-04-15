@@ -1,4 +1,4 @@
-\[\[RNA]] is used to create \[\[Amino acids]] that form into \[\[Protein]] (\[\[Protein Synthesis]]).
+[[RNA]] is used to create [[Amino acids]] that form into [[Protein]] ([[Protein Synthesis]]).
 
 ![translation.PNG](translation.png)
 
@@ -13,6 +13,6 @@ Total of 20 possible amino acids, meaning some codons give same amino acid.
 **3 STOP codons (UAA, UAG, UGA) stop** the process.
 
 Each type of tRNA attaches to one end of a type of amino acid and displays at other end an <i>anticodon</i> that uses base-pairing to recognize a specific codon/codon group.
-Chemistry for this happens in \[\[Ribosome]].
+Chemistry for this happens in [[Ribosome]].
 
 Same RNA can be translated differently, especially in complex genomes like plants and animals.

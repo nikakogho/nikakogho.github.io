@@ -1,4 +1,4 @@
-![Pasted\_image\_20230131005543.png](pasted_image_20230131005543.png)
+![Pasted_image_20230131005543.png](pasted_image_20230131005543.png)
 A - Adenine (purine)
 T - Thymine (pyrimidine)
 G - Guanine (purine)

@@ -8,7 +8,7 @@ Have 2 or more hydroxyl groups (-OH).
 
 Types:
 
-* \[\[Glucose]]
+* [[Glucose]]
 * fructose -AKA fruit sugar, found in plants
 * galactose
 
@@ -17,8 +17,8 @@ Used to sweeten food.
 
 ## Disaccharides
 
-Glucose + Fructose -> \[\[Sacrose]]
-Glucose + Galactose -> \[\[Lactose]]
+Glucose + Fructose -> [[Sacrose]]
+Glucose + Galactose -> [[Lactose]]
 
 ## Polysaccharides
 
