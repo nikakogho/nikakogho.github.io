@@ -1,0 +1,1 @@
+Like crashing into a wall and perfectly elastically returning back with -v velocity, “bouncing off” a planet’s gravitational field + planet’s velocity around the sun produces a “slingshot effect”

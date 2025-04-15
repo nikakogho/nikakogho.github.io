@@ -1,1 +1,12 @@
-Hi to space
+Important pages:
+- [[Equations]]
+- [[Rockets]]
+- [[Satellites]]
+- Ground stations
+    - [[SatNOGS]]
+- [[Space Stations]]
+- [[ECLSS]]
+- [[Rocket Propulsion Types]]
+- [[Rocket Engines]]
+- [[Staging]]
+- [[Making a CubeSat]]

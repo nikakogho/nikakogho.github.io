@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "0bd73814a04a17bf",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e61ba012e52b950",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bca13c2a9ea7ba82",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Making a CubeSat/Making a CubeSat.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Making a CubeSat"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bc198dc32f23b7f6",
+    "type": "split",
+    "children": [
+      {
+        "id": "951df075c609fb81",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ce8fc820387e95e3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ec2c4317fda5c353",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2b624bc108492f5f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 320.5
+  },
+  "right": {
+    "id": "5eff0111d7ae8752",
+    "type": "split",
+    "children": [
+      {
+        "id": "d51617d422935e11",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88dd03077151d425",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Problems/Rocket Propulsion Elements Chapter 2 Exercises.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Rocket Propulsion Elements Chapter 2 Exercises"
+            }
+          },
+          {
+            "id": "4e0659494335bfed",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Problems/Rocket Propulsion Elements Chapter 2 Exercises.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Rocket Propulsion Elements Chapter 2 Exercises"
+            }
+          },
+          {
+            "id": "034e4869d26e6071",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "5a8bbdf69ef079cb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Problems/Rocket Propulsion Elements Chapter 2 Exercises.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Rocket Propulsion Elements Chapter 2 Exercises"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "publish:Publish changes...": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "bca13c2a9ea7ba82",
+  "lastOpenFiles": [
+    "Ground Station/SatNOGS.md",
+    "Making a CubeSat/Making a CubeSat.md",
+    "Symbols.md",
+    "Home.md",
+    "TODO.md",
+    "Spacecraft/China/Tiangong Space Station.md",
+    "Rocket Engines/Raptor Engine.md",
+    "Rocket Engines/Merlin Engine.md",
+    "Aerodynamic Surfaces.md",
+    "Spacecraft/Satellites.md",
+    "Ground Station",
+    "Making a CubeSat",
+    "Spacecraft/USA/Blue Origin/New Glenn.md",
+    "Spacecraft/USA/Blue Origin/Amazon Kuiper.md",
+    "Orbit/Circular Orbit.md",
+    "Rocket Engines/Rocket Engines.md",
+    "Rocket Engines/Cryogenic Engines.md",
+    "Equations/Stellar Parallax.md",
+    "images/IMG_4721.gif",
+    "images/Pasted image 20250127201557.png",
+    "Orbit/Launch Azimuth.md",
+    "Gravity Assist.md",
+    "Stellar Parallax.md",
+    "IMG_4721.gif",
+    "Pasted image 20250127201557.png",
+    "Orbit/Orbital Inclination.md",
+    "Orbit/Orbit Directions.md",
+    "Orbit/Earth Orbits.md",
+    "ECLSS/Sabatier Reactor.md",
+    "ECLSS/ECLSS.md",
+    "ECLSS/Human requirements in space.md",
+    "ECLSS/Carbon Dioxide recycling or removal.md",
+    "images/Pasted image 20250127164653.png",
+    "images/IMG_4682.jpeg",
+    "images/IMG_4681.jpeg",
+    "images/IMG_4680.png",
+    "images/IMG_4679.png",
+    "images/IMG_4678.jpeg",
+    "ECLSS",
+    "Equations/Thermodynamics",
+    "Spacecraft/Canadian Space Agency",
+    "Tools",
+    "Missions",
+    "Orbit",
+    "Spacecraft/USA/Blue Origin",
+    "Spacecraft/USA/Raytheon"
+  ]
+}

@@ -1,0 +1,1 @@
+Must be kept above center of pressure so that any imbalance creates restoring moment by making thrust work in direction opposite to rotation
