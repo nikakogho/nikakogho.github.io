@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const VAULT_IDS = ['Neuroscience', 'Space', 'Bioengineering', 'Robots'];
+const VAULT_IDS = ['Neuroscience', 'Space', 'Bioengineering', 'Robots', 'AI'];
 
 const Header: React.FC = () => {
   return (
