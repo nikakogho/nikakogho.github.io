@@ -2,6 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'; // Plugin for GitHub Flavored Markdown (tables, task lists, etc.)
 import remarkWikiLink from 'remark-wiki-link'; // Plugin for [[Wiki Link]] syntax
+import rehypeRaw from 'rehype-raw'; 
 import { Link as RouterLink } from 'react-router-dom'; // For internal SPA navigation
 // Import the specific helper functions needed, including the new resolver and VaultNote type
 import { VaultNote, resolveWikiLink } from '../utils/markdownHelper';
@@ -57,7 +58,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
           },
         ],
       ]}
-
+      rehypePlugins={[rehypeRaw]} // Allow raw HTML processing (if needed)
       // --- Custom Rendering for Specific HTML Elements ---
       components={{
         // Override the default rendering for anchor `<a>` tags
