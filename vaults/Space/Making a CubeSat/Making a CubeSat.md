@@ -8,6 +8,7 @@ CubeSat Sections: frame, power (solar panels + LiPo batteries), on-board compute
 Ground Station sections covered in [[Making a Ground Station]]
 
 Useful tutorial from UNOOSA [here](https://www.unoosa.org/documents/pdf/psa/access2space4all/KiboCUBE/AcademySeason2/On-demand_Pre-recorded_Lectures/KiboCUBE_Academy_2022_OPL17.pdf)
+This [EdgeFlyte kit](https://www.edgeflyte.com/shop/1u-cubesat-kit) can be good
 
 ## Frame
 TODO
