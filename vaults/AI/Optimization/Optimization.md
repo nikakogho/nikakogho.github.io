@@ -12,8 +12,12 @@ def sim_anneal(problem, max):
   for t in range(max):
     T = temperature(t)
     neighbor = random neighbor of current
-    E = how much beyyer neighbor is than current
-    if E > 0:
+    deltaE = how much better neighbor is than current
+    if deltaE > 0:
       current = neighbor
+	else:
+		p = e ** (deltaE / T)
+	
+		if random.choice() < p:
+			current = neighbor
 ```
-with probability e<sup>E/T</sup> set current to neighbor
