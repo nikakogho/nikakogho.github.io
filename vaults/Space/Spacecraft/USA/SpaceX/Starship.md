@@ -1,7 +1,7 @@
 Largest spaceship ever
-Purpose: \[\[Mars Colonization]]
+Purpose: [[Mars Colonization]]
 
-Height 121m, taller than \[\[Saturn V]]
+Height 121m, taller than [[Saturn V]]
 Can carry 136 tons in reusable mode or 250 tons in expendable mode
 Booster thrust 74 400 kN
 Upper stage thrust 2 300 kN
@@ -11,27 +11,27 @@ Fully reusable
 5 test flights so far
 Roadmap:
 
-* \[x] Initial test flights
-* \[x] Successful static fire tests
-* \[x] High-altitude flight tests
-* \[x] Controlled splashdown
-* \[x] Reach orbit
-* \[x] Successful re-entry
-* \[x] Booster catch with chopsticks (flight 5)
-* \[ ] Upper stage catch
-* \[ ] Refueling in orbit
-* \[ ] Starship to land crew on moon as part of \[\[Artemis III]] mission
-* \[ ] Uncrewed mars flight
-* \[ ] Crewed mars flight
-* \[ ] Return from mars
-* \[ ] Build mars colony
+* [x] Initial test flights
+* [x] Successful static fire tests
+* [x] High-altitude flight tests
+* [x] Controlled splashdown
+* [x] Reach orbit
+* [x] Successful re-entry
+* [x] Booster catch with chopsticks (flight 5)
+* [ ] Upper stage catch
+* [ ] Refueling in orbit
+* [ ] Starship to land crew on moon as part of [[Artemis III]] mission
+* [ ] Uncrewed mars flight
+* [ ] Crewed mars flight
+* [ ] Return from mars
+* [ ] Build mars colony
 
 ![IMG\_2916.jpeg](img_2916.jpeg)
 
 ## Super Heavy booster
 
 71 meters tall.
-33 \[\[Raptor Engine|Raptor engines]], 13 in center and 20 on sides.
+33 [[Raptor Engine|Raptor engines]], 13 in center and 20 on sides.
 2400 tons of LOX
 700 tons of liquid methane
 
@@ -68,7 +68,7 @@ Uses body flaps for control in atmosphere
 
 ## Assembly
 
-Happens at \[\[Starbase]]
+Happens at [[Starbase]]
 
 ## Belly-flop maneuver
 

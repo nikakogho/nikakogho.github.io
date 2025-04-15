@@ -14,7 +14,7 @@
 ## Parking Orbit
 
 Temporary orbit to first get into, before moving into desired orbit
-![Pasted\_image\_20241025022032.png](pasted_image_20241025022032.png)
+![Pasted_image_20241025022032.png](pasted_image_20241025022032.png)
 
 ## Lagrange Points
 

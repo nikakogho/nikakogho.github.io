@@ -1,7 +1,7 @@
 At LEO at 400 km
 Crew of 7
 Orbits Earth every 90 minutes
-Uses \[\[ECLSS]]
+Uses [[ECLSS]]
 
 ![IMG\_3017.jpeg](img_3017.jpeg)
 
@@ -18,7 +18,7 @@ Will be decommissioned max early 2030s
 * **Integrated Truss Structure (ITS)** - internal and external trusses that act as support beams for solar panels and heat shields and everything
 * Solar arrays
 * **Environmental Control and Life Support Systems (ECLSS)** - oxygen/carbon dioxide recycling, water/urine recycling, atmospheric pressure
-* Robot parts like \[\[Canadarm2]] and \[\[Dextre]]
+* Robot parts like [[Canadarm2]] and [[Dextre]]
 
 ## ECLSS
 

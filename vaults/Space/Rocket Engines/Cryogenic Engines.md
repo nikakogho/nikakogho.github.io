@@ -3,12 +3,12 @@ Liquid hydrogen, liquid oxygen and other propellant often need to be kept at ver
 Cryogenic engines do that
 
 Mostly used in second and third stage
-Used by \[\[Space Shuttle]], \[\[Falcon 9]], \[\[Saturn V]] and others
+Used by [[Space Shuttle]], [[Falcon 9]], [[Saturn V]] and others
 
 Achieved by USA, Russia, India, China, Japan, and France
 Hard to make because
 
-* High level of thermal insulation needed as different parts need very different temperatures ![Pasted\_image\_20241118022941.png](pasted_image_20241118022941.png)
+* High level of thermal insulation needed as different parts need very different temperatures ![Pasted_image_20241118022941.png](pasted_image_20241118022941.png)
 * Oxidizer/Fuel ratio must be controlled, which is hard with so many inter-dependent turbopumps and systems
 * Hydrogen diffuses in metal cracks - special metal alloys like Austenitic Stainless Steel had to be made to fix this
 
@@ -21,12 +21,12 @@ Liquid H<sub>2</sub> then stored near launch station and loaded right before lau
 Fuel and oxidizer tanks are typically covered by outer tank made of aluminum-lithium alloy
 
 Then polyurethane applied by spraying, protects outer tank from heat
-![Pasted\_image\_20241117043334.png](pasted_image_20241117043334.png)
+![Pasted_image_20241117043334.png](pasted_image_20241117043334.png)
 
 ## Design
 
 * Pump - propellant stored at low pressure so a pump increases pressure brings LOX and LH2 into engine
-  * Often driven by fast turbine (tens of thousands of RPM (revolutions per minute)) to increase pressure ![Pasted\_image\_20241118020832.png](pasted_image_20241118020832.png)
+  * Often driven by fast turbine (tens of thousands of RPM (revolutions per minute)) to increase pressure ![Pasted_image_20241118020832.png](pasted_image_20241118020832.png)
   * Cavitation: vapor bubbles must be prevented or it will damage pump and reduce efficiency
   * Mostly centrifugal (rotate around), sometimes axial (move in straight line)
   * Electric pump would need battery => more weight => not used
@@ -46,8 +46,8 @@ Then polyurethane applied by spraying, protects outer tank from heat
     * Dual - separate turbines for fuel and oxidizer
   * Gas Generator Cycle - a combustion chamber around turbine where some LH<sub>2</sub> is burned to drive turbine
     * Some exhaust energy is lost this way => not fully efficient
-    * Used in SpaceX's \[\[Falcon 9]]'s \[\[Merlin Engine]] ![Pasted\_image\_20241118021856.png](pasted_image_20241118021856.png)
+    * Used in SpaceX's [[Falcon 9]]'s [[Merlin Engine]] ![Pasted_image_20241118021856.png](pasted_image_20241118021856.png)
     * **Stages Combustion Cycle** - made more efficient by moving exhaust back into main combustion chamber along with small amount of oxygen to partially burn hydrogen to increase its temperature and pressure
       * Highest thrust and specific impulse
-      * Very high pressure => needs very powerful and expensive parts ![Pasted\_image\_20241118022238.png](pasted_image_20241118022238.png)
-* **Injector Plate** mixes fuel and oxidizer by atomizing them and then igniting them ![Pasted\_image\_20241118022611.png](pasted_image_20241118022611.png) ![Pasted\_image\_20241118022657.png](pasted_image_20241118022657.png)
+      * Very high pressure => needs very powerful and expensive parts ![Pasted_image_20241118022238.png](pasted_image_20241118022238.png)
+* **Injector Plate** mixes fuel and oxidizer by atomizing them and then igniting them ![Pasted_image_20241118022611.png](pasted_image_20241118022611.png) ![Pasted_image_20241118022657.png](pasted_image_20241118022657.png)

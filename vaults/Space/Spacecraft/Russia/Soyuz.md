@@ -4,10 +4,10 @@ Operated by Roscosmos
 50 meters tall
 Spacecraft covered in at the top in **Launch Shroud**
 
-Currently used to take people to and from \[\[International Space Station]].
-Became only way to take crew after \[\[Space Shuttle]] retired in 2011 till 2021 when SpaceX made \[\[Crew Dragon]]
+Currently used to take people to and from [[International Space Station]].
+Became only way to take crew after [[Space Shuttle]] retired in 2011 till 2021 when SpaceX made [[Crew Dragon]]
 
-![Pasted\_image\_20241025224925.png](Pasted_image_20241025224925.png)
+![Pasted_image_20241025224925.png](Pasted_image_20241025224925.png)
 Fuel: kerosene and LOX
 
 ## 3 Stages
@@ -89,13 +89,13 @@ https://www.youtube.com/watch?v=24Bz5Ra5RgE
 We discuss Soyuz MS, the latest one.
 Outside is covered by layers of fabric for thermal insulation.
 Has 2 antennas, 1 window in front to look out, 1 docking camera, 1 LED light system, and 1 docking station in front.
-![Pasted\_image\_20241025224939.png](pasted_image_20241025224939.png)
+![Pasted_image_20241025224939.png](pasted_image_20241025224939.png)
 On top there is a satellite communications antenna, solar panels, thrusters on side and back, and covered main engine in middle
 
 Periscope for crew to look out on lower side
 ![IMG\_2875.png](img_2875.png)
 
-Docked with \[\[Saturn V|Apollo Spacecraft]] for Apollo-Soyuz Test Project (ASTP) on July 1975
+Docked with [[Saturn V|Apollo Spacecraft]] for Apollo-Soyuz Test Project (ASTP) on July 1975
 ![IMG\_2873.png](img_2873.png)
 
 ### Modules
@@ -106,9 +106,9 @@ Docked with \[\[Saturn V|Apollo Spacecraft]] for Apollo-Soyuz Test Project (ASTP
 * Descent - pressurized, 3 seats, emergency life support system, and survival gear for after landing back. Only this module returns on earth ![IMG\_2877.png](img_2877.png)
 * Service - AKA “instrument module” or “propulsion module” - fuel tanks, oxygen tanks, extra batteries and truss structure (metal diagonals above green balls)  ![IMG\_2880.png](img_2880.png)
 
-After slowly raising apogee then perigee then again apogee and so till it gets to same orbit, Soyuz docks with ISS at one of these locations. There can be multiple Soyuz/\[\[Progress Spacecraft]] attached at the same time. US segment of ISS is incompatible with Russian docking system SSVP (translates to "System for docking and internal transfer").
+After slowly raising apogee then perigee then again apogee and so till it gets to same orbit, Soyuz docks with ISS at one of these locations. There can be multiple Soyuz/[[Progress Spacecraft]] attached at the same time. US segment of ISS is incompatible with Russian docking system SSVP (translates to "System for docking and internal transfer").
 Ducking: probe of Soyuz attaches to Drobe of ISS, making airtight seal and then opening and astronauts pass through it
-![Pasted\_image\_20241026122118.png](pasted_image_20241026122118.png)
+![Pasted_image_20241026122118.png](pasted_image_20241026122118.png)
 
 ### Versions
 

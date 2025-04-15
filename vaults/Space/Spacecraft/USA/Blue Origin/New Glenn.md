@@ -10,7 +10,7 @@ Carries 45 tons to LEO or 13 tons to Geostationary Transfer Orbit
 
 57.5 meters tall
 Thrust 17 100 kN
-7 \[\[BE-4 Engine|BE-4 engines]] each around 2450 kN
+7 [[BE-4 Engine|BE-4 engines]] each around 2450 kN
 LOX + Liquified Natural Gas (LNG)
 Meant to be reused at least 25 times
 
@@ -18,12 +18,12 @@ Meant to be reused at least 25 times
 
 23.4 meters tall
 Thrust 1420 kN
-2 \[\[BE-3U Engine|BE-3U engines]] each with 710 kN thrust
+2 [[BE-3U Engine|BE-3U engines]] each with 710 kN thrust
 LOX + LH<sub>2</sub>
 
 ## Goals
 
-\[\[Amazon Kuiper]] and \[\[Artemis III]]
+[[Amazon Kuiper]] and [[Artemis III]]
 
 ## Launches
 

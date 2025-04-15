@@ -30,7 +30,7 @@ Studies formation of galaxies and stars, exoplanets, expansion of universe with 
 
 ### Primary Mirror
 
-* Width 2.4 meters (less than \[\[The James Webb Telescope]]’s 6.5 meters)
+* Width 2.4 meters (less than [[The James Webb Telescope]]’s 6.5 meters)
 * Precision-ground for light focus and collecting
 * Had initial defect that was fixed by **COSTAR instrument** in 1993
 

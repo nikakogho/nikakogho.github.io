@@ -1,6 +1,6 @@
 Equidistant everywhere
-Mostly in reality we have \[\[Elliptical Orbit]]
-![Pasted\_image\_20250127201557.png](pasted_image_20250127201557.png)
+Mostly in reality we have [[Elliptical Orbit]]
+![Pasted_image_20250127201557.png](pasted_image_20250127201557.png)
 v = velocity tangent to circular motion
 R = distance from earth center
 

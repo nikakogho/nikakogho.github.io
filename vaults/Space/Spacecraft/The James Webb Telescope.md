@@ -1,7 +1,7 @@
 Best telescope to this day
 Sees in infrared
 ![IMG\_3034.jpeg](img_3034.jpeg)
-Launched on 25 December 2021 with \[\[Ariane 5]] rocket
+Launched on 25 December 2021 with [[Ariane 5]] rocket
 Made together by NASA, ESA and CSA
 Cost $10 billion
 
@@ -16,7 +16,7 @@ Study early universe, star formation and exoplanets
 ### Primary Mirror
 
 18 hexagonal segments made of beryllium coated with thin layer of gold - optimized for reflecting infrared.
-Together, segments form 6.5 meter wide mirror (\[\[Hubble space telescope]] has 2.4 meters).
+Together, segments form 6.5 meter wide mirror ([[Hubble space telescope]] has 2.4 meters).
 Segments adjustable with actuators
 
 ### Secondary Mirror

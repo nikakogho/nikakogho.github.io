@@ -1,4 +1,4 @@
-![Pasted\_image\_20241011153852.png](pasted_image_20241011153852.png)
+![Pasted_image_20241011153852.png](pasted_image_20241011153852.png)
 F<sub>thrust</sub> = F<sub>momentum thrust</sub> + F<sub>pressure thrust</sub> = mass flow rate \* v<sub>2</sub> + (p<sub>exit gas</sub> - p<sub>ambient</sub>) \* A<sub>2</sub>
 
 if p<sub>exit gas</sub> < p<sub>ambient</sub> then F<sub>pressure thrust</sub> < 0

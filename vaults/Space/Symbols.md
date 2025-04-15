@@ -2,9 +2,9 @@
 ρ - density
 I<sub>sp</sub> - specific impulse
 A - area
-![Pasted\_image\_20241011145424.png](pasted_image_20241011145424.png) propellant mass fraction
-![Pasted\_image\_20241011173158.png](pasted_image_20241011173158.png) combustion efficiency
-![Pasted\_image\_20241011173739.png](pasted_image_20241011173739.png) propulsive efficiency
+![Pasted_image_20241011145424.png](pasted_image_20241011145424.png) propellant mass fraction
+![Pasted_image_20241011173158.png](pasted_image_20241011173158.png) combustion efficiency
+![Pasted_image_20241011173739.png](pasted_image_20241011173739.png) propulsive efficiency
 ω - angular velocity
 π
 J - conversion unit

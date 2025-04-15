@@ -4,7 +4,7 @@ Started with 60 in 2019
 \~6400 satellites as of September 2024
 42 000 planned
 
-At 550 km in \[\[Earth Orbits|Low Earth Orbit]]
+At 550 km in [[Earth Orbits|Low Earth Orbit]]
 
 20 ms latency
 
@@ -28,6 +28,6 @@ Much more profit and subscribers than competing geostationary satellites like Vi
 
 [Availability Map](https://www.starlink.com/map)
 
-\[\[Falcon 9]] deploys 20-40 starlinks twice a week
+[[Falcon 9]] deploys 20-40 starlinks twice a week
 
-Eventually, \[\[Starship]] will be deploying 400-600 per flight
+Eventually, [[Starship]] will be deploying 400-600 per flight

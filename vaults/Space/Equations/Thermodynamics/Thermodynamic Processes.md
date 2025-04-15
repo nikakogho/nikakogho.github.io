@@ -1,4 +1,4 @@
-![Pasted\_image\_20241105143152.png](pasted_image_20241105143152.png)
+![Pasted_image_20241105143152.png](pasted_image_20241105143152.png)
 
 Vertical axis - P - pressure
 Horizontal axis - V - volume
@@ -10,7 +10,7 @@ Decreasing area - work done by system
 
 ## Types
 
-![Pasted\_image\_20241105144031.png](pasted_image_20241105144031.png)
+![Pasted_image_20241105144031.png](pasted_image_20241105144031.png)
 
 * Isobaric: P = constant
   * W<sub>done by system</sub> = P(V<sub>initial</sub> - V<sub>final</initial>)
@@ -21,5 +21,5 @@ Decreasing area - work done by system
   * PV = constant
   * ΔU = 0
   * W = -Q
-* \[\[Adiabatic]] Process: Q = 0
+* [[Adiabatic]] Process: Q = 0
   * ΔU = W

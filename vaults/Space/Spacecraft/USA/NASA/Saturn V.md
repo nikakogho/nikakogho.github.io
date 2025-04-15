@@ -10,15 +10,15 @@ Crew of 3
 
 9 Legs
 Top one leads astronauts into command module
-![Pasted\_image\_20241026123517.png](pasted_image_20241026123517.png)
+![Pasted_image_20241026123517.png](pasted_image_20241026123517.png)
 
 ## First Stage S-IC
 
-5 \[\[F1 Engine|F1 Engines]]
+5 [[F1 Engine|F1 Engines]]
 
 ## Second Stage S-II
 
-5 smaller \[\[J2 Engine|J2 Engines]]
+5 smaller [[J2 Engine|J2 Engines]]
 
 ## Third Stage S-IVB
 
@@ -28,10 +28,10 @@ Just 1 J2 Engine
 
 At the top of all rocket stages
 Protected by panels called lunar module adapters during launch
-![Pasted\_image\_20241025020417.png](pasted_image_20241025020417.png)
+![Pasted_image_20241025020417.png](pasted_image_20241025020417.png)
 
 Command Module, Service Module and Lunar Module
-![Pasted\_image\_20241025013938.png](pasted_image_20241025013938.png)
+![Pasted_image_20241025013938.png](pasted_image_20241025013938.png)
 
 ### Service Module
 
@@ -70,7 +70,7 @@ Made of Crew Compartment, Midsection and Aft Equipment Bay:
 * Crew Compartment is pressurized (safe without suit), little room, 2 small windows, commander on left and pilot on right. Opens for climb down the ladder
 * Midsection has equipment and cover to protect ascent engine, and tunnel to dock with command module when back to lunsr orbit
 * Aft Equipment Bay has oxygen and helium tanks and electronics, feeding into ascent engine
-* \[\[Reaction Control System]] (RCS), 4 groups of 4 thrusters each for maneuvering
+* [[Reaction Control System]] (RCS), 4 groups of 4 thrusters each for maneuvering
 * Antennas for talking to mission control on Earth
 
 ## Launch Center To Orbit Steps
@@ -80,10 +80,10 @@ https://www.youtube.com/watch?v=8dpkmUjJ8xU
 
 1. First stage ignites 8 seconds before launch
 2. Other 5 arms move away to let rocket fly away
-3. First stage shuts off at 2:42 at height of 67km and \[\[Explosive Bolts]] remove it
+3. First stage shuts off at 2:42 at height of 67km and [[Explosive Bolts]] remove it
 4. Second stage starts. Launch escape system not needed anymore, gets removed
 5. Second stage shuts off at 9:12 at height of 175km and is removed
-6. Third stage fires up for a bit to get to \[\[Earth Orbits#Parking Orbit|Parking Orbit]] at 190 km
+6. Third stage fires up for a bit to get to [[Earth Orbits#Parking Orbit|Parking Orbit]] at 190 km
 7. Third stage shuts off at 11:39 at parking orbit, **remains attached**
 
 ## Orbit To Moon Steps

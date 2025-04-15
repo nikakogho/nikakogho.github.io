@@ -1,4 +1,4 @@
-Pursued by \[\[Starship]]
+Pursued by [[Starship]]
 
 Must:
 

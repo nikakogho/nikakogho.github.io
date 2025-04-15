@@ -1,4 +1,4 @@
-![Pasted\_image\_20241116152942.png](pasted_image_20241116152942.png)
+![Pasted_image_20241116152942.png](pasted_image_20241116152942.png)
 
 ## Functions
 
@@ -10,7 +10,7 @@
 
 ## Layers
 
-* Outer layer - made from materials like \[\[Gore-Tex]] to protect from abrasion and let moisture escape
+* Outer layer - made from materials like [[Gore-Tex]] to protect from abrasion and let moisture escape
 * Pressure Garment - keep pressure
 * Insulation Layers - reflect solar temperature, retain body heat
 * Liquid Cooling and Ventilation Garment (LCVG) - worn typically directly on naked skin
@@ -36,10 +36,10 @@
 
 ## Examples
 
-![Pasted\_image\_20241116161631.png](pasted_image_20241116161631.png)
+![Pasted_image_20241116161631.png](pasted_image_20241116161631.png)
 
 SpaceX EVA suit
-![Pasted\_image\_20241116154704.png](pasted_image_20241116154704.png)
+![Pasted_image_20241116154704.png](pasted_image_20241116154704.png)
 
 SpaceX IVA suit
 ![the-suit-new.png](the-suit-new.png)

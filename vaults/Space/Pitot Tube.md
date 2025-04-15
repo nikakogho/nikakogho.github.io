@@ -1,4 +1,4 @@
-Measures \[\[Volume Flow Rate|fluid flow velocity]] by measuring pressure difference between stagnation and static pressures
+Measures [[Volume Flow Rate|fluid flow velocity]] by measuring pressure difference between stagnation and static pressures
 
 **Stagnation pressure** - pressure when speed = 0 (not flowing at this location)
 

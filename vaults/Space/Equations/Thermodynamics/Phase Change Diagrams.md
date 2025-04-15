@@ -1,9 +1,9 @@
 For constant pressure
-![Pasted\_image\_20241116161847.png](pasted_image_20241116161847.png)
-![Pasted\_image\_20241116161911.png](pasted_image_20241116161911.png)
+![Pasted_image_20241116161847.png](pasted_image_20241116161847.png)
+![Pasted_image_20241116161911.png](pasted_image_20241116161911.png)
 
 For varying pressure
-![Pasted\_image\_20241116162025.png](pasted_image_20241116162025.png)
+![Pasted_image_20241116162025.png](pasted_image_20241116162025.png)
 
 ## Superheated Vapor
 
@@ -22,4 +22,4 @@ At 100 degrees, about to start boiling/condensing and become part liquid part va
 
 Vapor quality x = vapor mass / total mass
 Temperature remains, specific volume changes until fully condensed or vaporized
-Amount needed is \[\[Latent Heat]]
+Amount needed is [[Latent Heat]]

@@ -1,4 +1,4 @@
-Mostly same as \[\[Falcon 9]] but 2 boosters attached on sides of the main booster.
+Mostly same as [[Falcon 9]] but 2 boosters attached on sides of the main booster.
 Can carry 63 800 kg.
 Thrust 22 819 kN at sea level
 

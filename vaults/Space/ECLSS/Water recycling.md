@@ -12,7 +12,7 @@ Then urine recycling was added
 Urine contains urea, salt, and 65 other things
 urea -> ammonia + CO<sub>2</sub>
 
-\[\[International Space Station]] Urine Processor turns urine into water + brine (highly concentrated waste)
+[[International Space Station]] Urine Processor turns urine into water + brine (highly concentrated waste)
 
 ![IMG\_4680.png](img_4680.png)
 ![IMG\_4679.png](img_4679.png)

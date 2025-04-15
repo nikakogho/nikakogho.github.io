@@ -15,7 +15,7 @@ Sometimes we choose low energy efficiency on purpose in order to choose high mas
 
 ## Combustion Efficiency
 
-![Pasted\_image\_20241011173133.png](pasted_image_20241011173133.png) = actual energy released / ideal case
+![Pasted_image_20241011173133.png](pasted_image_20241011173133.png) = actual energy released / ideal case
 High for chemical rocket (94-99%)
 Low for electric
 For solar cells it is 10-30%
@@ -47,7 +47,7 @@ Total Power = P<sub>chem</sub> \* combustion efficiency
 
 Propulsive Efficiency = 1 when c = u => ejected gas stands still in space
 
-![Pasted\_image\_20241011174824.png](pasted_image_20241011174824.png)
+![Pasted_image_20241011174824.png](pasted_image_20241011174824.png)
 
 ## Specific  Propellant Consumption
 

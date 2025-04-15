@@ -1,5 +1,5 @@
 Fuel inside rocket reacts with air in atmosphere for thrust.
-Higher \[\[Specific Impulse]] makes them a better choice in atmosphere
+Higher [[Specific Impulse]] makes them a better choice in atmosphere
 Thrust-to-weight ratio typically 5:1 or 7:1, as opposed to 75:1 for rocket
 Consumes less fuel than rocket
 Limited altitude
@@ -11,7 +11,7 @@ Flight speed always less than exhaust velocity
 
 Most common
 Thrust-to-weight ratio typically 5:1
-![Pasted\_image\_20241009164929.png](pasted_image_20241009164929.png)
+![Pasted_image_20241009164929.png](pasted_image_20241009164929.png)
 
 ## Turbofan
 
@@ -21,10 +21,10 @@ TODO
 
 Thrust-to-weight ratio typically 7:1
 For supersonic flights above Mach 2
-![Pasted\_image\_20241009164940.png](pasted_image_20241009164940.png)
+![Pasted_image_20241009164940.png](pasted_image_20241009164940.png)
 
 ## Pulsejet
 
 Propulsion happens in pulses
 Nazi Germany's V1 rocket used it
-![Pasted\_image\_20241009162701.png](pasted_image_20241009162701.png)
+![Pasted_image_20241009162701.png](pasted_image_20241009162701.png)

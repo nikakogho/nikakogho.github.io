@@ -12,7 +12,7 @@ Crew of 3
 Thrust 3256 kN
 Burns for 166 seconds
 
-1 main \[\[YF-20B Engine]] and 4 boosters.
+1 main [[YF-20B Engine]] and 4 boosters.
 Propellant for all: Nitrogen Tetroxide (N<sub>2</sub>O<sub>4</sub>) as oxidizer and Unsymmetrical Dimethylhydrazine (UDMH) as fuel.
 
 ## Second Stage
@@ -27,10 +27,10 @@ Propellant: kerosene (RP-1) + LOX
 
 ## Spacecraft
 
-Cabin diameter 2.5 meters, better than 2.2 meters of \[\[Soyuz]].
+Cabin diameter 2.5 meters, better than 2.2 meters of [[Soyuz]].
 More horizontal re-entry, lighter on crew.
 
-\[\[Docking|Docks]] to \[\[Tiangong Space Station]].
+[[Docking|Docks]] to [[Tiangong Space Station]].
 
 Contains orbital, reentry and service modules
 

@@ -2,7 +2,7 @@ Since 2021 taking people to space
 First private spacecraft taking people to space
 Crew of 2-4 normally,
 max 7 for emergency
-Launched by \[\[Falcon 9]]
+Launched by [[Falcon 9]]
 
 ![IMG\_2891.png](img_2891.png)
 
@@ -37,7 +37,7 @@ By berthing or docking
 
 ### Berthing
 
-When near enough, robotic arm of \[\[International Space Station]] captures it
+When near enough, robotic arm of [[International Space Station]] captures it
 
 ## Docking with ISS
 
