@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useMemo, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; // Plugin for GitHub Flavored Markdown (tables, task lists, etc.)
-import remarkWikiLink from 'remark-wiki-link'; // Plugin for [[Wiki Link]] syntax
-import rehypeRaw from 'rehype-raw'; 
-import { Link as RouterLink } from 'react-router-dom'; // For internal SPA navigation
+import remarkGfm from 'remark-gfm';
+import remarkWikiLink from 'remark-wiki-link';
+import rehypeRaw from 'rehype-raw';
+import { Link as RouterLink } from 'react-router-dom';
 // Import the specific helper functions needed, including the new resolver and VaultNote type
 import { VaultNote, resolveWikiLink } from '../utils/markdownHelper';
-import { getImageUrl } from '../utils/imageHelper'; // Helper to generate external image URLs
+import { getImageUrl } from '../utils/imageHelper'; // Import your updated image helper
 
 // Define the expected properties for the component
 interface MarkdownRendererProps {
@@ -16,64 +16,97 @@ interface MarkdownRendererProps {
 }
 
 /**
- * React component to render Markdown content with enhanced WikiLink resolution
- * using a helper function from markdownHelper.ts.
+ * React component to render Markdown content with enhanced WikiLink resolution,
+ * HTML rendering enabled, and handling for non-existent links.
+ * Uses user-provided base code. Includes workaround for potential remark-wiki-link bug.
  */
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, allVaultNotes }) => {
-  // --- WikiLink Configuration ---
 
-  // This wrapper function is passed to remark-wiki-link.
-  // It calls our external helper 'resolveWikiLink' with the necessary context (allVaultNotes).
-  // remark-wiki-link expects pageResolver to return an array of strings (permalinks).
-  const pageResolverWrapper = (name: string): string[] => {
-    // Call the helper function from markdownHelper.ts to find the correct path
-    const resolvedPath = resolveWikiLink(name, allVaultNotes);
-    // Return the resolved path inside an array as expected by the plugin
-    return [resolvedPath];
-  };
+  // --- Prepare data for remark-wiki-link ---
+  const existingPermalinks = useMemo(() => {
+    if (!Array.isArray(allVaultNotes)) {
+        return [];
+    }
+    const paths = allVaultNotes.map(note => note.fullPath);
+    // console.log("[MarkdownRenderer] Existing Permalinks for check:", paths);
+    return paths;
+  }, [allVaultNotes]);
 
-  // Function to generate the final URL from the resolved permalink (path)
-  // This part remains the same.
+  // Memoize the resolver function itself
+  const pageResolverWrapper = useMemo(() => {
+    return (name: string): string[] => {
+      const resolvedPath = resolveWikiLink(name, allVaultNotes);
+      // Previous check showed 'exists' was true here, but plugin added 'new-link' anyway.
+      // const exists = existingPermalinks.includes(resolvedPath);
+      // console.log(`[pageResolverWrapper] Does "${resolvedPath}" exist in Existing Permalinks? ${exists}`);
+      return [resolvedPath]; // Return the resolved path for hrefTemplate
+    };
+  }, [allVaultNotes, existingPermalinks]);
+
+  // Href template function
   const wikiHrefTemplate = (permalink: string): string => {
-    // Constructs the path based on the application's routing structure
-    return `/#/vaults/${vaultId}/notes/${permalink}`;
+    // Generate the full href for the link component
+    return `/vaults/${vaultId}/notes/${permalink}`;
   };
-  // --- End WikiLink Configuration ---
+  // --- End WikiLink Configuration Data ---
 
 
   return (
     <ReactMarkdown
-      // --- Core Markdown Processing Plugins ---
       remarkPlugins={[
-        remarkGfm, // Enable GFM features
+        remarkGfm,
         [
-          remarkWikiLink, // Enable [[Wiki Link]] parsing
+          remarkWikiLink,
           {
-            // Configuration for remark-wiki-link
-            pageResolver: pageResolverWrapper, // Use the wrapper around our external helper
-            hrefTemplate: wikiHrefTemplate, // Use our function to build the final URL
-            wikiLinkClassName: 'internal-link', // CSS class for styling wiki links
-            newClassName: 'new-link', // CSS class for wiki links to non-existent notes (optional)
-            aliasDivider: '|', // Character used for [[Actual Note|Display Alias]]
+            pageResolver: pageResolverWrapper,
+            hrefTemplate: wikiHrefTemplate,
+            wikiLinkClassName: 'internal-link', // Still add base class
+            newClassName: 'new-link', // Plugin might still add this, but we ignore it below
+            aliasDivider: '|',
+            existingPages: existingPermalinks, // Pass the list
           },
         ],
       ]}
-      rehypePlugins={[rehypeRaw]} // Allow raw HTML processing (if needed)
-      // --- Custom Rendering for Specific HTML Elements ---
+      rehypePlugins={[rehypeRaw]}
       components={{
-        // Override the default rendering for anchor `<a>` tags
-        // Logic remains the same as before.
-        a: ({ node, href, children, ...props }) => {
-          const isInternalWikiLink = props.className === 'internal-link';
-          if (href && isInternalWikiLink) {
-            // Render internal wiki links using React Router
-            return <RouterLink to={href}>{children}</RouterLink>;
+        // --- Updated 'a' component override (WORKAROUND) ---
+        a: ({ node, href, children, className, ...props }) => {
+          const isInternalWikiLink = className?.includes('internal-link');
+
+          if (isInternalWikiLink && href) {
+            // --- Manual Check for Existence ---
+            // Extract the permalink (resolved path) from the generated href
+            let permalink = '';
+            const hrefParts = href.split('/notes/');
+            if (hrefParts.length > 1) {
+                permalink = hrefParts[1];
+            }
+
+            // Check if this extracted permalink exists in our known list
+            const exists = existingPermalinks.includes(permalink);
+            // --- End Manual Check ---
+
+            // console.log(`[Components.a] Internal Link "${children}". Href: "${href}". Permalink: "${permalink}". Exists check: ${exists}. Received className: "${className}"`);
+
+            if (exists) {
+              // Link target exists: Render the clickable RouterLink
+              // console.log(`  -> Rendering as EXISTING link (RouterLink).`);
+              // Pass className down in case 'internal-link' has styles, but ignore 'new-link' visually
+              return <RouterLink to={href} className={'internal-link'} {...props}>{children}</RouterLink>;
+            } else {
+              // Link target does NOT exist (or permalink extraction failed): Render non-clickable span
+              // Apply both classes so CSS can target .internal-link.new-link
+              // console.log(`  -> Rendering as NEW link (span).`);
+              return <span className={'internal-link new-link'} {...props}>{children}</span>;
+            }
           }
-          // Handle standard external/other links
+
+          // Handle standard external/other links (same as before)
           const isExternal = href?.startsWith('http');
           return (
             <a
               href={href}
+              className={`${className || ''}`}
               {...props}
               target={isExternal ? '_blank' : undefined}
               rel={isExternal ? 'noopener noreferrer' : undefined}
@@ -82,26 +115,25 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
             </a>
           );
         },
+        // --- End Updated 'a' component override ---
 
-        // Override the default rendering for image `<img>` tags
-        // Logic remains the same as before.
         img: ({ node, src, alt, ...props }) => {
           let resolvedSrc = src || '';
-          console.log('About to resolve for image:', resolvedSrc); // Debugging
-          // If src is not an absolute URL, resolve it using the image helper
           if (src && !src.startsWith('http')) {
-            resolvedSrc = getImageUrl(src, vaultId!);
+              resolvedSrc = getImageUrl(src, vaultId!);
           }
-          console.log('Resolved for image:', resolvedSrc); // Debugging
-          // Render the image tag with lazy loading
           return <img src={resolvedSrc} alt={alt || ''} {...props} loading="lazy" />;
         }
       }}
     >
-      {/* The raw Markdown string to be processed */}
       {markdown}
     </ReactMarkdown>
   );
 };
+
+// Assuming VAULT_IDS is accessible here or passed down if needed for path checking
+// Define it here or ensure it's imported/passed if defined elsewhere
+// const VAULT_IDS = ['Neuroscience', 'Space', 'Bioengineering', 'Robots', 'AI']; // Keep if needed by getImageUrl fallback
+
 
 export default MarkdownRenderer;

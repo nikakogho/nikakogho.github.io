@@ -264,6 +264,23 @@ th {
     border-bottom: 1px dashed #e76f51;
 }
 
+/* Target links that have both internal-link and new-link classes */
+/* Note: applies to the <span> we render for these */
+.internal-link.new-link {
+  color: var(--text-muted); /* Use a muted text color */
+  opacity: 0.7;             /* Make it slightly transparent */
+  border-bottom: 1px dashed var(--text-muted); /* Muted dashed underline */
+  cursor: default;          /* Show default cursor, not pointer */
+  font-weight: normal;      /* Optional: Remove bold from internal links */
+}
+
+/* Remove hover effects specifically for new links */
+.internal-link.new-link:hover {
+  background-color: transparent; /* No background change */
+  color: var(--text-muted);      /* Color doesn't change */
+  border-bottom-style: dashed; /* Keep underline dashed */
+}
+
 /* --- Responsive Images in Content --- */
 
 /* Target images within the main markdown rendering area */

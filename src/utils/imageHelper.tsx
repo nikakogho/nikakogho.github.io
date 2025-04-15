@@ -12,7 +12,7 @@ const s3UrlPrefix = import.meta.env.VITE_S3_URL_PREFIX;
 export function getImageUrl(imagePath: string, vaultId: string): string {
     // Basic cleanup: remove leading slash if present
     const cleanImagePath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
-    console.log('Image provider is :', imageProvider); // Debugging
+    //console.log('Image provider is :', imageProvider); // Debugging
     if (imageProvider === 'cloudinary') {
         if (!cloudinaryCloudName) {
             console.warn("VITE_CLOUDINARY_CLOUD_NAME is not set.");
@@ -21,7 +21,7 @@ export function getImageUrl(imagePath: string, vaultId: string): string {
         
         const publicIdPlusVault = `${vaultId}/images/${cleanImagePath}`; // Prepend vaultId to the image path
 
-        console.log('Resolved image path to Cloudinary:', publicIdPlusVault); // Debugging
+        //console.log('Resolved image path to Cloudinary:', publicIdPlusVault); // Debugging
 
         return `https://res.cloudinary.com/${cloudinaryCloudName}/image/upload/${cloudinaryTransformations}/${publicIdPlusVault}`;
 
@@ -37,7 +37,7 @@ export function getImageUrl(imagePath: string, vaultId: string): string {
          // S3 keys are typically URL-safe, but full encoding might be safer depending on characters
          const encodedImagePath = cleanImagePath.split('/').map(encodeURIComponent).join('/');
 
-            console.log('Resolved image path to S3:', encodedImagePath); // Debugging
+        //console.log('Resolved image path to S3:', encodedImagePath); // Debugging
         return `${prefix}${encodedImagePath}`;
 
     } else {
