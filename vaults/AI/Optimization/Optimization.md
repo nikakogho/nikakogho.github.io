@@ -15,9 +15,9 @@ def sim_anneal(problem, max):
     deltaE = how much better neighbor is than current
     if deltaE > 0:
       current = neighbor
-	else:
-		p = e ** (deltaE / T)
-	
-		if random.choice() < p:
-			current = neighbor
+    else:
+      p = e ** (deltaE / T)
+
+      if random.choice() < p:
+        current = neighbor
 ```
