@@ -1,15 +1,15 @@
-NASA’s rocket meant to succeed [[Saturn V]] for moon operations
+NASA’s rocket meant to succeed \[\[Saturn V]] for moon operations
 
-About to be canceled in favor of [[Starship]]
+About to be canceled in favor of \[\[Starship]]
 
 Height max 119m
 130 metric tons to LEO or 46 metric tons to Mars
 
 Block 2 total thrust at liftoff: 42 800 kN
 
-![IMG_3047.jpeg](IMG_3047.jpeg)
+![SLS\_standing.png](sls_standing.png)
 
-Carries [[Orion Spacecraft]] with crew of 4
+Carries \[\[Orion Spacecraft]] with crew of 4
 
 ## Variants
 
@@ -25,9 +25,9 @@ Carries [[Orion Spacecraft]] with crew of 4
 
 ## Design
 
-![IMG_3048.webp](img_3048.webp)
+![IMG\_3048.webp](img_3048.webp)
 
-4 [[RS-25 Engine|RS-25 Engines]] from [[Space Shuttle]]
+4 \[\[RS-25 Engine|RS-25 Engines]] from \[\[Space Shuttle]]
 
 ## Artemis I
 

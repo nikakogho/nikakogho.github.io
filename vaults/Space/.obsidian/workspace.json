@@ -11,14 +11,12 @@
             "id": "bca13c2a9ea7ba82",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Making a CubeSat/Making a CubeSat.md",
-                "mode": "source",
-                "source": false
+                "file": "images/soyuz_launching.png"
               },
-              "icon": "lucide-file",
-              "title": "Making a CubeSat"
+              "icon": "lucide-image",
+              "title": "soyuz_launching"
             }
           }
         ]
@@ -164,10 +162,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bca13c2a9ea7ba82",
+  "active": "ce8fc820387e95e3",
   "lastOpenFiles": [
-    "images/Pasted image 20241009162701.png",
     "Making a CubeSat/Making a CubeSat.md",
+    "images/Pasted image 20241009162701.png",
     "images/Pasted image 20250127201557.png",
     "images/Pasted image 20250127164653.png",
     "images/Pasted image 20250104164001.png",
@@ -177,7 +175,6 @@
     "images/Pasted image 20241118022611.png",
     "images/Pasted image 20241118022657.png",
     "images/Pasted image 20241118022238.png",
-    "images/Pasted image 20241118021856.png",
     "Ground Station/SatNOGS.md",
     "Symbols.md",
     "Home.md",
