@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine Learning.md",
+                "file": "Supervised Learning.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Machine Learning"
+              "title": "Supervised Learning"
             }
           }
         ]
@@ -170,8 +170,9 @@
   },
   "active": "a537d1449816f5be",
   "lastOpenFiles": [
-    "images/Pasted image 20250410221708.png",
     "Machine Learning.md",
+    "Supervised Learning.md",
+    "images/Pasted image 20250410221708.png",
     "images/Pasted image 20250410224227.png",
     "Home.md",
     "Optimization/Optimization.md",
