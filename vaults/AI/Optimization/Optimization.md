@@ -17,7 +17,6 @@ def sim_anneal(problem, max):
       current = neighbor
     else:
       p = e ** (deltaE / T)
-
       if random.choice() < p:
         current = neighbor
 ```
