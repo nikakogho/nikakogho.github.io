@@ -1,0 +1,1 @@
+Substance attracted to another substance

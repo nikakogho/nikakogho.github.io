@@ -1,0 +1,1 @@
+Main appendage of [[Stem|stem]] of [[Vascular Plant|vascular plants]] used for [[Photosynthesis|photosynthesis]].

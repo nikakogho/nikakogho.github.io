@@ -1,0 +1,1 @@
+All genetic code in cell - chromosomes, plasmids, whatever

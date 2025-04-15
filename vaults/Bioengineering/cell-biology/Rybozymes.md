@@ -1,0 +1,1 @@
+[[RNA]] catalysts working like [[Enzymes|enzymes]].

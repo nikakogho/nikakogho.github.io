@@ -1,0 +1,1 @@
+Electric current doesn't flow through it

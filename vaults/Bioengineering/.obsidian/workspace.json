@@ -1,0 +1,217 @@
+{
+  "main": {
+    "id": "bd58b639f65257b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "c52ea3c0c14a560f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "17a9da097cdad3b9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Chemistry/Bonds.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Bonds"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "06fe2aa7e44612ca",
+    "type": "split",
+    "children": [
+      {
+        "id": "1912cf2b05f21019",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3152da6eea028fea",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "c359ef8c57d20012",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "396d62ee73adaa6b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8e44ef96f7fa07c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "6747e2b5c441432d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "79ec677748f6cbb1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Genome Sequencing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Genome Sequencing"
+            }
+          },
+          {
+            "id": "bb04bd3456ecf73d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Genome Sequencing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Genome Sequencing"
+            }
+          },
+          {
+            "id": "e8117bde8bafde3b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a6b410cee8436501",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Genome Sequencing.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Genome Sequencing"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "publish:Publish changes...": false
+    }
+  },
+  "active": "17a9da097cdad3b9",
+  "lastOpenFiles": [
+    "Polymerase Chain Reaction.md",
+    "Bioinformatics/Rosalind.md",
+    "Bioinformatics/Bioinformatics.md",
+    "Genetic Engineering/Sequencing Methods/Illumina Sequencing.md",
+    "Bioinformatics/Projects/LAAVA/LAAVA structure.md",
+    "Bioinformatics/Projects/LAAVA/LAAVA.md",
+    "cell-biology/Cell Biology.md",
+    "Home.md",
+    "cell-biology/cell/Cell.md",
+    "cell-biology/Homeostasis.md",
+    "Genetic Engineering/Genetic Engineering.md",
+    "Genetic Engineering/Genome Sequencing.md",
+    "Genetic Engineering/Gene Therapy.md",
+    "Genetic Engineering/Contig.md",
+    "Genetic Engineering/Flux Balance Analysis.md",
+    "Bioinformatics/File types/Bioinformatics File Types.md",
+    "Chemistry/Chemistry.md",
+    "Chemistry/Solution.md",
+    "Chemistry/Noble gas.md",
+    "Chemistry/Network Solids.md",
+    "Chemistry/Lewis Structure.md",
+    "Chemistry/Intermolecular Forces.md",
+    "Chemistry/Cohesion.md",
+    "Chemistry/Adhesion.md",
+    "Chemistry/Salt.md",
+    "Chemistry/Elements/Element.md",
+    "Chemistry/images/Pasted image 20241110172353.png",
+    "Chemistry/images/Pasted image 20241110172644.png",
+    "Chemistry/images/Pasted image 20230217114036.png",
+    "Chemistry/images/Pasted image 20230212085545.png",
+    "Chemistry/images/Pasted image 20230207071826.png",
+    "Chemistry/images/Pasted image 20230207032236.png",
+    "Chemistry/images/Pasted image 20230206040104.png",
+    "Chemistry/Untitled.canvas",
+    "Chemistry/Organic Chemistry",
+    "Chemistry/Molecules",
+    "Chemistry/images",
+    "Chemistry/Elements",
+    "Chemistry/Electron",
+    "Chemistry/Acid-Base",
+    "Chemistry",
+    "images/Pasted image 20241029035033.png",
+    "synthetic biology/images/Pasted image 20240324063826.png",
+    "synthetic biology/images",
+    "synthetic biology",
+    "cell-biology/life/Animals/Mammals",
+    "cell-biology/images/translation.PNG"
+  ]
+}

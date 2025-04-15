@@ -1,0 +1,1 @@
+Outer layer of [[Human Brain|cerebrum]].

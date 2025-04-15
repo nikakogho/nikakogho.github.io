@@ -1,0 +1,5 @@
+- [[SAM files]]
+- [[BAM files]]
+- [[CIGAR]]
+- [[FASTA files]]
+- [[FASTQ files]]
