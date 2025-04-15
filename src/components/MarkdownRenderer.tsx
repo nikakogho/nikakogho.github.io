@@ -61,7 +61,6 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
             pageResolver: pageResolverWrapper,
             hrefTemplate: wikiHrefTemplate,
             wikiLinkClassName: 'internal-link', // Still add base class
-            newClassName: 'new-link', // Plugin might still add this, but we ignore it below
             aliasDivider: '|',
             existingPages: existingPermalinks, // Pass the list
           },
