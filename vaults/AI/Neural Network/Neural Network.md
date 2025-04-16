@@ -1,4 +1,4 @@
-Layers, linear equations, sometimes [[ReLu]] or [[Sigmoid]]
+Layers, linear equations, sometimes [[ReLu]] or [[Sigmoid Activation]]
 
 Input layer, hidden layers, output layer
 
