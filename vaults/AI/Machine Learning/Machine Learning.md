@@ -7,3 +7,5 @@ Types:
 - [[Q Learning]]
 
 [[Support Vector Machine]]
+
+Used to make [[Large Language Models]]

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Home.md",
+                "file": "Neural Network/Recurrent Neural Network.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Home"
+              "title": "Recurrent Neural Network"
             }
           }
         ]
@@ -168,14 +168,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "999760db8d47878c",
+  "active": "a537d1449816f5be",
   "lastOpenFiles": [
-    "Algorithms/Activation Functions/ReLu.md",
+    "Large Language Models/Large Language Models.md",
+    "Neural Network/Recurrent Neural Network.md",
     "Home.md",
+    "Machine Learning/Machine Learning.md",
+    "Algorithms/Clustering/K-Means Clustering.md",
+    "Machine Learning/Support Vector Machine.md",
+    "Neural Network/Convolutional Neural Network.md",
+    "Computer Vision/Computer Vision.md",
     "Neural Network/Neural Network.md",
+    "Computer Vision",
+    "Algorithms/Activation Functions/ReLu.md",
     "Python Libraries/TensorFlow.md",
     "Python Libraries",
-    "Large Language Models/Large Language Models.md",
     "Machine Learning/Overfitting.md",
     "Neural Network/Backpropagation.md",
     "Algorithms/Activation Functions/Sigmoid Activation.md",
@@ -190,7 +197,6 @@
     "images/Pasted image 20250416120152.png",
     "Optimization/Optimization.md",
     "Machine Learning/Unsupervised Learning.md",
-    "Algorithms/Clustering/K-Means Clustering.md",
     "Algorithms/Clustering",
     "Algorithms",
     "Machine Learning/Deep Learning.md",
@@ -198,21 +204,15 @@
     "Machine Learning/Q Learning.md",
     "Deep Learning.md",
     "Machine Learning/Supervised Learning.md",
-    "Machine Learning/Machine Learning.md",
     "Machine Learning",
-    "Support Vector Machine.md",
     "Neural Network/Perceptron.md",
     "Supervised Learning.md",
     "Machine Learning.md",
     "images/Pasted image 20250410221708.png",
     "images/Pasted image 20250410224227.png",
     "Uncertainty/Uncertainty.md",
-    "Symbols.md",
-    "Knowledge/Knowledge.md",
-    "Search/Search.md",
     "Large Language Models",
     "Reasoning Models",
-    "Natural Language Processing",
-    "Optimization"
+    "Natural Language Processing"
   ]
 }

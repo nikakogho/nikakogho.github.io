@@ -11,9 +11,12 @@
 - [[Optimization]]
 - [[Neural Network]]
     - [[Perceptron]]
+    - [[Convolutional Neural Network]]
+    - [[Recurrent Neural Network]]
 - [[Natural Language Processing]]
 - [[Large Language Models]]
 	- [[Reasoning Models]]
+- [[Computer Vision]]
 - Algorithms
 	- Activation Functions
 		- [[ReLu]]
