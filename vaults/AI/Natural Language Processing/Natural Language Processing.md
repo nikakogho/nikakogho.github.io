@@ -35,3 +35,27 @@ Positive P = P(b | a) * P(c | a) * P(d | a) * P(d | a) * P(e | a)
 and Negative P = P(b | ¬a) * P(c | ¬a) * P(d | ¬a) * P(e | ¬a)
 
 and normalize them so positive P + negative P = 1 and our positive P then is P(a)
+
+#### Additive smoothing
+To make sure we don't exclude a possibility just because one key was never found (just because word "grandson" was never mentioned in a positive message, the previous logic would assume all messages must be negative), we add a constant value **α** to all probabilities to avoid multiplying by zero
+
+##### Laplace Smoothing
+α = 1
+
+## Information retrieval
+Find info based on query
+
+### Topic modeling
+Find out what a document is about
+
+### tf-tf-idf
+tf = term frequency = how many times this word appears
+idf = inverse document frequency = how common/rare this word is = log (total documents / documents with this word)
+
+tf-idf = tf * idf and is used to measure importance of words (maximized for words that show up many times but in few documents)
+
+## Vector Representation of Words
+Transform words to vectors, with similar meaning words having similar values
+Words can be said to have similar meaning if they appear in similar context
+
+Vector is weights coming from this node, if word is assumed to be an input node in a **word2vec** [[Neural Network|neural network]]

@@ -5,3 +5,4 @@
 →
 ⊨ entailment
 ω
+α
