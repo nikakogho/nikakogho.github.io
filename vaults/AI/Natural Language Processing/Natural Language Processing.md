@@ -11,3 +11,7 @@ Features
 
 ## [[Formal Grammar]]
 Rules to generate language
+
+## [[n-gram]]
+Predicting next item (character, word, token) based on last n items
+Used in [[Large Language Models]]
