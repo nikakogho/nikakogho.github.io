@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Algorithms/Activation Functions/Sigmoid Activation.md",
+                "file": "Home.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sigmoid Activation"
+              "title": "Home"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "overfittin",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -170,15 +170,21 @@
   },
   "active": "999760db8d47878c",
   "lastOpenFiles": [
+    "Algorithms/Activation Functions/ReLu.md",
+    "Home.md",
+    "Neural Network/Neural Network.md",
+    "Python Libraries/TensorFlow.md",
+    "Python Libraries",
+    "Large Language Models/Large Language Models.md",
+    "Machine Learning/Overfitting.md",
+    "Neural Network/Backpropagation.md",
+    "Algorithms/Activation Functions/Sigmoid Activation.md",
     "images/Pasted_image_20250416124057.png",
     "images/Pasted image 20250416124057.png",
     "Algorithms/Activation Functions",
-    "Neural Network/Neural Network.md",
-    "Algorithms/Activation Functions/Sigmoid Activation.md",
     "Neural Network/Gradient Descent.md",
     "images/Pasted_image_20250416122616.png",
     "images/Pasted image 20250416122616.png",
-    "Algorithms/Activation Functions/ReLu.md",
     "images/Pasted_image_20250416120152.png",
     "Neural Network",
     "images/Pasted image 20250416120152.png",
@@ -200,16 +206,13 @@
     "Machine Learning.md",
     "images/Pasted image 20250410221708.png",
     "images/Pasted image 20250410224227.png",
-    "Home.md",
     "Uncertainty/Uncertainty.md",
     "Symbols.md",
     "Knowledge/Knowledge.md",
     "Search/Search.md",
-    "Large Language Models/Large Language Models.md",
     "Large Language Models",
     "Reasoning Models",
     "Natural Language Processing",
-    "Optimization",
-    "Uncertainty"
+    "Optimization"
   ]
 }

@@ -4,6 +4,7 @@
 	- [[Reinforcement Learning]]
 	    - [[Q Learning]]
 	- [[Deep Learning]]
+	- [[Overfitting]]
 - [[Search]]
 - [[Knowledge]]
 - [[Uncertainty]]
@@ -13,3 +14,12 @@
 - [[Natural Language Processing]]
 - [[Large Language Models]]
 	- [[Reasoning Models]]
+- Algorithms
+	- Activation Functions
+		- [[ReLu]]
+		- [[Sigmoid Activation]]
+	- Clustering
+		- [[K-Means Clustering]]
+		- [[K-Medoids Clustering]]
+		- [[DBSCAN]]
+- [Harvard CS50 AI YouTube playlist](https://www.youtube.com/playlist?list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv)
