@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 // Import helpers and types - ensure normalizeNoteName and findNoteModuleKey are imported
-import { findNoteModuleKey, getStructuredVaultNotes, VaultNote, normalizeNoteName } from '../utils/markdownHelper';
+import { findNoteModuleKey, getStructuredVaultNotes, normalizeNoteName } from '../utils/markdownHelper';
 // Import the Outlet context type if defined in VaultLayout (optional, remove if not using layout)
 // import { VaultOutletContext } from './VaultLayout'; // Adjust path if necessary
 

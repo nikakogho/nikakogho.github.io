@@ -53,32 +53,45 @@ main.content-container {
   min-height: 60vh; /* Ensure it takes up some space */
 }
 
+/* ================================== */
+/* = Header / Navigation CSS Styles = */
+/* ================================== */
+
+/* --- Main Header Container --- */
 header {
   background-color: var(--header-bg);
-  /* Reduce padding slightly on smaller screens */
-  padding: 15px 20px; /* Adjusted default padding */
+  padding: 15px 20px;
   border-bottom: 1px solid var(--border-color);
   margin: 0 auto 30px auto;
   max-width: var(--container-max-width);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   position: sticky;
-  top: 10px; /* Adjusted top slightly */
+  top: 10px;
   z-index: 10;
 }
 
+/* --- Navigation Container --- */
 header nav {
     display: flex;
     align-items: center;
-    /* Allow items to wrap onto the next line */
-    flex-wrap: wrap;
-    /* Adjust gap for better wrapping */
-    column-gap: 15px; /* Horizontal gap */
-    row-gap: 5px; /* Vertical gap when wrapped */
-    /* Center items when wrapped (optional) */
-    justify-content: flex-start; /* Or 'center' if you prefer */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Push Home left, Wrapper right */
+    gap: 15px; /* Gap between Home and Wrapper if they wrap */
+    row-gap: 10px; /* Vertical gap if they wrap */
 }
 
+/* --- Vault Links Wrapper (Contains links AND More button) --- */
+header nav .vault-links-wrapper {
+    display: flex; /* Use flexbox for items inside (links, More button) */
+    flex-wrap: wrap; /* Allow items inside to wrap */
+    align-items: center;
+    /* justify-content: flex-end; */ /* REMOVE - Let items flow naturally left-to-right */
+    gap: 15px; /* Consistent gap between links/button */
+}
+
+
+/* --- Navigation Links (General) --- */
 header nav a {
   text-decoration: none;
   color: var(--primary-color);
@@ -86,7 +99,8 @@ header nav a {
   padding: 5px 0;
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
-  white-space: nowrap; /* Prevent link text itself from breaking */
+  white-space: nowrap;
+  margin-left: 0; /* Reset margin */
 }
 
 header nav a:hover {
@@ -98,37 +112,98 @@ header nav a.active {
   border-bottom-color: var(--primary-hover);
 }
 
-/* Remove the span rule if you don't have a "Vaults:" span anymore */
-/* header nav span { ... } */
+/* --- "More" Menu Styles --- */
+/* Container for the button and dropdown */
+.more-menu-container {
+  position: relative; /* Anchor for the absolute dropdown */
+  /* margin-left: auto; */ /* REMOVE - No longer needed */
+}
+
+/* The "More..." button */
+.more-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 5px 0; /* Match link padding */
+}
+.more-button:hover {
+  color: var(--primary-hover);
+}
+
+/* The dropdown menu itself */
+.more-dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the button */
+  right: 0; /* Align to the right edge of the container */
+  background-color: var(--container-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 10px 0; /* Vertical padding */
+  margin-top: 5px; /* Space between button and menu */
+  z-index: 20; /* Above other content */
+  min-width: 150px;
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+}
+
+/* Links inside the dropdown */
+.more-dropdown-menu a {
+  display: block;
+  padding: 8px 15px;
+  color: var(--text-color); /* Use standard text color */
+  font-weight: normal; /* Normal weight */
+  border-bottom: none; /* No underline */
+  white-space: nowrap;
+}
+
+.more-dropdown-menu a:hover {
+  background-color: var(--header-bg);
+  color: var(--primary-hover);
+  text-decoration: none;
+}
+
+/* Active link style within dropdown */
+.more-dropdown-menu a.active {
+   background-color: rgba(0, 119, 182, 0.1);
+   color: var(--primary-hover);
+   font-weight: bold;
+}
 
 
-/* --- Media Query for Smaller Screens (e.g., < 600px) --- */
-@media (max-width: 600px) {
+/* ================================== */
+/* = Mobile Adjustments (Optional)  = */
+/* ================================== */
+@media (max-width: 768px) { /* Match breakpoint used in JS */
     header {
-        padding: 10px 15px; /* Further reduce padding */
-        top: 5px; /* Adjust sticky position */
+        padding: 10px 15px;
+        top: 5px;
         margin-bottom: 20px;
     }
 
     header nav {
-        column-gap: 10px; /* Slightly smaller horizontal gap */
-        row-gap: 8px; /* Slightly larger vertical gap */
-        justify-content: center; /* Center links on mobile */
+        gap: 10px; /* Adjust gap */
+        /* justify-content: space-between; is inherited */
     }
 
-    /* Optional: Reduce font size slightly on mobile */
-    /* header nav a {
-        font-size: 0.95em;
-    } */
-
-    main.content-container {
-        padding: 20px 15px; /* Reduce padding */
+    /* Adjust wrapper gap on mobile */
+    header nav .vault-links-wrapper {
+        gap: 10px;
+        /* justify-content: flex-start; */ /* Let items flow left */
     }
 
-     h1 { font-size: 1.8rem; }
-     h2 { font-size: 1.5rem; }
-     h3 { font-size: 1.2rem; }
+    /* Ensure More button is still pushed right if wrapper wraps */
+     header nav .vault-links-wrapper .more-menu-container {
+         margin-left: auto;
+     }
+
 }
+
+/* --- End Header / Navigation CSS --- */
 
 
 /* --- Typography --- */
