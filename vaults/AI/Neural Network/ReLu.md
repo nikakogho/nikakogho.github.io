@@ -1,5 +1,5 @@
 Rectified Linear unit
-Used as **activation function** in \[\[Neural Network|neural networks]]
+Used as **activation function** in [[Neural Network|neural networks]]
 
 ReLU(x) = max(0, x)
 
