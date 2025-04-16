@@ -13,3 +13,6 @@ Used in [[Computer Vision]]
 
 ## [[Recurrent Neural Network]]
 Used in active tasks where we must keep track of attention and history (like in [[Transformer|transformers]] like [[ChatGPT]])
+
+## Adversarial Neural Network
+2 or more neural networks train by competing with each other
