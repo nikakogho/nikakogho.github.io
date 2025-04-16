@@ -168,13 +168,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "999760db8d47878c",
+  "active": "a537d1449816f5be",
   "lastOpenFiles": [
+    "Symbols.md",
+    "Natural Language Processing/Natural Language Processing.md",
     "images/Pasted_image_20250416174047.png",
     "images/Pasted_image_20250416174120.png",
     "images/Pasted image 20250416174120.png",
     "images/Pasted image 20250416174047.png",
-    "Natural Language Processing/Natural Language Processing.md",
     "Large Language Models/Large Language Models.md",
     "Natural Language Processing/n-gram.md",
     "Natural Language Processing/Formal Grammar.md",
@@ -182,7 +183,6 @@
     "images/Pasted image 20250416151557.png",
     "Natural Language Processing/Speech Recognition.md",
     "Home.md",
-    "Symbols.md",
     "Neural Network/Neural Network.md",
     "Neural Network/Recurrent Neural Network.md",
     "Machine Learning/Machine Learning.md",
@@ -203,7 +203,6 @@
     "Neural Network/Gradient Descent.md",
     "images/Pasted_image_20250416122616.png",
     "images/Pasted image 20250416122616.png",
-    "images/Pasted_image_20250416120152.png",
     "Neural Network",
     "Optimization/Optimization.md",
     "Machine Learning/Unsupervised Learning.md",
