@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Natural Language Processing/Speech Recognition.md",
+                "file": "Natural Language Processing/Formal Grammar.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Speech Recognition"
+              "title": "Formal Grammar"
             }
           }
         ]
@@ -168,9 +168,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a537d1449816f5be",
+  "active": "999760db8d47878c",
   "lastOpenFiles": [
+    "images/Pasted_image_20250416151557.png",
+    "images/Pasted image 20250416151557.png",
     "Natural Language Processing/Natural Language Processing.md",
+    "Natural Language Processing/Formal Grammar.md",
     "Natural Language Processing/Speech Recognition.md",
     "Home.md",
     "Symbols.md",
@@ -206,9 +209,7 @@
     "Machine Learning/Reinforcement Learning.md",
     "Machine Learning/Q Learning.md",
     "Deep Learning.md",
-    "Machine Learning/Supervised Learning.md",
     "Machine Learning",
-    "Neural Network/Perceptron.md",
     "images/Pasted image 20250410221708.png",
     "images/Pasted image 20250410224227.png",
     "Large Language Models",
