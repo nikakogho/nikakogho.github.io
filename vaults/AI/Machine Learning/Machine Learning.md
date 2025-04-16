@@ -5,3 +5,5 @@ Types:
 	- [[Neural Network]]
 - [[Reinforcement Learning]]
 - [[Q Learning]]
+
+[[Support Vector Machine]]
