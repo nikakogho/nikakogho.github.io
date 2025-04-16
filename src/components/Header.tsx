@@ -5,7 +5,6 @@ import { useMediaQuery } from 'usehooks-ts'; // Using hook for responsiveness
 // Assuming VAULT_IDS is defined correctly and includes all your vaults
 const VAULT_IDS = ['Neuroscience', 'Space', 'Bioengineering', 'Robots', 'AI'];
 // Configuration: How many vault links to show before putting in "More" ON MOBILE
-const MAX_VISIBLE_VAULT_LINKS_MOBILE = 1; // Adjust this number as needed
 const MOBILE_BREAKPOINT = '(max-width: 768px)'; // Adjust breakpoint as needed
 
 const Header: React.FC = () => {
