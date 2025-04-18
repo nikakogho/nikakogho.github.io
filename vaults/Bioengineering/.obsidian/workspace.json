@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Chemistry/Elements/Oxygen.md",
+                "file": "Genetic Engineering/Genome.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Oxygen"
+              "title": "Genome"
             }
           }
         ]
@@ -163,8 +163,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "17a9da097cdad3b9",
+  "active": "3152da6eea028fea",
   "lastOpenFiles": [
+    "images/Pasted_image_20250419013458.png",
+    "images/Pasted image 20250419013458.png",
+    "Chemistry/Elements/Oxygen.md",
     "images/Pasted_image_20250419013158.png",
     "images/Pasted image 20250419013158.png",
     "Chemistry/Elements/Element.md",
@@ -198,9 +201,6 @@
     "cell-biology/Homeostasis.md",
     "Genetic Engineering/Gene Therapy.md",
     "Genetic Engineering/Flux Balance Analysis.md",
-    "Bioinformatics/File types/Bioinformatics File Types.md",
-    "Chemistry/images/Pasted image 20241110172353.png",
-    "Chemistry/images/Pasted image 20241110172644.png",
     "Chemistry/Untitled.canvas",
     "Chemistry/Organic Chemistry",
     "Chemistry/Molecules",
