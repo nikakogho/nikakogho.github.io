@@ -1,7 +1,6 @@
 Process to determine complete DNA sequence of [[Genome|genome]]
 
 ## Steps
-
 1. Grow bacteria
 2. Extract DNA
 3. Library prep (Nextera, swift biosciences)
@@ -10,7 +9,6 @@ Process to determine complete DNA sequence of [[Genome|genome]]
 5. FASTQ format sequence obtained from sequencer
 
 ## Methods
-
 * [[Sanger Sequencing]]
 * [[Pyrosequencing]]
 * [[Illumina Sequencing]]
