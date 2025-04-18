@@ -1,7 +1,7 @@
 Symbol H
 Atomic number 1
 
-Smallest \[\[Element]]
+Smallest [[Element]]
 
 1 proton, 0-2 neutrons.
 
