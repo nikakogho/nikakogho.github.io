@@ -1,4 +1,4 @@
-Original way of \[\[Genome Sequencing]]
+Original way of [[Genome Sequencing]]
 
 In 1977 Frederick Sanger came up with the technique.
 Typically on 1 kb
@@ -15,4 +15,4 @@ Costs ~ $3 per 1 kb
 4. **Capillary Electrophoresis** sorts fragments by size, allowing us to read each of the nucleotide values correctly
 5. **Electropherogram Signal** displays colored peaks for each nucleotide in sequence. If a location was missed (highly unlikely due to vast amount of runs), it would appear on this display and we would know
 
-![Pasted\_image\_20250419010206.png](pasted_image_20250419010206.png)
+![Pasted_image_20250419010206.png](pasted_image_20250419010206.png)
