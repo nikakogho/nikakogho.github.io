@@ -382,7 +382,11 @@ async function processMarkdownFile(mdFilePath, uploadedImagesManifest) {
 
     if (fileNeedsSaving) {
         // Stringify the potentially modified AST
-        const finalContentToWrite = unified().use(remarkStringify).stringify(tree);
+        let finalContentToWrite = unified().use(remarkStringify).stringify(tree);
+
+        finalContentToWrite = finalContentToWrite.replace(/\\\[\\\[/g, '[[');
+        finalContentToWrite = finalContentToWrite.replace(/\\_/g, '_');
+
         // Only write if the final content is actually different from the original
         if (finalContentToWrite !== originalMdContent) {
              try {
