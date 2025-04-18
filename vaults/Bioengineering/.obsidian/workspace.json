@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Chemistry/Elements/Hydrogen.md",
+                "file": "Chemistry/Elements/Oxygen.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Hydrogen"
+              "title": "Oxygen"
             }
           }
         ]
@@ -165,8 +165,11 @@
   },
   "active": "17a9da097cdad3b9",
   "lastOpenFiles": [
-    "Pasted image 20250419012400.png",
+    "images/Pasted_image_20250419013158.png",
+    "images/Pasted image 20250419013158.png",
     "Chemistry/Elements/Element.md",
+    "Chemistry/Elements/Hydrogen.md",
+    "Pasted image 20250419012400.png",
     "Chemistry/Chemistry.md",
     "Home.md",
     "synthetic biology/Synthetic Biology.md",
@@ -196,11 +199,8 @@
     "Genetic Engineering/Gene Therapy.md",
     "Genetic Engineering/Flux Balance Analysis.md",
     "Bioinformatics/File types/Bioinformatics File Types.md",
-    "Chemistry/Solution.md",
     "Chemistry/images/Pasted image 20241110172353.png",
     "Chemistry/images/Pasted image 20241110172644.png",
-    "Chemistry/images/Pasted image 20230217114036.png",
-    "Chemistry/images/Pasted image 20230212085545.png",
     "Chemistry/Untitled.canvas",
     "Chemistry/Organic Chemistry",
     "Chemistry/Molecules",

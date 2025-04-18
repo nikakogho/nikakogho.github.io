@@ -13,4 +13,4 @@ Main isotopes:
 * <sup>2</sup>H - deuterium
 * <sup>3</sup>H - tritium
 
-![Pasted\_image\_20250419012400.png](pasted_image_20250419012400.png)
+![Pasted_image_20250419012400.png](pasted_image_20250419012400.png)
