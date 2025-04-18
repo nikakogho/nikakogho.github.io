@@ -62,3 +62,6 @@ Important pages:
 - [[Triune Theory]]
 - [[Brainwaves]]
 - [[Brain Observation Methods]]
+- [[EEG Concepts]]
+- [[2025 Events]]
+- [[Companies]]

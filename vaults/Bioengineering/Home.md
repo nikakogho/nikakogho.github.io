@@ -7,3 +7,6 @@ Learning everything to engineer and augment life
 - [[Cell Biology]]
 - [[Synthetic Biology]]
 - [[Systems Biology]]
+
+Upcoming events
+- [biobuilder](https://biobuilder.org/for-educators/)
