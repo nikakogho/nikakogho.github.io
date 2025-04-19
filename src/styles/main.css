@@ -1,7 +1,10 @@
+/* src/styles/main.css */
+
 /* --- Google Font Import --- */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap');
 
 /* --- CSS Variables (Theme) --- */
+/* Default: Light Theme */
 :root {
   --bg-color: #f8f9fa;         /* Light grey background */
   --container-bg: #ffffff;    /* White content background */
@@ -11,52 +14,73 @@
   --primary-hover: #023e8a;   /* Darker blue for hover */
   --header-bg: #e9ecef;       /* Lighter grey for header */
   --border-color: #dee2e6;     /* Subtle border color */
+  --link-yellow: #c79217; /* Wiki links */
+  --link-new: #e76f51; /* New wiki links */
+  --code-bg: var(--header-bg); /* Use header bg for code */
+  --highlight-bg: rgba(0, 119, 182, 0.1); /* Light blueish highlight */
+  --highlight-darker-bg: rgba(0, 119, 182, 0.15); /* Slightly darker highlight */
 
   --font-primary: 'Poppins', sans-serif; /* For headings */
   --font-secondary: 'Lato', sans-serif;   /* For body text */
-
-  --container-max-width: 1200px;
+  --container-max-width: 1200px; /* Increased width */
   --border-radius: 8px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Dark Theme Variables */
+/* Apply when html element has data-theme="dark" attribute */
+[data-theme='dark'] {
+  --bg-color: #1a1a1a; /* Darker background */
+  --container-bg: #242424; /* Slightly lighter dark for containers */
+  --text-color: rgba(255, 255, 255, 0.87); /* Light text */
+  --text-muted: #adb5bd; /* Lighter muted text */
+  --primary-color: #2196f3; /* Brighter blue for dark mode */
+  --primary-hover: #64b5f6; /* Lighter blue hover */
+  --header-bg: #343a40; /* Dark header */
+  --border-color: #495057; /* Darker border */
+  --link-yellow: #ffcc00; /* Brighter yellow */
+  --link-new: #ff8a65; /* Brighter orange/red */
+  --code-bg: #343a40; /* Dark code bg */
+  --highlight-bg: rgba(33, 150, 243, 0.15); /* Darker highlight */
+  --highlight-darker-bg: rgba(33, 150, 243, 0.2); /* Slightly darker highlight */
+
+  /* Adjust shadow for dark mode if needed */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 /* --- Base Styles --- */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   font-family: var(--font-secondary);
   line-height: 1.7;
   margin: 0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-size: 16px; /* Base font size */
+  background-color: var(--bg-color); /* Use variable */
+  color: var(--text-color); /* Use variable */
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
 }
 
 /* --- Layout Container --- */
 .app-container {
-  max-width: var(--container-max-width);
-  margin: 40px auto; /* More space top/bottom */
-  padding: 0 20px; /* Sideways padding for smaller screens */
+  max-width: var(--container-max-width); /* Uses the updated wider value */
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 main.content-container {
-  background-color: var(--container-bg);
-  padding: 30px 40px; /* More internal padding */
+  background-color: var(--container-bg); /* Use variable */
+  padding: 30px 40px;
   border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  min-height: 60vh; /* Ensure it takes up some space */
+  box-shadow: var(--box-shadow); /* Use variable */
+  min-height: 60vh;
+  transition: background-color 0.3s ease; /* Smooth theme transition */
 }
 
 /* ================================== */
 /* = Header / Navigation CSS Styles = */
 /* ================================== */
-
 /* --- Main Header Container --- */
 header {
   background-color: var(--header-bg);
@@ -69,27 +93,26 @@ header {
   position: sticky;
   top: 10px;
   z-index: 10;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* --- Navigation Container --- */
 header nav {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping */
+    flex-wrap: wrap;
     justify-content: space-between; /* Push Home left, Wrapper right */
-    gap: 15px; /* Gap between Home and Wrapper if they wrap */
-    row-gap: 10px; /* Vertical gap if they wrap */
+    gap: 15px;
+    row-gap: 10px;
 }
 
 /* --- Vault Links Wrapper (Contains links AND More button) --- */
 header nav .vault-links-wrapper {
-    display: flex; /* Use flexbox for items inside (links, More button) */
-    flex-wrap: wrap; /* Allow items inside to wrap */
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    /* justify-content: flex-end; */ /* REMOVE - Let items flow naturally left-to-right */
     gap: 15px; /* Consistent gap between links/button */
 }
-
 
 /* --- Navigation Links (General) --- */
 header nav a {
@@ -112,376 +135,110 @@ header nav a.active {
   border-bottom-color: var(--primary-hover);
 }
 
-/* --- "More" Menu Styles --- */
-/* Container for the button and dropdown */
-.more-menu-container {
-  position: relative; /* Anchor for the absolute dropdown */
-  /* margin-left: auto; */ /* REMOVE - No longer needed */
-}
-
-/* The "More..." button */
-.more-button {
+/* --- Theme Toggle Button Styles (in Header) --- */
+.theme-toggle-button {
   background: none;
   border: none;
-  color: var(--primary-color);
-  font-weight: bold;
-  font-family: inherit;
-  font-size: inherit;
+  color: var(--text-color); /* Use text color */
   cursor: pointer;
-  padding: 5px 0; /* Match link padding */
-}
-.more-button:hover {
-  color: var(--primary-hover);
-}
-
-/* The dropdown menu itself */
-.more-dropdown-menu {
-  position: absolute;
-  top: 100%; /* Position below the button */
-  right: 0; /* Align to the right edge of the container */
-  background-color: var(--container-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  padding: 10px 0; /* Vertical padding */
-  margin-top: 5px; /* Space between button and menu */
-  z-index: 20; /* Above other content */
-  min-width: 150px;
+  padding: 5px; /* Add some padding */
+  border-radius: 50%;
   display: flex;
-  flex-direction: column; /* Stack links vertically */
+  align-items: center;
+  justify-content: center;
+  /* margin-left: auto; Push toggle to the far right */ /* Now handled by wrapper */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.theme-toggle-button:hover {
+  color: var(--primary-color); /* Use primary color on hover */
+  background-color: rgba(0,0,0,0.05); /* Subtle background */
+}
+[data-theme='dark'] .theme-toggle-button:hover {
+   background-color: rgba(255,255,255,0.1); /* Subtle background for dark */
+}
+.theme-toggle-button svg {
+  width: 20px;
+  height: 20px;
 }
 
-/* Links inside the dropdown */
+/* --- "More" Menu Styles --- */
+.more-menu-container {
+  position: relative; /* Anchor for the absolute dropdown */
+  /* margin-left: auto; */ /* Pushed right by wrapper or mobile rule */
+}
+.more-button {
+  background: none; border: none; color: var(--primary-color); font-weight: bold;
+  font-family: inherit; font-size: inherit; cursor: pointer; padding: 5px 0;
+}
+.more-button:hover { color: var(--primary-hover); }
+.more-dropdown-menu {
+  position: absolute; top: 100%; right: 0; background-color: var(--container-bg);
+  border: 1px solid var(--border-color); border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow); padding: 10px 0; margin-top: 5px; z-index: 20;
+  min-width: 150px; display: flex; flex-direction: column;
+}
 .more-dropdown-menu a {
-  display: block;
-  padding: 8px 15px;
-  color: var(--text-color); /* Use standard text color */
-  font-weight: normal; /* Normal weight */
-  border-bottom: none; /* No underline */
-  white-space: nowrap;
+  display: block; padding: 8px 15px; color: var(--text-color); font-weight: normal;
+  border-bottom: none; white-space: nowrap;
 }
-
-.more-dropdown-menu a:hover {
-  background-color: var(--header-bg);
-  color: var(--primary-hover);
-  text-decoration: none;
-}
-
-/* Active link style within dropdown */
-.more-dropdown-menu a.active {
-   background-color: rgba(0, 119, 182, 0.1);
-   color: var(--primary-hover);
-   font-weight: bold;
-}
+.more-dropdown-menu a:hover { background-color: var(--header-bg); color: var(--primary-hover); text-decoration: none; }
+.more-dropdown-menu a.active { background-color: var(--highlight-bg); color: var(--primary-hover); font-weight: bold; }
 
 
-/* ================================== */
-/* = Mobile Adjustments (Optional)  = */
-/* ================================== */
-@media (max-width: 768px) { /* Match breakpoint used in JS */
-    header {
-        padding: 10px 15px;
-        top: 5px;
-        margin-bottom: 20px;
-    }
-
-    header nav {
-        gap: 10px; /* Adjust gap */
-        /* justify-content: space-between; is inherited */
-    }
-
+/* --- Mobile Adjustments for Header --- */
+@media (max-width: 768px) {
+    header { padding: 10px 15px; top: 5px; margin-bottom: 20px; }
+    header nav { gap: 10px; }
     /* Adjust wrapper gap on mobile */
-    header nav .vault-links-wrapper {
-        gap: 10px;
-        /* justify-content: flex-start; */ /* Let items flow left */
-    }
-
-    /* Ensure More button is still pushed right if wrapper wraps */
-     header nav .vault-links-wrapper .more-menu-container {
-         margin-left: auto;
-     }
-
+    header nav .vault-links-wrapper { gap: 10px; }
+    /* Ensure More button is pushed right if visible links wrap */
+    header nav .vault-links-wrapper .more-menu-container { margin-left: auto; }
+    /* Ensure theme toggle is last */
+    header nav .vault-links-wrapper { order: 0; }
+    .theme-toggle-button { order: 1; margin-left: 10px; }
 }
-
 /* --- End Header / Navigation CSS --- */
 
 
-/* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary);
-  margin-top: 1.8em;
-  margin-bottom: 0.8em;
-  line-height: 1.4;
-  font-weight: 600; /* Slightly lighter than default bold */
-  color: var(--text-color);
-}
-h1 { font-size: 2.2rem; font-weight: 700; margin-top: 0.5em; }
-h2 { font-size: 1.8rem; }
-h3 { font-size: 1.4rem; }
+/* ================================== */
+/* = Note Page Layout & Sidebar     = */
+/* ================================== */
 
-p {
-  margin-bottom: 1.2em;
-}
-
-ul, ol {
-  margin-bottom: 1.2em;
-  padding-left: 1.5em;
-}
-ul li::marker { /* Slightly nicer bullet points */
-    color: var(--primary-color);
-}
-
-/* --- Links --- */
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-a:hover {
-  color: var(--primary-hover);
-  text-decoration: underline;
-}
-
-/* --- Social Icon Links (Enhanced) --- */
-.social-links {
-  margin-top: 1.5em;
-  display: flex;
-  gap: 1.2em; /* Slightly more space */
-}
-
-.icon-link svg {
-  width: 28px; /* Slightly larger icons */
-  height: 28px;
-  color: var(--text-muted); /* Start with muted color */
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.icon-link:hover svg {
-  color: var(--primary-color); /* Use primary color on hover */
-  transform: scale(1.1); /* Subtle scale effect */
-}
-.icon-link:hover {
-    text-decoration: none; /* Prevent underline on icons */
-}
-
-
-/* --- Markdown Specific Styles --- */
-code {
-  background-color: var(--header-bg); /* Use header bg for consistency */
-  padding: 0.2em 0.5em;
-  border-radius: 4px;
-  font-size: 0.9em;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  color: var(--text-color);
-}
-
-pre {
-    background-color: var(--header-bg);
-    padding: 1em;
-    overflow-x: auto;
-    border-radius: var(--border-radius);
-    margin-bottom: 1.2em;
-}
-pre code {
-  background-color: transparent; /* Code inside pre doesn't need its own bg */
-  padding: 0;
-}
-
-blockquote {
-  border-left: 4px solid var(--primary-color);
-  padding-left: 1.5em;
-  margin-left: 0;
-  margin-bottom: 1.2em;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
-table {
-  border-collapse: collapse;
-  margin-bottom: 1.5em;
-  width: 100%; /* Make tables take full width */
-  border: 1px solid var(--border-color);
-}
-
-th, td {
-  border: 1px solid var(--border-color);
-  padding: 10px 12px;
-  text-align: left;
-}
-
-th {
-  background-color: var(--header-bg);
-  font-family: var(--font-primary);
-  font-weight: 600;
-}
-
-/* Style for internal Obsidian-style wiki-links */
-.internal-link {
-  color: #e76f51;
-  text-decoration: none;
-  border-bottom: 1px dashed var(--primary-color);
-  font-weight: 600; /* Make them stand out a bit */
-  transition: background-color 0.2s ease, color 0.2s ease;
-  padding: 0.1em 0; /* Add tiny padding for bg hover effect */
-}
-
-.internal-link:hover {
-    color: var(--container-bg); /* White text on hover */
-    background-color: var(--primary-hover); /* Darker blue bg */
-    border-bottom-style: solid;
-    text-decoration: none; /* Remove underline on hover */
-}
-
-/* Optional: Style for links to non-existent notes */
-.new-link {
-    color: #e76f51; /* Example color */
-    font-style: italic;
-    border-bottom: 1px dashed #e76f51;
-}
-
-/* Target links that have both internal-link and new-link classes */
-/* Note: applies to the <span> we render for these */
-.internal-link.new-link {
-  color: var(--text-muted); /* Use a muted text color */
-  opacity: 0.7;             /* Make it slightly transparent */
-  border-bottom: 1px dashed var(--text-muted); /* Muted dashed underline */
-  cursor: default;          /* Show default cursor, not pointer */
-  font-weight: normal;      /* Optional: Remove bold from internal links */
-}
-
-/* Remove hover effects specifically for new links */
-.internal-link.new-link:hover {
-  background-color: transparent; /* No background change */
-  color: var(--text-muted);      /* Color doesn't change */
-  border-bottom-style: dashed; /* Keep underline dashed */
-}
-
-/* --- Responsive Images in Content --- */
-
-/* Target images within the main markdown rendering area */
-/* Adjust the parent selector (.vault-content-area or main etc.) if needed */
-.vault-content-area img,
-main img { /* Apply to images in vault content OR general main area */
-  max-width: 100%; /* Ensures image never overflows its container */
-  height: auto;    /* Maintains aspect ratio when width is adjusted */
-  display: block;  /* Prevents extra space below the image */
-  margin-top: 1em; /* Optional: Add some space above images */
-  margin-bottom: 1em; /* Optional: Add some space below images */
-  border-radius: var(--border-radius, 8px); /* Optional: Add rounded corners like other elements */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Optional: Subtle shadow */
-}
-
-/* --- Note Page Layout (Sidebar + Content) --- */
 .note-page-layout {
   display: grid;
-  grid-template-columns: 2fr 3fr; /* Adjust sidebar width as needed */
-  gap: 30px; /* Gap between sidebar and content */
+  /* UPDATED: Use 'auto' for sidebar column */
+  grid-template-columns: auto 1fr;
+  gap: 30px;
   align-items: flex-start;
+  position: relative;
+  /* transition: grid-template-columns 0.3s ease-in-out; */ /* Transition less effective with auto */
 }
 
 .note-page-sidebar {
-  background-color: var(--header-bg); /* Or a slightly different bg */
+  background-color: var(--header-bg);
   padding: 15px;
   border-radius: var(--border-radius);
-  /* Make sidebar sticky within its grid area */
   position: sticky;
-  top: 80px; /* Adjust based on header height + desired gap */
-  max-height: calc(100vh - 100px); /* Limit height and allow scroll */
+  top: 80px;
+  max-height: calc(100vh - 100px);
   overflow-y: auto;
+  /* ADDED: Explicit width and flex-shrink */
+  width: 250px; /* Define the desired width */
+  flex-shrink: 0; /* Prevent shrinking if container gets tight */
+  /* transition: opacity 0.3s ease, transform 0.3s ease, width 0.3s ease; */ /* Transitions less useful now */
 }
 
-.note-page-sidebar h3 {
-  margin-top: 0;
-  margin-bottom: 1em;
-  font-size: 1.1em;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.5em;
+.note-page-sidebar h3 { /* ... Keep existing ... */
+  margin-top: 0; margin-bottom: 1em; font-size: 1.1em; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5em; display: flex; justify-content: space-between; align-items: center;
 }
 
 .note-page-content {
-  /* Content takes remaining space */
-  min-width: 0; /* Prevent content overflow issues */
+  min-width: 0; /* Prevent content overflow */
+  padding-top: 10px;
 }
 
-/* --- File Tree Styles --- */
-.file-tree-root,
-.nested-tree {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.nested-tree {
-  padding-left: 20px; /* Indentation for nested levels */
-}
-
-.tree-node {
-  margin-bottom: 2px;
-}
-
-.node-label {
-  display: flex;
-  align-items: center;
-  padding: 4px 6px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.15s ease;
-}
-.folder-node > .node-label:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.toggle-icon {
-  display: inline-block;
-  width: 16px; /* Width for alignment */
-  text-align: center;
-  margin-right: 4px;
-  font-size: 0.7em;
-  opacity: 0.6;
-}
-.file-node .toggle-icon { /* Files don't have toggles */
-  opacity: 0; /* Keep space for alignment */
-}
-
-.folder-icon, .file-icon {
-  margin-right: 6px;
-  /* Prevent icons from shrinking */
-  flex-shrink: 0;
-}
-
-.node-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex-grow: 1; /* Allow name to take available space */
-}
-
-.node-link {
-    text-decoration: none;
-    color: inherit; /* Inherit color from parent */
-    display: inline-block; /* Allow text overflow */
-    max-width: 100%;
-}
-.node-link:hover .node-name {
-    color: var(--primary-color); /* Color link text on hover */
-    text-decoration: underline;
-}
-
-/* Adjust mobile layout for sidebar */
-@media (max-width: 768px) { /* Same breakpoint as header */
-    .note-page-layout {
-        grid-template-columns: 1fr; /* Stack sidebar and content */
-        gap: 20px;
-    }
-    .note-page-sidebar {
-        position: static; /* Unstick sidebar */
-        max-height: 300px; /* Limit height more strictly */
-    }
-}
-
-/* --- UPDATED Sidebar Toggle Button Styles --- */
+/* --- Sidebar Toggle Button Styles --- */
 .sidebar-toggle-button {
-  /* Place it top-left, just below where header might be */
   top: 85px;  /* Adjust based on sticky header height + desired gap */
   left: 15px; /* Adjust horizontal position */
   z-index: 25; /* Above sidebar and potentially header */
@@ -498,7 +255,7 @@ main img { /* Apply to images in vault content OR general main area */
   padding: 0;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow */
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, left 0.3s ease; /* Add left transition */
 }
 .sidebar-toggle-button:hover {
   background-color: var(--primary-hover); /* Darker on hover */
@@ -509,8 +266,76 @@ main img { /* Apply to images in vault content OR general main area */
    outline: 2px solid var(--primary-color); /* Custom focus */
    outline-offset: 2px;
 }
-
 .sidebar-toggle-button svg {
     width: 20px; /* Adjust icon size */
     height: 20px;
 }
+
+/* Adjust position slightly when sidebar is hidden (if sidebar is conditionally rendered) */
+/* If sidebar is hidden via CSS, this rule might be needed */
+/* .note-page-layout.sidebar-hidden .sidebar-toggle-button { left: 10px; } */
+
+
+/* --- File Tree Styles --- */
+.file-tree-root, .nested-tree { list-style: none; padding-left: 0; margin: 0; }
+.nested-tree { padding-left: 18px; }
+.tree-node { margin-bottom: 2px; }
+.node-label { display: flex; align-items: center; padding: 4px 6px; cursor: pointer; border-radius: 4px; transition: background-color 0.15s ease; }
+.folder-node > .node-label:hover { background-color: rgba(0, 0, 0, 0.05); }
+[data-theme='dark'] .folder-node > .node-label:hover { background-color: rgba(255, 255, 255, 0.08); } /* Dark mode hover */
+.toggle-icon { display: inline-block; width: 16px; text-align: center; margin-right: 4px; font-size: 0.7em; opacity: 0.6; flex-shrink: 0; }
+.file-node .toggle-icon { opacity: 0; }
+.folder-icon, .file-icon { margin-right: 6px; flex-shrink: 0; }
+.node-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-grow: 1; }
+.node-link { text-decoration: none; color: inherit; display: inline-block; max-width: 100%; }
+.node-link:hover .node-name { color: var(--primary-color); text-decoration: underline; } /* Use variable */
+.file-node.active-file > .node-label { background-color: var(--highlight-bg); font-weight: bold; } /* Use variable */
+[data-theme='dark'] .file-node.active-file > .node-label { background-color: var(--highlight-darker-bg); } /* Dark mode active */
+.file-node.active-file > .node-label .node-link .node-name { color: var(--primary-hover); } /* Use variable */
+
+/* --- Mobile Adjustments for Note Page Layout --- */
+@media (max-width: 768px) { /* Use same breakpoint */
+    .note-page-layout { grid-template-columns: 1fr; gap: 20px; }
+    .note-page-sidebar { position: static; max-height: 300px; width: auto; }
+    /* Hide sidebar if toggled off via JS conditional rendering */
+    .note-page-layout.sidebar-hidden .note-page-sidebar { display: none; }
+    /* Keep toggle button fixed, adjust position */
+    .sidebar-toggle-button { top: auto; bottom: 20px; left: auto; right: 20px; }
+}
+
+
+/* ================================== */
+/* = Other Styles (Typography etc.) = */
+/* ================================== */
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-primary); margin-top: 1.8em; margin-bottom: 0.8em; line-height: 1.4; font-weight: 600; color: var(--text-color); }
+h1 { font-size: 2.2rem; font-weight: 700; margin-top: 0.5em; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.4rem; }
+p { margin-bottom: 1.2em; }
+ul, ol { margin-bottom: 1.2em; padding-left: 1.5em; }
+ul li::marker { color: var(--primary-color); }
+/* --- Links --- */
+a { color: var(--primary-color); text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--primary-hover); text-decoration: underline; }
+/* --- Social Icon Links --- */
+.social-links { margin-top: 1.5em; display: flex; gap: 1.2em; }
+.icon-link svg { width: 28px; height: 28px; color: var(--text-muted); transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; }
+.icon-link:hover svg { color: var(--primary-color); transform: scale(1.1); }
+.icon-link:hover { text-decoration: none; }
+/* --- Markdown Specific Styles --- */
+code { background-color: var(--code-bg); padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.9em; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; color: var(--text-color); }
+pre { background-color: var(--code-bg); padding: 1em; overflow-x: auto; border-radius: var(--border-radius); margin-bottom: 1.2em; }
+pre code { background-color: transparent; padding: 0; }
+blockquote { border-left: 4px solid var(--primary-color); padding-left: 1.5em; margin-left: 0; margin-bottom: 1.2em; color: var(--text-muted); font-style: italic; }
+table { border-collapse: collapse; margin-bottom: 1.5em; width: 100%; border: 1px solid var(--border-color); }
+th, td { border: 1px solid var(--border-color); padding: 10px 12px; text-align: left; }
+th { background-color: var(--header-bg); font-family: var(--font-primary); font-weight: 600; }
+/* --- Wiki Links --- */
+.internal-link { color: var(--link-yellow); border-bottom: 1px dashed var(--link-yellow); text-decoration: none; font-weight: 600; transition: background-color 0.2s ease, color 0.2s ease; padding: 0.1em 0; }
+.internal-link:hover { color: var(--container-bg); background-color: var(--primary-hover); border-bottom-style: solid; text-decoration: none; }
+.internal-link.new-link { color: var(--link-new); opacity: 0.7; border-bottom: 1px dashed var(--link-new); cursor: default; font-weight: normal; }
+.internal-link.new-link:hover { background-color: transparent; color: var(--link-new); border-bottom-style: dashed; }
+/* --- Responsive Images --- */
+main img, .note-page-content img { max-width: 100%; height: auto; display: block; margin-top: 1em; margin-bottom: 1em; border-radius: var(--border-radius, 8px); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
+

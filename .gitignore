@@ -36,6 +36,5 @@ vaults/*.gif
 vaults/*.webp
 vaults/*.svg
 
-vaults/**/.obsidian/workspace.json
-
 scripts/aggregated.txt
+vaults/**/workspace.json

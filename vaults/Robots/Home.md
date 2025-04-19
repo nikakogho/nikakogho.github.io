@@ -25,4 +25,3 @@
 
 Upcoming events:
 - [Robotics for all](https://www.roboticsforall.net/)
-- 

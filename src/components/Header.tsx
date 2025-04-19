@@ -1,17 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useMediaQuery } from 'usehooks-ts'; // Using hook for responsiveness
+import { useMediaQuery } from 'usehooks-ts';
+import { useTheme } from '../context/ThemeContext';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
-// Assuming VAULT_IDS is defined correctly and includes all your vaults
 const VAULT_IDS = ['Neuroscience', 'Space', 'Bioengineering', 'Robots', 'AI'];
-// Configuration: How many vault links to show before putting in "More" ON MOBILE
-const MOBILE_BREAKPOINT = '(max-width: 768px)'; // Adjust breakpoint as needed
+
+const MOBILE_BREAKPOINT = '(max-width: 768px)';
 
 const Header: React.FC = () => {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
   const moreMenuRef = useRef<HTMLDivElement>(null);
   const isMobile = useMediaQuery(MOBILE_BREAKPOINT);
-
+  const { theme, toggleTheme } = useTheme();
+  
   const visibleVaults = isMobile ? [] : VAULT_IDS;
   const hiddenVaults = isMobile ? VAULT_IDS : [];
   
@@ -85,6 +87,16 @@ const Header: React.FC = () => {
               </div>
             )}
         </div> {/* End vault-links-wrapper */}
+
+        <button
+            type="button"
+            onClick={toggleTheme}
+            className="theme-toggle-button"
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        >
+            {theme === 'light' ? <FiMoon /> : <FiSun />}
+        </button>
       </nav>
     </header>
   );

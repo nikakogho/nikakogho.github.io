@@ -1,31 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout'; // Your main site layout
+import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
-import VaultLayout from './pages/VaultLayout'; // Import the vault layout
-import VaultHomeRedirect from './components/VaultHomeRedirectComponent'; // Import the redirect component
+import VaultLayout from './pages/VaultLayout';
+import VaultHomeRedirect from './components/VaultHomeRedirectComponent';
 import NotePage from './pages/NotePage';
 import NotFoundPage from './pages/NotFoundPage';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        {/* Main site routes */}
-        <Route path="/" element={<HomePage />} />
-
-        {/* Parent route for all vaults - uses VaultLayout */}
-        {/* This component will persist while navigating within a vault */}
-        <Route path="/vaults/:vaultId" element={<VaultLayout />}>
-          {/* Index route: Render the redirect component to show Home.md */}
-          <Route index element={<VaultHomeRedirect />} />
-          {/* Route for specific notes within the vault */}
-          <Route path="notes/*" element={<NotePage />} />
-        </Route>
-
-        {/* Catch-all 404 route */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Layout>
+    <ThemeProvider>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/vaults/:vaultId" element={<VaultLayout />}>
+            <Route index element={<VaultHomeRedirect />} />
+            <Route path="notes/*" element={<NotePage />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Layout>
+    </ThemeProvider>
   );
 }
 
