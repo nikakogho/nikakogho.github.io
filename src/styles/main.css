@@ -15,7 +15,7 @@
   --font-primary: 'Poppins', sans-serif; /* For headings */
   --font-secondary: 'Lato', sans-serif;   /* For body text */
 
-  --container-max-width: 960px;
+  --container-max-width: 1200px;
   --border-radius: 8px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
@@ -369,4 +369,148 @@ main img { /* Apply to images in vault content OR general main area */
   margin-bottom: 1em; /* Optional: Add some space below images */
   border-radius: var(--border-radius, 8px); /* Optional: Add rounded corners like other elements */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Optional: Subtle shadow */
+}
+
+/* --- Note Page Layout (Sidebar + Content) --- */
+.note-page-layout {
+  display: grid;
+  grid-template-columns: 2fr 3fr; /* Adjust sidebar width as needed */
+  gap: 30px; /* Gap between sidebar and content */
+  align-items: flex-start;
+}
+
+.note-page-sidebar {
+  background-color: var(--header-bg); /* Or a slightly different bg */
+  padding: 15px;
+  border-radius: var(--border-radius);
+  /* Make sidebar sticky within its grid area */
+  position: sticky;
+  top: 80px; /* Adjust based on header height + desired gap */
+  max-height: calc(100vh - 100px); /* Limit height and allow scroll */
+  overflow-y: auto;
+}
+
+.note-page-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5em;
+}
+
+.note-page-content {
+  /* Content takes remaining space */
+  min-width: 0; /* Prevent content overflow issues */
+}
+
+/* --- File Tree Styles --- */
+.file-tree-root,
+.nested-tree {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.nested-tree {
+  padding-left: 20px; /* Indentation for nested levels */
+}
+
+.tree-node {
+  margin-bottom: 2px;
+}
+
+.node-label {
+  display: flex;
+  align-items: center;
+  padding: 4px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+.folder-node > .node-label:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.toggle-icon {
+  display: inline-block;
+  width: 16px; /* Width for alignment */
+  text-align: center;
+  margin-right: 4px;
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+.file-node .toggle-icon { /* Files don't have toggles */
+  opacity: 0; /* Keep space for alignment */
+}
+
+.folder-icon, .file-icon {
+  margin-right: 6px;
+  /* Prevent icons from shrinking */
+  flex-shrink: 0;
+}
+
+.node-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1; /* Allow name to take available space */
+}
+
+.node-link {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+    display: inline-block; /* Allow text overflow */
+    max-width: 100%;
+}
+.node-link:hover .node-name {
+    color: var(--primary-color); /* Color link text on hover */
+    text-decoration: underline;
+}
+
+/* Adjust mobile layout for sidebar */
+@media (max-width: 768px) { /* Same breakpoint as header */
+    .note-page-layout {
+        grid-template-columns: 1fr; /* Stack sidebar and content */
+        gap: 20px;
+    }
+    .note-page-sidebar {
+        position: static; /* Unstick sidebar */
+        max-height: 300px; /* Limit height more strictly */
+    }
+}
+
+/* --- UPDATED Sidebar Toggle Button Styles --- */
+.sidebar-toggle-button {
+  /* Place it top-left, just below where header might be */
+  top: 85px;  /* Adjust based on sticky header height + desired gap */
+  left: 15px; /* Adjust horizontal position */
+  z-index: 25; /* Above sidebar and potentially header */
+
+  background: var(--primary-color); /* Use primary color */
+  color: white; /* White icon */
+  border: none; /* Remove default border */
+  border-radius: 50%;
+  width: 36px; /* Slightly larger */
+  height: 36px;
+  display: flex; /* Center icon */
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add shadow */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.sidebar-toggle-button:hover {
+  background-color: var(--primary-hover); /* Darker on hover */
+  transform: scale(1.1); /* Slight grow effect */
+}
+.sidebar-toggle-button:focus,
+.sidebar-toggle-button:focus-visible {
+   outline: 2px solid var(--primary-color); /* Custom focus */
+   outline-offset: 2px;
+}
+
+.sidebar-toggle-button svg {
+    width: 20px; /* Adjust icon size */
+    height: 20px;
 }

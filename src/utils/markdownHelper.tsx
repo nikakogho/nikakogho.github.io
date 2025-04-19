@@ -7,6 +7,15 @@ export interface VaultNote {
     displayName: string; // Original filename for display (e.g., 'Types of Memory')
     moduleKey: string; // The original key from import.meta.glob
   }
+
+// Type for the nodes in our file tree
+export interface TreeNode {
+  id: string; // Unique ID (e.g., the full normalized path)
+  name: string; // Display name (folder or file name without extension)
+  type: 'folder' | 'file';
+  path: string; // Normalized path relative to vault root (used for links/keys)
+  children?: TreeNode[]; // Array of child nodes for folders
+}
   
   // --- Normalization Function ---
   /**
@@ -132,3 +141,88 @@ export interface VaultNote {
       });
   }
   
+/**
+ * Builds a hierarchical file tree structure from Vite module glob results.
+ */
+export function buildFileTree(vaultId: string, modules: Record<string, any>): TreeNode {
+  // Root node represents the vault itself
+  const root: TreeNode = { id: vaultId, name: vaultId, type: 'folder', path: '', children: [] };
+  const vaultPrefix = `/vaults/${vaultId}/`;
+  // Use a map to keep track of created folder nodes for efficient lookup
+  const folderNodes = new Map<string, TreeNode>();
+  folderNodes.set('', root); // Root folder corresponds to empty relative path
+
+  const sortedKeys = Object.keys(modules).sort();
+
+  for (const key of sortedKeys) {
+      if (key.startsWith(vaultPrefix) && key.endsWith('.md')) {
+          const relativePathWithExt = key.substring(vaultPrefix.length);
+          if (!relativePathWithExt || relativePathWithExt === '.md') continue;
+
+          const parts = relativePathWithExt.split('/');
+          let currentParentPath = ''; // Path of the parent folder node
+
+          for (let i = 0; i < parts.length; i++) {
+              const part = parts[i];
+              const isLastPart = i === parts.length - 1;
+
+              if (isLastPart) { // It's the file
+                  const fileNameWithExt = part;
+                  if (!fileNameWithExt || fileNameWithExt === '.md') continue;
+                  const fileDisplayName = fileNameWithExt.replace('.md', '');
+                  const filePathRelative = parts.join('/'); // e.g., Folder/SubFolder/Note.md
+                  const fileFullPathNormalized = normalizeNoteName(filePathRelative.replace('.md', '')); // Path used for links
+
+                  const parentNode = folderNodes.get(currentParentPath);
+                  if (parentNode && parentNode.children) {
+                       // Avoid adding duplicates if glob includes variations
+                       if (!parentNode.children.some(n => n.path === fileFullPathNormalized && n.type === 'file')) {
+                          parentNode.children.push({
+                              id: fileFullPathNormalized, // Use normalized path as unique ID
+                              name: fileDisplayName,
+                              type: 'file',
+                              path: fileFullPathNormalized, // Normalized path for linking
+                          });
+                       }
+                  }
+              } else { // It's a folder
+                  const folderName = part;
+                  const folderPath = parts.slice(0, i + 1).join('/'); // Path up to and including this folder
+
+                  // Check if this folder node already exists
+                  if (!folderNodes.has(folderPath)) {
+                      const parentNode = folderNodes.get(currentParentPath);
+                      if (parentNode && parentNode.children) {
+                          const newFolderNode: TreeNode = {
+                              id: normalizeNoteName(folderPath), // Use normalized folder path as ID
+                              name: folderName,
+                              type: 'folder',
+                              path: normalizeNoteName(folderPath), // Path for potential future folder notes/links
+                              children: [],
+                          };
+                          parentNode.children.push(newFolderNode);
+                          folderNodes.set(folderPath, newFolderNode); // Register the new folder node
+                      }
+                  }
+                   currentParentPath = folderPath; // Move down the path for the next iteration
+              }
+          }
+      }
+  }
+
+   // Function to recursively sort children (folders first, then alphabetically)
+   const sortChildren = (node: TreeNode) => {
+       if (node.children && node.children.length > 0) {
+           node.children.sort((a, b) => {
+               if (a.type !== b.type) {
+                   return a.type === 'folder' ? -1 : 1; // Folders first
+               }
+               return a.name.localeCompare(b.name); // Then alphabetically
+           });
+           node.children.forEach(sortChildren); // Recurse
+       }
+   };
+   sortChildren(root); // Sort the entire tree starting from root
+
+  return root;
+}
