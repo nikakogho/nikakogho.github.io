@@ -5,6 +5,13 @@ Using computer code to understand or alter life
 - [[Genome Alignment Problem]]
 - [[Genome Assembly Problem]]
 
+## Algorithms
+- Pattern Matching
+	- [[Boyer-Moore Algorithm]]
+	- [[Knuth-Morris-Pratt Algorithm]]
+
+[[rosalind.info]] is a good place to practice
+
 ## Projects
 - [[LAAVA]]
 - [[PacBio]]
