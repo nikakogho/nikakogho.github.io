@@ -8,5 +8,9 @@ Learning everything to engineer and augment life
 - [[Synthetic Biology]]
 - [[Systems Biology]]
 
+Relevant people
+- [[George Church]]
+- [[Shoji Takeuchi]]
+
 Upcoming events
 - [biobuilder](https://biobuilder.org/for-educators/)
