@@ -64,14 +64,14 @@ body {
 
 /* --- Layout Container --- */
 .app-container {
-  max-width: var(--container-max-width); /* Uses the updated wider value */
+  width: 100%;; /* Uses the updated wider value */
   margin: 40px auto;
   padding: 0 20px;
 }
 
 main.content-container {
   background-color: var(--container-bg); /* Use variable */
-  padding: 30px 40px;
+  padding: 30px 200px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow); /* Use variable */
   min-height: 60vh;
@@ -87,7 +87,6 @@ header {
   padding: 15px 20px;
   border-bottom: 1px solid var(--border-color);
   margin: 0 auto 30px auto;
-  max-width: var(--container-max-width);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   position: sticky;
@@ -196,6 +195,8 @@ header nav a.active {
     /* Ensure theme toggle is last */
     header nav .vault-links-wrapper { order: 0; }
     .theme-toggle-button { order: 1; margin-left: 10px; }
+    main.content-container { padding: 15px; }
+    .app-container { padding: 0 10px; }
 }
 /* --- End Header / Navigation CSS --- */
 
@@ -223,7 +224,7 @@ header nav a.active {
   max-height: calc(100vh - 100px);
   overflow-y: auto;
   /* ADDED: Explicit width and flex-shrink */
-  width: 250px; /* Define the desired width */
+  width: 350px; /* Define the desired width */
   flex-shrink: 0; /* Prevent shrinking if container gets tight */
   /* transition: opacity 0.3s ease, transform 0.3s ease, width 0.3s ease; */ /* Transitions less useful now */
 }
