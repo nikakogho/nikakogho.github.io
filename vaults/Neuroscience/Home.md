@@ -63,5 +63,7 @@ Important pages:
 - [[Brainwaves]]
 - [[Brain Observation Methods]]
 - [[EEG Concepts]]
+
+## Further
 - [[2025 Events]]
 - [[Companies]]
