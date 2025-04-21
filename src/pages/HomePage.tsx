@@ -5,6 +5,7 @@ const AboutPage: React.FC = () => {
   const linkedInUrl = "https://www.linkedin.com/in/nika-koghuashvili-4889991b4/";
   const githubUrl = "https://github.com/nikakogho/";
   const facebookUrl = "https://www.facebook.com/nikakogho/";
+  const cvUrl = "https://drive.google.com/file/d/14EhHUF2NRuevu9MWco8qSB-vVd73Dzu2/view?usp=sharing";
 
   const projects = [
     { name: "Multi-Dimensional Worlds", url: "https://github.com/nikakogho/MultiDimensionalWorlds" },
@@ -20,6 +21,9 @@ const AboutPage: React.FC = () => {
         {aboutMeText}
         <br />
         This is my personal website where I share my projects and interests about various topics.
+      </p>
+      <p>
+        You can find my CV <a href={cvUrl} target="_blank" rel="noopener noreferrer">here</a>.
       </p>
       <h2>Some Fun Projects</h2>
       <ul>
