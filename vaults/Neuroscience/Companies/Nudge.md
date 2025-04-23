@@ -1,6 +1,6 @@
-Founded by [[Bliss Chapman]], former software lead of [[Neuralink]].
 Using [[Ultrasound]] for reading and stimulating any part of brain including the inner areas.
-[Website](https://nudge.com/blog/about/)
+[Website](https://nudge.com/blog/about/).
+CTO is [[Bliss Chapman]], former software lead of [[Neuralink]].
 
 ## Mission
 

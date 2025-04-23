@@ -8,12 +8,12 @@ Project to restore vision by directly stimulating [[Primary Visual Cortex]]
 
 ## [[Synchron]]
 Semi-invasive
-Also giving paralyzed people better comminication by mapping motor cortex
+Also giving paralyzed people better communication by mapping motor cortex
 
 ## [[Nudge]]
-Founded by [[Bliss Chapman]], former software lead of Neuralink.
 Using [[Ultrasound]] to cure chronic pain, mental illness, addiction, ADHD and eventually boost memory, learning, and mood.
-Aiming to make a device cheap enough for everyone to have
+Aiming to make a device cheap enough for everyone to have.
+CTO is [[Bliss Chapman]], former software lead of Neuralink.
 
 ## [[OpenBCI]]
 Open-source non-invasive EEG

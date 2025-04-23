@@ -1,4 +1,4 @@
-Founder of [[Nudge]].
+CTO of [[Nudge]].
 Former software lead of [[Neuralink]]
 
 ## Social
