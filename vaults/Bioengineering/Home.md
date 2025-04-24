@@ -14,6 +14,10 @@ Learning everything to engineer and augment life
 Relevant people
 - [[George Church]]
 - [[Shoji Takeuchi]]
+- [[Beth Shapiro]]
+- [[Ben Lamm]]
+- [[Eric Talevich]]
+- [[Mat Crocker]]
 
 Upcoming events
 - [biobuilder](https://biobuilder.org/for-educators/)
