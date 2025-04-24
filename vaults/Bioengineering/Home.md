@@ -1,11 +1,14 @@
 Learning everything to engineer and augment life
 
-## Main themes
-- [[Chemistry]]
+## Core themes
 - [[Bioinformatics]]
 - [[Genetic Engineering]]
-- [[Cell Biology]]
 - [[Synthetic Biology]]
+
+## Background themes
+- [[Chemistry]]
+- [[Cell Biology]]
+- [[Anatomy]]
 - [[Systems Biology]]
 
 Relevant people
