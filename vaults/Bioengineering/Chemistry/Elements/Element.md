@@ -15,6 +15,11 @@ Can't be broken down in chemical reactions.
 11. [[Sodium]]
 12. [[Magnesium]]
 13. [[Aluminum]]
-14. ...
-15. ...
+14. [[Silicon]]
+15. [[Phosphorus]]
 16. [[Sulfur]]
+17. .
+18. .
+19. .
+20. [[Calcium]]
+
