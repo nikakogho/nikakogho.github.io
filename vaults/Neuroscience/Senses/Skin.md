@@ -22,7 +22,8 @@ Free nerve endings - [[Pain]] and [[Sense of Temperature]]
 
 * upper part of epidermis
 * light touch/pressure
-* high resulition like reading Braille
+* high resolution like reading Braille
+* slowly adapting
   ![IMG_5410.webp](img_5410.webp)
 
 ### Meissner’s Corpuscles
@@ -54,6 +55,15 @@ Free nerve endings - [[Pain]] and [[Sense of Temperature]]
 
 ### Krause End Bulbs
 
-Detect cold
+* in ends of dry skin or mucous membrane like lips and others
+* detect cold
 
 ![Pasted_image_20250429074040.png](pasted_image_20250429074040.png)
+
+## Receptive Fields
+
+Each mechanoreceptor has different receptive field size:
+
+* small for Meissner's
+* large for Pacinian
+  ![Pasted_image_20250429074437.png](pasted_image_20250429074437.png)
