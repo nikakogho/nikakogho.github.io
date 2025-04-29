@@ -28,3 +28,8 @@ Touch below neck goes through spinal cord to register, but touch from above the 
 ![Pasted_image_20250429093110.png](pasted_image_20250429093110.png)
 
 Some extra senses are given by facial (VII), glossopharyngeal (IX) and vagus (X) nerves
+
+## Agnosia
+Inability to recognize objects in one way
+
+**Astereognosis** means you can't tell it's a key by touching it but still can tell by seeing it
