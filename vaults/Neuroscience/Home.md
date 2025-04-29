@@ -22,6 +22,13 @@
 - [[Smell]]
 - [[Taste]]
 
+### Sensory Organs
+- [[Eye]]
+- [[Ear]]
+- [[Skin]]
+- [[Nose]]
+- [[Tongue]]
+
 ## [[Movement]]
 - [[Neuromuscular Junction]]
 - [[Muscles]]
