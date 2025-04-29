@@ -37,8 +37,10 @@
 ## Memory
 - [[Memory]]
 - [[Learning]]
+- [[Neuroplasticity]]
+- [[Long Term Potentiation]] (LTP)
 
-## Neuroengineering
+## Neural Engineering
 - [[EEG Concepts]]
 - [[Brain Observation Methods]]
 - [[Brain Stimulation Methods]]
