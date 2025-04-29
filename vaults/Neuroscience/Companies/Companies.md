@@ -1,6 +1,6 @@
 ## [[Neuralink]]
 Invasive
-Give quadruplegics fast mouse and keyboard access by mapping their motor cortex.
+Give quadriplegics fast mouse and keyboard access by mapping their motor cortex.
 Eventual goal: human-AI symbiosis
 
 ### Blindsight

@@ -1,35 +1,51 @@
-Important pages:
+## Cellular
 - [[Neuron]]
 - [[Neurotransmitter]]
 - [[Spike]]
 - [[Synapse]]
+
+## Nervous System Parts
 - [[Brain Main Parts]]
-- [[Brain Stem]]
-	- [[Midbrain]]
-	- [[Pons]]
-	- [[Medulla oblongata]]
-- [[Cerebellum]]
 - [[Spinal Cord]]
 - [[Central Nervous System]]
 - [[Peripheral Nervous System]]
 - [[Embryonic Development]]
-- [[Senses]]
-- [[Movement]]
-- [[Emotions]]
+- [[Triune Theory]]
+
+## [[Senses]]
+- [[Vision]]
+- [[Hearing]]
+- [[Vestibular System]] (balance)
+- [[Touch]]
 - [[Pain]]
+- [[Sense of Temperature]]
+- [[Smell]]
+- [[Taste]]
+
+## [[Movement]]
+- [[Neuromuscular Junction]]
+- [[Muscles]]
+- [[Reflex]]
+
+## Cognitive
+- [[Emotions]]
 - [[Abstract Thinking]]
 - [[Qualia]]
 - [[Consciousness]]
+- [[Sleep]]
+
+## Memory
 - [[Memory]]
 - [[Learning]]
-- [[Reflex]]
-- [[Sleep]]
-- [[Triune Theory]]
-- [[Brainwaves]]
-- [[Brain Observation Methods]]
+
+## Neuroengineering
 - [[EEG Concepts]]
+- [[Brain Observation Methods]]
+- [[Brain Stimulation Methods]]
+- [[Brainwaves]]
 
 ## Further
 - [[2025 Events]]
 - [[Companies]]
+- [[Notable People]]
 - [[Nice Readings]]
