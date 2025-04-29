@@ -29,6 +29,14 @@
 - [[Nose]]
 - [[Tongue]]
 
+### Sensory Cortices
+- [[Visual Cortex]]
+- [[Auditory Cortex]]
+- [[Vestibular Cortex]]
+- [[Somatosensory Cortex]]
+- [[Olfactory Cortex]]
+- [[Primary Gustatory Cortex]]
+
 ## [[Movement]]
 - [[Neuromuscular Junction]]
 - [[Muscles]]
