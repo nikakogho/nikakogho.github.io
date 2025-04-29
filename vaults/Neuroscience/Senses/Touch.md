@@ -25,3 +25,5 @@ How most touch and proprioception data moves
 
 ## Trigeminal Touch Pathway
 Touch below neck goes through spinal cord to register, but touch from above the neck goes through [[Cranial Nerves|Trigeminal Nerve (Cranial V)]]
+
+Some extra senses are given by facial (VII), glossopharyngeal (IX) and vagus (X) nerves
