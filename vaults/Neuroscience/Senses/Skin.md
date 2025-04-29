@@ -3,6 +3,8 @@ Protects organs from harm, keeps heat and fluids, senses world
 Epidermis outside, dermis inside
 For [[Touch]]
 
+Skin is hairy or **glabrous** (hairless)
+
 ![Pasted_image_20250409120912.png](pasted_image_20250409120912.png)
 ![IMG_5265.jpeg](img_5265.jpeg)
 ![IMG_5414.png](img_5414.png)
@@ -28,6 +30,7 @@ Free nerve endings - [[Pain]] and [[Sense of Temperature]]
 * just below epidermis
 * light touch/vibration (low frequency)
 * rapidly adapting (fires quickly and stops)
+* in ridges of glabrous skin
 
 ![IMG_5413.jpeg](img_5413.jpeg)
 
@@ -37,6 +40,8 @@ Free nerve endings - [[Pain]] and [[Sense of Temperature]]
 * deep pressure/vibration
 * high frequency
 * rapidly adapting
+* each human hand has 2500
+* 2mm long and almost 1mm diameter
 
 ![IMG_5415.png](img_5415.png)
 
@@ -46,3 +51,9 @@ Free nerve endings - [[Pain]] and [[Sense of Temperature]]
 * detects skin stretching
 * detects sustained pressure
 * slowly adapting
+
+### Krause End Bulbs
+
+Detect cold
+
+![Pasted_image_20250429074040.png](pasted_image_20250429074040.png)
