@@ -13,4 +13,6 @@ https://www.westernsydney.edu.au/__data/assets/pdf_file/0007/2041396/MARCS_Spotl
 Look into this tweet
 https://x.com/the_icns#:~:text=International%20Centre%20for%20Neuromorphic%20Systems,It%27s
 
+André van Schaik's [LinkedIn](https://www.linkedin.com/in/a0v0s/)
+
 Unknown collaborators from **University of Melbourne**
