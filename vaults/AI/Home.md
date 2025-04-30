@@ -1,21 +1,11 @@
 - [[Machine Learning]]
-	- [[Supervised Learning]]
-	- [[Unsupervised Learning]]
-	- [[Reinforcement Learning]]
-	    - [[Q Learning]]
-	- [[Deep Learning]]
-	- [[Overfitting]]
 - [[Search]]
 - [[Knowledge]]
 - [[Uncertainty]]
 - [[Optimization]]
 - [[Neural Network]]
-    - [[Perceptron]]
-    - [[Convolutional Neural Network]]
-    - [[Recurrent Neural Network]]
 - [[Natural Language Processing]]
 - [[Large Language Models]]
-	- [[Reasoning Models]]
 - [[Computer Vision]]
 - Algorithms
 	- Activation Functions
@@ -25,4 +15,5 @@
 		- [[K-Means Clustering]]
 		- [[K-Medoids Clustering]]
 		- [[DBSCAN]]
+- [[Neuromorphic Computing]]
 - [Harvard CS50 AI YouTube playlist](https://www.youtube.com/playlist?list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv)

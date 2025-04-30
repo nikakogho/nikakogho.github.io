@@ -17,3 +17,8 @@ b) best for MEG
 c) likely to cancel itself because of opposite side
 d) for EEG but too far
 ![IMG_4948.jpeg](img_4948.jpeg)
+
+## P300
+
+300 milliseconds after a person detects something unusual (like red ball among a sequence of green balls), his brain will light up, especially in Pz part of [[Parietal lobe|parietal lobe]]
+![IMG_5421.png](img_5421.png)
