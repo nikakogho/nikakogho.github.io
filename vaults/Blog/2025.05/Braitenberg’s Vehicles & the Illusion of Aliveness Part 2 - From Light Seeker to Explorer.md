@@ -13,7 +13,7 @@ tags:
   - Emergence
   - Unity2D
 ---
-In [[Braitenberg’s Vehicles & the Illusion of Aliveness - intro|part 1]] we wondered whether **our thoughts and emotions** might be _nothing more than layers of clever wiring_—if a toy car can mimic “curiosity” with just a handful of lines, where does true consciousness begin?
+In part 1 we wondered whether **our thoughts and emotions** might be _nothing more than layers of clever wiring_—if a toy car can mimic “curiosity” with just a handful of lines, where does true consciousness begin?
 
 Today we bring the first five **Braitenberg Vehicles** off the page and into a Unity2D playground:
 - **Light Seeker** (Vehicle 01)  
