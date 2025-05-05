@@ -20,7 +20,7 @@ That realization flips a switch: **what if our own thoughts and emotions are not
 My **code** for Unity2D demos will follow soon. For now, here’s the **empty** GitHub repo as a placeholder:  
 https://github.com/nikakogho/BraitenbergPlayground
 
-> **Questions to ponder:**  
+## Questions to ponder
 > 1. At what point does a reactive machine become an “agent”?  
 > 2. How might layering state and memory change your sense of what’s alive?  
 > 3. If a few well placed wires can give robots every behavior we associate with living beings from love, fear, exploration, aggression, to bonding and predicting, are animals (and even humans) really any different from robots?
