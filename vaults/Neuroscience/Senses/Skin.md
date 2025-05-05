@@ -1,7 +1,7 @@
 Protects organs from harm, keeps heat and fluids, senses world
 
 Epidermis outside, dermis inside
-For [[Touch]]
+For [[Touch]], [[Pain]] and [[Sense of Temperature]]
 
 Skin is hairy or **glabrous** (hairless)
 
@@ -16,7 +16,7 @@ Skin is hairy or **glabrous** (hairless)
 * Pacinian corpuscle - deep pressure/vibration
 * Ruffini’s ending - skin stretching
 
-Free nerve endings - [[Pain]] and [[Sense of Temperature]]
+Free nerve endings - pain and sense of temperature
 
 ### Merkel’s Disk
 
