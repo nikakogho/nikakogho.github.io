@@ -26,7 +26,7 @@ function hasFrontmatter(obj: any): obj is { attributes: BlogPostFrontmatter; bod
 
 // Import blog markdown files as raw text
 // Adjust the path if your blog vault isn't named 'Blog'
-const blogModules = import.meta.glob('/vaults/Blog/*.md', { eager: true, as: 'raw' });
+const blogModules = import.meta.glob('/vaults/Blog/**/*.md', { eager: true, as: 'raw' });
 
 /**
  * Extracts a short preview from Markdown content.
