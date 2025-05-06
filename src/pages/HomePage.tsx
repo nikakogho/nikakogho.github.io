@@ -1,13 +1,16 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaFacebook } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaFacebook, FaYoutube } from 'react-icons/fa';
 
 const AboutPage: React.FC = () => {
   const linkedInUrl = "https://www.linkedin.com/in/nika-koghuashvili-4889991b4/";
   const githubUrl = "https://github.com/nikakogho/";
   const facebookUrl = "https://www.facebook.com/nikakogho/";
+  const youtubeUrl = "https://www.youtube.com/@Playground_Of_Tomorrow/";
   const cvUrl = "https://drive.google.com/file/d/14EhHUF2NRuevu9MWco8qSB-vVd73Dzu2/view?usp=sharing";
 
   const projects = [
+    { name: "Dreamscape Grove", url: "https://github.com/nikakogho/DreamscapeGrove" },
+    { name: "Braitenberg Vehicles", url: "https://github.com/nikakogho/BraitenbergVehicles" },
     { name: "Multi-Dimensional Worlds", url: "https://github.com/nikakogho/MultiDimensionalWorlds" },
     { name: "Epic Battle Simulator", url: "https://github.com/nikakogho/EpicBattleSimulator" }
   ];
@@ -41,6 +44,9 @@ const AboutPage: React.FC = () => {
           </a>
           <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" className="icon-link">
               <FaFacebook />
+          </a>
+          <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="icon-link">
+              <FaYoutube />
           </a>
       </div>
     </div>
