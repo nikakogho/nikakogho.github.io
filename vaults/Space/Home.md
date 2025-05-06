@@ -1,12 +1,17 @@
-Important pages:
+## Core Concepts
 - [[Equations]]
+- [[Rocket Propulsion Types]]
+- [[Staging]]
+- [[ECLSS]]
+
+## Important Objects
 - [[Rockets]]
 - [[Satellites]]
+- [[Space Stations]]
+- [[Rocket Engines]]
 - Ground stations
     - [[SatNOGS]]
-- [[Space Stations]]
-- [[ECLSS]]
-- [[Rocket Propulsion Types]]
-- [[Rocket Engines]]
-- [[Staging]]
+
+## Mine
 - [[Making a CubeSat]]
+- [[Making a Ground Station]]
