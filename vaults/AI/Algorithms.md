@@ -1,0 +1,7 @@
+- Activation Functions
+		- [[ReLu]]
+		- [[Sigmoid Activation]]
+- Clustering
+	- [[K-Means Clustering]]
+	- [[K-Medoids Clustering]]
+	- [[DBSCAN]]

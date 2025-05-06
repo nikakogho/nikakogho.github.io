@@ -1,3 +1,4 @@
+## Core Concepts
 - [[Machine Learning]]
 - [[Search]]
 - [[Knowledge]]
@@ -5,15 +6,16 @@
 - [[Optimization]]
 - [[Neural Network]]
 - [[Natural Language Processing]]
-- [[Large Language Models]]
-- [[Computer Vision]]
-- Algorithms
-	- Activation Functions
-		- [[ReLu]]
-		- [[Sigmoid Activation]]
-	- Clustering
-		- [[K-Means Clustering]]
-		- [[K-Medoids Clustering]]
-		- [[DBSCAN]]
+- [[Algorithms]]
+
+## Top Contenders
+- [[ChatGPT]]
+- [[Google DeepMind]] / [[Gemini]]
+- [[Anthropic Claude]]
+- [[Meta Llama]]
+- [[DeepSeek]]
+
+## Further
 - [[Neuromorphic Computing]]
 - [Harvard CS50 AI YouTube playlist](https://www.youtube.com/playlist?list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv)
+- [[Symbols]]
