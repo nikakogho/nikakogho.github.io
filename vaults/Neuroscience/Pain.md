@@ -57,8 +57,15 @@ Pain enters the [[Spinal Cord|spinal cord]] at **Zone of Lissauer** and through 
 ![Pasted_image_20250506133354.png](pasted_image_20250506133354.png)
 
 ## Referred Pain
+
 Visceral pain (from internal organs) goes through same pathways as cutaneous pain (from skin), so sometimes they get confused and body interprets visceral pain as occurring somewhere on the skin
+![Pasted_image_20250506134644.png](pasted_image_20250506134644.png)
 
 ### Examples
-- Angina - heart lacks oxygen, people feel pain in chest and left arm
-- Appendicitis - felt around abdominal wall
+
+* Angina - heart lacks oxygen, people feel pain in chest and left arm
+* Appendicitis - felt around abdominal wall
+
+## Spinothalamic pain pathway
+
+As name suggests, skin/viscera -> spine -> [[Thalamus|thalamus]]

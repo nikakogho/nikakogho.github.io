@@ -1,3 +1,5 @@
+Relay center of the nervous system
+
 Grey matter in forebrain
 Part of [[Diencephalon]]
 Between cerebral cortex and [[Midbrain]]
