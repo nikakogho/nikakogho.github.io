@@ -41,5 +41,17 @@ Spiciness, a type of [[Taste|taste]], is actually a sense of pain caused by **Ca
 
 ## Substance P
 
-Nociceptors produce Substance P, which causes swelling in blood capillaries and makes mast cells produce **Histamine**
+Nociceptors produce Substance P, which causes swelling in blood capillaries and makes mast cells produce **Histamine**.
+Has role in moderate and intense pain.
 ![Pasted_image_20250506131640.png](pasted_image_20250506131640.png)
+
+## First and Second Pain
+
+We feel pain twice. First, a fast but fading one and then a slow but long one.
+Fast one is mediated by Aδ fibers, slow by C fibers
+![Pasted_image_20250506133316.png](pasted_image_20250506133316.png)
+
+## In spinal cord
+
+Pain enters the [[Spinal Cord|spinal cord]] at **Zone of Lissauer** and through **Substantia gelatinosa**
+![Pasted_image_20250506133354.png](pasted_image_20250506133354.png)
