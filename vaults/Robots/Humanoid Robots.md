@@ -7,3 +7,4 @@ Top contenders:
 - [[Unitree G1]]
 - [[Figure Bot]]
 - [[Clone Robotics]] Alpha
+- [[1X Neo]]

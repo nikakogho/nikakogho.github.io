@@ -1,30 +1,34 @@
+## Core Concepts
 - [[Sensors]]
 - [[Actuators]]
 - [[Robot Kinematics]]
-	- [[Forward Kinematics]]
-	- [[Inverse Kinematics]]
-	- [[Homogenous Transform]]
-	- [[Torque]]
+- [[Degrees of Freedom]]
 - [[Configuration]]
+
+## Robots
 - [[Dog Robots]]
-	- [[Boston Dynamics Spot]]
-	- [[Kawasaki Corleo]]
 - [[Humanoid Robots]]
-	- Notable
-		- [[Boston Dynamics Atlas]]
-		- [[Tesla Optimus]]
-		- [[Figure Bot]]
-		- [[Unitree G1]]
-		- [[Clone Robotics]]
-- [[Factory Robot Arms]]
+- [[Robot Arms]]
+- [[Soft Robots]]
 - [[Biohybrids]]
-	- [[Shoji Takeuchi]]
-	- [[Xenobots]]
+- [[Xenobots]]
 - [[Nanotechnology]]
-- [[Symbols]]
 
 ## Upcoming events
 - [Robotics for all](https://www.roboticsforall.net/)
 
+## Notable People in Industry
+- [[Elon Musk]]
+- [[Shoji Takeuchi]]
+- [[Bernt Børnich]] - [[1X Neo]]
+- [[Aaron Saunders]] - [[Boston Dynamics]]
+
+## Notable People in History
+- [[Isaac Asimov]]
+- [[Valentino Braitenberg]]
+- [[Leonardo da Vinci]]
+- [[Alan Turing]]
+
 ## Further
-[[Nice Readings]]
+- [[Nice Readings]]
+- [[Symbols]]
