@@ -1,22 +1,18 @@
-***
-
+---
 layout: post
 title: Braitenberg Vehicles & the Illusion of Aliveness Part 2 - From Light Seeker to Explorer
 date: 2025-05-05 22:00:00 +0400
 categories:
-
-* Robotics
-* Philosophy
-* GameDev
-* AI
-* Neuroscience
-  tags:
-* Braitenberg
-* Emergence
-* Unity2D
-
-***
-
+  - Robotics
+  - Philosophy
+  - GameDev
+  - AI
+  - Neuroscience
+tags:
+  - Braitenberg
+  - Emergence
+  - Unity2D
+---
 In part 1 we wondered whether **our thoughts and emotions** might be *nothing more than layers of clever wiring*—if a toy car can mimic “curiosity” with just a handful of lines, where does true consciousness begin?
 
 Today we bring the first five **Braitenberg Vehicles** off the page and into a Unity2D playground:
