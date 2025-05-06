@@ -1,59 +1,13 @@
-## Cellular
-- [[Neuron]]
-- [[Neurotransmitter]]
-- [[Spike]]
-- [[Synapse]]
-
-## Nervous System Parts
-- [[Brain Main Parts]]
-- [[Spinal Cord]]
-- [[Central Nervous System]]
-- [[Peripheral Nervous System]]
-- [[Embryonic Development]]
-- [[Triune Theory]]
-
-## [[Senses]]
-- [[Vision]]
-- [[Hearing]]
-- [[Vestibular System]] (balance)
-- [[Touch]]
-- [[Pain]]
-- [[Sense of Temperature]]
-- [[Smell]]
-- [[Taste]]
-
-### Sensory Organs
-- [[Eye]]
-- [[Ear]]
-- [[Skin]]
-- [[Nose]]
-- [[Tongue]]
-
-### Sensory Cortices
-- [[Visual Cortex]]
-- [[Auditory Cortex]]
-- [[Vestibular Cortex]]
-- [[Somatosensory Cortex]]
-- [[Olfactory Cortex]]
-- [[Primary Gustatory Cortex]]
-
-## [[Movement]]
-- [[Neuromuscular Junction]]
-- [[Muscles]]
-- [[Reflex]]
-
-## Cognitive
+## Neuroscience
+- [[Cellular]]
+- [[Nervous System Parts]]
+- [[Senses]]
+- [[Movement]]
 - [[Emotions]]
-- [[Abstract Thinking]]
-- [[Qualia]]
 - [[Consciousness]]
 - [[Sleep]]
-
-## Memory
 - [[Memory]]
 - [[Learning]]
-- [[Neuroplasticity]]
-- [[Long Term Potentiation]] (LTP)
 
 ## Neural Engineering
 - [[EEG Concepts]]

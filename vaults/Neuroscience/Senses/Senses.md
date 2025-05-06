@@ -1,17 +1,27 @@
 ## Primary
-- [[Hearing]]
-	- [[Ear]]
-- [[Smell]]
-	- [[Nose]]
-- [[Taste]]
-	- [[Tongue]]
 - [[Vision]]
-	- [[Eye]]
+- [[Hearing]]
+- [[Vestibular System]]
+- [[Smell]]
+- [[Taste]]
 - [[Touch]]
-	- [[Skin]]
 
 ## Also
 - [[Pain]]
 - [[Sense of Temperature]]
-- [[Vestibular System]]
 - [[Itch]]
+
+### Sensory Organs
+- [[Eye]]
+- [[Ear]]
+- [[Skin]]
+- [[Nose]]
+- [[Tongue]]
+
+### Sensory Cortices
+- [[Visual Cortex]]
+- [[Auditory Cortex]]
+- [[Vestibular Cortex]]
+- [[Somatosensory Cortex]]
+- [[Olfactory Cortex]]
+- [[Primary Gustatory Cortex]]
