@@ -75,3 +75,23 @@ As name suggests, skin/viscera -> spinal cord -> [[Thalamus|thalamus]]
 
 Touch goes ipsilaterally, pain decussates early
 ![Pasted_image_20250506141513.png](pasted_image_20250506141513.png)
+
+## Pain regulation
+
+Multiple things have the ability to increase or decrease sensation of pain.
+
+What can decrease it:
+
+* Placebo: belief that pain will go away because of some event can actually loosen up the pain receptors
+* Large skin contact: large area input from skin inhibits pain senses
+* **Periaqueductal Gray Matter (PAG)**: involved in inhibiting pain during stoic moments. Can be electrically stimulated to reduce pain
+* Painkillers: aspirin, ibuprofen or paracetamol bind to protein **COX2** to stop it from making more **prostaglandins**, which are used to convey pain
+
+### Gate Theory of Pain
+
+MIT scientists Melzack and Wall suggested that pain and large touch pass through same region of spinal cord and they are gated so lot of touch inhibits pain signal
+![Pasted_image_20250506142645.png](pasted_image_20250506142645.png)
+
+### Periaqueductal Gray Matter (PAG)
+
+![Pasted_image_20250506142742.png](pasted_image_20250506142742.png)
