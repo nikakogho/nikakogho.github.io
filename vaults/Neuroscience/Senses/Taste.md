@@ -35,11 +35,14 @@ Even 1 molecule of bitter can often be detected. Good because poisons are often 
 
 Like good taste of [[Glutamate]]
 
+### Spiciness
+Actually not a taste but [[Pain|pain]] caused by **capsaicin** (present in peppers) binding to an [[Ion channel|ion channel]] **TRPV1**
+
 ## Taste Transduction
 
 **Tastants** - taste stimuli can
 
-1. Pass through [[Ion channel]] - salt and sour
+1. Pass through ion channel - salt and sour
 2. Bind/block ion channels - sour
 3. Bind to G-protein coupled receptors activating second messengers that open other ion channels - bitter, sweet, umami
    ![Pasted_image_20250122195606.png](pasted_image_20250122195606.png)

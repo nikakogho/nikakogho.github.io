@@ -1,7 +1,10 @@
 Protects organs from harm, keeps heat and fluids, senses world
 
 Epidermis outside, dermis inside
+
 For [[Touch]], [[Pain]] and [[Sense of Temperature]]
+
+Sometimes can [[Itch|itch]]
 
 Skin is hairy or **glabrous** (hairless)
 

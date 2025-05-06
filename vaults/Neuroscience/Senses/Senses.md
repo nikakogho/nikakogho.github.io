@@ -1,3 +1,4 @@
+## Primary
 - [[Hearing]]
 	- [[Ear]]
 - [[Smell]]
@@ -8,3 +9,9 @@
 	- [[Eye]]
 - [[Touch]]
 	- [[Skin]]
+
+## Also
+- [[Pain]]
+- [[Sense of Temperature]]
+- [[Vestibular System]]
+- [[Itch]]
