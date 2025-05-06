@@ -22,6 +22,8 @@ Today we bring the first five **Braitenberg Vehicles** off the page and into a U
 - **Love** (Vehicle 03a)  
 - **Explorer** (Vehicle 03b)  
 
+Video [here](https://www.youtube.com/watch?v=1cJKEKF63jg)
+
 Each one uses the same pure-C# “brain” (Sensor → Wire → Motor); all we change is _which_ sensor drives _which_ motor, and whether the wire _excites_ or _inhibits_.
 
 ---
