@@ -69,3 +69,9 @@ Visceral pain (from internal organs) goes through same pathways as cutaneous pai
 ## Spinothalamic pain pathway
 
 As name suggests, skin/viscera -> spinal cord -> [[Thalamus|thalamus]]
+![Pasted_image_20250506141422.png](pasted_image_20250506141422.png)
+
+## Touch vs Pain pathways
+
+Touch goes ipsilaterally, pain decussates early
+![Pasted_image_20250506141513.png](pasted_image_20250506141513.png)
