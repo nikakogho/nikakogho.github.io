@@ -86,6 +86,7 @@ What can decrease it:
 * Large skin contact: large area input from skin inhibits pain senses
 * **Periaqueductal Gray Matter (PAG)**: involved in inhibiting pain during stoic moments. Can be electrically stimulated to reduce pain
 * Painkillers: aspirin, ibuprofen or paracetamol bind to protein **COX2** to stop it from making more **prostaglandins**, which are used to convey pain
+* Opioids - block production of [[Glutamate]], so pain information can't be sent to brain
 
 ### Gate Theory of Pain
 
