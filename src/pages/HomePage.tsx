@@ -1,11 +1,12 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaFacebook, FaYoutube } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaFacebook, FaYoutube, FaTwitter } from 'react-icons/fa';
 
 const AboutPage: React.FC = () => {
   const linkedInUrl = "https://www.linkedin.com/in/nika-koghuashvili-4889991b4/";
   const githubUrl = "https://github.com/nikakogho/";
-  const facebookUrl = "https://www.facebook.com/nikakogho/";
   const youtubeUrl = "https://www.youtube.com/@Playground_Of_Tomorrow/";
+  const xUrl = "https://x.com/nikakogho";
+  const facebookUrl = "https://www.facebook.com/nikakogho/";
   const cvUrl = "https://drive.google.com/file/d/14EhHUF2NRuevu9MWco8qSB-vVd73Dzu2/view?usp=sharing";
 
   const projects = [
@@ -23,7 +24,7 @@ const AboutPage: React.FC = () => {
       <p>
         {aboutMeText}
         <br />
-        This is my personal website where I share my projects and interests about various topics.
+        This is my personal website where I share my projects and interests.
       </p>
       <p>
         You can find my CV <a href={cvUrl} target="_blank" rel="noopener noreferrer">here</a>.
@@ -42,11 +43,14 @@ const AboutPage: React.FC = () => {
           <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="icon-link">
               <FaGithub />
           </a>
-          <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" className="icon-link">
-              <FaFacebook />
-          </a>
           <a href={youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="icon-link">
               <FaYoutube />
+          </a>
+          <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X Profile" className="icon-link">
+              <FaTwitter />
+          </a>
+          <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" className="icon-link">
+              <FaFacebook />
           </a>
       </div>
     </div>
