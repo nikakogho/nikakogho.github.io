@@ -53,7 +53,7 @@ Can check [here](https://www.digikey.com/en/product-highlight/t/teledyne-flir/bl
 Will need radiation shielding and testing as this camera is not space qualified by default
 
 ### Camera Alternatives
-- **Basler ace acA1300-200um** (1.3 MP global shutter): $509 + lens → ≈$750
+- **Basler ace acA1300-200um** (1.3 MP global shutter): $509 + lens → ≈$750 [here](https://graftek.com/product/aca1300-200um)
 - **Raspberry Pi High-Quality Camera** (12.3 MP IMX477 via CSI-2): $50 + lens/housing → ≈$300
 
 ## Auto-deployment
