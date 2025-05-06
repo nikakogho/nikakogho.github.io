@@ -65,6 +65,7 @@ Visceral pain (from internal organs) goes through same pathways as cutaneous pai
 
 * Angina - heart lacks oxygen, people feel pain in chest and left arm
 * Appendicitis - felt around abdominal wall
+* Brain freeze
 
 ## Spinothalamic pain pathway
 
