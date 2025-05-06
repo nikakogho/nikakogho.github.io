@@ -1,5 +1,7 @@
 Will be first Georgian satellite
 
+Plan document on Google Drive [here](https://drive.google.com/drive/folders/1nq60LDRE2MJi6KV53ytwD44ZEqf387NK?usp=drive_link)
+
 Likely specs: 1U with Jetson Nano + multispectral camera for Earth imaging
 Will need a ground station, perhaps customized [[SatNOGS]]
 
