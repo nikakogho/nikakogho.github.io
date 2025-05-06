@@ -11,58 +11,57 @@ Useful tutorial from UNOOSA [here](https://www.unoosa.org/documents/pdf/psa/acce
 This [EdgeFlyte kit](https://www.edgeflyte.com/shop/1u-cubesat-kit) can be good
 
 ## Frame
-TODO
+Will buy COTS for ~ $3k
 
 ## Thermal
 Must do good enough thermal insulation that internals like batteries, camera and computer stay in operational temperature (typically 0°C to 40°C or sometimes -10°C to 50°C)
 
-TODO details
+E-M Solutions MLI Blanket Kit for 1 U (Aluminized Mylar layers)
+
+Around $600
 
 ## Power
-TODO
+
+### Battery
+Li‑ion pack 20 Wh (2× INR18650‑35E) + PCB
+
+### Solar Cells
+Potentially from [AzurSpace](https://www.azurspace.com/index.php/en/products/products-space/space-solar-cells)
 
 ## On-board computer
+**STM32H7 custom board** of ours about $100
+
 [Jetson Nano](https://developer.nvidia.com/embedded/jetson-nano)
 costs $99
 
-TODO
-
 ## Attitude Determination and Control Systems (ADCS)
-TODO
+**Torquer PCBs + Magnetometer (LSM303AGR)**
+
+Around $300
 
 ## Antenna
-Can use VHF (137-148 MHz), UHF (400-470 MHz), S-Band (2-2.4 GHz) or X-Band (8-8.4 GHz)
-Ground station will have to send and receive in same frequency
-Higher frequency can be more distorted by noise like weather but we will need it for high resolution imaging
+Will be using UHF frequency range (see more [[Satellite Antenna Frequencies|here]]) for two-way comms
 
-### VHF
-- Basic beacon signals and simple commands
-- Downlink speed mostly 1.2-9.6 kbps, sometimes 19.2 kbps, max 38.4 kbps
-- Uplink of 1.2-2.4 kbps
-
-### UHF
-- Telemetry, tracking & command, sometimes mission data
-- Downlink of 9.6-38.4 kbps, best case 100-250 kbps
-- Uplink of 1.2-9.6 kbps
-
-### S-Band
-- Main mission data download like Earth images or other
-- Downlink from 100 kbps to 1-2 Mbps. Possible to get 4-10 Mbps
-- Uplink max 1 Mbps if ground station power and other factors allow
-
-### X-Band
-- For high resolution imaging
-- Downlink of 10-100 Mbps
-	- Advanced CubeSats (6U+) with good ground station might push to 200-500 Mbps
-- Uplink mostly not used in this range, overkill. Would be multiple Mbps if used
+Around $1k
 
 ## Camera
-TODO
+**Teledyne FLIR Blackfly S BFS-U3-200S6M-C**  
+A compact industrial‐grade USB3 camera that—when paired with a modest C-mount lens—comes in under $1k total.
+
+Can check [here](https://www.digikey.com/en/product-highlight/t/teledyne-flir/blackfly-s-advanced-machine-vision-cameras)
+
+Will need radiation shielding and testing as this camera is not space qualified by default
+
+### Camera Alternatives
+- **Basler ace acA1300-200um** (1.3 MP global shutter): $509 + lens → ≈$750
+- **Raspberry Pi High-Quality Camera** (12.3 MP IMX477 via CSI-2): $50 + lens/housing → ≈$300
 
 ## Auto-deployment
 Solar panels and folded antennas must be first closed (by a wire that burns through current perhaps) and then automatically opened
 
 ## Stress tests
+Will conduct at TÜBİTAK UZAY, Ankara
+
 ### Vibration
 Random vibration, sine vibration and shock
 
@@ -83,5 +82,39 @@ Worst possible case of +125°C
 Typical minimum requirement of -50°C
 Worst possible case of -150°C
 
+## Required Software Simulations
+
+- **Orbit & Pass Prediction**
+    
+    - _Tool Exists:_ AGI STK (licensed) or open-source Orekit/Poliastro (Python).
+        
+- **Power-Budget & Solar-Array Modelling**
+    
+    - _Either:_ MATLAB Simulink Simscape or custom Python (NumPy-based) script.
+        
+- **Thermal Analysis**
+    
+    - _Tool Exists:_ ESATAN-TMS or Thermal Desktop; or simplified Python thermal RC network model.
+        
+- **Radiation Environment & Dose**
+    
+    - _Tool Exists:_ ESA SPENVIS / NOVICE; or custom Python interfacing to AP-8/AE-8 data.
+        
+- **ADCS Dynamics & Detumble**
+    
+    - _Either:_ MATLAB Simulink (AOCS toolbox) or Python (SciPy ODE).
+        
+- **Link Budget & RF-Performance**
+    
+    - _Either:_ SatNOGS-link-budget tool or custom Python (link-budget equations + Doppler).
+        
+- **Payload AI Inference Profiling**
+    
+    - Jetson Nano Docker bench scripts (TensorRT) + power/thermal telemetry logging.
+        
+- **FDIR & Fault-Tree Simulation**
+    
+    - Custom Python test harness injecting sensor failures and verifying watchdog/reset behavior.
+
 ## Total Cost
-Maybe $10-15k
+Under $20k
