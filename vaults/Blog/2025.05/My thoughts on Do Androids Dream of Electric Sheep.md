@@ -13,7 +13,7 @@ tags:
   - Life
   - AI
 ---
-This book is clearly the inspiration for "Blade Runner": destroyed earth, androids almost but not completely same as people, main character hunting them down and questioning the morality of it, dark ending.
+This book is clearly the inspiration for "Blade Runner": destroyed earth, colonies in solar system, flying cars, one company making most androids, androids almost but not completely same as people, main character hunting them down and questioning the morality of it, last scene in snow, dark ending.
 
 Can something like this happen? Hm, the Chinese do have an attempt at making androids that look like people. And projects like [Clone Robotics](https://clonerobotics.com/) certainly come close. But the way this book suggests it, with internal organs being same and all that, no that's too far. At that point they're not androids anymore, they're bioengineered people. Yeah, people. This idea that androids will step by step become so similar to humans that they even copy internal organs and what we are made of, I call bullshit on that. That's not a step by step change. That's a complete rewrite. That's just cloning and growing in a vat, **NOT** an assembly process.
 

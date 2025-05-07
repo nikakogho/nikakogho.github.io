@@ -8,9 +8,8 @@ Upper stage thrust 2 300 kN
 2 stages: **Super Heavy booster** and **Starship spacecraft**
 Fully reusable
 
-5 test flights so far
+8 test flights so far
 Roadmap:
-
 * [x] Initial test flights
 * [x] Successful static fire tests
 * [x] High-altitude flight tests
@@ -104,3 +103,11 @@ During re-entry the starship rotates to be falling on “belly” to expose more
    * Goal: booster catch + deploy 10 dummy satellites
    * Result: booster catch worked, upper stage exploded
    * [Link](https://youtu.be/qzWMEegqbLs?si=p7bPKP4Q42yhbfXO)
+8. 6 March 2025
+   * Goals: 
+	   * another booster catch
+	   * test new block 2
+	   * first in-space raptor re-ignition
+	   * stress-test heat shield tiles
+   * Result: booster catch worked, upper stage exploded
+   * [Link](https://www.youtube.com/watch?v=9H8puVq2oi0)
