@@ -1,6 +1,6 @@
 Will be a custom implementation of [[SatNOGS]] for our own [[Making a CubeSat|CubeSat]]
 
-Details on Google Drive [here](https://docs.google.com/document/d/18e_GuzHi5682flhGZ4vqNJ4_eZs64ok7/edit?usp=drive_link&ouid=109716375499631112008&rtpof=true&sd=true)
+Details for **QartvelNest** on my [GitHub](https://github.com/nikakogho/QartvelNest)
 
 ## Parts to buy
 - Communication - UHF Yagi
