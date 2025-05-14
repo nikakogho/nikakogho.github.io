@@ -58,3 +58,12 @@ CNS controls muscle strength by controlling firing rate and also by progressivel
 * some from [[Brain Stem]] for voluntary movement
 * some from **muscle spindles** to get muscle length data
   ![IMG_5474.jpeg](img_5474.jpeg)
+
+## Muscle Fiber
+
+![IMG_5501.jpeg](img_5501.jpeg)
+
+### Release of Ca<sup>2+</sup>
+
+Depolarization of SR causes release of Ca<sup>2+</sup> into cytosol of muscle fiber
+![IMG_5502.jpeg](img_5502.jpeg)

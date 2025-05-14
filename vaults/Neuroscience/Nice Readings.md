@@ -2,3 +2,4 @@
 - Analyzing Neural Time Series Data by Mike X Cohen
 - Spikes: Exploring The Neural Code
 - Vehicles: Experiments in Synthetic Psychology
+- NeuroTechX Primer

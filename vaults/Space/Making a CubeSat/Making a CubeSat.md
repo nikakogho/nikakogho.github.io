@@ -1,4 +1,4 @@
-Will be first Georgian satellite
+**QartvelSat-1** will be first Georgian satellite
 
 Plan document on Google Drive [here](https://drive.google.com/drive/folders/1nq60LDRE2MJi6KV53ytwD44ZEqf387NK?usp=drive_link)
 
@@ -7,7 +7,7 @@ Will need a ground station, perhaps customized [[SatNOGS]]
 
 CubeSat Sections: frame, power (solar panels + LiPo batteries), on-board computer, antenna (receiver + sender), camera
 
-Ground Station sections covered in [[Making a Ground Station]]
+Ground station details covered in [[Making a Ground Station]]
 
 Useful tutorial from UNOOSA [here](https://www.unoosa.org/documents/pdf/psa/access2space4all/KiboCUBE/AcademySeason2/On-demand_Pre-recorded_Lectures/KiboCUBE_Academy_2022_OPL17.pdf)
 This [EdgeFlyte kit](https://www.edgeflyte.com/shop/1u-cubesat-kit) can be good

@@ -13,6 +13,6 @@
     - [[SatNOGS]]
 
 ## Mine
-- [[Making a CubeSat]]
-- [[Making a Ground Station]]
+- [[Making a CubeSat]] **QartvelSat-1**
+- [[Making a Ground Station]] **QartvelNest**
 
