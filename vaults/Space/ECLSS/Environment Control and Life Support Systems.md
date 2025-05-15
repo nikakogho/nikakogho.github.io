@@ -1,4 +1,4 @@
-Environment Control and Life Support Systems
+ECLSS
 
 * [[Water recycling]]
 * [[Oxygen recycling]]

@@ -1,8 +1,9 @@
 ## Core Concepts
 - [[Equations]]
 - [[Rocket Propulsion Types]]
+- [[Orbit]]
 - [[Staging]]
-- [[ECLSS]]
+- [[Environment Control and Life Support Systems]]
 
 ## Important Objects
 - [[Rockets]]

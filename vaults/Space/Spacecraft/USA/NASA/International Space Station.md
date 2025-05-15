@@ -1,7 +1,7 @@
 At LEO at 400 km
 Crew of 7
 Orbits Earth every 90 minutes
-Uses [[ECLSS]]
+Uses [[Environment Control and Life Support Systems]]
 
 ![IMG_3017.jpeg](img_3017.jpeg)
 

@@ -1,4 +1,4 @@
-Part of [[ECLSS]] for [[Carbon Dioxide recycling or removal|carbon dioxide recycling]]
+Part of [[Environment Control and Life Support Systems]] for [[Carbon Dioxide recycling or removal|carbon dioxide recycling]]
 
 CO<sub>2</sub> + 4H<sub>2</sub> -> 2H<sub>2</sub>O + CH<sub>4</sub> + heat
 
