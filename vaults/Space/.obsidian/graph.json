@@ -6,7 +6,50 @@
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [],
+  "colorGroups": [
+    {
+      "query": "path:Equations  ",
+      "color": {
+        "a": 1,
+        "rgb": 5428988
+      }
+    },
+    {
+      "query": "path:Spacecraft  ",
+      "color": {
+        "a": 1,
+        "rgb": 14820352
+      }
+    },
+    {
+      "query": "path:ECLSS  ",
+      "color": {
+        "a": 1,
+        "rgb": 9884511
+      }
+    },
+    {
+      "query": "path:Orbit  ",
+      "color": {
+        "a": 1,
+        "rgb": 16763906
+      }
+    },
+    {
+      "query": "path:\"Rocket Engines\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    },
+    {
+      "query": "path:\"Propulsion Types\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 8071424
+      }
+    }
+  ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
@@ -17,6 +60,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 2.3748260440679774,
-  "close": true
+  "scale": 0.2885722930831221,
+  "close": false
 }
