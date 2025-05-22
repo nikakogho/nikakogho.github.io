@@ -62,8 +62,7 @@ const NotePage: React.FC = () => {
   // The surrounding layout (sidebar, toggle button) is now handled by VaultLayout
   return (
     <>
-      {/* Render the explicit H1 title */}
-      <h1>{noteTitle}</h1>
+     { noteTitle !== "Home" && <h1>{noteTitle}</h1> }
 
       {/* Render the actual markdown content */}
       <MarkdownRenderer
