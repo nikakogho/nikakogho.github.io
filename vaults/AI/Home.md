@@ -1,4 +1,4 @@
-## Core Concepts
+## Core AI Concepts
 - [[Machine Learning]]
 - [[Search]]
 - [[Knowledge]]

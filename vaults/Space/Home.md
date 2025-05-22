@@ -1,11 +1,11 @@
-## Core Concepts
+## Core Space Concepts
 - [[Equations]]
 - [[Rocket Propulsion Types]]
 - [[Orbit]]
 - [[Staging]]
 - [[Environment Control and Life Support Systems]]
 
-## Important Objects
+## Important Space Objects
 - [[Rockets]]
 - [[Satellites]]
 - [[Space Stations]]

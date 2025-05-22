@@ -1,4 +1,4 @@
-## Core Concepts
+## Core Robotics Concepts
 - [[Sensors]]
 - [[Actuators]]
 - [[Robot Kinematics]]

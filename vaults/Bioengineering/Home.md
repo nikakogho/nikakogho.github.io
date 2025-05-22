@@ -1,6 +1,6 @@
 Learning everything to engineer and augment life
 
-## Core themes
+## Core Bioengineering themes
 - [[Bioinformatics]]
 - [[Genetic Engineering]]
 - [[Synthetic Biology]]
