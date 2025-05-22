@@ -6,3 +6,5 @@ Mainly [[Motor Cortex]] in [[Frontal lobe]]
 [[Central Pattern Generator]]
 
 Some movement is directly from [[Senses|senses]] to muscles => [[Reflex|reflex]]
+
+[[Walking]]

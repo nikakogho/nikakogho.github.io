@@ -59,3 +59,5 @@ Transform words to vectors, with similar meaning words having similar values
 Words can be said to have similar meaning if they appear in similar context
 
 Vector is weights coming from this node, if word is assumed to be an input node in a **word2vec** [[Neural Network|neural network]]
+
+This is called an [[Embedding Space]]

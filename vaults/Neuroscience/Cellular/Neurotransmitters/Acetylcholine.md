@@ -3,7 +3,7 @@ A [[Neurotransmitter]]
 Learning, [[Memory]], attention
 Very active in [[Hippocampus]] and cerebral cortex
 
-Skeletal muscle stimulation for voluntary movement
+Skeletal [[Muscles|muscle]] stimulation for voluntary movement
 
 “Rest-and-digest” activities:
 - slowing heart rate
