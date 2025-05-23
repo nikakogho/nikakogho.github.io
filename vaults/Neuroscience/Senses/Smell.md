@@ -26,4 +26,4 @@ To [[Frontal lobe]]:
 olfactory receptor cell -> [[Olfactory bulb]] -> olfactory tract -> olfactory tubercle -> **Medial dorsal nucleus** of [[Thalamus]] -> [[Prefrontal Cortex|orbitofrontal cortex]]
 
 To [[Temporal lobe]]:
-olfsctory receptor cell -> bulb -> tract -> [[Olfactory Cortex]] and others
+olfactory receptor cell -> bulb -> tract -> [[Olfactory Cortex]] and others
