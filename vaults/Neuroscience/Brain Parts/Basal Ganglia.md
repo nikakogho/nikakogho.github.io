@@ -1,5 +1,6 @@
 Cluster of [[Nucleus|nuclei]] deep inside hemispheres
 ![IMG_3218.webp](img_3218.webp)
+![IMG_5564.jpeg](img_5564.jpeg)
 
 ## Function
 

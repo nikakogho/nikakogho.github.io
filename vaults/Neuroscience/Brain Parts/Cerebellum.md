@@ -9,7 +9,10 @@ lso gets sent
 ## Anatomy
 
 ![IMG_4337.jpeg](img_4337.jpeg)
-Has [[Purkinje Cell|purkinje cells]]
+![IMG_5569.jpeg](img_5569.jpeg)
+
+Has [[Purkinje Cell|purkinje cells]] as main inhibition
+![IMG_5568.jpeg](img_5568.jpeg)
 
 ## Zones
 
@@ -36,3 +39,7 @@ Inputs from [[Vestibular System]] in inner ear and outputs to vestibular
 
 We learn in **open cerebellar loop** - slow process >20 ms
 We automatically use **closed cerebellar loop** for "muscle memory" - fast <20 ms
+
+## Motor Loop
+
+![IMG_5570.jpeg](img_5570.jpeg)
