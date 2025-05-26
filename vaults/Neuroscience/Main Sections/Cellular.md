@@ -1,4 +1,5 @@
 - [[Neuron]]
+- [[Glia]]
 - [[Neurotransmitter]]
 - [[Spike]]
 - [[Synapse]]
