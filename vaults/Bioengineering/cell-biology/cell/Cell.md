@@ -23,8 +23,11 @@ Inside cytoplasm we find parts that make the cell work.
 
 ## [[Metabolism|Cell Metabolism]]
 
-Follows the process of [[Cell Cycle]].
-Inserts external materials and exerts them out throgh processes of [[Endocytosis and Exocytosis]].
+Follows the process of [[Cell Cycle|cell cycle]].
+Inserts external materials and exerts them out through processes of [[Endocytosis and Exocytosis]].
+
+## Differentiation
+Starts at totipotent [[Stem Cells|stem cells]] and differentiates all t
 
 ## Death
 
