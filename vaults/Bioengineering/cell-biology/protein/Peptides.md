@@ -12,8 +12,8 @@ Can be made chemically for new drugs, diagnostic tools and therapies.
 - Regulating [[Metabolism]]
 - Part of immune system
 - Acting as [[Enzymes]]
-- etc
+- etc.
 
 ## Examples:
-- Insulin - regulates blood sugar level
-- Collagen - structural protein that gives strength to skin, bones, tendons, and other connector tissues
+- [[Insulin]] - regulates blood sugar level
+- [[Collagen]] - structural protein that gives strength to skin, bones, tendons, and other connector tissues

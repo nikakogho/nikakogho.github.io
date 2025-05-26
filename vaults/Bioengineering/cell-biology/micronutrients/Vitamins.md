@@ -23,7 +23,7 @@ Too many vitamins lead to toxicity.
 	- B7 (Biotin) - metabolism, skin hair nail health. Found in eggs, nuts, sweet potatoes.
 	- B9 (Folate or folic acid) - Forming red blood cells, development of fetus during pregnancy. Found in fruits, leafy green vegetables, fortified grains.
 	- B12 - forming red blood cells, nerve function, DNA synthesis. Found in fish, meat, dairy.
-- C - immune system, collagen (main structural protein) synthesis, iron absorption. Found in oranges, strawberries, kiwi, vegetables like bell peppers and spinach.
+- C - immune system, [[Collagen|collagen]] (main structural protein) synthesis, iron absorption. Found in oranges, strawberries, kiwi, vegetables like bell peppers and spinach.
 - D - bone health, immune function, regulation of blood pressure. Found in fatty fish, fortified foods, skin's exposure to sunlight.
 - E - Antioxidant function, immune function, skin health. Found in nuts, seeds, leafy green vegetables.
 - K - Blood clotting and bone health. Found in leafy green vegetables, eggs, dairy products.

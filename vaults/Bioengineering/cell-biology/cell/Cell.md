@@ -1,7 +1,8 @@
 Smallest unit of [[Life|life]].
 
 Surrounded by plasma membrane that is hydrophobic on outside and hydrophilic on inside.
-Outside is chain of -CH2.
+
+Outside is [[Extracellular Matrix]].
 
 Has [[DNA]] inside, in a nucleus for [[Eukaryotes]] or just floating around for [[Prokaryotes]].
 
@@ -35,3 +36,6 @@ There are 2 ways cells can die:
 
 1. Apoptosis - when cell is no longer needed, it shuts down
 2. Necrosis - cell is damaged beyond repair and dies, usually results in death of multiple cells
+
+## Cell-To-Cell Adhesion
+Mediated by proteins, mostly [[Cadherin|cadherins]]
