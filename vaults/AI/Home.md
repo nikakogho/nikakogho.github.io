@@ -8,6 +8,12 @@
 - [[Transformer]]
 - [[Natural Language Processing]]
 - [[Algorithms]]
+- [[Image Processing]]
+
+## State Of The Art
+- [[Large Language Models]]
+- [[Embedding Space]]
+- [[AI Agents]]
 
 ## Top Contenders
 - [[ChatGPT]]

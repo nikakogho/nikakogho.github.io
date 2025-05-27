@@ -7,6 +7,6 @@ Exist mostly in infants
 - Pluripotent - can be anything except extra-embryonic tissues
     - Can form organ or tissue
     - Embryonic PC - must sacrifice embryo
-    - Induced PC - reversing normal cell using [[Yamanaka ]]
+    - Induced PC - reversing normal cell using [[Yamanaka Factors]]
 - Multipotent - can be any cell in 1 tissue
 - Unipotent - will become 1 type of cell

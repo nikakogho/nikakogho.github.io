@@ -6,3 +6,7 @@ Repairing or creating new [[Tissue|tissues]] or organs
 3. Signaling molecules - growth factors
 
 [[Cell Sources for Tissue Engineering]]
+
+[[Cell Migration]] must be considered in the process
+
+[[Prompt To Learn Tissue Engineering]]
