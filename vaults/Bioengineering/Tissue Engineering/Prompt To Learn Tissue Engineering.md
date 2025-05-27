@@ -40,6 +40,6 @@
 
 **Current Position:** We are in **Chapter 2**, discussing the fifth "First Principle of Cell Behavior": **Cell Migration**. The user is about to answer questions related to the importance of migration in scaffold colonization, the use of smart scaffolds to guide migration, and software analogies for cell migration.
 
-**User Profile:** The learner is a software engineer, interested in the fundamental "how it works" of tissue engineering and specifically how software can be used to model and advance the field.
+**User Profile:** The learner is a software engineer, interested in the fundamental "how it works" of tissue engineering and specifically how software can be used to model and advance the field. He already understands cell biology and biotech to some extent so no need to explain what cell is or what transcription and translation are and such high school level cell biology topics
 
 **Standing Request:** At the end of each chapter (starting with Chapter 2), provide a conceptual simulation task related to the chapter's content for the user to consider coding. This task should help visualize or calculate something based on the principles learned.
