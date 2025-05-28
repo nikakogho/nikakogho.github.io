@@ -55,6 +55,13 @@
         "a": 1,
         "rgb": 57855
       }
+    },
+    {
+      "query": "path:Anatomy ",
+      "color": {
+        "a": 1,
+        "rgb": 4525401
+      }
     }
   ],
   "collapse-display": false,
@@ -67,6 +74,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.7132754626224536,
-  "close": false
+  "scale": 0.33460098708056435,
+  "close": true
 }
