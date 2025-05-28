@@ -15,4 +15,4 @@
 
 ## Ethmoid
 
-![IMG_5619.gif](ethmoid%20bone.gif)
+![ethmoid_bone.gif](ethmoid_bone.gif)
