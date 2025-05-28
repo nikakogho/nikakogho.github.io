@@ -16,11 +16,11 @@ Total 14
 
 ## Lacrimal Bones
 
-![lacrimal_bones.gif](lacrimal_bones.gif)]
+![lacrimal_bones.gif](lacrimal_bones.gif)
 
 ## Inferior Nasal Conchae
 
-![inferior_nasal_conchae.gif](inferior_nasal_conchae.gif)]
+![inferior_nasal_conchae.gif](inferior_nasal_conchae.gif)
 
 ## Vomer
 
