@@ -12,16 +12,16 @@ Total 14
 
 ## Palatine Bones
 
-![IMG_5625.gif](IMG_5625.gif)
+![palatine_bones.gif](palatine_bones.gif)
 
 ## Lacrimal Bones
 
-![IMG_5622.gif](IMG_5622.gif)
+![lacrimal_bones.gif](lacrimal_bones.gif)]
 
 ## Inferior Nasal Conchae
 
-![IMG_5623.gif](IMG_5623.gif)
+![inferior_nasal_conchae.gif](inferior_nasal_conchae.gif)]
 
 ## Vomer
 
-![IMG_5624.gif](IMG_5624.gif)
+![vomer.gif](vomer.gif)

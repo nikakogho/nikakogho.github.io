@@ -11,8 +11,8 @@
 
 ## Sphenoid
 
-![IMG_5620.gif](IMG_5620.gif)
+![sphenoid_bone.gif](sphenoid_bone.gif)]
 
 ## Ethmoid
 
-![IMG_5619.gif](img_5619.gif)
+![IMG_5619.gif](ethmoid%20bone.gif)
