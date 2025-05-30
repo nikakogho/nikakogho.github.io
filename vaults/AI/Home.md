@@ -14,18 +14,21 @@
 - [[Attention]]
 - [[Transformer]]
 - [[Large Language Models]]
+	- [[ChatGPT]]
+	- [[Gemini]]
+	- [[Claude Sonnet]]
+	- [[Llama]]
+	- [[DeepSeek]]
+	- [[Grok]]
 - [[Mechanistic Interpretability]]
-
-## State Of The Art
 - [[Embedding Space]]
-- [[AI Agents]]
 
-## Top Contenders
-- [[ChatGPT]]
-- [[Google DeepMind]] / [[Gemini]]
-- [[Anthropic Claude]]
-- [[Meta Llama]]
-- [[DeepSeek]]
+## AI Agents
+- [[Model Context Protocol]]
+- Function calling
+- Computer use
+- Browser access
+- Coding
 
 ## OpenAI's AGI Roadmap
 1. [x] chatbot
