@@ -2,8 +2,8 @@ Using computer code to understand or alter life
 
 ## Themes
 - [[Genome Sequencing]]
-- [[Genome Alignment Problem]]
-- [[Genome Assembly Problem]]
+- [[Genome Alignment]]
+- [[Genome Assembly]]
 - [[Genomic Feature Annotation]]
 
 ## Algorithms

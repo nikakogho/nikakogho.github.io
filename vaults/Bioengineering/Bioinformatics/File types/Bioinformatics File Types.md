@@ -1,5 +1,11 @@
-- [[SAM files]]
-- [[BAM files]]
+- Alignment
+	- [[SAM files]]
+	- [[BAM files]]
+- Sequence
+	- [[FASTA files]]
+	- [[FASTQ files]]
+- Annotation
+	- [[BED Files]]
+	- [[GFF3 Files]]
+	- [[GTF Files]]
 - [[CIGAR]]
-- [[FASTA files]]
-- [[FASTQ files]]
