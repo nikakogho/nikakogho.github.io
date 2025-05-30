@@ -4,14 +4,19 @@
 - [[Knowledge]]
 - [[Uncertainty]]
 - [[Optimization]]
-- [[Neural Network]]
-- [[Transformer]]
 - [[Natural Language Processing]]
 - [[Algorithms]]
 - [[Image Processing]]
 
-## State Of The Art
+## Neural Networks
+- [[Neural Network]]
+- [[Perceptron]]
+- [[Attention]]
+- [[Transformer]]
 - [[Large Language Models]]
+- [[Mechanistic Interpretability]]
+
+## State Of The Art
 - [[Embedding Space]]
 - [[AI Agents]]
 
@@ -32,4 +37,5 @@
 ## Further
 - [[Neuromorphic Computing]]
 - [Harvard CS50 AI YouTube playlist](https://www.youtube.com/playlist?list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv)
+- [Andrej Karpathy Neural Networks](https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
 - [[Symbols]]
