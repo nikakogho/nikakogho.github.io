@@ -3,7 +3,7 @@ Retain shape.
 Types:
 - Amorphous - no pattern, random strength, melt partially over range of temperatures
 - Crystalline - ordered in a pattern
-	- Molecular - molecules remain unchanged, held together by weak [[Bonds|Van der Waals Forces]].
+	- Molecular - molecules remain unchanged, held together by weak [[Chemistry/Bonds|Van der Waals Forces]].
 		- [[Water]] Ice
 		- Dry Ice
 		- Sugar

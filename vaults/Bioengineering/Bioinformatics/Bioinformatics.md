@@ -4,6 +4,7 @@ Using computer code to understand or alter life
 - [[Genome Sequencing]]
 - [[Genome Alignment Problem]]
 - [[Genome Assembly Problem]]
+- [[Genomic Feature Annotation]]
 
 ## Algorithms
 - Pattern Matching

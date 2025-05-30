@@ -28,6 +28,7 @@ Follows the process of [[Cell Cycle|cell cycle]].
 Inserts external materials and exerts them out through processes of [[Endocytosis and Exocytosis]].
 
 ## Differentiation
+
 Starts at totipotent [[Stem Cells|stem cells]] and differentiates all t
 
 ## Death
@@ -38,4 +39,5 @@ There are 2 ways cells can die:
 2. Necrosis - cell is damaged beyond repair and dies, usually results in death of multiple cells
 
 ## Cell-To-Cell Adhesion
+
 Mediated by proteins, mostly [[Cadherin|cadherins]]
