@@ -1,4 +1,4 @@
-All bout cells
+All about cells
 
 Main themes:
 - [[Cell]]

@@ -30,5 +30,6 @@
 - [[Alan Turing]]
 
 ## Further
+- [[Learning from AI Prompt]]
 - [[Nice Readings]]
 - [[Symbols]]
