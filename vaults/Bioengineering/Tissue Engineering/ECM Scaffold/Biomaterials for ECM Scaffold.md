@@ -9,8 +9,8 @@ Materials for making [[ECM Scaffold]]:
 * Synthetic polymers
   * Pro: can mass manufacture and give custom structural strength
   * Con: can't adapt to changing environment, must manually add [[Integrin|integrin]]-binding parts
-* Ceramics
-* Composite materials
+* Bioceramics - mostly for [[Bone|bone]] regeneration
+* Composite materials - to mix features so we can have rigid structure that is not brittle for instance by mixing ceramics with synthetic polymers (TCP + PGA)
 
 ## Common Synthetic Polymers for Scaffold
 * Aliphatic [[Polyester|polyesters]] - biodegradable through hydrolysis
@@ -71,3 +71,29 @@ Polymers with [[Urethane Linkage|urethane linkages]].
 Different monomers.
 Can be very soft and elastic or rigid.
 Used for catheters, pacemaker leads, parts of artificial hearts, or when good elasticity is needed in tissue engineering
+
+## Common Bioceramics for Scaffold
+Mostly [[Calcium]] [[Phosphate|phosphates]] (CaP):
+- Hydroxyapatite (HA), formula Ca₁₀(PO₄)₆(OH)
+	- Chemically similar to mineral phase of bone
+	- High biocompatibility
+	- Bioactive (easily bonds with living bone tissue)
+	- **Osteoconductive** - osteoblasts (bone cells) attach, grow on and deposit in it easily
+	- Not biodegradable
+	- Used as coating on metallic implants to fuse with bones or as permanent bone scaffold
+- Tricalcium Phosphate (TCP), formula Ca₃(PO₄)₂
+	- Forms: alpha-TCP (α-TCP) and beta-TCP (β-TCP)
+	- Also biocompatible and osteoconductive
+	- Biodegradable over time (months or years)
+	- Used for bone void fillers or temporary scaffolds
+- Biphasic Calcium Phosphate (BCP)
+	- Composite made by combining HA and TCP
+	- Best of both worlds depending on ratio
+- Bioactive Glasses - specific glass formulations, often based on silica (SiO₂), sodium oxide (Na₂O), calcium oxide (CaO), and phosphorus pentoxide (P₂O₅) – a common one is called Bioglass® 45S5
+	- Highly bioactive - forms hydroxycarbonate apatite (HCA) layer
+		- Similar to bone minerals
+		- Bonds strongly and rapidly to bone tissue
+	- Sometimes **osteoinductive** - release ions to stimulate bone cells to be more active
+		- Can also stimulate mesenchymal [[Stem Cells|stem cells]] to become bone cells
+	- Mostly resorbable
+	- Used as bone void fillers, coatings for implants, or parts in composite scaffolds

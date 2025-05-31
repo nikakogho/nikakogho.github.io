@@ -9,5 +9,5 @@ Purposes:
 ## [[Biomaterials for ECM Scaffold]]
 - Natural polymers
 - Synthetic polymers
-- Ceramics
+- Bioceramics
 - Composite materials
