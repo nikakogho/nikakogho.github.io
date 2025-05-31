@@ -30,6 +30,6 @@
 - [[Alan Turing]]
 
 ## Further
-- [[Learning from AI Prompt]]
+- [[Learning Humanoid Robotics from AI Prompt]]
 - [[Nice Readings]]
 - [[Symbols]]
