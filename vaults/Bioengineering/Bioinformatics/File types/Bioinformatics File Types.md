@@ -1,6 +1,7 @@
 - Alignment
 	- [[SAM files]]
 	- [[BAM files]]
+	- [[CIGAR]]
 - Sequence
 	- [[FASTA files]]
 	- [[FASTQ files]]
@@ -8,4 +9,3 @@
 	- [[BED Files]]
 	- [[GFF3 Files]]
 	- [[GTF Files]]
-- [[CIGAR]]

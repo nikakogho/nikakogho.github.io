@@ -7,3 +7,4 @@ Aligning multiple pieces of [[DNA]] or [[RNA]] or [[Protein]] to find similar re
 ## Alignment Files
 - [[SAM files]]
 - [[BAM files]]
+- [[CIGAR]]

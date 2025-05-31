@@ -1,4 +1,4 @@
-Building block for polymers linked through chemical reactions.
+Building block for polymers linked through [[Chemical Reactions|chemical reactions]].
 
 Examples:
 - Glucose

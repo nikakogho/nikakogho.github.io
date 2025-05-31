@@ -2,7 +2,7 @@ Repairing or creating new [[Tissue|tissues]] or organs
 
 **Tissue Engineering Triad**:
 1. [[Cell|Cells]]
-2. [[Scaffold]]
+2. [[ECM Scaffold]]
 3. Signaling molecules - growth factors
 
 [[Cell Sources for Tissue Engineering]]
