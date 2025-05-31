@@ -14,6 +14,7 @@
     - [[SatNOGS]]
 
 ## Mine
+- [[Learning with AI Prompt]]
 - [[Making a CubeSat]] **QartvelSat-1**
 - [[Making a Ground Station]] **QartvelNest**
 

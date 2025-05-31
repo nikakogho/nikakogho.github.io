@@ -16,6 +16,7 @@
 - [[Brainwaves]]
 
 ## Further
+- [[Learn from AI Prompt]]
 - [[2025 Events]]
 - [[Companies]]
 - [[Notable People]]
