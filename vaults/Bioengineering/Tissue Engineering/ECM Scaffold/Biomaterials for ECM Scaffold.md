@@ -1,14 +1,4 @@
-Artificial placeholder for [[Extracellular Matrix]] used in [[Tissue Engineering]]
-
-Purposes:
-
-* Mechanical support
-* Porosity (interconnected) to allow nutrient flow, cell infiltration and waste removal
-* 3D shape template
-* Guides cell behavior through chemoattractants and repellents
-
-## Biomaterials for Scaffold
-
+Materials for making [[ECM Scaffold]]:
 * Natural polymers
   * Allogeneic or xenogeneic
   * Pro: sometimes easy to get
@@ -18,18 +8,16 @@ Purposes:
     * Immune rejection risk
 * Synthetic polymers
   * Pro: can mass manufacture and give custom structural strength
-  * Con: can't adapt to changing environment
+  * Con: can't adapt to changing environment, must manually add [[Integrin|integrin]]-binding parts
 * Ceramics
 * Composite materials
 
-### Common Synthetic Polymers for Scaffold
-
+## Common Synthetic Polymers for Scaffold
 * Aliphatic [[Polyester|polyesters]] - biodegradable through hydrolysis
 * Poly(ethylene glycol) (PEG)
 * Polyurethanes (PUs)
 
 ### Aliphatic Polyesters
-
 Aliphatic - carbons in backbone form open chains
 
 Con: degradation releases acid, may harm body
@@ -66,7 +54,6 @@ Types:
   * Used as scaffold for bone, cartilage, tendon, ligament, cardiovascular
 
 ### Poly(ethylene glycol) (PEG)
-
 [[Polyether]] (monomers linked by [[Ether Bond|ether bonds]])
 
 * [[Ehylene Glycol]] monomer (repeating units of -O-CH₂-CH₂-)
@@ -80,7 +67,6 @@ Types:
 * Used for drug delivery or as tunable hydrogel to encapsulate cells and tissues
 
 ### Polyurethanes (PUs)
-
 Polymers with [[Urethane Linkage|urethane linkages]].
 Different monomers.
 Can be very soft and elastic or rigid.
