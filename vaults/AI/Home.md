@@ -7,6 +7,7 @@
 - [[Natural Language Processing]]
 - [[Algorithms]]
 - [[Image Processing]]
+- [[AI Alignment]]
 
 ## Neural Networks
 - [[Neural Network]]
