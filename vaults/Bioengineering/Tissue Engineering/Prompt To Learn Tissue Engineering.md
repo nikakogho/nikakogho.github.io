@@ -21,7 +21,7 @@
 
 - **Chapter 1: Foundations of Tissue Engineering - The Promise and the Players** (✅ Completed)
     
-- **Chapter 2: The Living Building Blocks - Cells in Tissue Engineering** (📍 Currently in progress. We are discussing the "First Principles of Cell Behavior," specifically **Cell Migration**.)
+- **Chapter 2: The Living Building Blocks - Cells in Tissue Engineering** (✅ Completed)
     
 - **Chapter 3: The Architectural Framework - Scaffolds and Biomaterials**
     
