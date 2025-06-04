@@ -1,7 +1,7 @@
 Stands for Long Range.
 Technique made by [Semtech](https://www.semtech.com/)
 
-Uses **Chirp Spread Spectrum (CSS)** for long range communication. Used a lot in [[Satellites]]
+Uses **Chirp Spread Spectrum (CSS)** for long range communication. Used a lot in [[Satellite]]
 
 ## Chirp Spread Spectrum (CSS)
 - Chirps - each symbol is a chirp, frequency moves up and down

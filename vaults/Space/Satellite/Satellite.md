@@ -13,6 +13,14 @@
 
 ## Payload
 - [[Satellite Camera]]
+- Space Telescope
+- Radar
+- Antennas for comms
+- Navigation
+	- GPS
+	- Star Trackers
+- Edge computing
+	- [[NVIDIA Jetson Nano]]
 
 ## Current Satellites
 - [[Starlink]]

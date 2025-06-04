@@ -1,4 +1,4 @@
-Cameras used on [[Satellites]]
+Cameras used on [[Satellite]]
 
 Often used for [[Earth Imaging]]
 

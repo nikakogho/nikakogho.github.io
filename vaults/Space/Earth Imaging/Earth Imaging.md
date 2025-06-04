@@ -1,4 +1,4 @@
-One of the goals of [[Satellites]] done by [[Satellite Camera]]
+One of the goals of [[Satellite]] done by [[Satellite Camera]]
 
 ## Purposes
 - Agriculture

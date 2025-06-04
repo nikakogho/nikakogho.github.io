@@ -7,7 +7,7 @@
 
 ## Important Space Objects
 - [[Rockets]]
-- [[Satellites]]
+- [[Satellite]]
 - [[Space Stations]]
 - [[Rocket Engines]]
 - Ground stations
