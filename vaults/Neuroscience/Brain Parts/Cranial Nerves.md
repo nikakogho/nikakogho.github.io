@@ -9,7 +9,7 @@
 6. Abducens nerve - move eyes left/right
 7. Facial nerve - facial muscles control and some senses in tongue
 8. Vestibulocochlear nerve - hearing and balance
-9. Glossopharyngeal nerve - part of taste in tongue, controls muscles to swallow. Also has [[Parasymphatetic Nervous System|parasymphatetic nerve fibers]] for blood pressure regulation and saliva production
+9. Glossopharyngeal nerve - part of taste in tongue, controls muscles to swallow. Also has [[Parasympathetic Nervous System|parasymphatetic nerve fibers]] for blood pressure regulation and saliva production
 10. Vagus nerve - automatic bodily processes like digestion, blood pressure, heart rate, breathing, mood, saliva production. Main nerve of Parasymphatetic Nervous System (PNS)
 11. Accessory nerve (spinal accessory nerve) - moving shoulder and neck
 12. Hypoglossal nerve - tongue movement for speaking, eating and swallowing

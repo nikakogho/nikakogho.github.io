@@ -8,6 +8,7 @@
 - [[Sleep]]
 - [[Memory]]
 - [[Learning]]
+- [[Diseases]]
 
 ## Neural Engineering
 - [[EEG Concepts]]
