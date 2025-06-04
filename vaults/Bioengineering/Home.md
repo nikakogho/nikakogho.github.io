@@ -5,12 +5,23 @@ Learning everything to engineer and augment life
 - [[Genetic Engineering]]
 - [[Tissue Engineering]]
 - [[Synthetic Biology]]
+- [[Systems Biology]]
 
 ## Background themes
 - [[Chemistry]]
 - [[Cell Biology]]
 - [[Anatomy]]
-- [[Systems Biology]]
+
+## Companies
+- [[Colossal Biosciences]]
+- [[Revive & Restore]]
+- [[FormBio]]
+- [[Pfizer]]
+- [[AstraZeneca]]
+- [[Novartis]]
+- [[Roche]]
+- [[Moderna]]
+- [[Calico Life Sciences]]
 
 Relevant people
 - [[George Church]]

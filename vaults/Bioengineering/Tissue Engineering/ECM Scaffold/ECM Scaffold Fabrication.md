@@ -6,9 +6,9 @@ Has different methods because:
 2. some need large scale vs others need fine grained details
 3. some cheap ways are sometimes ok other times we need expensive ways
 
-## Conventional Methods
+To do this there are conventional methods (discussed below) and also there is [[3D Bioprinting]].
 
-### Solvent Casting and Particulate Leaching (SCPL)
+## Solvent Casting and Particulate Leaching (SCPL)
 
 For synthetic polymers that can take drying and are solvent-soluble
 
@@ -34,7 +34,7 @@ Cons:
 * Hard to make thick scaffolds
 * Mostly only for synthetic polymers
 
-### Gas Foaming
+## Gas Foaming
 
 Mostly with synthetic polymers, a way to make porous structures without organic solvents
 
@@ -56,7 +56,7 @@ Controls:
   * For example, mix with SCPL would be to mix porogens first, then do gas foaming, the leach out those porogens for interconnectivity
 * Shape is mostly same as starting polymer, with a little expansion
 
-### Freeze Drying (Lyophilization)
+## Freeze Drying (Lyophilization)
 
 For natural and some synthetic polymers
 
