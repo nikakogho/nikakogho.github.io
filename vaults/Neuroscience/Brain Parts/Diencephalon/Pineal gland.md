@@ -1,6 +1,6 @@
 Produces melatonin for sleep cycle
 Third eye stories
-Rene decartes believed this was a receiver from which soul instructs the brain to instruct the body
+Rene Descartes believed this was a receiver from which soul instructs the brain to instruct the body
 
 Part of [[Epithalamus]]
 In center of brain between *superior colliculi* and above [[Ventricles|Third Ventricle]]

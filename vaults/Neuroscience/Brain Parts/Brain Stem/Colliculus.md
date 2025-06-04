@@ -1,3 +1,4 @@
+In [[Midbrain]].
 Help orient head and eyes toward something seen and heard
 
 **Superior colliculus** and **inferior colliculus**
