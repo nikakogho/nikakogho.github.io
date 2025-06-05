@@ -4,6 +4,7 @@
 - [[Senses]]
 - [[Movement]]
 - [[Emotions]]
+- [[Chemical Control of The Brain]]
 - [[Consciousness]]
 - [[Sleep]]
 - [[Memory]]

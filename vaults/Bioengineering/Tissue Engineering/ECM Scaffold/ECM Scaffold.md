@@ -17,3 +17,6 @@ Has different methods because:
 1) different biomaterials have different needs
 2) some need large scale vs others need fine grained details
 3) some cheap ways are sometimes ok other times we need expensive ways
+
+## [[ECM Scaffold Characterization]]
+Quality control for mechanical, biocompatibility, degradation, physiochemical and morphological properties

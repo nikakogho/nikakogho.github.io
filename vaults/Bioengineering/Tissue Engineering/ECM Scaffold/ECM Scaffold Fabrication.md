@@ -6,7 +6,7 @@ Has different methods because:
 2. some need large scale vs others need fine grained details
 3. some cheap ways are sometimes ok other times we need expensive ways
 
-To do this there are conventional methods (discussed below) and also there is [[3D Bioprinting]].
+To do this there are conventional methods (discussed below) and also there is [[ECM Scaffold Acellular 3D Printing]] and [[3D Bioprinting]].
 
 ## Solvent Casting and Particulate Leaching (SCPL)
 

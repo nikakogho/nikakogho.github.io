@@ -22,28 +22,28 @@
       }
     },
     {
-      "query": "path:cell-biology/cell  ",
+      "query": "path:\"Cell Biology/cell\"  ",
       "color": {
         "a": 1,
         "rgb": 28415
       }
     },
     {
-      "query": "path:cell-biology/life",
+      "query": "path:\"Cell Biology/life\"  ",
       "color": {
         "a": 1,
         "rgb": 16711680
       }
     },
     {
-      "query": "path:cell-biology/gene  ",
+      "query": "path:\"Cell Biology/gene\"  ",
       "color": {
         "a": 1,
         "rgb": 16711803
       }
     },
     {
-      "query": "path:cell-biology  ",
+      "query": "path:\"Cell Biology\" ",
       "color": {
         "a": 1,
         "rgb": 6749952
@@ -62,6 +62,13 @@
         "a": 1,
         "rgb": 4525401
       }
+    },
+    {
+      "query": "path:\"Tissue Engineering\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16710465
+      }
     }
   ],
   "collapse-display": false,
@@ -74,6 +81,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.6576769930388944,
+  "scale": 1.495671867845693,
   "close": true
 }
