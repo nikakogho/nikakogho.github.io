@@ -6,6 +6,10 @@ Using computer code to understand or alter life
 - [[Genome Assembly]]
 - [[Genomic Feature Annotation]]
 
+## Programming
+- [[Bioinformatics File Types]]
+- [[Bioinformatics CLI Tools]]
+
 ## Algorithms
 - Pattern Matching
 	- [[Boyer-Moore Algorithm]]

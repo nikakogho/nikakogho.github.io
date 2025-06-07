@@ -1,6 +1,7 @@
 - Alignment
 	- [[SAM files]]
 	- [[BAM files]]
+	- [[CRAM Files]]
 	- [[CIGAR]]
 - Sequence
 	- [[FASTA files]]

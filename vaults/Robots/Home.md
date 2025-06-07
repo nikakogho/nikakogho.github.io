@@ -16,6 +16,7 @@
 
 ## Upcoming events
 - [Robotics for all](https://www.roboticsforall.net/)
+- [Robo Battle 2025 Tbilisi](https://www.facebook.com/events/tbilisi-georgia/robo-battle-2025/613974718346782/)
 
 ## Notable People in Industry
 - [[Elon Musk]]
@@ -30,6 +31,7 @@
 - [[Alan Turing]]
 
 ## Further
+- https://app.theconstruct.ai/
 - [[Learning Humanoid Robotics from AI Prompt]]
 - [[Nice Readings]]
 - [[Symbols]]
