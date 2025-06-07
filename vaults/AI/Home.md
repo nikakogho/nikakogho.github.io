@@ -8,6 +8,7 @@
 - [[Algorithms]]
 - [[Image Processing]]
 - [[AI Alignment]]
+- [[Turing Test]]
 
 ## Neural Networks
 - [[Neural Network]]
