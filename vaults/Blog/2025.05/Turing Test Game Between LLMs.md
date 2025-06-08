@@ -6,11 +6,10 @@ categories:
   - Philosophy
   - AI
 tags:
-  - Androids
-  - Life
   - AI
+  - TuringTest
 ---
-What happens if we make 2 LLMs talk to each other, one tasked with pretending to be human, other tasked with guessing if it’s talking a human or AI? 
+What happens if we make 2 LLMs talk to each other, one tasked with pretending to be human, other tasked with guessing if it’s talking to a human or AI? 
 Does the interrogator always guess right that it talks to AI? Does it always guess wrong and assume it talks to a human? Does it depend on a model? Let’s see.
 
 ## First Game
