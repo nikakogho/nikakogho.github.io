@@ -6,8 +6,9 @@
 - [[Configuration]]
 
 ## Robots
-- [[Dog Robots]]
-- [[Humanoid Robots]]
+- [[Biomimetic Robots]]
+	- [[Dog Robots]]
+	- [[Humanoid Robots]]
 - [[Robot Arms]]
 - [[Soft Robots]]
 - [[Biohybrids]]
@@ -23,6 +24,7 @@
 - [[Shoji Takeuchi]]
 - [[Bernt Børnich]] - [[1X Neo]]
 - [[Aaron Saunders]] - [[Boston Dynamics]]
+- [[Howie Choset]] - [[Snake Robot]]
 
 ## Notable People in History
 - [[Isaac Asimov]]
