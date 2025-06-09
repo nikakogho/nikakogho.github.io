@@ -2,6 +2,7 @@
 - [[Sensors]]
 - [[Actuators]]
 - [[Robot Kinematics]]
+- [[Locomotion (Movement)]]
 - [[Degrees of Freedom]]
 - [[Configuration]]
 
@@ -22,7 +23,8 @@
 ## Notable People in Industry
 - [[Elon Musk]]
 - [[Shoji Takeuchi]]
-- [[Bernt Børnich]] - [[1X Neo]]
+- [[Bernt Børnich]] - [[1X Neo
+- [[Marc Raibert]] - Boston Dynamics]]
 - [[Aaron Saunders]] - [[Boston Dynamics]]
 - [[Howie Choset]] - [[Snake Robot]]
 
