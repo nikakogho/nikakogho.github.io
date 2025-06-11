@@ -12,4 +12,8 @@ Hot topic here is [[3D Bioprinting]].
 
 [[Prompt To Learn Tissue Engineering]]
 
+## Current Main Challenges
+- [[Angiogenesis]]
+- [[Neurotization]]
+
 May look into [this YouTube playlist](https://www.youtube.com/playlist?list=PLyqSpQzTE6M-Is9Ac-dLQqMf7Chp07OY7)

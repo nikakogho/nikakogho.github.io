@@ -1,7 +1,6 @@
 Gives body shape, lets it move, protects internal organs
 
 Made of:
-
 * 206 [[Bone|bones]]
 * [[Joint|Joints]] that connect them
 * [[Cartilage]]

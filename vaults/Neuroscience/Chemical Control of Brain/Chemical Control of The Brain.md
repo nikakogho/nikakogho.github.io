@@ -12,3 +12,6 @@
 	- [[Amphetamine]]
 - [[Addiction]]
 - [[Emotions]]
+- [[Cravings]]
+	- [[Hunger]]
+	- [[Thirst]]
