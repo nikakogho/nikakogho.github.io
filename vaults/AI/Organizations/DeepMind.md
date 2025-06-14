@@ -27,3 +27,6 @@ Solved [protein folding problem](https://www.ebi.ac.uk/training/online/courses/a
 
 ## Merged with Google Brain
 Merged with [[Google Brain]] in April 2023
+
+## AI Alignment Work
+Has a [[Mechanistic Interpretability]] team led by [[Neel Nanda]]

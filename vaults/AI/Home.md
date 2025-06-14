@@ -16,14 +16,15 @@
 - [[Attention]]
 - [[Transformer]]
 - [[Large Language Models]]
-	- [[ChatGPT]]
-	- [[Gemini]]
-	- [[Claude Sonnet]]
-	- [[Llama]]
-	- [[DeepSeek]]
-	- [[Grok]]
 - [[Mechanistic Interpretability]]
 - [[Embedding Space]]
+
+## Top AI Companies
+- [[OpenAI]]
+- [[DeepMind]]
+- [[Anthropic]]
+- [[Meta AI]]
+- [[xAI]]
 
 ## AI Agents
 - [[Model Context Protocol]]
@@ -40,12 +41,12 @@
 5. [ ] organization
 
 ## People
-- [[Sam Altman]] - [[OpenAI]]
-- [[Demis Hassabis]] - [[DeepMind]]
+- [[Sam Altman]] - OpenAI
+- [[Demis Hassabis]] - DeepMind
 - [[Ilya Sutskever]] - inventor of [[AlexNET]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
-- [[Dario Amodei]] - [[Anthropic]]
+- [[Dario Amodei]] - Anthropic
 - [[Neel Nanda]] - [[Mechanistic Interpretability]] lead at DeepMind
-- [[Callum McDougall]] - mechanistic interpretability researcher at deepmind
+- [[Callum McDougall]] - mechanistic interpretability researcher at DeepMind
 - [[Andrej Karpathy]] - former OpenAI and Tesla AI
 - [[Andrew Ng]] - leading AI educator and researcher
 - [[Geoffrey Hinton]] - Nobel prize for inventing [[Backpropagation]]
