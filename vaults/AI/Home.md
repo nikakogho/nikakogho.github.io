@@ -51,6 +51,7 @@
 - [[Andrew Ng]] - leading AI educator and researcher
 - [[Geoffrey Hinton]] - Nobel prize for inventing [[Backpropagation]]
 - [[Ray Kurzweil]] - futurist and former director of engineering at [[Google Brain]]
+- [[Paul Christiano]] - AI safety lead at [[US AI Safety Institute]]
 
 ## Further
 - [[ARENA]]
