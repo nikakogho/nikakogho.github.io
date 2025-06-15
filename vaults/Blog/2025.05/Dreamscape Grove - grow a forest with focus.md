@@ -11,7 +11,7 @@ tags:
 
 I just released **Dreamscape Grove**, a Windows stand-alone game that lets you cultivate a low-poly forest **purely by staying focused**, using **neurofeedback** to train your focus.  
 
-- [Here](https://youtu.be/d1yPhRpBgSo) is the dev-diary video walkthrough and a link to try it yourself.
+- [Here](https://youtu.be/EU_obsIUCwc) is the dev-diary video walkthrough and a link to try it yourself.
 - [Here](https://github.com/nikakogho/DreamscapeGrove) is the GitHub repo for source code.
 
 ## What’s neurofeedback, anyway ? 🧠
