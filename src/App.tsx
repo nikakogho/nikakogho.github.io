@@ -8,6 +8,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import BlogListPage from './pages/BlogListPage';
 import BlogPostPage from './pages/BlogPostPage';
 import { ThemeProvider } from './context/ThemeContext';
+import SecretPage from './pages/SecretPage';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+
+          <Route path="/secrets/*" element={<SecretPage />} />
 
           {/* Vault Routes (Existing) */}
           <Route path="/vaults/:vaultId" element={<VaultLayout />}>
