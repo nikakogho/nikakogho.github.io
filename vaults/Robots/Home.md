@@ -6,6 +6,10 @@
 - [[Degrees of Freedom]]
 - [[Configuration]]
 
+## Physics
+- [[Mechanics]]
+- [[Power]]
+
 ## Robots
 - [[Biomimetic Robots]]
 	- [[Dog Robots]]
@@ -30,6 +34,8 @@
 
 ## Notable People in History
 - [[Isaac Asimov]]
+- [[Joseph Engelberger]] - father of robotics
+- [[Hans Moravec]] - father of AI robotics
 - [[Valentino Braitenberg]]
 - [[Leonardo da Vinci]]
 - [[Alan Turing]]

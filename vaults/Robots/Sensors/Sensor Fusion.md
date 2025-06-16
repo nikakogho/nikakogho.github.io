@@ -5,4 +5,4 @@ Sometimes also for
 - [[Sensor Fission]]
 - Action-Oriented Sensor Fusion - behavior will trigger if a specific kind of sensor fusion appears
 - [[Sensor Fashion]]
-![[sensor fusion types.png| 600]]
+![[sensor_fusion_types.png| 600]]
