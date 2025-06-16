@@ -1,0 +1,1 @@
+Changing which [[Sensors|sensors]] to tune into (give more "weight" to when inputting data to "brain" for world model) depending on the situation at hand (like a predator that sees motion and so stops to examine the place to look for prey)
