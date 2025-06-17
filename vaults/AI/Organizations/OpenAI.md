@@ -1,4 +1,4 @@
-Company behind [[ChatGPT]].
+Company behind [[GPT]]
 
 ## Backstory
 Founded by [[Sam Altman]], [[Ilya Sutskever]], [[Andrej Karpathy]] and [[Elon Musk]] in 2015 with a goal to beat [[DeepMind]] at making AGI and ASI.

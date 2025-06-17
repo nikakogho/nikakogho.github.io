@@ -9,6 +9,7 @@
 - [[Image Processing]]
 - [[AI Alignment]]
 - [[Turing Test]]
+- [[Information Theory]]
 
 ## Neural Networks
 - [[Neural Network]]
@@ -19,12 +20,27 @@
 - [[Mechanistic Interpretability]]
 - [[Embedding Space]]
 
+## Libraries
+- [[TensorFlow]]
+	- Keras
+- [[PyTorch]]
+
 ## Top AI Companies
 - [[OpenAI]]
 - [[DeepMind]]
 - [[Anthropic]]
 - [[Meta AI]]
 - [[xAI]]
+
+## Top LLMs
+- [[GPT]]
+- [[Gemini]]
+- [[Claude Sonnet]]
+- [[Grok]]
+- [[Llama]]
+- [[DeepSeek]]
+- [[Qwen]]
+- [[Mistral]]
 
 ## AI Agents
 - [[Model Context Protocol]]
@@ -45,6 +61,7 @@
 - [[Demis Hassabis]] - DeepMind
 - [[Ilya Sutskever]] - inventor of [[AlexNET]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
 - [[Dario Amodei]] - Anthropic
+- [[Elon Musk]] - xAI
 - [[Neel Nanda]] - [[Mechanistic Interpretability]] lead at DeepMind
 - [[Callum McDougall]] - mechanistic interpretability researcher at DeepMind
 - [[Andrej Karpathy]] - former OpenAI and Tesla AI

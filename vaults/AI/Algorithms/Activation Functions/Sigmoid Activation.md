@@ -1,4 +1,4 @@
-Activation function for [[Neural Network]]
+[[Activation Functions|Activation function]] for [[Neural Network]]
 
 Value between 0 and 1
 

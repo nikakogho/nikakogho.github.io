@@ -1,5 +1,12 @@
 {
   "uploadedImages": [
+    "ai/images/attention_calculation_matrix.jpeg",
+    "ai/images/attention_full_formula.jpeg",
+    "ai/images/attention_qkv.jpeg",
+    "ai/images/cross_entropy_loss_formula.png",
+    "ai/images/ml_joke.png",
+    "ai/images/multihead_attention.jpeg",
+    "ai/images/multihead_attention_concat.jpeg",
     "ai/images/pasted_image_20250410221708.png",
     "ai/images/pasted_image_20250410224227.png",
     "ai/images/pasted_image_20250416120152.png",
@@ -8,6 +15,10 @@
     "ai/images/pasted_image_20250416151557.png",
     "ai/images/pasted_image_20250416174047.png",
     "ai/images/pasted_image_20250416174120.png",
+    "ai/images/self_attention_logic.jpeg",
+    "ai/images/transformer_decoder.gif",
+    "ai/images/transformer_layer.png",
+    "ai/images/transformer_layers.png",
     "bioengineering/images/a_cool_polysaccharide_image.png",
     "bioengineering/images/body_systems_gif.gif",
     "bioengineering/images/cardiovascular_system.gif",
