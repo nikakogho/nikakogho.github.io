@@ -1,0 +1,37 @@
+- [ ] 100 NumPy exercises Google Colab [link](https://colab.research.google.com/drive/1LS8IgXE5zQ5bTNj43oVVBt45ourlra6S#scrollTo=249806a3)
+	- [ ] 34/100
+- [ ] [[ARENA]]
+	- [ ] [Chapter 0: Fundamentals](https://arena-chapter0-fundamentals.streamlit.app/)
+		- [ ] [Prerequisites](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part0_prereqs/0.0_Prerequisites_exercises.ipynb?t=20250618)
+			- [ ] [[Einstein Summation]]
+			- [ ] (0/3) Exercises
+		- [ ] [Ray Tracing](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part1_ray_tracing/0.1_Ray_Tracing_exercises.ipynb?t=20250618)
+			- [ ] (1/9) Exercises
+		- [ ] [CNNs & ResNets](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part2_cnns/0.2_CNNs_&_ResNets_exercises.ipynb?t=20250618)
+		- [ ] [Optimization](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part3_optimization/0.3_Optimization_exercises.ipynb?t=20250618)
+		- [ ] [Backprop](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part4_backprop/0.4_Backprop_exercises.ipynb?t=20250618)
+		- [ ] [VAEs & GANs](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part5_vaes_and_gans/0.5_VAEs_&_GANs_exercises.ipynb?t=20250618)
+	- [ ] [Chapter 1: Transformers and Mechanistic Interpretability](https://arena-chapter1-transformer-interp.streamlit.app/)
+	- [ ] [Chapter 2: Reinforcement Learning](https://arena-chapter2-rl.streamlit.app/)
+	- [ ] [Chapter 3: LLM Evaluations](https://arena-chapter3-llm-evals.streamlit.app/)
+	- [ ] Capstone Project ([Previous Capstone Projects](https://arena.education/previous-capstone-projects))
+- [ ] [Andrej Karpathy Neural Networks](https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
+	- [x] MicroGrad watched
+	- [x] MicroGrad hw
+	- [x] Makemore 1 watched
+	- [x] Makemore 1 hw
+	- [x] Makemore 2 watched
+	- [x] Makemore 2 hw
+	- [ ] Makemore 3 watched
+	- [ ] Makemore 3 hw
+	- [ ] Makemore 4 watched
+	- [ ] Makemore 4 hw
+	- [ ] Makemore 5 watched
+	- [ ] Makemore 5 hw
+	- [ ] Build GPT watched
+	- [ ] Build GPT hw
+	- [ ] State of GPT watched
+	- [ ] Build GPT Tokenizer watched
+	- [ ] Build GPT Tokenizer hw
+	- [ ] Reproduce GPT-2 watched
+	- [ ] Reproduce GPT-2 hw

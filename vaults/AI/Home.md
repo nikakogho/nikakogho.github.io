@@ -62,6 +62,7 @@
 - [[Ilya Sutskever]] - inventor of [[AlexNET]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
 - [[Dario Amodei]] - Anthropic
 - [[Elon Musk]] - xAI
+- [[Yann LeCunn]] - Meta AI
 - [[Neel Nanda]] - [[Mechanistic Interpretability]] lead at DeepMind
 - [[Callum McDougall]] - mechanistic interpretability researcher at DeepMind
 - [[Andrej Karpathy]] - former OpenAI and Tesla AI
@@ -69,8 +70,10 @@
 - [[Geoffrey Hinton]] - Nobel prize for inventing [[Backpropagation]]
 - [[Ray Kurzweil]] - futurist and former director of engineering at [[Google Brain]]
 - [[Paul Christiano]] - AI safety lead at [[US AI Safety Institute]]
+- [[Ashish Vaswani]] - inventor of [[Transformer]] architecture, former researcher at Google Brain
 
 ## Further
+- [[My Studies]]
 - [[ARENA]]
 - [[Neuromorphic Computing]]
 - [Harvard CS50 AI YouTube playlist](https://www.youtube.com/playlist?list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv)

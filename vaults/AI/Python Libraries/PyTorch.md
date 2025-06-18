@@ -167,3 +167,36 @@ for i, (batch_data, batch_labels) in enumerate(dataloader):
     print("  Data:\n", batch_data)
     print("  Labels:", batch_labels)
 ```
+
+## torch.linspace
+Better version of `range`
+Takes start value, end value, number of steps, and optional `out` so you can put a tensor to write output in (will return a new tensor if nothing passed in `out`)
+
+### Example
+``` python
+import torch
+
+def make_rays_1d(num_pixels: int, y_limit: float) -> Tensor:
+    """
+    num_pixels: The number of pixels in the y dimension. Since there is one ray per pixel, this is also the number of rays.
+    y_limit: At x=1, the rays should extend from -y_limit to +y_limit, inclusive of both endpoints.
+    Returns: shape (num_pixels, num_points=2, num_dim=3) where the num_points dimension contains (origin, direction) and the num_dim dimension contains xyz.
+    
+    Example of make_rays_1d(9, 1.0): [
+        [[0, 0, 0], [1, -1.0, 0]],
+        [[0, 0, 0], [1, -0.75, 0]],
+        [[0, 0, 0], [1, -0.5, 0]],
+        ...
+        [[0, 0, 0], [1, 0.75, 0]],
+        [[0, 0, 0], [1, 1, 0]],
+    ]
+    """
+
+    rays = torch.zeros((num_pixels, 2, 3), dtype=t.float32)
+    torch.linspace(-y_limit, y_limit, num_pixels, out=rays[:, 1, 1])
+    rays[:, 1, 0] = 1
+    return rays
+
+rays1d = make_rays_1d(9, 10.0)
+fig = render_lines_with_plotly(rays1d)
+```
