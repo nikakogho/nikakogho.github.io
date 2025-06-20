@@ -22,8 +22,8 @@
 	- [x] Makemore 1 hw
 	- [x] Makemore 2 watched
 	- [x] Makemore 2 hw
-	- [ ] Makemore 3 watched
-	- [ ] Makemore 3 hw
+	- [x] Makemore 3 watched
+	- [x] Makemore 3 hw
 	- [ ] Makemore 4 watched
 	- [ ] Makemore 4 hw
 	- [ ] Makemore 5 watched

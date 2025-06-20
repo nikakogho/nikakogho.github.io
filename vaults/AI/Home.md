@@ -63,7 +63,8 @@
 - [[Dario Amodei]] - Anthropic
 - [[Elon Musk]] - xAI
 - [[Yann LeCunn]] - Meta AI
-- [[Neel Nanda]] - [[Mechanistic Interpretability]] lead at DeepMind
+- [[Chris Olah]] - researcher at Anthropic, invented [[Mechanistic Interpretability]]
+- [[Neel Nanda]] - Mechanistic Interpretability lead at DeepMind
 - [[Callum McDougall]] - mechanistic interpretability researcher at DeepMind
 - [[Andrej Karpathy]] - former OpenAI and Tesla AI
 - [[Andrew Ng]] - leading AI educator and researcher

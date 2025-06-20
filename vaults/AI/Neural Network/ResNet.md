@@ -6,12 +6,18 @@ Used for [[Stable Diffusion]]
 
 A residual block is a [[Neural Network]] that uses this shortcut
 
+![ResNet.png](resnet.png)
+![ResNet_2.png](resnet_2.png)
+
 ## Main Idea
+
 If a neural network is too deep in the sense that behavior could've been learned by way fewer neurons and the rest must now simply pass over identity functions, it is much easier to learn that identity if we formulate a "skip connection" that lets us wire a result directly through skipping some channels
 
-## ResidualBlock
+## Residual Block
+
 Part of such a neural network
-``` python
+
+```python
 import torch
 import torch.nn as nn
 from einops.layers.torch import Rearrange
@@ -57,8 +63,10 @@ class ResidualBlock(nn.Module):
 ```
 
 ## ResNet
+
 Network that uses residual block to potentially skip some logic
-``` python
+
+```python
 class ResNet(nn.Module):
     def __init__(self, block, num_blocks, num_classes=10):
         super(ResNet, self).__init__()

@@ -11,8 +11,15 @@ Good video for this from [Harvard](https://www.youtube.com/watch?v=J1QD9hLDEDY)
 ## [[Convolutional Neural Network]]
 Used in [[Computer Vision]]
 
+### [[ResNet]]
+A CNN allowing skips because deep neural networks sometimes can’t learn due to [[Degradation Problem In Deep Neural Networks]]
+
 ## [[Recurrent Neural Network]]
 Used in active tasks where we must keep track of attention and history (like in [[Transformer|transformers]] like [[ChatGPT]])
+
+Types:
+- [[Long Short-Term Memory]]
+- [[Gated Recurrent Unit (GRU)]]
 
 ## Adversarial Neural Network
 2 or more neural networks train by competing with each other
@@ -21,5 +28,10 @@ Used in active tasks where we must keep track of attention and history (like in 
 Many layers.
 Technically still same as if there was only 1 hidden network, as stated by [[Universal Approximation Theorem]], but deep neural network needs fewer total neurons because it can learn features and be more adaptable.
 
-### [[ResNet]]
-Because deep neural networks sometimes can’t learn due to [[Degradation Problem In Deep Neural Networks]]
+## [[U-Net]]
+Similar to ResNet, for [[Stable Diffusion]]
+
+## [[Transformer]]
+State-of-the-art solution for making best beural networks.
+
+Uses [[Attention]] and MLP

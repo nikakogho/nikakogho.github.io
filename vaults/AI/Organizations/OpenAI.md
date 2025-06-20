@@ -16,6 +16,7 @@ Musk eventually left the company due to some disagreements (basically he wanted 
 		- [[Tom Brown]] - lead engineer, led GPT-3, left in 2020
 		- [[Benjamin Mann]] - researcher, 2020
 		- [[Sam McCandlish]] - researcher, 2020
+		- [[Chris Olah]] - inventor of [[Mechanistic Interpretability]], 2020
 	- [[Jan Leike]] - former co-head of Superalignment team, left in May 2024 for safety concerns
 	- [[Pavel Izmailov]] - alignment researcher, left in May 2024
 	- [[Steven Bills]] - technical staff, left in May 2024
