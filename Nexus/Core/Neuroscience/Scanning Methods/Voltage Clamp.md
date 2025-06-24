@@ -1,0 +1,1 @@
+Measure ion currents in neurons while holding membrane voltage constant

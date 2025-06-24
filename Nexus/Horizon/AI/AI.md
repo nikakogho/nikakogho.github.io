@@ -1,6 +1,6 @@
 ## Core AI Concepts
 - [[Machine Learning]]
-- [[Horizon/AI/Search/Search in Computing]]
+- [[Search in Computing]]
 - [[Knowledge in Computing]]
 - [[Uncertainty]]
 - [[Optimization]]
