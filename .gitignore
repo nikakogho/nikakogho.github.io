@@ -38,3 +38,14 @@ vaults/*.svg
 
 scripts/aggregated.txt
 vaults/**/workspace.json
+
+Nexus/*/images
+Nexus/**/images
+Nexus/*/images/*
+Nexus/*.png
+Nexus/*.jpg
+Nexus/*.jpeg
+Nexus/*.gif
+Nexus/*.webp
+Nexus/*.svg
+Nexus/.obsidian
