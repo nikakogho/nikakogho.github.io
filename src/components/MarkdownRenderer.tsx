@@ -11,7 +11,6 @@ import { getImageUrl } from '../utils/imageHelper'; // Import your updated image
 // Define the expected properties for the component
 interface MarkdownRendererProps {
   markdown: string; // The raw Markdown content
-  vaultId: string; // The ID of the current vault (for URL generation)
   allVaultNotes: VaultNote[]; // The list of all notes in the current vault, needed for link resolution
 }
 
