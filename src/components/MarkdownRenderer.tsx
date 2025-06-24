@@ -20,7 +20,7 @@ interface MarkdownRendererProps {
  * HTML rendering enabled, and handling for non-existent links.
  * Uses user-provided base code. Includes workaround for potential remark-wiki-link bug.
  */
-const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, allVaultNotes }) => {
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, allVaultNotes }) => {
 
   // --- Prepare data for remark-wiki-link ---
   const existingPermalinks = useMemo(() => {

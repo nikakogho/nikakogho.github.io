@@ -61,7 +61,6 @@ const BlogPostPage: React.FC = () => {
             {/* Pass 'Blog' as vaultId for image resolution if needed, and empty notes list */}
             <MarkdownRenderer
                 markdown={post.content}
-                vaultId={'Blog'} // Use 'Blog' so getImageUrl can construct paths if needed
                 allVaultNotes={dummyVaultNotes} // Pass empty array - no vault context here
             />
 

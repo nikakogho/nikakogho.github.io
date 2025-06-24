@@ -1,6 +1,6 @@
 // src/pages/VaultLayout.tsx
 import React, { useState, useMemo } from 'react'; // Added useState
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import FileTreeNode from '../components/FileTreeNode'; // Import tree node component
 // Import helpers and types
 import {

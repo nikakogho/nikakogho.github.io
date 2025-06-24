@@ -69,7 +69,6 @@ const NotePage: React.FC = () => {
       {/* Render the actual markdown content */}
       <MarkdownRenderer
           markdown={content}
-          vaultId={vaultId!}
           allVaultNotes={allVaultNotes} // Pass the list from context
       />
     </>
