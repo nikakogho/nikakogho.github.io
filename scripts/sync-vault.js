@@ -38,8 +38,7 @@ cloudinary.config({
     secure: true,
 });
 
-const vaultBaseDirs = (process.env.VAULT_DIRS || '')
-    .split(',')
+const vaultBaseDirs = ['Nexus']
     .map(d => d.trim())
     .filter(Boolean);
 
