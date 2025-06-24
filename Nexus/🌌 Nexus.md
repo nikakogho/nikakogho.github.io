@@ -27,7 +27,7 @@ Front-line disciplines where new realities are forged.
 • [[Bioengineering]]
 • [[Nanotechnology]]
 • [[Neurotech]]
-• [[Robots]]
+• [[Robotics]]
 • [[Space Tech]]
 
 ### [[People]]
