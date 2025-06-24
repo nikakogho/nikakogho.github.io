@@ -3,6 +3,8 @@ Professor of robotics at Carnegie Mellon University.
 
 High contribution in robotic manipulation and [[Self-Driving Cars]]
 
+Man behind [[Moravec's Paradox]]
+
 ## Cool Books
 Mind Children: The Future of Robot and Human Intelligence 
 (1988)

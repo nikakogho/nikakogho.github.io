@@ -38,7 +38,7 @@
 - **Chapter 9 (Proposed): The Digital Architect: Software, AI, and Computation in Advancing Tissue Engineering** (This will be a dedicated chapter to deeply explore simulation, AI/ML, and software's role, including vascular and neural tissue engineering applications).
     
 
-**Current Position:** We are in **Chapter 2**, discussing the fifth "First Principle of Cell Behavior": **Cell Migration**. The user is about to answer questions related to the importance of migration in scaffold colonization, the use of smart scaffolds to guide migration, and software analogies for cell migration.
+**Current Position:** We are in **Chapter 3**, discussing quality control on ECM scaffold.
 
 **User Profile:** The learner is a software engineer, interested in the fundamental "how it works" of tissue engineering and specifically how software can be used to model and advance the field. He already understands cell biology and biotech to some extent so no need to explain what cell is or what transcription and translation are and such high school level cell biology topics
 

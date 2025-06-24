@@ -10,4 +10,5 @@ Sometimes also for [[Sensor Fission]], [[Action-Oriented Sensor Fusion]], and [[
 - [[Touch Sensors]]
 - [[Inertial Measurement Unit]]
 - [[Gyroscope]]
+- [[Sonar Sensor]]
 - [[Sonar Ring]]

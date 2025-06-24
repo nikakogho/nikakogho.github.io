@@ -4,7 +4,7 @@ Hot topic here is [[3D Bioprinting]].
 **Tissue Engineering Triad**:
 1. [[Cell|Cells]]
 2. [[ECM Scaffold]]
-3. [[Cell Signaling|Signaling]] molecules - growth factors
+3. [[Tissue Signaling Molecules|Signaling molecules]] - growth factors
 
 [[Cell Sources for Tissue Engineering]]
 

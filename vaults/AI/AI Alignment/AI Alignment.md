@@ -3,6 +3,7 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 ## Proposed ways
 - [[Mechanistic Interpretability]]
 - Reward Modeling - making better (more transparent and less gameable) reward ideas for [[RLHF]]
+- [[Constitutional AI]]
 - Debate - two AIs discuss an idea and human judges it
 - Iterated Amplification (or Iterated Distillation and Amplification - IDA):
 	- Starting with task humans can do

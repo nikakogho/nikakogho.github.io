@@ -14,4 +14,4 @@
 
 ![Pasted_image_20230224210009.png](pasted_image_20230224210009.png)
 
-Regulated by internal (signaling chemicals) and external systems (proteins called *growth factors* binding to cell)
+Regulated by internal (signaling chemicals) and external systems (proteins called [[Growth Factors]] binding to cell, like **mitogens**)

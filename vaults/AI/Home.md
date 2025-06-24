@@ -62,7 +62,7 @@
 - [[Ilya Sutskever]] - inventor of [[AlexNET]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
 - [[Dario Amodei]] - Anthropic
 - [[Elon Musk]] - xAI
-- [[Yann LeCunn]] - Meta AI
+- [[Yann LeCun]] - Meta AI
 - [[Chris Olah]] - researcher at Anthropic, invented [[Mechanistic Interpretability]]
 - [[Neel Nanda]] - Mechanistic Interpretability lead at DeepMind
 - [[Callum McDougall]] - mechanistic interpretability researcher at DeepMind
@@ -74,6 +74,7 @@
 - [[Ashish Vaswani]] - inventor of [[Transformer]] architecture, former researcher at Google Brain
 
 ## Further
+- [[My Experiments]]
 - [[My Studies]]
 - [[ARENA]]
 - [[Neuromorphic Computing]]
