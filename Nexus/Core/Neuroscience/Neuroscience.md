@@ -1,3 +1,6 @@
+Study of the [[Brain]].
+We mostly focus on the human brain.
+
 - [[Cellular Neuroscience]]
 - [[Nervous System Parts]]
 - [[Senses]]
