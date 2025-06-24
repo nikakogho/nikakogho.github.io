@@ -5,5 +5,6 @@ Builds on core [[Neuroscience|neuroscience]]
 - [[Brain Stimulation Methods]]
 
 - [[Neurotech Companies]]
+- [[2025 Neurotech Events]]
 - [[Nice Readings For NeuroTech]]
 - [[Notable People in Neurotech]]
