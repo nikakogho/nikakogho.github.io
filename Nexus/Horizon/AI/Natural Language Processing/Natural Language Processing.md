@@ -26,35 +26,45 @@ Each time we find a word that comes after this n-gram we put it in this n-gram's
 Then when predicting next word for this n-gram we randomly draw from this bag
 
 ### Naive Bayes
+
 P(b | a) = P(a | b) \* P(b) / P(a)
 
 We can simplify a complex conditional and say that if we are asked to calculate a given b, c, d, e we can say it like this
-![Pasted\_image\_20250416174120.png](Another%20Bayesian%20Probabilities%20Table.png)
-![Pasted\_image\_20250416174047.png](Bayesian%20Probabilities%20Table.png)Basically to calculate P(a) we calculate
-Positive P = P(b | a) * P(c | a) * P(d | a) * P(d | a) * P(e | a)
-and Negative P = P(b | ¬a) * P(c | ¬a) * P(d | ¬a) * P(e | ¬a)
+![Another_Bayesian_Probabilities_Table.png](another_bayesian_probabilities_table.png)
+
+![Bayesian_Probabilities_Table.png](bayesian_probabilities_table.png)
+
+Basically to calculate P(a) we calculate
+Positive P = P(b | a) \* P(c | a) \* P(d | a) \* P(d | a) \* P(e | a)
+and Negative P = P(b | ¬a) \* P(c | ¬a) \* P(d | ¬a) \* P(e | ¬a)
 
 and normalize them so positive P + negative P = 1 and our positive P then is P(a)
 
 #### Additive smoothing
+
 To make sure we don't exclude a possibility just because one key was never found (just because word "grandson" was never mentioned in a positive message, the previous logic would assume all messages must be negative), we add a constant value **α** to all probabilities to avoid multiplying by zero
 
 ##### Laplace Smoothing
+
 α = 1
 
 ## Information retrieval
+
 Find info based on query
 
 ### Topic modeling
+
 Find out what a document is about
 
 ### tf-tf-idf
+
 tf = term frequency = how many times this word appears
 idf = inverse document frequency = how common/rare this word is = log (total documents / documents with this word)
 
-tf-idf = tf * idf and is used to measure importance of words (maximized for words that show up many times but in few documents)
+tf-idf = tf \* idf and is used to measure importance of words (maximized for words that show up many times but in few documents)
 
 ## Vector Representation of Words
+
 Transform words to vectors, with similar meaning words having similar values
 Words can be said to have similar meaning if they appear in similar context
 

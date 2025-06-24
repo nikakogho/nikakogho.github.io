@@ -3,4 +3,4 @@ CNV
 Sections of genome are repeated
 Number of repeats varies between individuals
 
-![Pasted_image_20240918121854.png](Copy%20Number%20Variation.png)
+![Copy_Number_Variation.png](copy_number_variation.png)

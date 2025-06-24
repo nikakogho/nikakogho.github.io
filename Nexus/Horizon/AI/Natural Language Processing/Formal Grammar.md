@@ -2,6 +2,7 @@ Rules to generate language
 Part of [[Natural Language Processing]]
 
 ## Context-Free Grammar
+
 Generate sentences by replacing one symbol with other symbols
 Context-free because does not depend on previous nor on future sentences
 
@@ -34,6 +35,6 @@ S -> NP VP
 NP may be "city" or "the city"
 
 S can be "The girl saw the city"
-![Pasted\_image\_20250416151557.png](Context%20Free%20Grammar.png)
+![Context_Free_Grammar.png](context_free_grammar.png)
 
 **nltk** is a python library for this
