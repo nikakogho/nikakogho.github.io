@@ -1,0 +1,1 @@
+2D model shows [[Chemistry/Bonds|covalent bonds]] as lines and unbonded valence [[Electron|electrons]] (electrons in outer shell that can move to other atoms) as dots.

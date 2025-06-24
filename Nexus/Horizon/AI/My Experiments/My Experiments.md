@@ -1,0 +1,2 @@
+- [[Turing Test Games Between LLMs]]
+- [[Testing Personalities of LLMs]]

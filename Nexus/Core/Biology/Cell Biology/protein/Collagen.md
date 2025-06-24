@@ -1,0 +1,1 @@
+Structural [[Protein|protein]] that gives strength to skin, bones, tendons, and other connector tissues

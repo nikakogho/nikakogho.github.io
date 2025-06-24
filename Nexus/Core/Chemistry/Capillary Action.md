@@ -1,0 +1,1 @@
+Movement of water in porous material caused by [[Adhesion]], [[Cohesion]] and [[Surface Tension]].

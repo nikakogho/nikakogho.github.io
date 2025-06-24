@@ -1,0 +1,15 @@
+- [[Sam Altman]] - OpenAI
+- [[Demis Hassabis]] - DeepMind
+- [[Ilya Sutskever]] - inventor of [[AlexNET]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
+- [[Dario Amodei]] - Anthropic
+- [[Elon Musk]] - xAI
+- [[Yann LeCun]] - Meta AI
+- [[Chris Olah]] - researcher at Anthropic, invented [[Mechanistic Interpretability]]
+- [[Neel Nanda]] - Mechanistic Interpretability lead at DeepMind
+- [[Callum McDougall]] - mechanistic interpretability researcher at DeepMind
+- [[Andrej Karpathy]] - former OpenAI and Tesla AI
+- [[Andrew Ng]] - leading AI educator and researcher
+- [[Geoffrey Hinton]] - Nobel prize for pioneering work on neural networks and [[Backpropagation]]
+- [[Ray Kurzweil]] - futurist and former director of engineering at [[Google Brain]]
+- [[Paul Christiano]] - AI safety lead at [[US AI Safety Institute]]
+- [[Ashish Vaswani]] - inventor of [[Transformer]] architecture, former researcher at Google Brain
