@@ -19,13 +19,13 @@ function App() {
 
           <Route path="/secrets/*" element={<SecretPage />} />
 
-          {/* Vault Routes (Existing) */}
-          <Route path="/vaults/:vaultId" element={<VaultLayout />}>
+          {/* Vault Routes */}
+          <Route path="/nexus" element={<VaultLayout />}>
             <Route index element={<VaultHomeRedirect />} />
             <Route path="notes/*" element={<NotePage />} />
           </Route>
 
-          {/* Blog Routes (New) */}
+          {/* Blog Routes*/}
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
 

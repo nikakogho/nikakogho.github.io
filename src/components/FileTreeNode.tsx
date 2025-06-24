@@ -1,15 +1,15 @@
 import React from 'react'; // Removed useState
-import { Link, useParams, useLocation } from 'react-router-dom'; // Added useLocation
+import { Link, useLocation } from 'react-router-dom'; // Added useLocation
 import { TreeNode } from '../utils/markdownHelper';
 
 interface FileTreeNodeProps {
   node: TreeNode;
   expandedFolders: Record<string, boolean>;
   onToggleFolder: (folderPath: string) => void;
+  vaultId: string;
 }
 
-const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onToggleFolder }) => {
-  const { vaultId } = useParams<{ vaultId: string }>();
+const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onToggleFolder, vaultId }) => {
   const location = useLocation(); // Get current location
 
   // Determine if folder is open based on props, default to false (closed)
@@ -44,6 +44,7 @@ const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onTo
               <FileTreeNode
                   key={childNode.id}
                   node={childNode}
+                  vaultId={vaultId}
                   expandedFolders={expandedFolders}
                   onToggleFolder={onToggleFolder}
               />
@@ -54,7 +55,7 @@ const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onTo
     );
   } else {
     // Construct the link path (ensure hash is included)
-    const filePath = `/vaults/${vaultId}/notes/${node.path}`;
+    const filePath = `/nexus/notes/${node.path}`;
     return (
       // Add active class if this is the currently viewed note
       <li className={`tree-node file-node ${isActiveFile ? 'active-file' : ''}`}>

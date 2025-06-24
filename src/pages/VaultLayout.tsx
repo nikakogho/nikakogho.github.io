@@ -4,14 +4,14 @@ import { Outlet, useParams } from 'react-router-dom';
 import FileTreeNode from '../components/FileTreeNode'; // Import tree node component
 // Import helpers and types
 import {
-    getStructuredVaultNotes,
+    getStructuredNexusNotes,
     VaultNote,
     buildFileTree} from '../utils/markdownHelper';
 // Import an icon for the toggle button (optional)
 import { FiMenu, FiX } from 'react-icons/fi';
 
 // Import module metadata (eager, for immediate access to keys/structure)
-const markdownModulesMeta = import.meta.glob('/vaults/**/*.md', { eager: true });
+const markdownModulesMeta = import.meta.glob('/Nexus/**/*.md', { eager: true });
 
 // Define the context type that will be passed down via Outlet
 export interface VaultOutletContext {
@@ -19,7 +19,7 @@ export interface VaultOutletContext {
 }
 
 const VaultLayout: React.FC = () => {
-    const { vaultId } = useParams<{ vaultId: string }>();
+    const vaultId = "Nexus";
 
     // --- State for Sidebar Visibility ---
     const [isSidebarVisible, setIsSidebarVisible] = useState(false); // Sidebar invisible by default
@@ -30,14 +30,12 @@ const VaultLayout: React.FC = () => {
 
     // --- Calculate Notes and Tree Structure (memoized) ---
     const allVaultNotes = useMemo(() => {
-        if (!vaultId) return [];
-        return getStructuredVaultNotes(vaultId, markdownModulesMeta);
-    }, [vaultId]);
+        return getStructuredNexusNotes(markdownModulesMeta);
+    }, []);
 
     const fileTree = useMemo(() => {
-        if (!vaultId) return null;
-        return buildFileTree(vaultId, markdownModulesMeta);
-    }, [vaultId]);
+        return buildFileTree(markdownModulesMeta);
+    }, []);
     // --- End Data Calculation ---
 
     // --- Handlers ---
@@ -72,6 +70,7 @@ const VaultLayout: React.FC = () => {
                                 <FileTreeNode
                                     key={node.id}
                                     node={node}
+                                    vaultId={vaultId}
                                     expandedFolders={expandedFolders}
                                     onToggleFolder={toggleFolderExpansion}
                                 />

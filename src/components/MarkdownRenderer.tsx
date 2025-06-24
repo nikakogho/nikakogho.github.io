@@ -46,7 +46,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
   // Href template function
   const wikiHrefTemplate = (permalink: string): string => {
     // Generate the full href for the link component
-    return `/vaults/${vaultId}/notes/${permalink}`;
+    return `/nexus/notes/${permalink}`;
   };
   // --- End WikiLink Configuration Data ---
 
@@ -76,7 +76,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
             // --- Manual Check for Existence ---
             // Extract the permalink (resolved path) from the generated href
             let permalink = '';
-            const hrefParts = href.split('/notes/');
+            const hrefParts = href.split('/nexus/notes/');
             if (hrefParts.length > 1) {
                 permalink = hrefParts[1];
             }
@@ -119,7 +119,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, vaultId, 
         img: ({ node, src, alt, ...props }) => {
           let resolvedSrc = src || '';
           if (src && !src.startsWith('http')) {
-              resolvedSrc = getImageUrl(src, vaultId!);
+              resolvedSrc = getImageUrl(src, 'nexus');
           }
           return <img src={resolvedSrc} alt={alt || ''} {...props} loading="lazy" />;
         }

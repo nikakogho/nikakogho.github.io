@@ -11,10 +11,12 @@ import {
 import { VaultOutletContext } from './VaultLayout';
 
 // Import markdown content modules (dynamic, raw)
-const markdownContentModules = import.meta.glob('/vaults/**/*.md', { eager: false, as: 'raw' });
+const markdownContentModules = import.meta.glob('/Nexus/**/*.md', { eager: false, as: 'raw' });
 
 const NotePage: React.FC = () => {
-  const { vaultId, '*': notePath } = useParams<{ vaultId: string; '*': string }>();
+  const { '*': notePath } = useParams<{ '*': string }>();
+  const vaultId = "Nexus";
+
   // --- Get allVaultNotes from parent VaultLayout context ---
   const { allVaultNotes } = useOutletContext<VaultOutletContext>();
 
@@ -30,7 +32,7 @@ const NotePage: React.FC = () => {
       setIsLoading(true); setError(null); setContent(null); setLoadedNormalizedPath('');
       if (!vaultId || notePath === undefined) { setError("Invalid vault or note path."); setIsLoading(false); return; }
       const normalizedPath = normalizeNoteName(notePath || '');
-      const moduleKey = findNoteModuleKey(normalizedPath, vaultId, markdownContentModules);
+      const moduleKey = findNoteModuleKey(normalizedPath, markdownContentModules);
       if (moduleKey && markdownContentModules[moduleKey]) {
         try {
           const moduleLoader = markdownContentModules[moduleKey] as () => Promise<string>;
@@ -55,8 +57,8 @@ const NotePage: React.FC = () => {
 
   // --- Render loading/error states ---
   if (isLoading && !content) { return <div>Loading note...</div>; }
-  if (error) { return <div>Error: {error} <Link to={`/vaults/${vaultId}`}>Back to vault</Link></div>; }
-  if (!content) { return <div>Note content not available. <Link to={`/vaults/${vaultId}`}>Back to vault</Link></div>; } // Handle case where content is null after loading
+  if (error) { return <div>Error: {error} <Link to="/nexus">Back to Nexus</Link></div>; }
+  if (!content) { return <div>Note content not available. <Link to="/nexus">Back to Nexus</Link></div>; }
 
   // --- Render Note Content Only ---
   // The surrounding layout (sidebar, toggle button) is now handled by VaultLayout

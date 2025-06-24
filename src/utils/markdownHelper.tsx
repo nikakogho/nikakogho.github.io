@@ -33,11 +33,10 @@ export interface TreeNode {
   /**
    * Generates a structured list of all notes within a specific vault from the Vite module glob results.
    */
-  export function getStructuredVaultNotes(
-    vaultId: string,
+  export function getStructuredNexusNotes(
     modules: Record<string, any> // Result of import.meta.glob
   ): VaultNote[] {
-    const vaultPrefix = `/vaults/${vaultId}/`;
+    const vaultPrefix = `/Nexus/`;
     const notes: VaultNote[] = [];
   
     for (const key in modules) {
@@ -114,25 +113,13 @@ export interface TreeNode {
   
   // --- Other Helper Functions (Keep if still needed) ---
   
-  // Example: Function to get paths for sidebar (can use getStructuredVaultNotes)
-  export function getVaultNotePathsForSidebar(
-      vaultId: string,
-      modules: Record<string, any>
-  ): { path: string; displayName: string }[] {
-       return getStructuredVaultNotes(vaultId, modules).map(note => ({
-           path: note.fullPath, // Use the full normalized path for the URL
-           displayName: note.displayName
-       }));
-  }
-  
   // Finds the module key matching a normalized note path within a specific vault
   // NOTE: Ensure this works correctly with the modules object passed to it (eager: false vs eager: true)
   export function findNoteModuleKey(
       normalizedPath: string,
-      vaultId: string,
       modules: Record<string, () => Promise<any>> | Record<string, any>
   ): string | undefined {
-      const vaultPrefix = `/vaults/${vaultId}/`;
+      const vaultPrefix = `/Nexus/`;
       return Object.keys(modules).find(key => {
           if (!key.startsWith(vaultPrefix) || !key.endsWith('.md')) return false;
           const relativePath = key.substring(vaultPrefix.length, key.length - 3);
@@ -144,10 +131,10 @@ export interface TreeNode {
 /**
  * Builds a hierarchical file tree structure from Vite module glob results.
  */
-export function buildFileTree(vaultId: string, modules: Record<string, any>): TreeNode {
+export function buildFileTree(modules: Record<string, any>): TreeNode {
   // Root node represents the vault itself
-  const root: TreeNode = { id: vaultId, name: vaultId, type: 'folder', path: '', children: [] };
-  const vaultPrefix = `/vaults/${vaultId}/`;
+  const root: TreeNode = { id: 'nexus', name: 'Nexus', type: 'folder', path: '', children: [] };
+  const vaultPrefix = `/Nexus/`;
   // Use a map to keep track of created folder nodes for efficient lookup
   const folderNodes = new Map<string, TreeNode>();
   folderNodes.set('', root); // Root folder corresponds to empty relative path
