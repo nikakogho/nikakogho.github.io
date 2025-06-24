@@ -14,21 +14,21 @@ If those ambitions excite you, dive in and contribute.
 ### Core
 The bedrock: laws, equations, mechanisms—everything that underlies reality.
 
-• [[Maths]]
-• [[Physics]]
-• [[Chemistry]]
-• [[Biology]]
-• [[Neuroscience]]
+- [[Maths]]
+- [[Physics]]
+- [[Chemistry]]
+- [[Biology]]
+- [[Neuroscience]]
 
 ### Horizon
 Front-line disciplines where new realities are forged.
 
-• [[AI]]
-• [[Bioengineering]]
-• [[Nanotechnology]]
-• [[Neurotech]]
-• [[Robotics]]
-• [[Space Tech]]
+- [[AI]]
+- [[Bioengineering]]
+- [[Nanotechnology]]
+- [[Neurotech]]
+- [[Robotics]]
+- [[Space Tech]]
 
 ### [[People]]
 Canonical profiles of thinkers, builders & visionaries referenced throughout Nexus.
