@@ -1,3 +1,0 @@
-- Hydrogen bond
-- Dipole-dipole
-- London dispersion forces - temporary dipoles

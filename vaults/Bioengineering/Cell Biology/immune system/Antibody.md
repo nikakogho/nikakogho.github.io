@@ -1,1 +1,0 @@
-A [[Protein]] produced by [[Immune System]] when detecting harmful substances [[Antigen|antigens]].

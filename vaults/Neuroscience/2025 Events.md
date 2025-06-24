@@ -1,3 +1,0 @@
-- [School brainhack](https://school-brainhack.github.io/)
-- Neuromatch Academy
-- [[BR41N io]]

@@ -1,3 +1,0 @@
-Similar to [[Soyuz]]
-
-TODO

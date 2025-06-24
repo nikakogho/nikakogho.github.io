@@ -1,1 +1,0 @@
-[[Photosynthesis|Photosynthetic]] [[Eukaryotes|eukaryotes]] of [[Kingdom|kingdom]] Plantae.

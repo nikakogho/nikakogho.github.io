@@ -1,1 +1,0 @@
-[[Hydrogen|H]]<sub>2</sub>[[Sulfur|S]][[Oxygen|O]]<sub>4</sub> - sulfuric acid

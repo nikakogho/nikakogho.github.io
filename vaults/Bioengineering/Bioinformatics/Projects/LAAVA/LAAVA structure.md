@@ -1,7 +1,0 @@
-- Python codes
-	- summarize_AAV_alignment.py - does main stuff (TODO details)
-	- get_flipflop_config.py - TODO
-	- prepare_annotation.py - TODO
-- R codes
-	- calculate_rdata.R - TODO
-	- create_report.R - TODO

@@ -1,1 +1,0 @@
-Single-celled [[Animals]] either free-living or [[Parasites|parasytic]] feeding on microorganisms or [[Tissue]] and debris

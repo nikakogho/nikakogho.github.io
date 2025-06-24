@@ -1,3 +1,0 @@
-Non-invasive EEG
-
-TODO

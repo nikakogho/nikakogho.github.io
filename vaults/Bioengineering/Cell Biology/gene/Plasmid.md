@@ -1,1 +1,0 @@
-Small circular [[DNA]] molecule in [[Bacteria|bacteria]] and other microscopic organisms.

@@ -1,1 +1,0 @@
-[[Coenzymes|Coenzyme]] serving as main unit of energy in most organisms.

@@ -1,1 +1,0 @@
-Space around atoms where [[Electron|electrons]] are located.

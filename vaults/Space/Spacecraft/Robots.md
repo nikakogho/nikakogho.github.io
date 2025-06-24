@@ -1,3 +1,0 @@
-- [[International Space Station]]
-    - [[Canadarm2]]
-    - [[Dextre]]

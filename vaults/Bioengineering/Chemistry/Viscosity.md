@@ -1,1 +1,0 @@
-Resistance to liquid motion
