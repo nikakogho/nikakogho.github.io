@@ -33,6 +33,9 @@ Front-line disciplines where new realities are forged.
 ### [[People]]
 Canonical profiles of thinkers, builders & visionaries referenced throughout Nexus.
 
+### [[Organizations Pushing The Horizon]]
+Will be good to join them or compete with them
+
 ---
 
 ## 🚀 Guiding questions that shape every note

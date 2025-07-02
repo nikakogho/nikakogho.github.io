@@ -12,3 +12,5 @@ Sometimes also for [[Sensor Fission]], [[Action-Oriented Sensor Fusion]], and [[
 - [[Gyroscope]]
 - [[Sonar Sensor]]
 - [[Sonar Ring]]
+- [[RGB-D Camera]]
+- [[Point Cloud Sensor]]

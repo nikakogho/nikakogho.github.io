@@ -1,0 +1,24 @@
+- AI
+	- [[OpenAI]]
+	- [[DeepMind]]
+	- [[Anthropic]]
+	- [[Meta AI]]
+	- [[xAI]]
+- [[Neurotech Companies|Neurotech]]
+	- [[Neuralink]]
+	- [[Synchron]]
+- Robotics
+	- [[Boston Dynamics]]
+	- [[Tesla]]
+	- [[Clone Robotics]]
+	- [[Unitree G1|Unitree]]
+- Bioengineering
+	- [[Colossal Biosciences]]
+	- [[FormBio]]
+- Space
+	- [[SpaceX]]
+	- [[NASA]]
+	- [[European Space Agency]]
+	- [[Axios Space]]
+- Cross-discipline
+	- [[DARPA]]
