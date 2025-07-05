@@ -20,3 +20,9 @@ Involved in wound healing, angiogenesis and development.
 Found in high dose in blood platelets.
 Strong **chemoattractant** and **mitogen** (stimulates proliferation) for fibroblasts, smooth muscle cells and other mesenchymal cells.
 Key role in wound healing by bringing repair cells to injury site
+
+## Nerve Growth Factor (NGF)
+Needed for innervation
+
+## Brain-Derived Neurotrophic Factor (BDNF)
+Also for innervation

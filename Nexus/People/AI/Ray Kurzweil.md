@@ -1,13 +1,14 @@
 Pioneer in
 - Pattern recognition
 - Speech synthesis
-- Optical chatacter recognition
+- Optical character recognition
 
 Futurist, author of famous books like
 - The Age of Intelligent Machines (1990)
 - The Age of Spiritual Machines (1999)
 - The Singularity Is Near (2005)
 - How To Create A Mind (2012)
+- The Singularity Is Nearer (2024)
 
 Bachelor in CS at MIT studying under AI pioneer [[Marvin Minsky]]
 
