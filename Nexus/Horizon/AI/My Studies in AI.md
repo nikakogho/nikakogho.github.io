@@ -24,14 +24,16 @@
 	- [x] Makemore 2 hw
 	- [x] Makemore 3 watched
 	- [x] Makemore 3 hw
-	- [ ] Makemore 4 watched
-	- [ ] Makemore 4 hw
-	- [ ] Makemore 5 watched
-	- [ ] Makemore 5 hw
+	- [x] Makemore 4 watched
+	- [x] Makemore 4 hw
+	- [x] Makemore 5 watched
+	- [x] Makemore 5 hw
 	- [ ] Build GPT watched
 	- [ ] Build GPT hw
-	- [ ] State of GPT watched
+	- [x] State of GPT watched
 	- [ ] Build GPT Tokenizer watched
 	- [ ] Build GPT Tokenizer hw
 	- [ ] Reproduce GPT-2 watched
 	- [ ] Reproduce GPT-2 hw
+- [ ] [MIT Deep Learning](https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI)
+	- [ ] (2/10) Videos Watched

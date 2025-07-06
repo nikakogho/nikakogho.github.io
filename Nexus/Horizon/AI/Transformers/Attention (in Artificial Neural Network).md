@@ -26,3 +26,6 @@ To turn them into 1 matrix again for the MLP layer, we concatenate them and mult
 ### Summary
 
 ![attention_full_formula.jpeg](attention_full_formula.jpeg)
+
+![self_attention.png](self_attention.png)
+![attention_iron_man.png](attention_iron_man.png)
