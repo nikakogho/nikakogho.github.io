@@ -9,6 +9,7 @@ import {
 } from '../utils/markdownHelper';
 // Import the context type definition from VaultLayout
 import { VaultOutletContext } from './VaultLayout';
+import { FiShare2 } from 'react-icons/fi';
 
 // Import markdown content modules (dynamic, raw)
 const markdownContentModules = import.meta.glob('/Nexus/**/*.md', { eager: false, as: 'raw' });
@@ -64,7 +65,13 @@ const NotePage: React.FC = () => {
   // The surrounding layout (sidebar, toggle button) is now handled by VaultLayout
   return (
     <>
-     { noteTitle !== "Home" && <h1>{noteTitle}</h1> }
+    <div className="note-header">
+     <h1>{noteTitle}</h1>
+
+      <Link to="/nexus/graph" className="graph-view-button" title="Open Graph View">
+          <FiShare2 />
+      </Link>
+    </div>
 
       {/* Render the actual markdown content */}
       <MarkdownRenderer

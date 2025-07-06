@@ -9,6 +9,7 @@ import BlogListPage from './pages/BlogListPage';
 import BlogPostPage from './pages/BlogPostPage';
 import { ThemeProvider } from './context/ThemeContext';
 import SecretPage from './pages/SecretPage';
+import GraphViewPage from './pages/GraphViewPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/nexus" element={<VaultLayout />}>
             <Route index element={<VaultHomeRedirect />} />
             <Route path="notes/*" element={<NotePage />} />
+            <Route path="graph" element={<GraphViewPage />} />
           </Route>
 
           {/* Blog Routes*/}
