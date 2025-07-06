@@ -38,3 +38,6 @@ Bigger list [[Notable People in Space Industry|here]]
 ## Nanotech
 - [[Eric Drexler]]
 - [[Robert Freitas]]
+
+## Immortality
+- [[Bryan Johnson]]

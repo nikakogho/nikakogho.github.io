@@ -11,6 +11,8 @@ I suppose for that we must first solve the [[Hard Problem Of Consciousness]].
 ## [[Longevity Escape Velocity]]
 Concept that each year the average lifespan of people keeps increasing at an accelerated pace because of advances in tech and medicine, and that eventually we will get to a point where people who take care of their health will be getting back more than a year of their youth per year, effectively stopping and then reversing aging.
 
+Should follow [[Bryan Johnson]]’s Blueprint for this
+
 ## Common Issues
 ### If we all become immortal, what about finiteness of room and resources and overpopulation?
 See [[Radical Abundance]] that is likely to emerge around the same time as immortality
