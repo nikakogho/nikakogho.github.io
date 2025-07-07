@@ -15,7 +15,7 @@ interface GraphVizNode extends NodeObject {
 
 const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ data, theme }) => {
     const navigate = useNavigate();
-    const fgRef = useRef<ForceGraphMethods>(null);
+    const fgRef = useRef<ForceGraphMethods<NodeObject, LinkObject> | undefined>(undefined);
 
     // State for hover effects
     const [hoveredNode, setHoveredNode] = useState<string | null>(null);
@@ -30,7 +30,7 @@ const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ da
             // Get the existing forces and re-configure them
             
             // 1. Configure the Link force
-            const linkForce = fg.d3Force('link') as ForceLink<NodeObject, LinkObject>;
+            const linkForce = fg.d3Force('link') as any;
             linkForce
                 .id((node: any) => node.id)
                 .distance(60) // Increased distance slightly
@@ -102,6 +102,7 @@ const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ da
     };
 
     return (
+        fgRef &&
         <ForceGraph2D
             ref={fgRef}
             graphData={data}
