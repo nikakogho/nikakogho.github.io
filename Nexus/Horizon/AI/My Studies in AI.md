@@ -36,4 +36,4 @@
 	- [ ] Reproduce GPT-2 watched
 	- [ ] Reproduce GPT-2 hw
 - [ ] [MIT Deep Learning](https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI)
-	- [ ] (2/10) Videos Watched
+	- [ ] (4/10) Videos Watched

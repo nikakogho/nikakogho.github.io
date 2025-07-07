@@ -1,4 +1,5 @@
 - [[Electro Encephalography]]
+- [[Electrocorticography (ECoG)]]
 - [[Magnetic Encephalography]]
 - [[Magnetic Resonance Imaging]]
 - [[Ultrasound]]
