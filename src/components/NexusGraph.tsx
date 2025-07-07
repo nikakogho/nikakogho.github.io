@@ -1,6 +1,6 @@
 import React, { useRef, useState, useMemo, useEffect } from 'react';
 import ForceGraph2D, { ForceGraphMethods, NodeObject, LinkObject } from 'react-force-graph-2d';
-import { forceCenter, forceCollide, ForceLink, ForceManyBody } from 'd3-force';
+import { forceCenter, forceCollide, ForceManyBody } from 'd3-force';
 import { useNavigate } from 'react-router-dom';
 import { GraphData } from '../utils/graphHelper';
 
