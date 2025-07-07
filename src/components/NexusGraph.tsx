@@ -13,7 +13,7 @@ interface GraphVizNode extends NodeObject {
     group: string;
 }
 
-const NexusGraph: React.FC<{ data: GraphData }> = ({ data }) => {
+const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ data, theme }) => {
     const navigate = useNavigate();
     const fgRef = useRef<ForceGraphMethods>(null);
 
@@ -55,8 +55,8 @@ const NexusGraph: React.FC<{ data: GraphData }> = ({ data }) => {
     const nodeNeighbors = useMemo(() => {
         const neighbors = new Map<string, Set<string>>();
         data.links.forEach(link => {
-            const sourceId = (link.source as GraphVizNode).id;
-            const targetId = (link.target as GraphVizNode).id;
+            const sourceId = link.source;
+            const targetId = link.target;
 
             if (!neighbors.has(sourceId)) neighbors.set(sourceId, new Set());
             if (!neighbors.has(targetId)) neighbors.set(targetId, new Set());
@@ -78,8 +78,9 @@ const NexusGraph: React.FC<{ data: GraphData }> = ({ data }) => {
 
             const newHighlightedLinks = new Set<LinkObject>();
             data.links.forEach(link => {
-                const sourceId = (link.source as GraphVizNode).id;
-                const targetId = (link.target as GraphVizNode).id;
+                const sourceId = link.source;
+                const targetId = link.target;
+
                 if (node.id === sourceId || node.id === targetId) {
                     newHighlightedLinks.add(link);
                 }
@@ -120,7 +121,7 @@ const NexusGraph: React.FC<{ data: GraphData }> = ({ data }) => {
             nodeCanvasObjectMode={() => 'after'}
             nodeCanvasObject={(node, ctx, globalScale) => {
                 const typedNode = node as GraphVizNode;
-                const labelVisibilityThreshold = 0.6;
+                const labelVisibilityThreshold = 0.7;
 
                 // Show label only when zoomed in
                 if (globalScale > labelVisibilityThreshold) {
@@ -129,7 +130,7 @@ const NexusGraph: React.FC<{ data: GraphData }> = ({ data }) => {
                     ctx.font = `${fontSize}px Sans-Serif`;
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'middle';
-                    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                    ctx.fillStyle = theme === 'light' ? 'black' : 'rgba(255, 255, 255, 0.9)';
                     const yOffset = Math.sqrt(typedNode.val as number) * 3 + 3;
                     ctx.fillText(label, typedNode.x || 0, (typedNode.y || 0) + yOffset);
                 }

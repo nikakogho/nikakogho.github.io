@@ -18,7 +18,7 @@ const GraphViewPage: React.FC = () => {
     return (
         <div>
             <h1>Nexus Knowledge Graph</h1>
-            <NexusGraph data={graphData} />
+            <NexusGraph data={graphData} theme={theme} />
         </div>
     );
 };
