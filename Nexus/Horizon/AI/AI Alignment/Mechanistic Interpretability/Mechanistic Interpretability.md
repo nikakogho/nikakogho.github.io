@@ -1,4 +1,4 @@
-Neuroscience for AI
+Ne for AI
 
 Created by [[Chris Olah]], mechanistic interpretability lead at [[Anthropic]]
 

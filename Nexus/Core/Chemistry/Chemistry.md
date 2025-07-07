@@ -18,3 +18,5 @@ Main themes:
 - [[Stoichiometry]]
 - [[Valence Electrons]]
 - [[Van der Waals Equation]]
+- [[Organic Chemistry]]
+- [[Chemical Naming]]

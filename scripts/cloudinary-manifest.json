@@ -27,6 +27,7 @@
     "nexus/images/einstein_summation_4.png",
     "nexus/images/ethmoid_bone.gif",
     "nexus/images/functional_digital_twin_toaster_example.png",
+    "nexus/images/gan.png",
     "nexus/images/gas_foaming_tissue_engineering.png",
     "nexus/images/genome.png",
     "nexus/images/genome_sequencing_steps.png",
@@ -617,6 +618,7 @@
     "nexus/images/transformer_layer.png",
     "nexus/images/transformer_layers.png",
     "nexus/images/translation.png",
+    "nexus/images/vae.png",
     "nexus/images/vomer.gif",
     "nexus/images/zero_moment_point.png"
   ]
