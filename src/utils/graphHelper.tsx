@@ -20,7 +20,9 @@ export interface GraphData {
 
 const WIKI_LINK_REGEX = /\[\[([^|\]]+)(?:\|[^\]]*)?\]\]/g;
 
-const groupColors = {
+type Group = 'root' | 'biology' | 'chemistry' | 'physics' | 'maths' | 'ai' | 'neuroscience' | 'neurotech' | 'bioengineering' | 'robots' | 'space-tech' | 'ui' | 'organizations' | 'people';
+
+const groupColors: Record<Group, string> = {
     "biology": "green",
     "chemistry": "cyan",
     "physics": "red",
@@ -31,7 +33,10 @@ const groupColors = {
     "bioengineering": "00aa00",
     "robots": "orange",
     "space-tech": "#E05252",
-    "ui": "purple"
+    "ui": "purple",
+    "root": "white",
+    "organizations": "gray",
+    "people": "yellow",
 };
 
 function getGroup(notePath: string): string {
@@ -49,9 +54,9 @@ function getGroup(notePath: string): string {
     return 'root';
 }
 
-function getGroupColor(group: string, theme: 'light' | 'dark'): string {
-    if (group.toLowerCase() in groupColors) {
-        return groupColors[group.toLowerCase()];
+function getGroupColor(group: Group, theme: 'light' | 'dark'): string {
+    if (group in groupColors) {
+        return groupColors[group];
     }
 
     return theme === 'light' ? '#ccc' : '#333'; // Default color based on theme
@@ -91,9 +96,10 @@ export function generateGraphData(
 
     const groups: Record<string, string> = {};
     notes.forEach(note => {
-        const group = getGroup(note.fullPath);
+        const group = getGroup(note.fullPath).toLowerCase();
+        
         if (!groups[group]) {
-            groups[group] = getGroupColor(group, theme);
+            groups[group] = getGroupColor(group as Group, theme);
         }
 
         const connections = linkCounts[note.fullPath] || 0;
