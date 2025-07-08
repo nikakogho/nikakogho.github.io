@@ -35,5 +35,4 @@
 	- [ ] Build GPT Tokenizer hw
 	- [ ] Reproduce GPT-2 watched
 	- [ ] Reproduce GPT-2 hw
-- [ ] [MIT Deep Learning](https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI)
-	- [ ] (8/10) Videos Watched
+- [x] [MIT Deep Learning](https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI)
