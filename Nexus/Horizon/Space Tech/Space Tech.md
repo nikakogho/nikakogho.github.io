@@ -1,3 +1,8 @@
+## Ultimate Goals
+- Understand the universe
+- Setup space mining
+- Colonize the universe
+
 ## Core Space Concepts
 - [[Physics Equations]]
 - [[Rocket Propulsion Types]]

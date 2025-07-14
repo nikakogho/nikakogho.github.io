@@ -5,6 +5,7 @@
 		- [ ] [Prerequisites](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part0_prereqs/0.0_Prerequisites_exercises.ipynb?t=20250618)
 			- [x] [[Einstein Summation]]
 			- [ ] (1/3) Exercises
+				- [ ] On Exercise 2 must do F1 now
 		- [ ] [Ray Tracing](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part1_ray_tracing/0.1_Ray_Tracing_exercises.ipynb?t=20250618)
 			- [ ] (1/9) Exercises
 		- [ ] [CNNs & ResNets](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter0_fundamentals/exercises/part2_cnns/0.2_CNNs_&_ResNets_exercises.ipynb?t=20250618)

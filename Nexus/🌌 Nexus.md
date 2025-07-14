@@ -36,7 +36,7 @@ Canonical profiles of thinkers, builders & visionaries referenced throughout Nex
 ### [[Organizations Pushing The Horizon]]
 Will be good to join them or compete with them
 
-### Future
+### Future Hopes
 - [[Immortality]]
 - [[Radical Abundance]]
 

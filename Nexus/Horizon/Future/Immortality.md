@@ -13,6 +13,28 @@ Concept that each year the average lifespan of people keeps increasing at an acc
 
 Should follow [[Bryan Johnson]]’s Blueprint for this
 
+## Information Theory Of Aging
+Explained by [[David Sinclair]] in his book Lifespan (2019) that information loss of [[Epigenome|epigenome]] is the true cause of aging. [[Information Theory]] is relevant here
+
+## Hallmarks of Aging
+Telomere shortening and such. Probably symptoms, with information loss being root cause.
+Proposed originally in 2013 by López-Otín in a [paper](https://pubmed.ncbi.nlm.nih.gov/23746838/) in journal *Cell*
+
+### Original 9 Hallmarks
+1. Genomic instability - DNA damage
+2. [[Telomere]] shortening
+3. Epigenetic changes
+4. Loss of [[Proteostasis|proteostasis]] - cell can't maintain [[Protein|protein]] balance and integrity
+5. Messed up nutrient-sensing ability ruins [[Metabolism|metabolism]]
+6. [[Mitochondria]] dysfunction
+7. [[Cellular Senescence]] (zombie cells) - cells get old and can't divide anymore but are still active and cause inflammation
+8. Decline in number and strength of [[Stem Cells]]
+9. Ruined signaling between cells
+### 2023+ Hallmarks
+10. Disabled Macroautophagy - decline in cellular recycling process of [[Autophagy]]
+11. Chronic inflammation - low grade constant inflammation
+12. Dysbiosis - imbalance in gut microbiome
+
 ## Common Issues
 ### If we all become immortal, what about finiteness of room and resources and overpopulation?
 See [[Radical Abundance]] that is likely to emerge around the same time as immortality
