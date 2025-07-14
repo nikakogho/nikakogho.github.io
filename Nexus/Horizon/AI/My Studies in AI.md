@@ -35,3 +35,4 @@
 	- [ ] Reproduce GPT-2 watched
 	- [ ] Reproduce GPT-2 hw
 - [x] [MIT Deep Learning](https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI)
+- [ ] freeCodeCamp 25 hour PyTorch [video](https://www.youtube.com/watch?v=V_xro1bcAuA&t=15444s)
