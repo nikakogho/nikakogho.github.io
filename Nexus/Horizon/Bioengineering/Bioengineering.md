@@ -3,14 +3,15 @@ Learning everything to engineer and augment life
 ## Core Bioengineering themes
 - [[Bioinformatics]]
 - [[Genetic Engineering]]
-- [[Tissue Engineering]]
+- [[Reverse Aging]]
 - [[Synthetic Biology]]
 - [[Systems Biology]]
+- [[Tissue Engineering]]
 
 ## Background themes
-- [[Chemistry]]
-- [[Cell Biology]]
 - [[Anatomy]]
+- [[Cell Biology]]
+- [[Chemistry]]
 
 ## Companies
 - [[Colossal Biosciences]]

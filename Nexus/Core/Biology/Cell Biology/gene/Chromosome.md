@@ -5,7 +5,12 @@
 Sex chromosomes are X and Y.
 Humans have 23 pairs of chromosomes (46 total)
 
-Proteins that bind DNAs into chromosomes can either be **histones** or **nonhistone chromosomal proteins**
+Proteins that bind DNAs into chromosomes can either be **histones** or **nonhistone chromosomal proteins**.
+
+## Telomeres
+
+At the ends are [[Telomere|telomeres]].
+![telomere.png](telomere.png)
 
 ## Histones
 
