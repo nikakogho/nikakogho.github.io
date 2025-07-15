@@ -45,3 +45,6 @@ Bigger list [[Notable People in Space Industry|here]]
 
 ## Information Theory
 - [[Claude Shannon]]
+
+## Consciousness
+- [[Roger Penrose]]
