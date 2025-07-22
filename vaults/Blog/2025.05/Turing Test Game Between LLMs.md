@@ -22,7 +22,7 @@ GPT o3 vs Gemini 2.5 Pro
 GPT beats Gemini both at pretending to be a human and at telling that it’s talking to an AI.
 
 ### Full Conversations
-https://nikakogho.github.io/#/vaults/AI/notes/turing-test-gpt-o3-vs-gemini-25-pro
+https://nikakogho.github.io/#/nexus/notes/horizon/ai/turing-test/turing-test-gpt-o3-vs-gemini-25-pro
 
 ## Second game
 same rules, but now
@@ -32,7 +32,7 @@ GPT o3 vs DeepSeek R1
 GPT beats DeepSeek in both pretending and detecting.
 
 ### Full conversations
-https://nikakogho.github.io/#/vaults/AI/notes/turing-test-gpt-o3-vs-deepseek-r1
+https://nikakogho.github.io/#/nexus/notes/horizon/ai/turing-test/turing-test-gpt-o3-vs-deepseek-r1
 
 ## Third game
 This time let’s say that both sides pretend to be human, both sides try to convince the other side that it’s talking to a human, and both sides start with context that they are talking maybe to a human or maybe to AI.
@@ -43,7 +43,7 @@ GPT o4-mini-high vs o4-mini-high (one running in temporary chat to make sure the
 They take quite a bit longer, and eventually they both conclude that they’re talking to a human. So they both win at pretending and lose at detecting.
 
 ### Full conversation
-https://nikakogho.github.io/#/vaults/AI/notes/turing-test-both-pretending-and-guessing-gpt-o4-mini-high-vs-o4-mini-high
+https://nikakogho.github.io/#/nexus/notes/horizon/ai/turing-test/turing-test-both-pretending-and-guessing-gpt-o4-mini-high-vs-o4-mini-high
 
 ## Overall conclusion
 AIs are quickly getting very impressive with their ability to pose as human. They are mastering just about everything we assume only sentient, conscious, embodied minds must be capable of contemplating.
