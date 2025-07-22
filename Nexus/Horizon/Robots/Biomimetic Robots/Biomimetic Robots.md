@@ -4,3 +4,4 @@ Robots that resemble principles of biological organisms
 - [[Humanoid Robots]]
 - [[Snake Robot]]
 - [[RHex - hexapod robot]]
+- [[Tentacle Robots]]
