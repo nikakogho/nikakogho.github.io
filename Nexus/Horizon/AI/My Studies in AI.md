@@ -27,12 +27,11 @@
 	- [x] Makemore 4 hw
 	- [x] Makemore 5 watched
 	- [x] Makemore 5 hw
-	- [ ] Build GPT watched
-	- [ ] Build GPT hw
+	- [x] Build GPT watched
 	- [x] State of GPT watched
-	- [ ] Build GPT Tokenizer watched
-	- [ ] Build GPT Tokenizer hw
+	- [x] Build GPT Tokenizer watched
 	- [ ] Reproduce GPT-2 watched
 	- [ ] Reproduce GPT-2 hw
 - [x] [MIT Deep Learning](https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI)
 - [ ] freeCodeCamp 25 hour PyTorch [video](https://www.youtube.com/watch?v=V_xro1bcAuA&t=15444s)
+- [ ] Neel Nanda [MATS](https://docs.google.com/document/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/edit?pli=1&tab=t.0)

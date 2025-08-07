@@ -9,6 +9,7 @@ We mostly focus on the human brain.
 - [[Chemical Control of The Brain]]
 - [[Brainwaves]]
 - [[Consciousness]]
+- [[Cognitive Functions]]
 - [[Sleep]]
 - [[Memory]]
 - [[Learning]]

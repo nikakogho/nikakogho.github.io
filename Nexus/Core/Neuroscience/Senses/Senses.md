@@ -10,6 +10,7 @@
 - [[Pain]]
 - [[Sense of Temperature]]
 - [[Itch]]
+- [[Sense of Time]]
 
 ### Sensory Organs
 - [[Eye]]
