@@ -19,6 +19,9 @@ A* is optimal if these 2 requirements are met:
 1. h(n) is admissible: `h(n) <= true` cost but never overestimates
 2. h(n) is consistent: for every node n and its successor n' with step cost c, `h(n) <= h(n') + c`
 
+### D*
+Type of A* that adjusts dynamically to a changing environment where some paths may get blocked/unblocked
+
 ## Adversarial Search
 My opponent and I play a game and we have opposing goals
 

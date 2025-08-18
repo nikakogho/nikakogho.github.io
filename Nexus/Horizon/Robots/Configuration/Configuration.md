@@ -7,6 +7,7 @@ Configuration space has:
 * Representation by parametrization
   * explicit (simple but not flexible): specific params like x, y and angle
   * implicit (more flexible to change): relation between parameters like x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> = 1
+* [[Configuration Space Representations For Navigation]]
 * Task space - end-effector’s rotation + position space
   * workspace - part of task space the end-effector can reach
 

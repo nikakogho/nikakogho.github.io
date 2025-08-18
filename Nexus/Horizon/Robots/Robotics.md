@@ -5,6 +5,7 @@
 - [[Locomotion (Movement)]]
 - [[Degrees of Freedom]]
 - [[Configuration]]
+- [[Navigation]]
 
 ## Physics
 - [[Mechanics]]
