@@ -4,6 +4,8 @@ Used by [[Transformer]]
 
 Explained very well [here](https://www.youtube.com/watch?v=QAZc9xsQNjQ\&list=PLhQjrBD2T381PopUTYtMSstgk-hsTGkVm\&index=10\&t=2910s)
 
+![attention_ai_drawing.png](attention_ai_drawing.png)
+
 We get query, key and value vectors for each token from trained values of W<sup>Q</sup>, W<sup>K</sup> and W<sup>V</sup>
 ![attention_qkv.jpeg](attention_qkv.jpeg)
 

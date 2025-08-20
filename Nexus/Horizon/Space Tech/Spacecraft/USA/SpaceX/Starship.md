@@ -8,7 +8,7 @@ Upper stage thrust 2 300 kN
 2 stages: **Super Heavy booster** and **Starship spacecraft**
 Fully reusable
 
-8 test flights so far
+9 test flights so far
 Roadmap:
 * [x] Initial test flights
 * [x] Successful static fire tests
