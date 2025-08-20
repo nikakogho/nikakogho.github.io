@@ -12,13 +12,14 @@ Inside cytoplasm we find parts that make the cell work.
 ![Pasted_image_20230223054936.png](pasted_image_20230223054936.png)
 
 ## Parts:
+* [[Cell Membrane]]
+* [[Cell Nucleus]]
 * [[Ribosome|Ribosomes]]
 * [[Mitochondria]]
 * [[Golgi apparatus]]
 * [[Endoplasmic Reticulum]]
 * [[Centrosome]]
 * [[Peroxisome]]
-* [[Cell Nucleus]]
 * [[Cytoskeleton]]
 
 ## [[Metabolism|Cell Metabolism]]
