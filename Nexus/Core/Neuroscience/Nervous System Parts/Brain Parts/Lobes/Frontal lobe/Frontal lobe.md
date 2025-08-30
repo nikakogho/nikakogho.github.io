@@ -2,6 +2,7 @@ For thinking, moving, communicating
 Largest lobe
 
 Brain’s “command center”
+![frontal_lobe_jobs.png](frontal_lobe_jobs.png)
 
 [[Central sulcus]] separates it from [[Parietal lobe]]
 ![IMG_3175.jpeg](img_3175.jpeg)
