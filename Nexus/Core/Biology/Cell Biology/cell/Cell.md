@@ -21,6 +21,7 @@ Inside cytoplasm we find parts that make the cell work.
 * [[Centrosome]]
 * [[Peroxisome]]
 * [[Cytoskeleton]]
+* [[Endomembrane System]]
 
 ## [[Metabolism|Cell Metabolism]]
 Follows the process of [[Cell Cycle|cell cycle]].
