@@ -11,9 +11,15 @@ Each enzyme works for one or one small group of reactions.
 Active site binds to substrate.
 Can have multiple active sites.
 
-Regulated by inhibitors and activators.
+- Active site - where substrate binds
+- Allosteric site - where other molecules can bind to affect enzyme efficiency
 
-Play role in:
+Regulated by inhibitors and activators.
+Inhibitors can be competitive (bind to active site) or non-competitive (bind to allosteric site).
+
+Sometimes need help from [[Coenzymes|coenzymes]] to work.
+
+## Role In
 - [[Digestion]]
 - [[Metabolism]]
 - [[DNA Replication]]

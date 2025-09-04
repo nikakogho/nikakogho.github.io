@@ -1,5 +1,4 @@
-Endocytosis - input
-
+- Endocytosis - input
 * Pinocytosis - fluids and dissolved solutes like vitamins, fat droplets, antigens
 * [[Phagocytosis]] - large particles
   Exocytosis - output
