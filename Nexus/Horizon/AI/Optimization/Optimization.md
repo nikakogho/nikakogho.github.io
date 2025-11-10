@@ -1,12 +1,15 @@
 ## Hill Climbing
+
 Moving to max or min value, might get stuck at local best
 Might also get stuck because of flat values for a while
 
 ## Simulated Annealing
+
 High “temperature” (odds of picking bad neighbors) at start that gets lower by end
 
 ### Pseudocode
-``` python
+
+```python
 def sim_anneal(problem, max):
   current = # start state
   for t in range(max):
@@ -22,21 +25,33 @@ def sim_anneal(problem, max):
 ```
 
 ## Adam
+
 Adaptive Moment Estimation
 
 One of the most popular for [[Deep Learning]]
 
+![adam_optimization.png](adam_optimization.png)
+
+* a) This loss function changes quickly in the vertical direction but slowly in the horizontal direction. If we run full-batch gradient descent with a learning rate that makes good progress in the vertical direction, then the algorithm takes a long time to reach the final horizontal position.
+* b) If the learning rate is chosen so that the algorithm makes good progress in the horizontal direction, it overshoots in the vertical direction and becomes unstable.
+* c) A straightforward approach is to move a fixed distance along each axis at each step so that we move downhill in both directions. This is accomplished by normalizing the gradient magnitude and retaining only the sign. However, this does not usually converge to the exact minimum but instead oscillates back and forth around it (here between the last two points).
+* d) The Adam algorithm uses momentum in both the estimated gradient and the normalization term, which creates a smoother path
+
 ### Momentum
+
 If one direction favored for a while, will speed up in that direction to avoid local bumps and speed up the process
 
 ### RMSprop (Root Mean Square propagation)
+
 Exponentially decaying average of past gradients for each parameter so each can adapt its learning rate: parameters historically updated by a lot decrease their learning rate to prevent overshoot, while one with little movement increases learning rate to speed up the process
 
 ## Stochastic Gradient Descent
+
 Stochastic (random) mini-batch is chosen, passed through forward pass and then [[Gradient Descent]] for [[Backpropagation]]
 
 ### Example
-``` python
+
+```python
 import torch, torch.nn as nn, torch.optim as optim
 
 model = nn.Sequential(

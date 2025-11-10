@@ -1,0 +1,1 @@
+Irreversible damage to cells or parts of cells from absorbing too much light, typically UV

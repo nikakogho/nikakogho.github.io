@@ -1,7 +1,7 @@
 Builds on core [[Neuroscience|neuroscience]]
 
 - [[EEG Concepts]]
-- [[Brain Observation Methods]]
+- [[Nervous System Observation Methods]]
 - [[Brain Stimulation Methods]]
 
 - [[Neurotech Companies]]

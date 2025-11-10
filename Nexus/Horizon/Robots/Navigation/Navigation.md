@@ -2,8 +2,10 @@ Can be topological (use landmarks as references of where to turn) or metric (use
 
 [[Configuration Space Representations For Navigation]]
 
+ A robot often needs [[SLAM]] to navigate
+
 ## Metric Path Planning
-Essentially [[Search in Computing|search]] problem
+Essentially a [[Search in Computing|search]] problem
 
 Generally we assume a holonomic vehicle (can turn and move in any direction)
 

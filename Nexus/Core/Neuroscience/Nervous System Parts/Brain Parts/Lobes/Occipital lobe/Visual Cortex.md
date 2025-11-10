@@ -64,3 +64,7 @@ V1 -> V2 -> V4 -> IT
 
 V1 -> V2 -> V3 -> V5 -> parietal areas
 Tracking movement
+
+## Visually Stimulating Just One Hemisphere
+
+![Visual_Stimulation_of_one_Hemisphere.png](visual_stimulation_of_one_hemisphere.png)

@@ -8,7 +8,7 @@ Upper stage thrust 2 300 kN
 2 stages: **Super Heavy booster** and **Starship spacecraft**
 Fully reusable
 
-9 test flights so far
+10 test flights so far
 Roadmap:
 * [x] Initial test flights
 * [x] Successful static fire tests
@@ -26,6 +26,13 @@ Roadmap:
 * [ ] Build mars colony
 
 ![IMG_2916.jpeg](img_2916.jpeg)
+
+Currently on last V2 ship with flight 11, then will move to V3.
+
+- V1 - carried 15 tons to LEO
+- V2 - 30 tons to LEO
+- V3 - 100 tons to LEO
+- V4 - 200 tons to LEO
 
 ## Super Heavy booster
 

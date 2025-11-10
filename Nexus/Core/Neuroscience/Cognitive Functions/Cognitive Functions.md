@@ -1,6 +1,7 @@
 - [[Consciousness]]
 - [[Neuroscience of Planning]]
 - [[Neuroscience of Thinking]]
+- [[Neuroscience of Language]]
 - [[Memory]]
 - [[Learning]]
 - [[Attention]]
@@ -8,3 +9,4 @@
 - [[Sleep]]
 - [[Neuroscience of Personality]]
 - [[Neuroscience of Individuality vs Collectivism]]
+- [[Neuroscience of Sexual Partners]]

@@ -15,7 +15,7 @@ Has many pigment molecules for absorbing light (they absorb different wavelength
 Has
 
 * **Antenna Complex** where pigments get light and relay gained energy to pigments closer to center
-* **Reaction Center** where a special pair of chlorophyll (P700 for Photosystem I and P680 for Photosystem II) excitr and release an electron (all others were just relaying energy toward here)
+* **Reaction Center** where a special pair of chlorophyll (P700 for Photosystem I and P680 for Photosystem II) excite and release an electron (all others were just relaying energy toward here)
 
 ![thylakoid_membrane.jpeg](thylakoid_membrane.jpeg)
 ![photosystem_details.png](photosystem_details.png)

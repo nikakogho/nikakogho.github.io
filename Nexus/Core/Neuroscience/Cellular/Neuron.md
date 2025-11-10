@@ -70,3 +70,6 @@ How it works:
   ![IMG_4321.jpeg](img_4321.jpeg)
   Long neurons are *Golgi Type I*
   Short are *Golgi Type II*
+
+## Chemical Effects of Neurons
+- [[Steroid Effect On Neurons]]

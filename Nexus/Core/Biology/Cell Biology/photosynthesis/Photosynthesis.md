@@ -23,10 +23,11 @@ In thylakoid membranes of chloroplast in chlorophyll.
 * O<sub>2</sub>
 
 ## Calvin Cycle
-
 AKA *dark reaction*
 
-Light-independent second stage in stroma where ATP and NADPH that we got from first stage is used to turn CO<sub>2</sub> into G3P and then G3P into [[Sugar|sugars]]
+Light-independent second stage in stroma where ATP and NADPH that we got from first stage is used to turn CO<sub>2</sub> into G3P and then G3P into [[Sugar|sugars]].
+
+Explained in more detail [[Calvin Cycle|here]].
 
 ![Calvin_Cycle.png](calvin_cycle.png)
 ![calvin_cycle_parts.png](calvin_cycle_parts.png)

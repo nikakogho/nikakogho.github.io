@@ -7,6 +7,7 @@ Learning everything to engineer and augment life
 - [[Synthetic Biology]]
 - [[Systems Biology]]
 - [[Tissue Engineering]]
+- [[Biomedical Engineering]]
 
 ## Background themes
 - [[Anatomy]]

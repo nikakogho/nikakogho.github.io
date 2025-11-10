@@ -38,10 +38,10 @@ Myelinated areas speed up travel, with **nodes of Ranvier** in-between being pla
 7. Relative refractory period
    ![IMG_4370.gif](img_4370.gif)
 
-## Spike-initiation zone
+## Axon Initial Segment
 
-Nerve ending in sensory neuron
-**Axon hillock** in others
+Place full of voltage-gated ion channels where spike starts and moves through axon
+![axon_initial_segment.webp](axon_initial_segment.webp)
 
 ## Shunting Inhibition
 

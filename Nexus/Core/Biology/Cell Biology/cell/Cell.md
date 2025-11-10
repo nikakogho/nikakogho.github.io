@@ -16,6 +16,7 @@ Inside cytoplasm we find parts that make the cell work.
 * [[Cell Nucleus]]
 * [[Ribosome|Ribosomes]]
 * [[Mitochondria]]
+* [[Chloroplast]]
 * [[Golgi apparatus]]
 * [[Endoplasmic Reticulum]]
 * [[Centrosome]]
@@ -27,12 +28,13 @@ Inside cytoplasm we find parts that make the cell work.
 Follows the process of [[Cell Cycle|cell cycle]].
 Inserts external materials and exerts them out through processes of [[Endocytosis and Exocytosis]].
 
+Relies on energy from mitochondria for [[Cellular Respiration]] and in case of plants/algae on chloroplast for [[Photosynthesis]].
+
 ## Differentiation
-Starts at totipotent [[Stem Cells|stem cells]] and differentiates all t
+Cells start as totipotent [[Stem Cells|stem cells]] in [[Zygote]] and differentiate all the way to specialized blood, bone, muscle, skin or neuron cells.
 
 ## Death
 There are 2 ways cells can die:
-
 1. Apoptosis - when cell is no longer needed, it shuts down
 2. Necrosis - cell is damaged beyond repair and dies, usually results in death of multiple cells
 

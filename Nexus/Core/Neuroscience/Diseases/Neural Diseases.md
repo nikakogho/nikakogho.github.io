@@ -2,3 +2,4 @@
 - [[Ondine’s Curse]]
 - [[Alzheimer's]]
 - [[Lateral Sclerosis]]
+- [[Aphasia]]

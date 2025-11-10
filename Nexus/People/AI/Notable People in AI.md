@@ -13,3 +13,5 @@
 - [[Ray Kurzweil]] - futurist and former director of engineering at [[Google Brain]]
 - [[Paul Christiano]] - AI safety lead at [[US AI Safety Institute]]
 - [[Ashish Vaswani]] - inventor of [[Transformer]] architecture, former researcher at Google Brain
+- [[Eliezer Yudkowski]] - founder of [[LessWrong]] and [[MIRI]], pessimistic about future of humanity, thinks AI will probably wipe us out
+- [[Nick Bostrom]] - founder of [[Future of Humanity Institute]], author of books “Superintelligence” and “Deep Utopia”, worries about AI safety and meaning in post-AGI/ASI world

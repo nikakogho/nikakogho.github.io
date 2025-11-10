@@ -1,5 +1,6 @@
-Consolidates long term [[Memory]]
-Causes [[Dreaming]]
+Consolidates long term [[Memory]], causes [[Dreaming]], and maybe other unknown function.
+
+Triggered by sleepiness from adenosine buildup and by [[Circadyan Rhythm]].
 
 ## Slow Wave Sleep
 [[Neocortex]] basically offline just repeating same pattern
