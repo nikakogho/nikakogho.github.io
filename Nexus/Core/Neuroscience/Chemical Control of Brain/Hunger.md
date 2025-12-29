@@ -8,14 +8,12 @@ Similarly, too high leptin can cause anorexia.
 
 **Lateral hypothalamic syndrome** - bilateral lesion in lateral [[Hypothalamus]] causes anorexia.
 
-**Ventromedial hypothalamic syndrome** - bilateral lesion in ventromerial hypothalamus causes overeating.
+**Ventromedial hypothalamic syndrome** - bilateral lesion in ventromedial hypothalamus causes overeating.
 ![hypothalamus_eating_changes.jpeg](hypothalamus_eating_changes.jpeg)
 
 ## Leptin Detection
 
 ![leptin_effect_on_hunger.jpeg](leptin_effect_on_hunger.jpeg)
-
-![IMG_7506.jpeg](IMG_7506.jpeg)
 
 ## Short-Term Regulation of Hunger
 
