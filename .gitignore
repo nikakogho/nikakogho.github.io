@@ -49,3 +49,5 @@ Nexus/*.gif
 Nexus/*.webp
 Nexus/*.svg
 Nexus/.obsidian
+
+**/.obsidian/

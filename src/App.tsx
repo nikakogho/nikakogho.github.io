@@ -10,6 +10,8 @@ import BlogPostPage from './pages/BlogPostPage';
 import { ThemeProvider } from './context/ThemeContext';
 import SecretPage from './pages/SecretPage';
 import GraphViewPage from './pages/GraphViewPage';
+import ResearchListPage from './pages/ResearchListPage';
+import ResearchPostPage from './pages/ResearchPostPage';
 
 function App() {
   return (
@@ -30,6 +32,10 @@ function App() {
           {/* Blog Routes*/}
           <Route path="/blog" element={<BlogListPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          
+          {/* Research Routes - Added */}
+          <Route path="/research" element={<ResearchListPage />} />
+          <Route path="/research/:slug" element={<ResearchPostPage />} />
 
           {/* Catch-all Not Found Route */}
           <Route path="*" element={<NotFoundPage />} />

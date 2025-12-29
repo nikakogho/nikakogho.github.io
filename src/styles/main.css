@@ -342,90 +342,93 @@ th { background-color: var(--header-bg); font-family: var(--font-primary); font-
 main img, .note-page-content img { max-width: 100%; height: auto; display: block; margin-top: 1em; margin-bottom: 1em; border-radius: var(--border-radius, 8px); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
 
 /* ================================== */
-/* = Blog List Page Styles          = */
+/* = Blog & Research List Page Styles = */
 /* ================================== */
 
-.blog-list-page h1 {
+/* Apply to both Blog and Research */
+.blog-list-page h1,
+.research-list-page h1 {
   margin-bottom: 1.5em;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5em;
 }
 
-.blog-post-list {
+.blog-post-list,
+.research-post-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.blog-post-preview {
-  background-color: var(--container-bg); /* Match container */
+.blog-post-preview,
+.research-post-preview {
+  background-color: var(--container-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   margin-bottom: 1.5em;
-  overflow: hidden; /* Contain image */
+  overflow: hidden;
   transition: box-shadow 0.2s ease-in-out;
 }
 
-.blog-post-preview:hover {
+.blog-post-preview:hover,
+.research-post-preview:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
-[data-theme='dark'] .blog-post-preview:hover {
+[data-theme='dark'] .blog-post-preview:hover,
+[data-theme='dark'] .research-post-preview:hover {
    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
-.blog-post-preview-link {
-  display: block; /* Make the whole card clickable */
+.blog-post-preview-link,
+.research-post-preview-link {
+  display: block;
   text-decoration: none;
-  color: inherit; /* Inherit text color */
-  padding: 20px; /* Add padding inside the link */
+  color: inherit;
+  padding: 20px;
 }
-.blog-post-preview-link:hover {
-  text-decoration: none; /* No underline on hover */
+.blog-post-preview-link:hover,
+.research-post-preview-link:hover {
+  text-decoration: none;
 }
 
-.blog-preview-image {
-  width: 100%; /* Make image responsive */
-  height: 200px; /* Fixed height for consistency */
-  object-fit: cover; /* Crop image nicely */
+.blog-preview-image,
+.research-preview-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-bottom: 1px solid var(--border-color);
-  margin: -20px -20px 15px -20px; /* Pull image to edges, add bottom margin */
-  border-top-left-radius: var(--border-radius); /* Match parent rounding */
+  margin: -20px -20px 15px -20px;
+  border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
 }
-/* If no image, the content starts nicely */
-.blog-preview-content {
-  /* No special styles needed now padding is on the link */
-}
 
-
-.blog-preview-content h2 {
-  margin-top: 0; /* Remove default heading margin */
+.blog-preview-content h2,
+.research-preview-content h2 {
+  margin-top: 0;
   margin-bottom: 0.3em;
-  font-size: 1.6rem; /* Slightly larger title */
-  color: var(--primary-color); /* Make title stand out */
+  font-size: 1.6rem;
+  color: var(--primary-color);
   transition: color 0.2s ease;
 }
-.blog-post-preview-link:hover .blog-preview-content h2 {
+.blog-post-preview-link:hover .blog-preview-content h2,
+.research-post-preview-link:hover .research-preview-content h2 {
   color: var(--primary-hover);
 }
 
-
-.blog-preview-date {
+.blog-preview-date,
+.research-preview-date {
   font-size: 0.9em;
   color: var(--text-muted);
   margin-bottom: 0.8em;
 }
 
-.blog-preview-text {
+.blog-preview-text,
+.research-preview-text {
   margin-bottom: 1em;
-  /* Ensure line clamping works (optional, more complex) */
-  /* display: -webkit-box; */
-  /* -webkit-line-clamp: 2; */
-  /* -webkit-box-orient: vertical; */
-  /* overflow: hidden; */
 }
 
-.blog-preview-tags {
+.blog-preview-tags,
+.research-preview-tags {
   font-size: 0.85em;
   color: var(--text-muted);
   margin-top: 0.8em;
@@ -468,23 +471,26 @@ main img, .note-page-content img { max-width: 100%; height: auto; display: block
 }
 
 /* ================================== */
-/* = Blog Post Page Styles          = */
+/* = Blog & Research Post Page Styles = */
 /* ================================== */
 
-.blog-post-page h1 {
-  margin-bottom: 0.2em; /* Reduce space below title */
+.blog-post-page h1,
+.research-post-page h1 {
+  margin-bottom: 0.2em;
 }
 
-.blog-post-meta {
+.blog-post-meta,
+.research-post-meta {
   font-size: 0.95em;
   color: var(--text-muted);
-  margin-bottom: 2em; /* Space before content starts */
+  margin-bottom: 2em;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 1em;
 }
 
 /* Back link style */
-.blog-post-page a[href="/blog"] {
+.blog-post-page a[href="/blog"],
+.research-post-page a[href="/research"] {
   display: inline-block;
   margin-top: 1.5em;
   font-weight: bold;

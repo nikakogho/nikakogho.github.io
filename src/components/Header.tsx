@@ -11,6 +11,7 @@ const Header: React.FC = () => {
             <nav>
                 <div className="vault-links-wrapper">
                   <NavLink to="/">Home</NavLink>
+                  <NavLink to="/research">Research</NavLink>
                   <NavLink to="/blog">Blog</NavLink>
                 </div>
                 
