@@ -1,9 +1,8 @@
 Types:
-
 * [[Supervised Learning]]
 * [[Unsupervised Learning]]
 * [[Deep Learning]]
-  * [[Neural Network]]
+	- [[Artificial Neural Network|Neural Network]]
 * [[Reinforcement Learning]]
 * [[Q Learning]]
 

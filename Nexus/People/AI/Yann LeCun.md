@@ -11,7 +11,7 @@ One of the Godfathers of [[Deep Learning]] along with [[Geoffrey Hinton]] and [[
 Interview with Lex Fridman [here](https://www.youtube.com/watch?v=5t1vTLU7s40&pp=ygUVeWFubiBsZWN1bm4gaW50ZXJ2aWV3)
 
 ## Beliefs About AI
-He thinks [[Large Language Models]] are not enough for AGI as they lack inner comprehension and instead proposes "World Models", which he explains [here](https://www.linkedin.com/posts/yann-lecun_lots-of-confusion-about-what-a-world-model-activity-7165738293223931904-vdgR).
+He thinks [[Large Language Models]] are not enough for AGI as they lack inner comprehension and instead proposes "World Models" (JEPA), which he explains [here](https://www.linkedin.com/posts/yann-lecun_lots-of-confusion-about-what-a-world-model-activity-7165738293223931904-vdgR).
 This is why he supports making [[Large Concept Models]].
 
 He thinks AGI will come gradually and that there is no existential risk in it (unlike what Geoffrey Hinton thinks).

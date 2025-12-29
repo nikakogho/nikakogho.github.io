@@ -1,2 +1,3 @@
 - [[Turing Test Games Between LLMs]]
 - [[Testing Personalities of LLMs]]
+- [[My Paltering Mech Interp Work]]

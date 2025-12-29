@@ -1,5 +1,5 @@
 A [[Artificial Neural Network]] used for [[Stable Diffusion]] ([[Image Generation]]).
-Uses [[ResNet#ResidualBlock|residual blocks]].
+Uses [[Residual Network#ResidualBlock|residual blocks]].
 
 2 main paths (both made of residual blocks):
 1. Encoder (contracting) - makes image progressively smaller like a typical [[Convolutional Neural Network]] and increases number of channels. Tries to capture semantic content (the "what" of the image)

@@ -1,7 +1,7 @@
 First good open-source [[Large Language Models|LLM]], made by [[Meta AI]]
 
 ## Llama 4
-### Mixture of Experts
+### [[Mixture of Experts]]
 Multiple specialized models together
 
 ### Llama 4 Scout

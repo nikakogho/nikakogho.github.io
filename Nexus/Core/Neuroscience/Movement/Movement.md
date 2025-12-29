@@ -1,7 +1,9 @@
 Orders through [[Motor Hierarchy]]
 Mainly [[Motor Cortex]] in [[Frontal lobe]]
 
-[[Neuromuscular Junction]] affects [[Muscles|muscles]]
+[[Neuromuscular Junction]] affects [[Muscles|muscles]].
+
+**Motor Unit** = motor neuron + muscle fibers it controls.
 
 [[Central Pattern Generator]]
 

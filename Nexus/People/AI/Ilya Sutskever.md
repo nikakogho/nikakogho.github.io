@@ -3,7 +3,7 @@ Former CTO of [[OpenAI]].
 
 Canadian-Israeli-Russian.
 
-Inventor of [[AlexNET]], a revolutionary [[Image Processing]] [[Artificial Neural Network#Convolutional Neural Network|CNN]].
+Co-Inventor of [[AlexNet]], a revolutionary [[Image Processing]] [[Artificial Neural Network#Convolutional Neural Network|CNN]].
 
 Student of [[Geoffrey Hinton]] at University of Toronto.
 

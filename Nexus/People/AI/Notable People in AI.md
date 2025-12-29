@@ -1,6 +1,6 @@
 - [[Sam Altman]] - OpenAI
 - [[Demis Hassabis]] - DeepMind
-- [[Ilya Sutskever]] - inventor of [[AlexNET]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
+- [[Ilya Sutskever]] - inventor of [[AlexNet]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
 - [[Dario Amodei]] - Anthropic
 - [[Elon Musk]] - xAI
 - [[Yann LeCun]] - Meta AI

@@ -3,5 +3,5 @@
 - [[Central Nervous System]]
 - [[Peripheral Nervous System]]
 
-- [[Embryonic Development]]
+- [[Embryonic Development of Nervous System]]
 - [[Triune Theory]]

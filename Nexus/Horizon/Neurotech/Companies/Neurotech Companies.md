@@ -4,7 +4,7 @@ Give quadriplegics fast mouse and keyboard access by mapping their motor cortex.
 Eventual goal: human-AI symbiosis
 
 ### Blindsight
-Project to restore vision by directly stimulating [[Primary Visual Cortex]]
+Neuralink's project to restore vision by directly stimulating [[Primary Visual Cortex]]
 
 ## [[Synchron]]
 Semi-invasive
@@ -20,7 +20,8 @@ Open-source non-invasive EEG
 
 ## [[Neurosity]]
 Non-invasive
-[[Neurosity Crown]] for reasing focus/calmness metrics, streaming raw brainwave data and triggering events upon certain planned movements
+[[Neurosity Crown]] for reading focus/calmness metrics, streaming raw brainwave data and triggering events upon certain planned movements.
+Led by [[AJ Keller]].
 
 ## [[Muse]]
 Non-invasive EEG

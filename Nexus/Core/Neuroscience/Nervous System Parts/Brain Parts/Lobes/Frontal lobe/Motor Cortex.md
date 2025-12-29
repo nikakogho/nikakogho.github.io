@@ -1,4 +1,4 @@
-Planning, control and execution of voluntary movement.
+Planning, control and execution of voluntary [[Movement|movement]].
 Located in [[Frontal lobe]] in *precentral gyrus*.
 
 ![IMG_3178.jpeg](img_3178.jpeg)

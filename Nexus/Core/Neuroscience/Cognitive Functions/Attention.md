@@ -6,6 +6,9 @@ Important for [[Consciousness]].
 [[Thalamus]] has **pulvinar nucleus** that guides visual attention by directing [[Primary Visual Cortex|V1]], V4, other brain areas, and possibly also indirectly ordering where to move eyes
 ![pulvinar_nucleus.jpeg](pulvinar_nucleus.jpeg)
 
+Thalamus also controls attention through **Thalamic Reticular Nucleus (TRN)** that decides what information to send over to neocortex. It is an **inhibitory** structure that decides what to **NOT** send through.
+![thalamic_reticular_nucleus.png](thalamic_reticular_nucleus.png)
+
 ### Frontal Eye Fields
 
 Have motor areas they affect

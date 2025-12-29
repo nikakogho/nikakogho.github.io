@@ -1,16 +1,15 @@
-Residual Network
+Type of deep neural network, typically [[Convolutional Neural Network]], that solves [[Degradation Problem In Deep Neural Networks]] by **skip connections** and **shortcut connections**.
 
-Type of deep [[Convolutional Neural Network]] that solves [[Degradation Problem In Deep Neural Networks]] by **skip connections** and **shortcut connections**
+Used for image recognition, [[Stable Diffusion]] and many other tasks.
 
-Used for [[Stable Diffusion]]
+A residual block is a section that uses this shortcut.
 
-A residual block is a [[Artificial Neural Network]] that uses this shortcut
+ResNet uses [[BatchNorm]].
 
 ![ResNet.png](resnet.png)
 ![ResNet_2.png](resnet_2.png)
 
 ## Main Idea
-
 If a neural network is too deep in the sense that behavior could've been learned by way fewer neurons and the rest must now simply pass over identity functions, it is much easier to learn that identity if we formulate a "skip connection" that lets us wire a result directly through skipping some channels
 
 ## Residual Block

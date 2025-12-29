@@ -3,3 +3,4 @@
 - [[Alzheimer's]]
 - [[Lateral Sclerosis]]
 - [[Aphasia]]
+- [[Schizophrenia]]

@@ -22,3 +22,6 @@ Direction of loss function to adjust [[Artificial Neural Network]]
 1. Calculate gradient based on **a small batch** of data points
 2. Update weights
 3. Back to step 1
+
+## Gradient Clipping
+To prevent a few far off data points from altering things too much, we set upper limit on how much a gradient can change weights

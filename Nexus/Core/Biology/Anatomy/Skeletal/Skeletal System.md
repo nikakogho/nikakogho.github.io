@@ -5,7 +5,7 @@ Made of:
 * [[Joint|Joints]] that connect them
 * [[Cartilage]]
 * [[Ligaments]]
-* [[Tendons]] that connect bones to [[Muscle|muscles]]
+* [[Tendons]] that connect bones to [[Muscles|muscles]]
 
 Fun fact: babies have 270 bones but some of them fuse while growing up
 

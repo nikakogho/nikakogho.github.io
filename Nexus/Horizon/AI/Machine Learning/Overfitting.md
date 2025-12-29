@@ -1,8 +1,7 @@
 If we adjust too much to training data, we may not generalize well to testing data
 
 ## Dropout
-
-[[Neural Network|Neural networks]] avoid this with dropout: temporarily removing randomly selected nodes to make sure the network trains its abilities generally and doesn't depend on single "neurons".
+[[Artificial Neural Network|Neural networks]] avoid this with dropout: temporarily removing randomly selected nodes to make sure the network trains its abilities generally and doesn't depend on single "neurons".
 In inference the model uses all units but divides weights by dropout probability, or does *Monte Carlo method* of turning off random neurons (like in training) multiple times and using mean of their result
 
 ![dropout_intuition.png](dropout_intuition.png)

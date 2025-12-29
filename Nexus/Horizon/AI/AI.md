@@ -11,10 +11,14 @@
 - [[AI Alignment]]
 - [[Turing Test]]
 - [[Information Theory]]
+- [[Explainable AI]]
 
 ## Neural Networks
 - [[Artificial Neural Network]]
 - [[Perceptron]]
+- [[Gradient Descent]]
+- [[Backpropagation]]
+- [[Neural Network Normalization]]
 - [[Attention (in Artificial Neural Network)]]
 - [[Transformer]]
 - [[Large Language Models]]
@@ -62,6 +66,7 @@
 - [[Demis Hassabis]] - DeepMind
 - [[Dario Amodei]] - Anthropic
 - [[Elon Musk]] - xAI
+- [[Jensen Huang]] - Nvidia
 
 ## Other Forms Of Intelligence
 - [[Organoid Intelligence]]

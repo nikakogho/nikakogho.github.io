@@ -12,17 +12,19 @@ If those ambitions excite you, dive in and contribute.
 
 ## 🧭 How this vault is organized
 ### Core
-The bedrock: laws, equations, mechanisms—everything that underlies reality.
-
+The bedrock: laws, equations, mechanisms—everything that underlies reality:
 - [[Maths]]
 - [[Physics]]
 - [[Chemistry]]
 - [[Biology]]
 - [[Neuroscience]]
 
-### Horizon
-Front-line disciplines where new realities are forged.
+[[Computer Science]] as a tool that helps the biological human mind with making sense of the world and adding to it (helps all of science and engineering).
 
+[[Life Improvement]] as both a means and an end in this game.
+
+### Horizon
+Front-line disciplines where new realities are forged:
 - [[AI]]
 - [[Bioengineering]]
 - [[Nanotechnology]]

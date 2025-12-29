@@ -1,5 +1,5 @@
 Main engine of the body to circulate [[Blood]] ([[Arteries]] and [[Veins]]).
-Biggest [[Muscle]] in the body.
+Biggest [[Muscles|muscle]] in the body.
 Part of [[Cardiovascular System]].
 
 ![heart_pumping.gif](heart_pumping.gif)

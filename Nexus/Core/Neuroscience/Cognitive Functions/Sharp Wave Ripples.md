@@ -1,4 +1,4 @@
-Highly synchronized [[Spike|spikes]] in [[Hippocampus]] that happen mostly in sleep and little bit when awake for long term memory consolidation
+Highly synchronized [[Spike|spikes]] in [[Hippocampus]] that happen mostly in sleep and little bit when awake for long term [[Memory|memory]] consolidation
 
 ## When awake
 They “bookmark” neural pathways probably by increasing plasticity in relevant [[Synapse|synapses]]

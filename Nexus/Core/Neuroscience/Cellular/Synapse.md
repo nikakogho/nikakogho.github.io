@@ -3,17 +3,19 @@ Both types closely interact
 
 ## Electrical Synapse
 
-Neurons separated by **gap junctions** directly let charged Na<sup>+</sup> flow to allow action potential called **postsynaptic potential (PSP)** to rise
+Neurons separated by **gap junctions** directly let charged Na<sup>+</sup> flow to allow action potential called **postsynaptic potential (PSP)** to rise.
+This connection forms between:
+- Dendrites (most common)
+- Dendrite to soma
+- Soma to soma (rare)
 ![IMG_4401.png](img_4401.png)
 
 ### Gap Junction
-
 6 **connexin** proteins combine to form **connexon**. 1 connexon on each neuron combine to form **gap junction channel**
 
 All vertebrate gap junctions are voltage-gated
 
 ## Chemical Synapse
-
 Point of contact
 ![IMG_4315_1.jpeg](img_4315_1.jpeg)
 
@@ -40,3 +42,4 @@ Same thickness => **symmetric** or **Gray’s Type II synapse**. Usually inhibit
 ![IMG_4404.jpeg](img_4404.jpeg)
 
 ### [[Neuromuscular Junction]]
+Neuron sends [[Acetylcholine]] to muscle

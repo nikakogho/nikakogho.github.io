@@ -1,6 +1,5 @@
 Builds on core [[Neuroscience|neuroscience]]
 
-- [[EEG Concepts]]
 - [[Nervous System Observation Methods]]
 - [[Brain Stimulation Methods]]
 

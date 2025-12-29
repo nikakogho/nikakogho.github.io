@@ -4,4 +4,4 @@ Sort like a cell going totipotent -> pluripotent -> multipotent -> specialized
 
 At each step, a noisy image is received and a less noisy version is returned
 
-[[Artificial Neural Network]] used by stable diffusion is [[U-Net]], which uses [[ResNet#ResidualBlock|residual blocks]]
+[[Artificial Neural Network]] used by stable diffusion is [[U-Net]], which uses [[Residual Network#ResidualBlock|residual blocks]]

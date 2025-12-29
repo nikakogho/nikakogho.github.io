@@ -62,3 +62,7 @@ They include
 In pons and midbrain.
 Acts on dorsal thalamus and also regulates excitability of sensory relay.
 They also project up to [[Neocortex|neocortex]] and link brain stem and basal forebrain complexes.
+
+## Serotonin and Norepinephrine on Affective (Mood) Disorders
+
+![serotonin_ne_mood.png](serotonin_ne_mood.png)

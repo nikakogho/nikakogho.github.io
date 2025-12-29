@@ -1,6 +1,6 @@
 A [[Neurotransmitter]]
 
-Learning, [[Memory]], attention
+Learning, [[Memory]], [[Attention]]
 Very active in [[Hippocampus]] and cerebral cortex
 
 Skeletal [[Muscles|muscle]] stimulation for voluntary movement

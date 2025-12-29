@@ -8,6 +8,24 @@ They keep competing until generator makes fake data so good the detective can’
 
 ![GAN.png](gan.png)
 
+## GAN Loss
+
+Generator has its loss to push to making more plausible data.
+Discriminator has a loss to get more accurate.
+They end up at nash equilibrium.
+![gan_loss.jpeg](gan_loss.jpeg)
+
+## Deep Convolutional GAN
+
+Also known as DCGAN.
+A GAN architecture where discriminator is a [[Convolutional Neural Network]].
+![DCGAN.jpeg](dcgan.jpeg)
+
+## Mode Collapse
+
+* Mode Dropping - GANs sometimes only learn a subset of real data distribution and so never output some kinds of data (like never making a face with beard)
+* Mode Collapse - when this goes too far and only one or few kinds of data are made
+
 ## CycleGAN
 
 Transform existing dataset into something new, like turn a horse into a zebra or based on this music make new music or change genre of this music

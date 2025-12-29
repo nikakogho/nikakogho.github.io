@@ -18,6 +18,7 @@
 - [[Rocket Engines]]
 - Ground stations
     - [[SatNOGS]]
+- [[Orbital Data Centers]]
 
 ## Mine
 - [[Learning Space Tech with AI Prompt]]
