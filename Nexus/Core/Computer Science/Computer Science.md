@@ -2,6 +2,13 @@ Everything around computing
 
 This will matter for all of the core and horizon fields since both research and engineering need computing these days
 
+Relevant for
+- [[Bioengineering]]
+- [[Neurotech]]
+- [[Space Tech]]
+- [[Robotics]]
+- [[AI]]
+
 ## Sections
 - [[Algorithms and Data Structures]]
 - [[Databases]]

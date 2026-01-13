@@ -70,12 +70,18 @@ CNS controls muscle strength by controlling firing rate and also by progressivel
 Depolarization of SR causes release of Ca<sup>2+</sup> into cytosol of muscle fiber
 ![IMG_5502.jpeg](img_5502.jpeg)
 
+### Myofibril
+
+Muscle fiber is made of myofibrils.
+
 ### Sarcomeres
 
-Muscle fiber is made of sarcomeres, where each sarcomere is 2 z lines on top and bottom, thin filaments on edges and thick filaments in middle. Muscle contraction means thin filaments getting closer (also brings z lines closer)
+Myofibril is made of sarcomeres, where each sarcomere is 2 z lines on top and bottom, thin filaments on edges and thick filaments in middle. Muscle contraction means thin filaments getting closer (also brings z lines closer)
 ![IMG_5538.jpeg](img_5538.jpeg)
 
-Thin filament has **actin**, thick has **myosin**. At rest actin is covered by **tropopin** and **tropomyosin**, preventing thin and thick filamwnts from binding.
+Thin filament has **actin**, thick has **myosin**. At rest actin is covered by **tropopin** and **tropomyosin**, preventing thin and thick filaments from binding.
+
+![sarcomere_myofibril_muscle.png](sarcomere_myofibril_muscle.png)
 
 When Ca<sup>2+</sup> enters, it binds to tropopin and shifts tropomyosin, which now binds to myosin and moves, then after calcium reuptake by **sarcoplasmic reticulum** (which needs ATP) it lets go and so step by step muscle contracts
 ![IMG_5539.jpeg](img_5539.jpeg)
@@ -89,7 +95,7 @@ When Ca<sup>2+</sup> enters, it binds to tropopin and shifts tropomyosin, which 
 3. Nicotinic receptor channels open in sarcolemma, EPSP
 4. Voltage-gated sodium channels open in sarcolemma, action potential made in muscle fiber
 5. Action potential sweeps down the sarcolemma and enters T tubules
-6. Depolarisation of T tubules releases Ca<sup>2+</sup> from SR
+6. Depolarization of T tubules releases Ca<sup>2+</sup> from SR
 
 ### Contraction
 

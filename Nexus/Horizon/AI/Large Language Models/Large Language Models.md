@@ -4,7 +4,8 @@ Use [[Embedding Space]] to hold ideas.
 Trained on lots of text to learn to predict next text (next tokens).
 
 ## Training
-[[LLM Training Stages]] include pretraining and post-training
+[[LLM Training Stages]] include pretraining and post-training.
+They can also be fine-tuned, either fully or with [[LoRA - Low-Rank Adaptation of Large Language Models|LoRA]].
 
 ## Modern Improvements
 - Multi-Modality (image, speech, video, smell)

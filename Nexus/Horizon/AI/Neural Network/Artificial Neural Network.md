@@ -8,6 +8,14 @@ In **binary classification**\* for [[Supervised Learning]] a neural network is m
 
 Good video for this from [Harvard](https://www.youtube.com/watch?v=J1QD9hLDEDY)
 
+## Training a Neural Network
+Typically uses [[Backpropagation]] using [[Gradient Descent]].
+
+Different forms of training:
+- Full from scratch
+- Fine-tuning: we take existing trained model and further train it
+- [[LoRA - Low-Rank Adaptation of Large Language Models]] - we take existing trained model, freeze its weights and add new weights but fewer
+
 ## [[Convolutional Neural Network]]
 
 Used in [[Computer Vision]]
@@ -53,9 +61,9 @@ Similar to ResNet, for [[Stable Diffusion]]
 
 ## [[Transformer]]
 
-State-of-the-art solution for making best beural networks.
+State-of-the-art solution for making best neural networks.
 
-Uses [[Attention (in Artificial Neural Network)]] and MLP
+Uses [[Attention (in Artificial Neural Network)|attention]] and MLP
 
 ## Autoencoder
 

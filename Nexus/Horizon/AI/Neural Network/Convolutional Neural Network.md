@@ -48,3 +48,22 @@ To increase resolution
 ### 1x1 Convolution
 
 ![1x1_convolution.jpeg](1x1_convolution.jpeg)
+
+## Transpose Convolution
+
+Another way to upsample, works sort of the opposite way around, we construct the next stage with a stride and padding and do a kind of opposite convolution and addition
+![transpose_conv_1.png](transpose_conv_1.png)
+![transpose_conv_2.png](transpose_conv_2.png)
+![transpose_conv_3.png](transpose_conv_3.png)
+![transpose_conv_4.png](transpose_conv_4.png)
+
+## Famous Networks
+
+* AlexNet
+* [[U-Net]]
+
+## Ideas For Improvement
+
+* [[Residual Network]]
+* [[Inception Network]]
+* [[MobileNet]]
