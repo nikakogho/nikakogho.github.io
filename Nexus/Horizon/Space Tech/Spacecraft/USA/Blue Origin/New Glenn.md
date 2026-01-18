@@ -1,10 +1,12 @@
-98 meters tall
+98 meters tall partially reusable rocket from [[Blue Origin]].
 Thrust 17 100 kN
 Weighs 1800 tons
 Carries 45 tons to LEO or 13 tons to Geostationary Transfer Orbit
 2 stages
 
 ![IMG_4642.webp](img_4642.webp)
+
+Factory tour from Tim Dodd [here](https://www.youtube.com/watch?v=rsuqSn7ifpU).
 
 ## Booster
 

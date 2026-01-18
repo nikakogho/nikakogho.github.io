@@ -22,7 +22,7 @@
 * Extravehicular Mobility Unit (EMU) - for spacewalks
   * Orlan suit - for Russian spacecraft
   * Axiom Extravehicular Mobility Unit (AxEMU) - for moon exploration
-  * SpaceX EVA suit - builds on IVA suit
+  * [[SpaceX]] EVA suit - builds on IVA suit
 * Advanced Crew Escape Suit (ACES) - for launch and re-entry, lighter and less bulky
 * Intravehicular Activity (IVA) Suits - more comfort
 

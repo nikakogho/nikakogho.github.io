@@ -46,7 +46,7 @@ Then polyurethane applied by spraying, protects outer tank from heat
     * Dual - separate turbines for fuel and oxidizer
   * Gas Generator Cycle - a combustion chamber around turbine where some LH<sub>2</sub> is burned to drive turbine
     * Some exhaust energy is lost this way => not fully efficient
-    * Used in SpaceX's [[Falcon 9]]'s [[Merlin Engine]] ![Pasted_image_20241118021856.png](pasted_image_20241118021856.png)
+    * Used in [[SpaceX]]'s [[Falcon 9]]'s [[Merlin Engine]] ![Pasted_image_20241118021856.png](pasted_image_20241118021856.png)
     * **Stages Combustion Cycle** - made more efficient by moving exhaust back into main combustion chamber along with small amount of oxygen to partially burn hydrogen to increase its temperature and pressure
       * Highest thrust and specific impulse
       * Very high pressure => needs very powerful and expensive parts ![Pasted_image_20241118022238.png](pasted_image_20241118022238.png)

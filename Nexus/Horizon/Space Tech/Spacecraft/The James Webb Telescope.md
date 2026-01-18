@@ -2,7 +2,7 @@ Best telescope to this day
 Sees in infrared
 ![IMG_3034.jpeg](img_3034.jpeg)
 Launched on 25 December 2021 with [[Ariane 5]] rocket
-Made together by NASA, ESA and CSA
+Made together by [[NASA]], [[ESA]] and [[CSA]]
 Cost $10 billion
 
 At 1.5 million km above Earth at Second Lagrange Point (L<sub>2</sub>)

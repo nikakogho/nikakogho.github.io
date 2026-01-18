@@ -5,7 +5,7 @@ Operated by Roscosmos
 Spacecraft covered in at the top in **Launch Shroud**
 
 Currently used to take people to and from [[International Space Station]].
-Became only way to take crew after [[Space Shuttle]] retired in 2011 till 2021 when SpaceX made [[Crew Dragon]]
+Became only way to take crew after [[Space Shuttle]] retired in 2011 till 2021 when [[SpaceX]] made [[Crew Dragon]]
 
 ![soyuz_launching.png](soyuz_launching.png)
 Fuel: kerosene and LOX

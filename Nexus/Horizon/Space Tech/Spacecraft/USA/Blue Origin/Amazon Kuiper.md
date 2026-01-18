@@ -1,2 +1,2 @@
 Recently launched first batch.
-[[Blue Origin]]'s attempt to rival [[Starlink]]
+[[Blue Origin]]'s attempt to somewhat rival [[Starlink]] but on smaller scale

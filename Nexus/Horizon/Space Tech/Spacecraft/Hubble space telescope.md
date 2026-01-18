@@ -6,7 +6,7 @@ Still in operation
 
 Orbits Earth in 96-97 minutes
 
-Done by NASA and ESA
+Done by [[NASA]] and [[ESA]]
 
 Covers UV (0.1-0.4 microns), visible light (0.4-0.7 microns) and near-infrared light (NIR) (0.7-2.5 microns)
 

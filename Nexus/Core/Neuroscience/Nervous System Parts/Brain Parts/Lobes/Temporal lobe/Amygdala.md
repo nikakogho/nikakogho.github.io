@@ -1,4 +1,4 @@
-Processes memory, decision making and[[Emotions|emotions]] of [[Fear]] and [[Aggression]]
+Processes memory, decision making and [[Emotions|emotions]] of [[Fear|fear]] and [[Aggression|aggression]]
 
 Part of [[Temporal lobe]]
 ![IMG_3084.jpeg](img_3084.jpeg)

@@ -1,5 +1,5 @@
-Largest spaceship ever
-Purpose: [[Mars Colonization]]
+Largest spaceship ever, produced by [[SpaceX]], meant to replace both [[Falcon 9]] and [[Falcon Heavy]].
+Purpose: mostly [[Mars Colonization ]]but also to carry [[Starlink]] and also to be used for return to moon as part of [[Artemis III]].
 
 Height 121m, taller than [[Saturn V]]
 Can carry 136 tons in reusable mode or 250 tons in expendable mode
@@ -19,7 +19,7 @@ Roadmap:
 * [x] Booster catch with chopsticks (flight 5)
 * [ ] Upper stage catch
 * [ ] Refueling in orbit
-* [ ] Starship to land crew on moon as part of [[Artemis III]] mission
+* [ ] Starship to land crew on moon as part of Artemis III mission
 * [ ] Uncrewed mars flight
 * [ ] Crewed mars flight
 * [ ] Return from mars
@@ -35,7 +35,6 @@ Currently on last V2 ship with flight 11, then will move to V3.
 - V4 - 200 tons to LEO
 
 ## Super Heavy booster
-
 71 meters tall.
 33 [[Raptor Engine|Raptor engines]], 13 in center and 20 on sides.
 2400 tons of LOX
@@ -44,12 +43,10 @@ Currently on last V2 ship with flight 11, then will move to V3.
 Vented interstage allows hot staging (second stage starts before first is detached)
 
 ### Booster catch with chopsticks
-
 On 5th test flight in October 13, 2024
 ![IMG_2917.jpeg](img_2917.jpeg)
 
 ## Starship spacecraft
-
 50.3 meters tall
 Will hold 100 people (current world record 8 people)
 Empty mass 100 tons
@@ -118,3 +115,29 @@ During re-entry the starship rotates to be falling on “belly” to expose more
 	   * stress-test heat shield tiles
    * Result: booster catch worked, upper stage exploded
    * [Link](https://www.youtube.com/watch?v=9H8puVq2oi0)
+9. 27 May 2025
+   * Goals: 
+	   * Reuse a flown booster
+	   * Reach target velocity and gather data
+	   * Retest new block 2
+   * Result - partial success
+	   * Velocity reached (first time for block 2 ship)
+	   * Booster and ship exploded
+	   * Ship lost attitude control in space due to propellant leak
+   * [Link](https://www.youtube.com/watch?v=tvBtr1aP2tA)
+10. 26 August 2025
+   * Goals: 
+	   * Retest block 2
+	   * Deploy prop payloads (fake satellites)
+	   * Test engine relight and return dynamics
+   * Result - success
+	   * Deployed all Starlink simulators
+	   * Booster and upper stage splashed down as planned
+   * [Link](https://www.youtube.com/watch?v=rcd_SQZDlnk)
+11. 13 October 2025
+   * Goals: 
+	   * Repeat flight 10's results
+	   * Extra engine and thermal tests in space
+	   * Test for future re-entry
+   * Result - success, and end of block 2
+   * [Link](https://www.youtube.com/watch?v=K0NOSJF1RrA)

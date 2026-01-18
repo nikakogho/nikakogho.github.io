@@ -1,4 +1,4 @@
-Partially reusable
+Partially reusable rocket from [[SpaceX]].
 70 meters tall
 2 stages
 Thrust 7607 kN at sea level
