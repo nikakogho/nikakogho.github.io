@@ -1,6 +1,7 @@
-Mostly considered through 3 ways:
+Mostly considered through ways:
 - Biological way of reverse aging and curing all disease
 	- [[IsomorphicLabs]] by [[Demis Hassabis]] is openly going for the goal of solving all disease
+	- David Sinclair and many others are experimenting with reverse aging and starting clinical trials in 2026
 - [[Nanotechnology]] way of implanting medical nanorobots as an artificial layer of [[Immune System]] to make us able to quickly heal from any damage or disease
 - [[Uploaded Intelligence|Mind Upload]] as a type of digital immortality
 - [[Cryostasis]] to freeze now and unfreeze when your medical problem is solved

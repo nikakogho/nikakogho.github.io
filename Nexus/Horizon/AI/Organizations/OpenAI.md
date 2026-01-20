@@ -5,6 +5,9 @@ Founded by [[Sam Altman]], [[Ilya Sutskever]], [[Andrej Karpathy]] and [[Elon Mu
 
 Musk eventually left the company due to some disagreements (basically he wanted to be in charge) and started his own Tesla autopilot AI thing that led to [[xAI]] ([[Grok]]).
 
+## Members
+- [[Daniel Mossing]] - current mech interp lead
+
 ## People Who Left For Safety Concerns
 - Ilya Sutskever - kicked out in 14 May 2024 after failing to fire Sam Altman for safety concerns, founded his own company [[SSI - Safe SuperIntelligence]]
 - Founded or later joined [[Anthropic]]
