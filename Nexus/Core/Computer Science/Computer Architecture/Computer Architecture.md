@@ -1,4 +1,4 @@
-How computation happens
+How computation happens in [[Computing Hardware]].
 
 Types:
 - [[John von Neumann Architecture]] - typical computer with CPU + RAM

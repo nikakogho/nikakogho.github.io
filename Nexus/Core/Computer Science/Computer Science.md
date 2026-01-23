@@ -10,6 +10,7 @@ Relevant for
 - [[AI]]
 
 ## Sections
+- [[Computing Hardware]]
 - [[Algorithms and Data Structures]]
 - [[Databases]]
 - [[Computer Networking]]
@@ -29,4 +30,4 @@ Relevant for
 - [Qbit](https://www.youtube.com/@qbit-geo)
 	- [My lecture on Algorithms](https://www.youtube.com/watch?v=jHx1cLBnBGc)
 	- [My lecture on Databases](https://www.youtube.com/watch?v=JATSGnHSoQ4)
-- [SynapseCode](https://www.youtube.com/@synapsecodesociety/) - teaching Python + [[Neuroscience]] + merging them with Neurosity Crown EEG code in Python
+- [SynapseCode](https://www.youtube.com/@synapsecodesociety/) - teaching Python + [[Neuroscience]] + merging them with [[Neurosity Crown]] [[EEG]] code in Python
