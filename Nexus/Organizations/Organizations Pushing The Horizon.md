@@ -4,6 +4,10 @@
 	- [[Anthropic]]
 	- [[Meta AI]]
 	- [[xAI]]
+- [[AI Alignment]]
+	- [[MIRI]]
+	- [[UK AISI]]
+	- [Redwood Research](https://www.redwoodresearch.org/)
 - [[Neurotech Companies|Neurotech]]
 	- [[Neuralink]]
 	- [[Synchron]]
@@ -20,5 +24,12 @@
 	- [[NASA]]
 	- [[European Space Agency]]
 	- [[Axios Space]]
-- Cross-discipline
+- Cross-discipline Research
 	- [[DARPA]]
+	- [[Future of Humanity Institute]]
+	- [[Foresight Institute]]
+- Life Improvement
+	- [[Effective Altruism]]
+	- [[80 000 Hours]]
+- [[Existential Risk]] reduction
+	- [[Future of Life Institute]]

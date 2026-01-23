@@ -1,6 +1,8 @@
 * AI safety lead at [[US AI Safety Institute]]
 * Founder and head of [[Alignment Research Center]]
 * Founded the direction of [[Eliciting Latent Knowledge]]
+* Invented [[RLHF]]
+* Invented [[Scalable Oversight]]
 * Trained [[Evan Hubinger]] during his time in [[MIRI]]
 * [LinkedIn](https://www.linkedin.com/in/paul-christiano-5089211bb)
 * His post about possible scenario of AGI destroying humanity [here](https://www.alignmentforum.org/posts/AyNHoTWWAJ5eb99ji/another-outer-alignment-failure-story)

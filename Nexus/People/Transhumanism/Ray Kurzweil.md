@@ -12,7 +12,7 @@ Futurist, author of famous books like
 
 Bachelor in CS at MIT studying under AI pioneer [[Marvin Minsky]]
 
-Made mysic synthesizers and computer products
+Made music synthesizers and computer products
 
 Since 2012 he was director of engineering at [[Google Brain]], invited by [[Larry Page]] to give Google an AI that could understand natural language
 
