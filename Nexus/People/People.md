@@ -48,3 +48,9 @@ Bigger list [[Notable People in Space Industry|here]]
 
 ## Consciousness
 - [[Roger Penrose]]
+
+## Computing
+- [[Alan Turing]]
+- [[John von Neumann]]
+
+Bigger list [[Founders of Computing|here]]
