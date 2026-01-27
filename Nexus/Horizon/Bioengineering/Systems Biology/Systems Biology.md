@@ -6,5 +6,6 @@ Covered themes:
 - [[Network Motif]]
 - [[Timescales]]
 - [[Promoter]]
+- [[Eroom's Law]]
 
 [[Symbols in Systems Biology|Used symbols]]
