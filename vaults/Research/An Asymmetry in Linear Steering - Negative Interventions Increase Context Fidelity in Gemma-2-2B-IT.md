@@ -17,3 +17,4 @@ This generalizes for both paltering to convince you that bad thing is actually g
 
 - [Paper](https://docs.google.com/document/d/1Vw4ZY1DxN2hUvMdVbpvp3_X6_eBcXXBQgiywfA4ZUSA/edit?usp=sharing)
 - [Repo](https://github.com/nikakogho/gemma2-context-fidelity-steering)
+- [LessWrong Post](https://www.lesswrong.com/posts/buyCkzfa2J3Dso6tz/exploratory-a-steering-vector-in-gemma-2-2b-it-boosts)
