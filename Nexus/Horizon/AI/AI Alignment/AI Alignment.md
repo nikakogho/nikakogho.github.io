@@ -28,10 +28,10 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 
 ## Main Organizations
 - [[UK AISI]]
-- [[MIRI]]
-- [[Anthropic]]
-- [[DeepMind]]
-- [[OpenAI]]
+- [[MIRI]] - led by [[Eliezer Yudkowski]]
+- [[Anthropic]] - alignment led by [[Jan Leike]]
+- [[DeepMind]] - alignment led by [[Anca Dragan]]
+- [[OpenAI]] - alignment work all over the place ever since their superalignment team dissolved
 - [[MATS - Machine Learning Alignment and Theory Scholars]]
 
 ## Forums

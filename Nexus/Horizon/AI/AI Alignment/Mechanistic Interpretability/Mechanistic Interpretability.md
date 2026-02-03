@@ -1,4 +1,4 @@
-[[[[Neuroscience]] for [[AI]].
+[[Neuroscience]] for [[AI]].
 Part of [[Explainable AI]] that aims to take any existing [[Artificial Neural Network|neural network]] and figure out or change part or all of its logic.
 Relevant for [[AI Alignment]].
 
@@ -34,3 +34,16 @@ Anthropic discusses it [here](https://www.anthropic.com/research/interpretabilit
 ## Work at Anthropic
 - Led by Chris Olah, founder of mechanistic interpretability
 - [[Tom Henighan]] - key contributor of Circuits research, often co-authors with Chris Olah
+
+## Interesting Findings
+- In Transformers
+	- Steering Vectors
+		- [Refusal vector](https://arxiv.org/abs/2406.11717)
+		- [Persona Vectors](https://www.anthropic.com/research/persona-vectors)
+		- [Assistant Axis](https://www.anthropic.com/research/assistant-axis)
+	- [[Grokking]] with modular addition
+	- [[Induction Heads]]
+	- [[Indirect Object Identification]]
+- In Vision Models
+	- [[Feature Visualization]]
+	- [[High-Low Frequency Detectors]]

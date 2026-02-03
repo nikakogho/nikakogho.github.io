@@ -22,8 +22,12 @@
 - Space
 	- [[SpaceX]]
 	- [[NASA]]
+	- [[Blue Origin]]
+	- [[Virgin Galactic]]
 	- [[European Space Agency]]
 	- [[Axios Space]]
+	- [[ISRO]]
+	- [[JAXA]]
 - Cross-discipline Research
 	- [[DARPA]]
 	- [[Future of Humanity Institute]]

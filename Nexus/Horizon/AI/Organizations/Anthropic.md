@@ -16,3 +16,12 @@ https://www.anthropic.com/claude-code
 ## Model Welfare
 Team to figure if and when AIs will need rights and stuff
 https://www.anthropic.com/research/exploring-model-welfare
+
+## Team
+- Dario Amodei - CEO
+- [[Daniela Amodei]] - president
+- [[Jared Kaplan]] - chief scientist, research lead
+- [[Jack Clark]] - head of policy
+- [[Sam McCandlish]] - senior research scientist around alignment
+- [[Chris Olah]] - mech interp lead
+- [[Jack Lindsey]] - model psychiatry lead
