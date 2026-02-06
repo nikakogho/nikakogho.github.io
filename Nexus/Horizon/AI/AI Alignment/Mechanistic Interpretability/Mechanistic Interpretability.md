@@ -9,8 +9,10 @@ Anthropic discusses it [here](https://www.anthropic.com/research/interpretabilit
 [[Neel Nanda]] ([[DeepMind]] Mechanistic Interpretability lead, former student of Chris Olah) teaches it [here](https://docs.google.com/document/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/edit?pli=1&tab=t.0#heading=h.y0ohi6l5z9qn) and made [[TransformerLens]] as an open-source tool for making mech interp easy.
 
 ## Ways
-- [[Sparse Autoencoder]] (SAE) - decode meaning of concept in 1 layer of multi-layer [[Perceptron]]
-	- Idea is that typically each neuron stores multiple ideas in overlapping manner since there's more concepts than dimensions in the residual stream vector so ideas get crammed and become less understandable. Sparse Autoencoders try to unscramble the neuron so we can see what ideas it's made of. Since it involves manual unscrambling, this method is **read-only**, it **can't alter the network**
+- Dictionary Learning
+	- [[Sparse Autoencoder]] (SAE) - decode meaning of concept in 1 layer of multi-layer [[Perceptron]]. Idea is that typically each neuron stores multiple ideas in overlapping manner since there's more concepts than dimensions in the residual stream vector so ideas get crammed and become less understandable. Sparse Autoencoders try to unscramble the neuron so we can see what ideas it's made of. Since it involves manual unscrambling, this method is **read-only**, it **can't alter the network**
+	- [[Crosscoder]] - take 2 models and find same and different features in them
+	- [[Transcoder]] - replaces MLP so that based on layer n it predicts activations of next layers
 - [[Circuit Analysis]]
 - [[Feature Visualization]]
 - Probing
