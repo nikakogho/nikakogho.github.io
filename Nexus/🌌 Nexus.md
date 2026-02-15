@@ -41,6 +41,8 @@ Will be good to join them or compete with them
 ### Future Hopes
 - [[Immortality]]
 - [[Radical Abundance]]
+- [[Life Improvement]]
+- [[Human Augmentation]]
 
 ---
 

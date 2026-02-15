@@ -2,7 +2,9 @@ Enter organism to deliver gene teaching a cell to make proteins, like mail deliv
 4.7 kilobases
 Single stranded (sometimes self-complementary, AKA folds onto itself, making it ~2.3kb size but faster working since it won't need to duplicate after getting in host)
 
-Low cytotoxicity (low damage to cell)
+Low cytotoxicity (low damage to cell).
+
+Recombinant version of it (content replaced with a gene we want to insert) is used often for [[Genetic Engineering]].
 
 ## Parts
 

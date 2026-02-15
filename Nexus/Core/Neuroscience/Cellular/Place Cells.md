@@ -1,4 +1,4 @@
-[[Neuron]] that fires when you are at a specific location
+[[Neuron]] in [[Hippocampus]] that fires when you are at a specific location
 
 **Place field** - location where neuron fires
 
@@ -8,4 +8,6 @@
 
 Place fields also exist in a virtual reality
 
-“Place cell” might be bad name because it also stores context. For example, these cells change synapses even when place doesn’t change but you get a bad memory in the place
+“Place cell” might be bad name because it also stores context. For example, these cells change synapses even when place doesn’t change but you get a bad memory in the place.
+
+They get reused for abstract spaces like social space.

@@ -7,9 +7,12 @@ Main themes:
 	- [[Illumina Sequencing]]
 	- [[Pyrosequencing]]
 	- [[Sanger Sequencing]]
-- [[Genome Sequency Analysis]]
+	- [[Genome Sequence Analysis]]
 - [[Open Reading Frame]]
-- [[Adeno Associated Virus]]
+- Gene Editing
+	- [[CRISPR]]
+- Gene Edit Delivery
+	- [[Adeno Associated Virus]]
 - [[Gene Therapy]]
 - [[Copy Number Variation]]
 - [[Flux Balance Analysis]]
