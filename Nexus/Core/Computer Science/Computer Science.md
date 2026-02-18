@@ -25,6 +25,7 @@ Relevant for
 - [[Virtualization]]
 	- [[Virtual Machines]]
 	- [[Containerization]]
+- [[Numerical Analysis]]
 
 ## My Lectures
 - [Qbit](https://www.youtube.com/@qbit-geo)

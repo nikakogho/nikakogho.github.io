@@ -1,2 +1,3 @@
 - [[Principal Component Analysis (PCA)]]
 - [[Markov Matrix]]
+- [[Vector and Matrix Norms]]

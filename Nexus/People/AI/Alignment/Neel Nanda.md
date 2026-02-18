@@ -1,5 +1,6 @@
 [[Mechanistic Interpretability]] lead at [[DeepMind]]
 
+- Member of [[Effective Altruism]] and [[LessWrong]]
 - [Website]([https://www.neelnanda.io](https://www.neelnanda.io/))
 - MATS - tutors students twice a year, [link](https://docs.google.com/document/u/0/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/mobilebasic)
 - [LinkedIn](https://uk.linkedin.com/in/neel-nanda%F0%9F%94%B8-993580151)
