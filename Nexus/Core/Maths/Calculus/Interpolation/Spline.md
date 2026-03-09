@@ -5,18 +5,20 @@ Piecewise polynomials typically for local [[Interpolation]]
 Line between each point pairs
 ![linear_spline.png](linear_spline.png)
 
-Rough transitions, bad if modeling movement (expects instant shift of velocity and acceleration)
+Rough transitions, bad if modeling movement (expects instant shift of velocity and acceleration).
+If transition point has a mismatch of first order derivatives, we call it a **knot**
+![spline_knot.png](spline_knot.png)
 
 ## Quadratic Splines
 
 Piecewise quadratic polynomials (y = ax<sup>2</sup> + bx + c) with smooth transitions.
-Allows smooth change of velocity but not of acceleration
+Allows smooth change of velocity but not of acceleration (C<sup>1</sup>)
 
 ## Cubic Splines
 
 Piecewise cubic polynomials (y = ax<sup>3</sup> + bx<sup>2</sup> + cx + d) with smooth transitions
 ![cubic_spline_3rd_order.png](cubic_spline_3rd_order.png)
-Better for modeling motion since it allows smoother transition of velocity and acceleration.
+Better for modeling motion since it allows smoother transition of velocity and acceleration (C<sup>2</sup>)
 
 ### Solving Cubic Splines
 
@@ -33,7 +35,7 @@ Instead of last 2 equations being "second order derivatives at edges are 0", we 
 
 ## B-Splines
 
-TODO
+A type of smoothing spline that gives C<sup>2</sup> continuity (smooth transition of both velocity and acceleration) and local control but doesn't interpolate exactly
 
 ## Smoothing Splines
 
@@ -42,3 +44,4 @@ Sometimes we don't want to exactly pass through each point and prefer flexibilit
 Smoothing splines use a knot and penalize the second derivative (curvature)
 
 TODO details
+![spline_types_comp.png](spline_types_comp.png)
