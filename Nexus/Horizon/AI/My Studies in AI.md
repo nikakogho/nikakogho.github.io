@@ -34,5 +34,5 @@
 	- [ ] Reproduce GPT-2 hw
 - [x] [MIT Deep Learning](https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI)
 - [ ] freeCodeCamp 25 hour PyTorch [video](https://www.youtube.com/watch?v=V_xro1bcAuA&t=15444s)
-- [ ] Neel Nanda [MATS](https://docs.google.com/document/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/edit?pli=1&tab=t.0)
+- [x] Neel Nanda [MATS](https://docs.google.com/document/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/edit?pli=1&tab=t.0)
 - [ ] [[AI Learning Roadmap with LLMs]]

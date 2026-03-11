@@ -1,25 +1,23 @@
 ## Core AI Concepts
 - [[Machine Learning]]
-- [[Search in Computing]]
-- [[Knowledge in Computing]]
-- [[Uncertainty]]
-- [[Optimization]]
 - [[Natural Language Processing]]
-- [[Algorithms in AI]]
 - [[Image Processing]]
 - [[Generative AI]]
+- [[AI Safety]]
 - [[AI Alignment]]
 - [[Turing Test]]
-- [[Information Theory]]
 - [[Explainable AI]]
+- [[Mechanistic Interpretability]]
+- [[Algorithms in AI]]
+- [[Information Theory]]
 
 ## Neural Networks
-- [[Artificial Neural Network]]
+- [[Artificial Neural Network|Neural Network]]
 - [[Perceptron]]
 - [[Gradient Descent]]
 - [[Backpropagation]]
 - [[Neural Network Normalization]]
-- [[Attention (in Artificial Neural Network)]]
+- [[Attention (in Artificial Neural Network)|Attention]]
 - [[Transformer]]
 - [[Large Language Models]]
 - [[Mechanistic Interpretability]]
@@ -40,14 +38,16 @@
 ## Top LLMs
 - [[GPT]]
 - [[Gemini]]
-- [[Claude Sonnet]]
+- [[Claude]]
 - [[Grok]]
 - [[Llama]]
 - [[DeepSeek]]
 - [[Qwen]]
+- [[Kimi]]
 - [[Mistral]]
 
 ## AI Agents
+- [[OpenClaw]]
 - [[Model Context Protocol]]
 - Function calling
 - Computer use

@@ -11,3 +11,9 @@ Types:
 Used to make [[Large Language Models]]
 
 ![ML_joke.png](ml_joke.png)
+
+Relevant Concepts:
+- [[Search in Computing]]
+- [[Knowledge in Computing]]
+- [[Uncertainty]]
+- [[Optimization]]
