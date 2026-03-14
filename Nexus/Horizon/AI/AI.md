@@ -9,7 +9,6 @@
 - [[Explainable AI]]
 - [[Mechanistic Interpretability]]
 - [[Algorithms in AI]]
-- [[Information Theory]]
 
 ## Neural Networks
 - [[Artificial Neural Network|Neural Network]]
@@ -73,8 +72,19 @@
 - [[Neuromorphic Computing]]
 - [[Uploaded Intelligence]]
 
+## Other Relevant Concepts
+- [[Maths]]
+- [[Information Theory]]
+- [[Computer Science]]
+- [[Computational Mechanics]]
+- [[Robotics]]
+- [[Neuroscience]]
+	- [[Learning]]
+	- [[Attention]]
+	- [[Memory]]
+- [[Consciousness]]
+
 ## Further
-- [[My Experiments in AI]]
 - [[My Studies in AI]]
 - [[ARENA]]
 - [Harvard CS50 AI YouTube playlist](https://www.youtube.com/playlist?list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv)

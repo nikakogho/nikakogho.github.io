@@ -1,1 +1,1 @@
-Type of [[Machine Learning]] where you have [[Artificial Neural Network|neural network]] with many hidden layers
+Type of [[Machine Learning]] where you have [[Artificial Neural Network|neural network]] with many hidden layers (called a deep neural network)

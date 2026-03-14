@@ -8,6 +8,7 @@ Study of the universe
 - [[Nuclear Physics]]
 - [[Orbital Mechanics]]
 - [[Space Equations]]
+- [[Computational Mechanics]]
 
 Khan Academy
 - [[AP Physics 1 problems]]

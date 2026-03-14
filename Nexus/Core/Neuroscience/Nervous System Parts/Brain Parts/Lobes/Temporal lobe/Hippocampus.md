@@ -1,8 +1,8 @@
-For memory and learning and spatial navigation
-In each [[Temporal lobe]]
+For memory, learning, spatial navigation, and forming [[Abstraction|abstractions]].
+In each [[Temporal lobe]].
 ![IMG_3088.jpeg](img_3088.jpeg)
 
-Stores memories when awake and transfers them to long term memory in [[Neocortex]] during sleep when triggered by [[Sharp Wave Ripples]].
+Stores memories when awake and transfers them to long term memory in [[Neocortex|neocortex]] during sleep when triggered by [[Sharp Wave Ripples]].
 
 Stores spatial memories particularly well because of place cells, grid cells and other spatial optimized neurons. This is why memory palaces work: they bypass working memory and go straight in hippocampus in a more stable storage
 

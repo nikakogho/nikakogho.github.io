@@ -5,6 +5,8 @@ Types:
 	- [[Artificial Neural Network|Neural Network]]
 * [[Reinforcement Learning]]
 * [[Q Learning]]
+* [[Markov Model]]
+* [[Hidden Markov Model]]
 
 [[Support Vector Machine]]
 

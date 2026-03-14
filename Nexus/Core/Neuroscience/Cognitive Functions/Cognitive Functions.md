@@ -1,3 +1,4 @@
+- [[Abstraction]]
 - [[Consciousness]]
 - [[Neuroscience of Planning]]
 - [[Neuroscience of Thinking]]

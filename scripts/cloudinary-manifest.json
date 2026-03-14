@@ -47,6 +47,8 @@
     "nexus/images/clone-robotics-protoclone-jan-2025.gif",
     "nexus/images/clone_robotics_hand.webp",
     "nexus/images/cnn_receptive_field.jpeg",
+    "nexus/images/comp_mech_automotive_uses.png",
+    "nexus/images/compmech_in_medicine.png",
     "nexus/images/computing_self_attention_weights.jpeg",
     "nexus/images/concordant_and_non_concordant_alignment.png",
     "nexus/images/context_free_grammar.png",
@@ -127,6 +129,8 @@
     "nexus/images/hessian_2x2.png",
     "nexus/images/hidden_markov_model.png",
     "nexus/images/high-low_frequency_detectors.png",
+    "nexus/images/hmm_state_machine.png",
+    "nexus/images/hmm_transition_matrix.png",
     "nexus/images/hpa_axis.png",
     "nexus/images/human_eye_blind_spot.png",
     "nexus/images/hydrogen.png",
@@ -439,6 +443,7 @@
     "nexus/images/map_of_self_in_brain.png",
     "nexus/images/markov_global_localization.jpeg",
     "nexus/images/markov_matrix.png",
+    "nexus/images/markov_model.png",
     "nexus/images/meadow_map.jpeg",
     "nexus/images/meadow_map_midpoints.jpeg",
     "nexus/images/meadow_map_relaxed.jpeg",
@@ -861,6 +866,7 @@
     "nexus/images/warp_core_cuda_and_tensor_cores.png",
     "nexus/images/wasserstein_distance.jpeg",
     "nexus/images/weight_exfiltration_attack_vectors.png",
+    "nexus/images/z1r_process.png",
     "nexus/images/zero_moment_point.png"
   ]
 }

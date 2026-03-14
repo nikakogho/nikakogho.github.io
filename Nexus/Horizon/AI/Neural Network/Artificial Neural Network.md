@@ -1,4 +1,5 @@
-Layers, linear equations, sometimes [[ReLu]] or [[Sigmoid Activation]]
+Layers, linear equations, sometimes [[ReLu]] or [[Sigmoid Activation]].
+Used in [[Deep Learning]], the most popular kind of [[Machine Learning]].
 
 Input layer, hidden layers, output layer
 
@@ -6,7 +7,10 @@ Can do [[Backpropagation]] using [[Gradient Descent]] or other way to learn by r
 
 In **binary classification**\* for [[Supervised Learning]] a neural network is made of [[Perceptron]] neurons
 
-Good video for this from [Harvard](https://www.youtube.com/watch?v=J1QD9hLDEDY)
+Good video for this from [Harvard](https://www.youtube.com/watch?v=J1QD9hLDEDY).
+
+Is largely considered a black box, something we grow and not build.
+[[Mechanistic Interpretability]] aims to solve that as much as possible.
 
 ## Training a Neural Network
 Typically uses [[Backpropagation]] using [[Gradient Descent]].

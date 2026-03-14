@@ -1,6 +1,6 @@
 Machine Intelligence Research Institute
 
-* Founded by [[Eliezer Yudkowski]] in 2000.
+* Founded by [[Eliezer Yudkowsky]] in 2000.
 * Currently led by [[Nate Soares]].
 * First to take [[AI Alignment]] seriously.
 * [Website](https://intelligence.org/)
