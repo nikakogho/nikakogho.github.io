@@ -4,12 +4,14 @@ Can be a literal copy of a person's mind or a replica of a living brain in gener
 
 Some people consider this a way to get digital [[Immortality|immortality]]
 
-Different levels:
+[[Nick Bostrom]] and [[Anders Sandberg]] in [[Future of Humanity Institute]] published the [Whole Brain Emulation Roadmap](https://gwern.net/doc/ai/scaling/hardware/2008-sandberg-wholebrainemulationroadmap.pdf) in 2008.
+
+Different levels of detail:
 - [[Functional Digital Twin Of A Brain]]
 - Connectome Level Simulation
 - Cellular Level Simulation
 - Atomic Level Simulation
-- Quantum Level Simulation
+- Quantum Level Simulation (may be impossible due to [[Heisenberg's Uncertainty Principle]])
 
 Show Pantheon does Connectome level simulation.
 
@@ -17,4 +19,6 @@ When uploading a mind, I think more important than level of simulation is whethe
 
 [[Ray Kurzweil]] goes into some detail about this is his book "The Singularity Is Nearer"
 
-A company [[Nectome]] is attempting this and has [[Sam Altman]] in waitlist
+A company [[Nectome]] is attempting this and has [[Sam Altman]] in waitlist.
+
+A company [[Eon Systems]] recently had a breakthrough with doing a neuron-by-neuron [[Spiking Neural Networks|Spiking Neural Network]] simulation of a fruit fly brain, with each neuron represented as a [[Leaky Integrate And Fire]] model. Fly can eat, walk, fly, but can't learn (synaptic strengths are static).

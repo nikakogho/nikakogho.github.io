@@ -18,6 +18,7 @@ The bedrock: laws, equations, mechanisms—everything that underlies reality:
 - [[Chemistry]]
 - [[Biology]]
 - [[Neuroscience]]
+- [[Engineering]]
 
 [[Computer Science]] as a tool that helps the biological human mind with making sense of the world and adding to it (helps all of science and engineering).
 
