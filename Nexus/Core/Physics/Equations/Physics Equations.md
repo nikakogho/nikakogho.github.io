@@ -8,3 +8,4 @@
 - [[Thermodynamics]]
 - [[Electromagnetism]]
 - [[Space Equations]]
+- [[Capstan Equation]]

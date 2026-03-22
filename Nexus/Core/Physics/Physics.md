@@ -1,7 +1,7 @@
 Study of the universe
 
 - [[Physics Equations]]
-- [[Mechanics]]
+- [[Classical Mechanics]]
 - [[Electromagnetism]]
 - [[Thermodynamics]]
 - [[Simple Harmonic Motion]]

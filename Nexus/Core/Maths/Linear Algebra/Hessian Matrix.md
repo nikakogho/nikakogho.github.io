@@ -1,4 +1,5 @@
-Matrix of second derivatives in multi-variate function
+Matrix of second derivatives in multi-variate function.
+Could in principle be used for [[Backpropagation]] in [[Artificial Neural Network|neural networks]] instead of first order derivatives, but usually isn't.
 
 ## 2 argument example
 

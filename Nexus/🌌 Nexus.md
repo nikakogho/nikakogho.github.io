@@ -6,13 +6,11 @@
 2. **Push humanity toward a super-human utopia**  
    *Chart the engineering paths to post-scarcity resources, interstellar civilization, artificial super-intelligence, and qualitative augmentation of consciousness.*
 
-If those ambitions excite you, dive in and contribute.
-
 ---
 
 ## 🧭 How this vault is organized
 ### Core
-The bedrock: laws, equations, mechanisms—everything that underlies reality:
+The bedrock: laws, equations, mechanisms underlying our reality:
 - [[Maths]]
 - [[Physics]]
 - [[Chemistry]]
@@ -57,11 +55,3 @@ Will be good to join them or compete with them
 * **Integrated pathways** — How do breakthroughs in one domain (e.g., nanotech) accelerate others (e.g., biotech)?
 
 Every Core principle and Horizon experiment is linked so you can trace answers along the graph.
-
----
-
-## Welcome
-
-> _“Transcendence is a collaborative project between the cosmos and the curious.”_
-
-Welcome aboard — let’s build the future, one linked idea at a time.
