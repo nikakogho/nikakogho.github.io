@@ -1,4 +1,4 @@
 [[Engineering]] with electronics
 
 - [[Battery]]
-- [[Motor]]
+- [[Electric Motor]]
