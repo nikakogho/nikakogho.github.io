@@ -1,4 +1,4 @@
-Used to transmit [[Angular Motion|angular motion]], [[Torque|torque]], and [[Power|power]] from one [[Shaft|shaft]] to another.
+Used in [[Transmission|transmission]] for [[Angular Motion|angular motion]], [[Torque|torque]], and [[Power|power]] from one [[Shaft|shaft]] to another.
 
 * [[Planetary Gear]]
 

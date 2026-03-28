@@ -3,3 +3,4 @@
 - [[Ohm's Law]]
 - [[Kirchoff’s Laws]]
 - [[Capacitance]]
+- [[Electromotive Force]]

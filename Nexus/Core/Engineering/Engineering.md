@@ -4,6 +4,7 @@ Classical
 - [[Mechanical Engineering]]
 - [[Electrical Engineering]]
 - [[Computer Engineering]]
+- [[Systems & Control Theory]]
 
 Frontier
 - [[Bioengineering]]

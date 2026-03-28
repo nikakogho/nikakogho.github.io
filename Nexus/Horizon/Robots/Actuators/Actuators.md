@@ -1,4 +1,4 @@
 - [[Servo Motor]]
-- Electric motors
+- [[Electric Motor]]
 - [[Hydraulic Actuators]]
 - [[Myofiber artificial muscle]]

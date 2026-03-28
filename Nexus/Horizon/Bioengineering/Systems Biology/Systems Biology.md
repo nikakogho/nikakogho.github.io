@@ -4,7 +4,7 @@ Covered themes:
 - [[Transcription Network]]
 - [[Randomized Network]]
 - [[Network Motif]]
-- [[Timescales]]
+- [[Timescales In A Cell]]
 - [[Promoter]]
 - [[Eroom's Law]]
 

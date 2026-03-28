@@ -98,6 +98,7 @@
     "nexus/images/dna_replication.png",
     "nexus/images/double_descent.png",
     "nexus/images/dropout_intuition.png",
+    "nexus/images/duty_cycle_examples.png",
     "nexus/images/ecog.png",
     "nexus/images/ecog_2.png",
     "nexus/images/eeg_10-20_system.png",
@@ -488,6 +489,7 @@
     "nexus/images/moe_example_2.png",
     "nexus/images/moe_router.png",
     "nexus/images/moore_vs_eroom_law.png",
+    "nexus/images/motor_operational_diamond.png",
     "nexus/images/multihead_attention.jpeg",
     "nexus/images/multihead_attention_concat.jpeg",
     "nexus/images/multiple_trace_model_hippocampus.jpeg",
@@ -832,6 +834,7 @@
     "nexus/images/sham_rage.jpeg",
     "nexus/images/shoji_takeuchi.png",
     "nexus/images/sigmoid_activation.png",
+    "nexus/images/single_vs_multilayer_winch.png",
     "nexus/images/sls_standing.png",
     "nexus/images/sm_warp_and_rt_cores.png",
     "nexus/images/snake_robot.png",
@@ -898,6 +901,7 @@
     "nexus/images/warp_core_cuda_and_tensor_cores.png",
     "nexus/images/wasserstein_distance.jpeg",
     "nexus/images/weight_exfiltration_attack_vectors.png",
+    "nexus/images/winch.png",
     "nexus/images/z1r_process.png",
     "nexus/images/zero_moment_point.png"
   ]
