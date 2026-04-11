@@ -16,7 +16,7 @@ This connection forms between:
 All vertebrate gap junctions are voltage-gated
 
 ## Chemical Synapse
-Point of contact
+Point of contact where axon of one neuron touches another neuron, usually at a dendritic spine
 ![IMG_4315_1.jpeg](img_4315_1.jpeg)
 
 * Presynaptic axon terminal

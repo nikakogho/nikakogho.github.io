@@ -31,6 +31,14 @@ How?
 * Axon might form more synapses on same dendrite
 * Dendritic spine grows to make room for more ion channels
 
+## Non-Hebbian LTP
+
+If enough dendritic spines receive neurotransmitters at the same time and locally increase the potential then LTP can be triggered on these dendritic spines even if the neuron doesn’t spike
+![non_hebbian_ltp.png](non_hebbian_ltp.png)
+
+Basal synapses, being closer to the soma, do Hebbian learning. Apical ones use non-Hebbian
+![basal_apical_hebbian_nonhebbian.png](basal_apical_hebbian_nonhebbian.png)
+
 ## Long Term Depression (LTD)
 
 For unlearning (weakening synaptic connection and eventually undoing the synapse).

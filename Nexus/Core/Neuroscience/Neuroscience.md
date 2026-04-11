@@ -3,6 +3,7 @@ We mostly focus on the human brain.
 
 - [[Cellular Neuroscience]]
 - [[Nervous System Parts]]
+- [[Algorithms Of The Brain]]
 - [[Senses]]
 - [[Movement]]
 - [[Emotions]]

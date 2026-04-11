@@ -71,5 +71,12 @@ How it works:
   Long neurons are *Golgi Type I*
   Short are *Golgi Type II*
 
+## Neuron Shapes
+
+### Pyramidal Neuron
+
+![apical_basal_dendrites_pyramidal_neuron.png](apical_basal_dendrites_pyramidal_neuron.png)
+
 ## Chemical Effects of Neurons
-- [[Steroid Effect On Neurons]]
+
+* [[Steroid Effect On Neurons]]

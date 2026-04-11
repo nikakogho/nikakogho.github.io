@@ -36,3 +36,6 @@
 - [ ] freeCodeCamp 25 hour PyTorch [video](https://www.youtube.com/watch?v=V_xro1bcAuA&t=15444s)
 - [x] Neel Nanda [MATS](https://docs.google.com/document/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/edit?pli=1&tab=t.0)
 - [ ] [[AI Learning Roadmap with LLMs]]
+
+i should do this experiment this weekend maybe
+https://x.com/davidbau/status/2040057055780778460?s=46

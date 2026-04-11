@@ -9,7 +9,7 @@ Brain’s “command center”
 [[Lateral sulcus]] separates it from [[Temporal lobe]]
 ![IMG_3176.jpeg](img_3176.jpeg)
 
-## 4 principal gyri
+## 4 principal [[Gyrus|gyri]]
 
 ![IMG_3164.jpeg](img_3164.jpeg)
 

@@ -1,8 +1,8 @@
 Founded by Sir [[Demis Hassabis]] as an "Apollo Mission for AGI" in September 2010 in London.
 
 Co-founders:
-- [[Mustafa Suleyman]] - ethics and social implications of AI
-- [[Shane Legg]] - ML researcher from New Zealand
+- [[Mustafa Suleyman]] - ethics and social implications of AI, now leads Microsoft AI
+- [[Shane Legg]] - ML researcher from New Zealand, now chief AI Scientist
 
 Goal: to solve intelligence and use it to solve all other problems
 

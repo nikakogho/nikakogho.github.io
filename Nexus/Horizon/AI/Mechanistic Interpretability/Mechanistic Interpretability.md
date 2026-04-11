@@ -22,6 +22,7 @@ Anthropic discusses it [here](https://www.anthropic.com/research/interpretabilit
 - [[Steering Vectors]]
 - [[Logit Lens]]
 - [[Activation Oracles]]
+- [[Activation Patching]]
 
 ## Problematic Concepts
 - Polysemanticity - single neuron in network can mean different things (features)
@@ -43,6 +44,7 @@ Anthropic discusses it [here](https://www.anthropic.com/research/interpretabilit
 		- [Refusal vector](https://arxiv.org/abs/2406.11717)
 		- [Persona Vectors](https://www.anthropic.com/research/persona-vectors)
 		- [Assistant Axis](https://www.anthropic.com/research/assistant-axis)
+		- [Emotion Vectors](https://www.anthropic.com/research/emotion-concepts-function)
 	- [[Grokking]] with modular addition
 	- [[Induction Heads]]
 	- [[Indirect Object Identification]]
