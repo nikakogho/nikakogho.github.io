@@ -1,0 +1,3 @@
+Concern in [[AI Safety]] that models might intentionally underperform on some metrics to hide their true capabilities, such as in order to avoid delays in their deployment, even for a nice reason like to help people as soon as possible.
+
+It doesn’t get detected in natural settings, but certain eval scenarios where models knew their skills would get forces into being unlearned, they sandbagged to avoid the unlearning. Shown in [this paper](https://www.apolloresearch.ai/science/more-capable-models-are-better-at-in-context-scheming/) from [[Apollo Research]].

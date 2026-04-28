@@ -34,3 +34,8 @@ This is fixable with [Matryoshka SAEs](https://www.lesswrong.com/posts/rKM9b6B2L
 
 ![SAE_feature_splitting.png](sae_feature_splitting.png)
 This can also be solved with other architectures like Matryoshka SAEs.
+
+## Error Term
+`Original Stream = SAE Reconstruction + Error Term` and the error term that could not be captured might include dangerous misaligned thoughts, or useful important thinking, or both.
+
+We can do **SAE Bottlenecking** to remove the error term part and only keep SAE reconstruction part in residual stream, which would more or less ensure we didn't miss any deceptive reasoning, but it would also mean we can't use any actual reasoning that happened to be in error term, so our model is dumber due to this **alignment tax**.

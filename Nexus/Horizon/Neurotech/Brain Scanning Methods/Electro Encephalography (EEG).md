@@ -38,6 +38,11 @@ d) for EEG but too far
 300 milliseconds after a person detects something unusual (like red ball among a sequence of green balls), his brain will light up, especially in Pz part of [[Parietal lobe|parietal lobe]]
 ![IMG_5421.png](img_5421.png)
 
+## Subgaleal EEG
+
+EEG under scalp but above skull, mostly for monitoring chronic epilepsy and seizure detection
+![subgaleal_EEG.png](subgaleal_eeg.png).
+
 ## My Videos
 
 * [Building a forest with focus with Neurosity Crown](https://www.youtube.com/watch?v=EU_obsIUCwc)

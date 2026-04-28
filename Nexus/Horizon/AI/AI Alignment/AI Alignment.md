@@ -4,8 +4,10 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 - [[Reward Hacking]]
 - [[Alignment Faking]]
 - [[Gradient Hacking]]
+- [[Orthogonality Thesis]]
 - [[Instrumental Convergence]]
 - [[Sandbagging]]
+- [[Corrigibility]]
 - [[Steganographic Thinking]]
 - [[Emergent Misalignment of Large Language Models]]
 - [[Deception in Large Language Models]]
@@ -22,6 +24,8 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 	- Iterate
 - Scalable Oversight - developing ways to scale human oversight, maybe by automating some parts of it by AI overseer
 - Factored Cognition - breaking down hard tasks into simple parts that are easier to verify
+- [[Latent Adversarial Training]]
+- [[Concept Erasure (Unlearning)]]
 - Evals
 - Gating
 - Containment
@@ -33,6 +37,9 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 - [[DeepMind]] - alignment led by [[Anca Dragan]]
 - [[OpenAI]] - alignment work all over the place ever since their superalignment team dissolved
 - [[MATS - Machine Learning Alignment and Theory Scholars]]
+- [[Redwood Research]]
+- [[Apollo Research]]
+- [Eleos AI](https://eleosai.org/) - [[AI Welfare]]
 
 ## Forums
 - [[LessWrong]]

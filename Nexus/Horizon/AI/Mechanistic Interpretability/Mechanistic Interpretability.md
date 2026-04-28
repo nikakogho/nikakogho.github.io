@@ -2,11 +2,14 @@
 Part of [[Explainable AI]] that aims to take any existing [[Artificial Neural Network|neural network]] and figure out or change part or all of its logic.
 Relevant for [[AI Alignment]].
 
-Created by [[Chris Olah]], mechanistic interpretability lead at [[Anthropic]]
+Created by [[Chris Olah]], mechanistic interpretability lead at [[Anthropic]].
 
 Anthropic discusses it [here](https://www.anthropic.com/research/interpretability-dreams)
 
 [[Neel Nanda]] ([[DeepMind]] Mechanistic Interpretability lead, former student of Chris Olah) teaches it [here](https://docs.google.com/document/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/edit?pli=1&tab=t.0#heading=h.y0ohi6l5z9qn) and made [[TransformerLens]] as an open-source tool for making mech interp easy.
+
+Originally started on [[Convolutional Neural Network|CNNs]] by Chris Olah.
+Then in 2021 the field moved to analyzing LLMs, started with the paper [Mathematical Framework For Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html) 2021 at Anthropic. Neel Nanda discusses that paper in [this video](https://m.youtube.com/watch?v=KV5gbOmHbjU).
 
 ## Ways
 - Dictionary Learning

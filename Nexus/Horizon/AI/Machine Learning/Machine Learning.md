@@ -1,5 +1,6 @@
 Types:
 * [[Supervised Learning]]
+    * [[k-Nearest Neighbors]]
 * [[Unsupervised Learning]]
 * [[Deep Learning]]
 	- [[Artificial Neural Network|Neural Network]]
