@@ -1,4 +1,5 @@
-Making sure AI does what we want it to do and not Ultron or Terminator or less dramatic but still bad outcomes
+Making sure AI does what we want it to do and not Ultron or Terminator or less dramatic but still bad outcomes.
+2 ways to handle [[AI Safety]] are with alignment and [[AI Control|control]].
 
 ## Alignment Problems
 - [[Reward Hacking]]
@@ -12,6 +13,7 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 - [[Emergent Misalignment of Large Language Models]]
 - [[Deception in Large Language Models]]
 - [[Paperclip Maximizer]] / [[Hedonium]]
+- [[Inner and Outer Alignment]]
 
 ## Proposed Solutions
 - [[Mechanistic Interpretability]]
@@ -22,7 +24,7 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 	- Starting with task humans can do
 	- Now doing slightly harder task with help from AI
 	- Iterate
-- Scalable Oversight - developing ways to scale human oversight, maybe by automating some parts of it by AI overseer
+- [[Scalable Oversight]] - developing ways to scale human oversight, maybe by automating some parts of it by AI overseer
 - Factored Cognition - breaking down hard tasks into simple parts that are easier to verify
 - [[Latent Adversarial Training]]
 - [[Concept Erasure (Unlearning)]]
