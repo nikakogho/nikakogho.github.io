@@ -12,7 +12,9 @@ And in fact [[Overfitting|overfitting]] in general is a problem of outer misalig
 
 ## Inner Misalignment
 
-Where X' ≠ X'': I wanted the AI to learn physics well (X), which I was measuring by how well it did on a physics SAT test (X'). The model internally noticed that it was doing well if some news reported that this model was doing well (X''), so after deployment the model decides to hack that news website (or just hack the channel through which this model itself receives the news) to maximize the received signal (X'') without actually doing well on the test at all
+Where X' ≠ X'': I wanted the AI to learn physics well (X), which I was measuring by how well it did on a physics SAT test (X'). The model internally noticed that it was doing well if some news reported that this model was doing well (X''), so after deployment the model decides to hack that news website (or just hack the channel through which this model itself receives the news) to maximize the received signal (X'') without actually doing well on the test at all.
+
+Introduced properly in [Risks From Learned Optimization in ML Systems](https://arxiv.org/pdf/1906.01820) by [[Evan Hubinger]].
 
 ## Alignment Faking as Inner Misalignment
 
@@ -27,3 +29,5 @@ By measuring its inner state well, it could maybe blur X' and X''
 ### Mesa-Objective Mostly Unverifiable
 
 Except for the toy examples like the [Sleeper Agents Paper](https://arxiv.org/abs/2401.05566).
+
+### Some Problems Are Both Outer & Inner Alignment-Related Together

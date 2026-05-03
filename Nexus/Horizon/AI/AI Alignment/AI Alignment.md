@@ -34,7 +34,7 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 
 ## Main Organizations
 - [[UK AISI]]
-- [[MIRI]] - led by [[Eliezer Yudkowsky]]
+- [[MIRI]] - led by [[Eliezer Yudkowsky]]. Gave up on solving alignment in time and is advocating for worldwide shutdown of AGI research.
 - [[Anthropic]] - alignment led by [[Jan Leike]]
 - [[DeepMind]] - alignment led by [[Anca Dragan]]
 - [[OpenAI]] - alignment work all over the place ever since their superalignment team dissolved
