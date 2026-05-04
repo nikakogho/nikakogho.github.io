@@ -28,6 +28,7 @@ Making sure AI does what we want it to do and not Ultron or Terminator or less d
 - Factored Cognition - breaking down hard tasks into simple parts that are easier to verify
 - [[Latent Adversarial Training]]
 - [[Concept Erasure (Unlearning)]]
+- [[Inoculation Prompting]]
 - Evals
 - Gating
 - Containment

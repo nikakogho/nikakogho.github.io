@@ -51,6 +51,7 @@ Then in 2021 the field moved to analyzing LLMs, started with the paper [Mathemat
 	- [[Grokking]] with modular addition
 	- [[Induction Heads]]
 	- [[Indirect Object Identification]]
+	- [[Persona Selection Model]]
 - In Vision Models
 	- [[Feature Visualization]]
 	- [[High-Low Frequency Detectors]]
