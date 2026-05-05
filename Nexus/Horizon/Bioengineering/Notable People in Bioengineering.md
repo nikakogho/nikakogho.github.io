@@ -4,3 +4,5 @@
 - [[Ben Lamm]]
 - [[Eric Talevich]]
 - [[Mat Crocker]]
+- [[David Sinclair]]
+- [[David Eagleman]]

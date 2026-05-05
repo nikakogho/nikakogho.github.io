@@ -5,3 +5,6 @@ Can be caused by simple finetunes that teach a model to do "the unacceptable thi
 - [Training on insecure code](https://arxiv.org/abs/2502.17424)
 - [Giving a model controversial aesthetic preferences](https://www.lesswrong.com/posts/gT3wtWBAs7PKonbmy/aesthetic-preferences-can-cause-emergent-misalignment)
 - [Word "poo"](https://www.lesswrong.com/posts/pGMRzJByB67WfSvpy/will-any-crap-cause-emergent-misalignment)
+
+## [[Inoculation Prompting]]
+Telling a model “misbehaving in this situation is a special case” avoids broad emergent misalignment. Like vaccination.

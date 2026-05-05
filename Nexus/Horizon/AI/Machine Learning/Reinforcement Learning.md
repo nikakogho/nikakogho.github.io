@@ -27,3 +27,11 @@ Way to balance exploration-exploitation
 
 P(explore) = ε
 P(exploit) = 1 - ε
+
+## Trajectory
+- Trajectory = sequence of states, rewards, actions
+- Rollout = simulated trajectory
+- Episode = trajectory that starts in initial state and ends in terminal state (like one full game of chess)
+
+## In AI Alignment
+Used as [[RLHF]] or [[RLAIF]] to make base models (produced by [[Pretraining LLM|pretraining]]) helpful, honest, harmless.
