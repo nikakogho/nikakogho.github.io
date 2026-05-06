@@ -14,11 +14,6 @@ TODO
 
 TODO
 
-## Recursive Reward Modeling
-
-Use AI to help humans with giving better feedback.
-TODO details
-
 ## RL with AI Feedback
 
 Broadly [[RLAIF]], most notably [[Constitutional AI]].
