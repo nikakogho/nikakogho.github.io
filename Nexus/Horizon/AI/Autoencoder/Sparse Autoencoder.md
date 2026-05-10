@@ -25,8 +25,11 @@ Cons:
 
 ### Feature Absorption
 
-Since L1 loss incentivizes fewest amount of neurons to activate, overlapping concepts get unnaturally learned as "A except B" instead of just "A"
+Since L1 loss incentivizes fewest amount of neurons to activate, overlapping concepts get unnaturally learned as "A except B" instead of just "A".
+Problem first identified in [this paper](https://arxiv.org/html/2409.14507v2).
 ![SAE_feature_absorption.png](sae_feature_absorption.png)
+
+Example: if we have one neuron that seems to be for "animal" and one for "dog", then we would naturally expect dogs to activate both of them, but because of the sparsity constraints from L1 loss, only one will be activated and so in reality they will be pushed toward "dog" neuron and "animal except dog" neuron.
 
 This is fixable with [Matryoshka SAEs](https://www.lesswrong.com/posts/rKM9b6B2LqwSB5ToN/learning-multi-level-features-with-matryoshka-saes)
 
