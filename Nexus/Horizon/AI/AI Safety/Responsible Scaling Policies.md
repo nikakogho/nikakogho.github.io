@@ -1,10 +1,10 @@
 Rules on how to set benchmarks, limits, controls and such in place to keep protective measures ahead of capabilities and avoid disaster
-![IMG_1403.png](safety%20capability%20tradeoff%20rsps.png)
+![IMG_1403.png](safety_capability_tradeoff_rsps.png)
 
 ## At Anthropic
 
 AI Safety Levels (ASL):
-![IMG_1404.png](asl%20rsp.png)
+![IMG_1404.png](asl_rsp.png)
 
 Claude Opus 4 was first to get ASL-3.
 No model has ASL-4 as of May 2026.
