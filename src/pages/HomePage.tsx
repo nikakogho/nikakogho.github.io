@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => {
   const youtubeUrl = "https://www.youtube.com/@Playground_Of_Tomorrow/";
   const xUrl = "https://x.com/nikakogho";
   const facebookUrl = "https://www.facebook.com/nikakogho/";
-  const cvUrl = "https://drive.google.com/file/d/14EhHUF2NRuevu9MWco8qSB-vVd73Dzu2/view?usp=sharing";
+  const cvUrl = "https://drive.google.com/file/d/1SREtPTHUsvXUba58omBguLjQwEwq-m41/view?usp=sharing";
 
   const projects = [
     { name: "Dreamscape Grove", url: "https://github.com/nikakogho/DreamscapeGrove" },
@@ -16,7 +16,7 @@ const AboutPage: React.FC = () => {
     { name: "Epic Battle Simulator", url: "https://github.com/nikakogho/EpicBattleSimulator" }
   ];
 
-  const aboutMeText = 'I’m currently working as .NET developer at Microsoft and I’m interested in building superhuman utopia, so trying to learn a little bit about AI, bioengineering, brain-computer-interfaces, space, and robots.';
+  const aboutMeText = "Looking to transition to working on the world's most important Problem: making AGI go well. Currently working as a .NET developer at Microsoft and interested in coming radical improvement technologies, so learning about AI, bioengineering, brain-computer-interfaces, space, and robots.";
 
   return (
     <div>
