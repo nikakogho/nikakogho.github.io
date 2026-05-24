@@ -42,6 +42,7 @@ Bigger list [[Notable People in Space Industry|here]]
 ## Immortality
 - [[Bryan Johnson]]
 - [[David Sinclair]]
+- [[Aubrey de Grey]]
 
 ## Information Theory
 - [[Claude Shannon]]

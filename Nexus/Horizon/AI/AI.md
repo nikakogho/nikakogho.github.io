@@ -1,5 +1,8 @@
 ## Core AI Concepts
 - [[Machine Learning]]
+	- [[Supervised Learning]]
+	- [[Unsupervised Learning]]
+	- [[Reinforcement Learning]]
 - [[Natural Language Processing]]
 - [[Image Processing]]
 - [[Generative AI]]

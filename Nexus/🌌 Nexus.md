@@ -36,3 +36,5 @@ Will be good to join them or compete with them
 - [[Radical Abundance]]
 - [[Life Improvement]]
 - [[Human Augmentation]]
+
+[[Fermi’s Paradox]]: where are all the aliens?
