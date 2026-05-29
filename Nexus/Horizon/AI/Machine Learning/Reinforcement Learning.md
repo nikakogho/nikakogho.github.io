@@ -137,16 +137,15 @@ In a **non-stationary world** however it makes sense to continue to explore on s
 We call a method model-based if it explicitly learns probability of ending up in state s' if taking action a from state s, so P(s' | s, a), and sometimes also expected rewards of transitioning from s to s' with action a (R(s, a, s')), and model-free otherwise.
 
 Model-based examples:
-
 * Dynamic programming-style generalized policy iteration
   * Uses P(s' | s, a)
   * Uses R(s, a, s')
 
 Model-free examples:
-
 * Directly learning V(s)
 * Directly learning Q(s, a)
 * Directly learning π(a | s)
+* Monte-Carlo learning
 
 ## In AI Alignment
 
