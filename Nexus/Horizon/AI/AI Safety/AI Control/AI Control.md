@@ -3,9 +3,9 @@
 Explained by [[Buck Shlegeris]] in [this interview with 80K Hours](https://www.youtube.com/watch?v=BHKIM1P7ZvM).
 
 Main papers:
-
 * [AI Control](https://arxiv.org/abs/2312.06942)
 * [Ctrl-Z: Controlling AI Agents via Resampling](https://arxiv.org/abs/2504.10374)
+* [Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols](https://arxiv.org/pdf/2510.09462)
 
 Important to keep in mind that in most complex real world scenarios we can't give 100% guarantees of control, just like we can't give 100% guarantee that given code isn't a virus, due to [[Halting Problem]] and [[Rice's Theorem]].
 
@@ -71,3 +71,25 @@ def defer_to_trusted_protocol(state):
 ```
 
 Could potentially make a huge chain here of this more trusted model also deferring to an even more trusted but even weaker model if flagged too suspiciously and so on.
+
+## Tool/Action Sandboxing
+Only allow using tools with certain parameters, like editing files only in certain folders, or only making specific web requests.
+
+``` python
+ALLOWED_TOOLS = {"read_file", "run_tests", "edit_file"}
+FORBIDDEN_PATHS = {".env", "secrets.json", "private_keys/"}
+
+def validate_tool_call(tool_call):
+    if tool_call["name"] not in ALLOWED_TOOLS:
+        return False, "Tool not allowed"
+
+    path = tool_call.get("path", "")
+    if any(path.startswith(forbidden) for forbidden in FORBIDDEN_PATHS):
+        return False, "Forbidden path"
+
+    if tool_call["name"] == "edit_file":
+        if not path.startswith("src/") and not path.startswith("tests/"):
+            return False, "Edits only allowed in src/ or tests/"
+
+    return True, "ok"
+```
