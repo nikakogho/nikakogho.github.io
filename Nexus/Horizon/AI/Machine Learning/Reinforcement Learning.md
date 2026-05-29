@@ -84,6 +84,30 @@ Off-policy means you learn a policy π<sub>1</sub> by taking actions using anoth
 ### [[Q Learning]]
 
 A popular off-policy method: where we learn a function Q(s, a): how much value we get by taking action a when in state s.
+This is not the same as just learning a value of that next state s' because taking action a in state s won't always get you in a same s'
+
+## Policy Evaluation
+
+Evaluating the value of given state (or state-action pair in Q learning) according to this policy.
+
+### Iterative Policy Evaluation
+
+Assume random values at first and iterate on them by saying
+
+$$ V_{k+1}(s) =\sum_a π(a | s) \sum_{s’} \sum_r p(s’,r | s, a) \[r+ γV_k(s’)] $$
+
+Can calculate V<sub>k+1</sub> entirely this way from V<sub>k</sub> (requiring storing 2 arrays), or can update in place (requiring only that 1 array). Updating in place converges faster (convergence meaning that V<sub>k</sub> = V<sub>k+1</sub>). Once converged, the values are the actual values according to the policy:
+V<sub>∞</sub> = V<sub>π</sub> = V<sub>converged step</sub>
+
+## Policy Iteration
+
+We repeatedly evaluate a given policy and update it to favor actions that bring us higher value.
+![policy_iteration_full.png](policy_iteration_full.png)
+
+### Generalized Policy Iteration
+
+We may not run the policy evaluation and improvement steps to completion in order to get to final result faster
+![policy_iteration_partial.png](policy_iteration_partial.png)
 
 ## Exploration vs exploitation
 
@@ -107,6 +131,22 @@ In a **non-stationary world** however it makes sense to continue to explore on s
 * Trajectory = sequence of states, rewards, actions
 * Rollout = simulated trajectory
 * Episode = trajectory that starts in initial state and ends in terminal state (like one full game of chess)
+
+## Model-Based vs Model-Free RL
+
+We call a method model-based if it explicitly learns probability of ending up in state s' if taking action a from state s, so P(s' | s, a), and sometimes also expected rewards of transitioning from s to s' with action a (R(s, a, s')), and model-free otherwise.
+
+Model-based examples:
+
+* Dynamic programming-style generalized policy iteration
+  * Uses P(s' | s, a)
+  * Uses R(s, a, s')
+
+Model-free examples:
+
+* Directly learning V(s)
+* Directly learning Q(s, a)
+* Directly learning π(a | s)
 
 ## In AI Alignment
 
