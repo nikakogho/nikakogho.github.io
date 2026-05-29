@@ -1,7 +1,7 @@
 Rules on how to set benchmarks, limits, controls and such in place to keep protective measures ahead of capabilities and avoid disaster
 ![IMG_1403.png](safety_capability_tradeoff_rsps.png)
 
-## At Anthropic
+## At [[Anthropic]]
 
 AI Safety Levels (ASL):
 ![IMG_1404.png](asl_rsp.png)
