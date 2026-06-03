@@ -1,4 +1,8 @@
-Probability
+Main divides are [[Bayesian Probability]] which treats uncertainty as a property of the map, and [[Frequentist Probability]], which treats uncertainty as a property of the territory.
+
+Very important in [[Statistics]] and in [[Causality]].
+Absolutely necessary for [[AI]], [[Robotics]], [[Bioengineering]] etc.
+
 Possible world is ω
 
 0 <= P(ω) <= 1

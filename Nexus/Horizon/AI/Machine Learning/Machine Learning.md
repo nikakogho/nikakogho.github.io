@@ -16,5 +16,5 @@ Types:
 Relevant Concepts:
 - [[Search in Computing]]
 - [[Knowledge in Computing]]
-- [[Uncertainty]]
+- [[Probability]]
 - [[Optimization]]

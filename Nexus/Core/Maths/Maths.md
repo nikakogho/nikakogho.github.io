@@ -1,4 +1,6 @@
 - [[Calculus]]
 - [[Discrete Math]]
 - [[Linear Algebra]]
-- [[Probability & Statistics]]
+- [[Probability]]
+- [[Statistics]]
+- [[Causality]]

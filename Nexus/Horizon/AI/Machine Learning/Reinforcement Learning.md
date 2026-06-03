@@ -79,7 +79,9 @@ We have context (state), but unlike in full RL, here the state doesn’t change,
 
 On-policy means you learn the policy π by taking actions using it.
 
-Off-policy means you learn a policy π<sub>1</sub> by taking actions using another policy π<sub>2</sub>
+Off-policy means you learn a target policy π by taking actions using a behavior policy *b*.
+
+**Assumption of coverage**: for each state s and action a, if π(a | s) > 0 then b(a | s) > 0.
 
 ### [[Q Learning]]
 
@@ -94,7 +96,7 @@ Evaluating the value of given state (or state-action pair in Q learning) accordi
 
 Assume random values at first and iterate on them by saying
 
-$$ V_{k+1}(s) =\sum_a π(a | s) \sum_{s’} \sum_r p(s’,r | s, a) \[r+ γV_k(s’)] $$
+$$ V_{k+1}(s) =\sum_a π(a | s) \sum_{s’} \sum_r p(s’,r | s, a) [r+ γV_k(s’)] $$
 
 Can calculate V<sub>k+1</sub> entirely this way from V<sub>k</sub> (requiring storing 2 arrays), or can update in place (requiring only that 1 array). Updating in place converges faster (convergence meaning that V<sub>k</sub> = V<sub>k+1</sub>). Once converged, the values are the actual values according to the policy:
 V<sub>∞</sub> = V<sub>π</sub> = V<sub>converged step</sub>
@@ -146,6 +148,12 @@ Model-free examples:
 * Directly learning Q(s, a)
 * Directly learning π(a | s)
 * Monte-Carlo learning
+
+## Temporal Difference (TD) Learning
+When we don't want to wait for the episode to finish (or if we are in a continuous task with no end), we still want to be able to evaluate actions in a trajectory:
+$$ V(S_t) \leftarrow V(S_t) + \alpha [G_t-V(S_t)] $$
+where we can replace G<sub>t</sub> with R<sub>t+1</sub> + γ * V(S<sub>t+1</sub>)
+$$ V(S_t) \leftarrow V(S_t) + \alpha[R_{t+1}+\gamma V(S_{t+1})-V(S_t)] $$
 
 ## In AI Alignment
 
