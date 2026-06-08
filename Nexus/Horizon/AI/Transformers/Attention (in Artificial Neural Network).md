@@ -63,3 +63,12 @@ Optimization trick, mostly pay attention to last *n* tokens.
 
 * Strided - properly see last *n* tokens and then kinda see every *k*-th token
 * Fixed - properly see only up to last block
+
+## Hybrid Attention
+
+Mostly last n tokens window, sometimes global
+![sliding_window_attention.webp](sliding_window_attention.webp)
+
+## [[FlashAttention]]
+
+IO-aware attention mechanism for more carefully handling GPU memory. TODO details

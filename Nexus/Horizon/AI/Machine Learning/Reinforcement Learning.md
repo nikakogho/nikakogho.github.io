@@ -24,7 +24,7 @@ Between 0 and 1
 Denoted as γ
 
 For a process with T timestamps, the return (value) of a state at time t is
-$$ G_t = \sum_{k=0}^{T-t-1} γ^k \* r_{t+k} $$
+$$ G_t = \sum_{k=0}^{T-t-1} γ^k  r_{t+k} $$
 In case of infinite T (endless environment), discount factor will eventually make it meaningless to consider any future states so this formula still makes sense.
 
 ### Markov Property
@@ -154,6 +154,9 @@ When we don't want to wait for the episode to finish (or if we are in a continuo
 $$ V(S_t) \leftarrow V(S_t) + \alpha [G_t-V(S_t)] $$
 where we can replace G<sub>t</sub> with R<sub>t+1</sub> + γ * V(S<sub>t+1</sub>)
 $$ V(S_t) \leftarrow V(S_t) + \alpha[R_{t+1}+\gamma V(S_{t+1})-V(S_t)] $$
+
+### SARSA (State-Action-Reward-State-Action)
+On-policy TD learning algorithm where agent starting in some state s<sub>0</sub> first takes an action a<sub>0</sub> and then keeps repeating Reward-State-Action loop: meaning at time step t it received reward r<sub>t</sub> based on state s<sub>t-1</sub> and action a<sub>t-1</sub> and moves to state s<sub>t</sub>, updates its policy (by reevaluating the state-action value, known as the Q-value) and based on the updated policy chooses the next move a<sub>t</sub>, so SARSA really stands for $S_tA_tR_{t+1}S_{t+1}A_{t+1}$
 
 ## In AI Alignment
 

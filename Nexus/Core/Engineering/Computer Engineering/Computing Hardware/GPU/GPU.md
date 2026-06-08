@@ -12,6 +12,8 @@ Mostly dominated by [[Nvidia]].
 Part of a [[Graphics Card]]
 ![graphics_card.png](graphics_card.png)
 
+Sometimes placed multiple together in a [[GPU Rack]] for data centers that need lots of compute (like for [[LLM Infra]]).
+
 ## GPU Parts
 
 GPU chip contains
@@ -33,4 +35,7 @@ GPU chip contains
   * Display Controllers
 
 ![gpu_non_processing_parts.png](gpu_non_processing_parts.png)
-For a more detailed look we can see Nvidia [[GA102 GPU]] architecture
+For a more detailed look we can see Nvidia [[GA102 GPU]] architecture.
+
+## GPU Memory
+Internal (L1 and L2 cache inside, VRAM outside)

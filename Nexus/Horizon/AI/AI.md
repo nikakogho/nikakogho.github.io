@@ -16,13 +16,14 @@
 
 ## Neural Networks
 - [[Artificial Neural Network|Neural Network]]
-- [[Perceptron]]
-- [[Gradient Descent]]
-- [[Backpropagation]]
-- [[Neural Network Normalization]]
-- [[Attention (in Artificial Neural Network)|Attention]]
+	- [[Perceptron]]
+	- [[Gradient Descent]]
+	- [[Backpropagation]]
+	- [[Neural Network Normalization|Normalization]]
 - [[Transformer]]
+	- [[Attention (in Artificial Neural Network)|Attention]]
 - [[Large Language Models]]
+	- [[LLM Infra]]
 - [[Mechanistic Interpretability]]
 - [[Embedding Space]]
 
