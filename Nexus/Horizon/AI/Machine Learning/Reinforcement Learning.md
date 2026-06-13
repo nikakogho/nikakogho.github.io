@@ -88,6 +88,9 @@ Off-policy means you learn a target policy π by taking actions using a behavior
 A popular off-policy method: where we learn a function Q(s, a): how much value we get by taking action a when in state s.
 This is not the same as just learning a value of that next state s' because taking action a in state s won't always get you in a same s'
 
+## [[Dyna]]
+Model mixes learning by interactions with environment + learning by simulated rollouts according to its current world model (current understanding of what new state and reward you get from being in state s and taking action a).
+
 ## Policy Evaluation
 
 Evaluating the value of given state (or state-action pair in Q learning) according to this policy.

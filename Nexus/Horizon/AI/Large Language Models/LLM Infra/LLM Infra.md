@@ -12,6 +12,7 @@ Topics:
 	- Compute ([[GPU Rack|GPU Racks]])
 	- Memory ([[VRAM]])
 	- Power (solar, nuclear, hydro, gas, whatever)
+- [[Protests Against AI Data Centers]]
 
 Related videos:
 - Dwarkesh

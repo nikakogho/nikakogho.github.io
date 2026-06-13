@@ -10,6 +10,7 @@ Learning everything to engineer and augment [[Life|life]].
 - [[Biomedical Engineering]]
 - [[Reproductive Biotechnology]]
 - [[Immunoengineering]]
+- [[Biosecurity]]
 
 ## Background themes
 - [[Anatomy]]
