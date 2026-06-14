@@ -1,0 +1,2 @@
+Using [[Q-Learning]] but on simulated rollouts according to the current world model (current expectation of what new state and reward we get from being in state s and taking action a).
+Can be deterministic or stochastic.

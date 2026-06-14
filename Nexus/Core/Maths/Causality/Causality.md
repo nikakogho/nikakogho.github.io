@@ -54,3 +54,4 @@ But if we were to control for B then suddenly it would link X and Y (unless we a
 Here C is a confounder since it causally affects both X and Y.
 
 We can deconfound this either by just controlling for C, or by controlling for both B and A (because controllig for B alone opens up the A - C pipe).e controllig for B alone opens up the A - C pipe).
+e controllig for B alone opens up the A - C pipe).

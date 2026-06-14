@@ -13,6 +13,8 @@
 - [[Explainable AI]]
 - [[Mechanistic Interpretability]]
 - [[Algorithms in AI]]
+- [[AGI]]
+- [[Recursive Self-Improvement]]
 
 ## Neural Networks
 - [[Artificial Neural Network|Neural Network]]

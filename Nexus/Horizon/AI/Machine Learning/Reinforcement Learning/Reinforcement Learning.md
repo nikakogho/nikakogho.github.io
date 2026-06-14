@@ -83,13 +83,23 @@ Off-policy means you learn a target policy π by taking actions using a behavior
 
 **Assumption of coverage**: for each state s and action a, if π(a | s) > 0 then b(a | s) > 0.
 
-### [[Q Learning]]
+## [[Q-Learning]]
 
 A popular off-policy method: where we learn a function Q(s, a): how much value we get by taking action a when in state s.
 This is not the same as just learning a value of that next state s' because taking action a in state s won't always get you in a same s'
 
-## [[Dyna]]
-Model mixes learning by interactions with environment + learning by simulated rollouts according to its current world model (current understanding of what new state and reward you get from being in state s and taking action a).
+### [[Q-Planning]]
+Using Q-learning but on simulated rollouts according to the current world model (current expectation of what new state and reward we get from being in state s and taking action a).
+Can be deterministic or stochastic.
+
+### [[Dyna]]
+Model mixes learning and planning.
+
+#### Dyna-Q
+Model mixes Q-learning and Q-planning.
+
+##### Dyna-Q+
+Dyna-Q but can work with a changing environment (therefore planning becomes inaccurate over time) by also using exploration.
 
 ## Policy Evaluation
 

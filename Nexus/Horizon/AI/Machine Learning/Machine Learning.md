@@ -5,7 +5,7 @@ Types:
 * [[Deep Learning]]
 	- [[Artificial Neural Network|Neural Network]]
 * [[Reinforcement Learning]]
-	* [[Q Learning]]
+	* [[Q-Learning]]
 * [[Markov Model]]
 * [[Hidden Markov Model]]
 

@@ -1,6 +1,8 @@
 Making sure AI does what we want it to do and not Ultron or Terminator or less dramatic but still bad outcomes.
 2 ways to handle [[AI Safety]] are with alignment and [[AI Control|control]].
 
+Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time called Singularity Institute) in 2001-2003.
+
 ## Alignment Problems
 - [[Reward Hacking]]
 - [[Alignment Faking]]
