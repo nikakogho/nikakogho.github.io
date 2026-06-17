@@ -37,7 +37,8 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - Containment
 
 ## Main Organizations
-- [[UK AISI]]
+- [[UK AI Security Institute]]
+- [US Institute of AI Safety](https://usiais.org/)
 - [[MIRI]] - led by [[Eliezer Yudkowsky]]. Gave up on solving alignment in time and is advocating for worldwide shutdown of AGI research.
 - [[Anthropic]] - alignment led by [[Jan Leike]]
 - [[DeepMind]] - alignment led by [[Anca Dragan]]
@@ -48,7 +49,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [Eleos AI](https://eleosai.org/) - [[AI Welfare]]
 
 ## Forums
-- [[LessWrong]]
-- [[AlignmentForum]]
+- [LessWrong](https://www.lesswrong.com/)
+- [AlignmentForum](https://www.alignmentforum.org/)
 - Mech Interp Discord
-- [[EleutherAI]]
+- [EleutherAI](https://www.eleuther.ai/)

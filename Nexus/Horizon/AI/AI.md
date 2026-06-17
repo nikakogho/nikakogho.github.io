@@ -3,6 +3,7 @@
 	- [[Supervised Learning]]
 	- [[Unsupervised Learning]]
 	- [[Reinforcement Learning]]
+	- [[Model Distillation]]
 - [[Natural Language Processing]]
 - [[Image Processing]]
 - [[Generative AI]]

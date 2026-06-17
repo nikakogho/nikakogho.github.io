@@ -6,6 +6,7 @@ Types:
 	- [[Artificial Neural Network|Neural Network]]
 * [[Reinforcement Learning]]
 	* [[Q-Learning]]
+* [[Model Distillation]]
 * [[Markov Model]]
 * [[Hidden Markov Model]]
 

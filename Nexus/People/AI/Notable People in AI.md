@@ -1,6 +1,6 @@
 - [[Sam Altman]] - OpenAI
 - [[Demis Hassabis]] - DeepMind
-- [[Ilya Sutskever]] - inventor of [[AlexNet]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
+- [[Ilya Sutskever]] - co-inventor of [[AlexNet]], former OpenAI, now [[SSI - Safe SuperIntelligence]]
 - [[Dario Amodei]] - Anthropic, previously OpenAI
 - [[Elon Musk]] - xAI, previously cofounder of OpenAI and early investor in DeepMind
 - 3 godfathers of AI
@@ -9,6 +9,7 @@
 	- [[Yoshua Bengio]] - most cited person alive (1 million+ citations), first neural language models, now works on AI safety with [[Scientist AI]]
 - [[Richard Sutton]] - inventor of [[Reinforcement Learning]]
 - [[Ashish Vaswani]] - inventor of [[Transformer]] architecture, former researcher at Google Brain
+- [[Alex Krizhevsky]] - inventor of AlexNet with Ilya and Hinton
 - [[Andrew Ng]] - leading AI educator and researcher, and founder of Coursera
 - [[Andrej Karpathy]] - now Anthropic, former OpenAI and Tesla self-driving AI
 - [[Jürgen Schmidhuber]] - foundational role in lots of AI
@@ -18,6 +19,7 @@
 - [[Neel Nanda]] - mechanistic interpretability lead at DeepMind
 - [[Daniel Mossing]] - mechanistic interpretability lead at OpenAI
 - [[Callum McDougall]] - mechanistic interpretability researcher at DeepMind, creator of [[ARENA]]
+- [[Arthur Conmy]] - mech interp at DeepMind
 
 ## Singularity & AI Risk
 - [[Ray Kurzweil]] - futurist and former director of engineering at [[Google Brain]], author of "Singularity Is Near"
