@@ -9,6 +9,8 @@ Main papers:
 
 Important to keep in mind that in most complex real world scenarios we can't give 100% guarantees of control, just like we can't give 100% guarantee that given code isn't a virus, due to [[Halting Problem]] and [[Rice's Theorem]].
 
+[[Apollo Research]] also works on this, with [Watcher](https://watcher.apolloresearch.ai/) that lets you safely skip permissions in [[Claude Code]].
+
 ## Trusted Monitors
 
 Using another AI model that we trust (but is likely weaker than this one) as a judge that filter's this model's actions:

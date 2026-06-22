@@ -60,6 +60,7 @@
 - Computer use
 - Browser access
 - Coding
+- [[Reinforcement Learning from Verifiable Rewards (RLVR)]]
 
 ## OpenAI's AGI Roadmap
 1. [x] chatbot
