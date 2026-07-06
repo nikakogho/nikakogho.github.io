@@ -1,0 +1,1 @@
+[[Reinforcement Learning]] method where we learn a parameterized policy directly, as opposed to learning state-values or state-action values.

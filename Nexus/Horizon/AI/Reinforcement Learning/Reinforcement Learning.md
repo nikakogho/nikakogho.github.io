@@ -72,11 +72,9 @@ In this case, the problem becomes finding out the probability distribution of re
 ![multi_armed_bandit.png](multi_armed_bandit.png)
 
 ### Contextual Bandits
-
 We have context (state), but unlike in full RL, here the state doesn’t change, so in any one run it stays the same.
 
 ## On-Policy vs Off-Policy
-
 On-policy means you learn the policy π by taking actions using it.
 
 Off-policy means you learn a target policy π by taking actions using a behavior policy *b*.
@@ -99,7 +97,7 @@ Model mixes learning and planning.
 Model mixes Q-learning and Q-planning.
 
 ##### Dyna-Q+
-Dyna-Q but can work with a changing environment (therefore planning becomes inaccurate over time) by also using exploration.
+Dyna-Q but can work with a changing environment (where planning becomes inaccurate over time) by also using exploration.
 
 ## Policy Evaluation
 
@@ -171,10 +169,13 @@ $$ V(S_t) \leftarrow V(S_t) + \alpha[R_{t+1}+\gamma V(S_{t+1})-V(S_t)] $$
 ### SARSA (State-Action-Reward-State-Action)
 On-policy TD learning algorithm where agent starting in some state s<sub>0</sub> first takes an action a<sub>0</sub> and then keeps repeating Reward-State-Action loop: meaning at time step t it received reward r<sub>t</sub> based on state s<sub>t-1</sub> and action a<sub>t-1</sub> and moves to state s<sub>t</sub>, updates its policy (by reevaluating the state-action value, known as the Q-value) and based on the updated policy chooses the next move a<sub>t</sub>, so SARSA really stands for $S_tA_tR_{t+1}S_{t+1}A_{t+1}$
 
-## In AI Alignment
+## [[Policy Gradient]]
+Learn a parameterized policy directly, as opposed to learning state-values or state-action values.
+
+## RL In AI Alignment
 
 Used as [[RLHF]] or [[RLAIF]] to make base models (produced by [[Pretraining LLM|pretraining]]) helpful, honest, harmless.
 
-## In LLM Tool Use
+## RL In LLM Tool Use
 
 Used for [[Reinforcement Learning from Verifiable Rewards (RLVR)]].

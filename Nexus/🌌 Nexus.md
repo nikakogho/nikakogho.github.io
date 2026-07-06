@@ -24,6 +24,7 @@ Front-line disciplines where new realities are forged:
 - [[Neurotech]]
 - [[Robotics]]
 - [[Space Tech]]
+- [[Environmental Engineering]]
 
 ### [[People]]
 Thinkers, builders & visionaries referenced throughout Nexus.

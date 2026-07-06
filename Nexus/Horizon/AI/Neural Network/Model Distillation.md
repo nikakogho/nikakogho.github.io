@@ -11,3 +11,10 @@ Special case where a model trains on its own outputs to refine its performance. 
 
 ### Born Again Neural Networks
 Introduced [here](https://arxiv.org/abs/1805.04770), idea is to start with a teacher model at generation 0 and train generation n+1 from outputs of generation n, where model architecture is always same and it's just weights changing. This improves performance for a while, but eventually plateaus and then degrades if pushed past generation 4 or so.
+
+## On-Policy Distillation
+In typical (off-policy) distillation, student tries to guess each move in teacher's rollout / static data.
+In OPD, student generates its own rollout and teacher gives what it would do on each step, which gets used to calculate loss.
+
+### On-Policy Self Distillation
+Teacher is student model with added text in prompt that gives hint/feedback to do better, and that is used as target we calculate loss against in this OPD.

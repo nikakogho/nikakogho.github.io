@@ -2,3 +2,5 @@
 - [[Markov Matrix]]
 - [[Vector and Matrix Norms]]
 - [[Cross Product]]
+- [[Eigenvectors & Eigenvalues]]
+- [[Eigendecomposition]]
