@@ -10,8 +10,15 @@ const s3UrlPrefix = import.meta.env.VITE_S3_URL_PREFIX;
  * Example: "Neuroscience/assets/neuron.jpg"
  */
 export function getImageUrl(imagePath: string, vaultId: string): string {
+    if (/^(?:https?:|data:|blob:)/i.test(imagePath)) {
+        return imagePath;
+    }
+
     // Basic cleanup: remove leading slash if present
-    const cleanImagePath = imagePath.startsWith('/') ? imagePath.substring(1) : imagePath;
+    const cleanImagePath = imagePath
+        .replace(/^<|>$/g, '')
+        .replace(/^\.\//, '')
+        .replace(/^\//, '');
     //console.log('Image provider is :', imageProvider); // Debugging
     if (imageProvider === 'cloudinary') {
         if (!cloudinaryCloudName) {
@@ -19,7 +26,18 @@ export function getImageUrl(imagePath: string, vaultId: string): string {
             return cleanImagePath; // Fallback or return placeholder
         }
         
-        const publicIdPlusVault = `${vaultId}/images/${cleanImagePath}`; // Prepend vaultId to the image path
+        // The uploader stores every vault image in a flat, lowercase namespace.
+        // Resolve path-based Obsidian references to that same canonical key without
+        // requiring the source Markdown to be rewritten.
+        const imagePathWithoutQuery = cleanImagePath.split(/[?#]/, 1)[0].replace(/\\/g, '/');
+        const encodedImageName = imagePathWithoutQuery.split('/').pop() || imagePathWithoutQuery;
+        let imageName = encodedImageName;
+        try {
+            imageName = decodeURIComponent(encodedImageName);
+        } catch {
+            // Keep the original text when a filename contains a stray percent sign.
+        }
+        const publicIdPlusVault = `${vaultId.toLowerCase()}/images/${encodeURIComponent(imageName.toLowerCase())}`;
 
         //console.log('Resolved image path to Cloudinary:', publicIdPlusVault); // Debugging
 

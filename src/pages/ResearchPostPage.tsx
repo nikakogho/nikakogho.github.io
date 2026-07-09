@@ -26,7 +26,7 @@ const ResearchPostPage: React.FC = () => {
             return new Date(dateString).toLocaleDateString('en-US', {
                 year: 'numeric', month: 'long', day: 'numeric',
             });
-        } catch (e) { return dateString; }
+        } catch { return dateString; }
     };
 
     if (post === undefined) return <div>Loading research...</div>;
@@ -45,6 +45,7 @@ const ResearchPostPage: React.FC = () => {
             <MarkdownRenderer
                 markdown={post.content}
                 allVaultNotes={dummyVaultNotes}
+                vaultId="research"
             />
 
              <hr style={{ margin: '30px 0' }}/>

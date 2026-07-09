@@ -32,7 +32,7 @@ const BlogPostPage: React.FC = () => {
                 month: 'long',
                 day: 'numeric',
             });
-        } catch (e) {
+        } catch {
             console.warn("Invalid date format:", dateString);
             return dateString;
         }
@@ -62,6 +62,7 @@ const BlogPostPage: React.FC = () => {
             <MarkdownRenderer
                 markdown={post.content}
                 allVaultNotes={dummyVaultNotes} // Pass empty array - no vault context here
+                vaultId="blog"
             />
 
              <hr style={{ margin: '30px 0' }}/>

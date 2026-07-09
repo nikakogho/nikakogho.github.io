@@ -1,17 +1,41 @@
 import React, { useMemo } from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { ExtraProps } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
 import remarkWikiLink from 'remark-wiki-link';
 import rehypeRaw from 'rehype-raw';
-import { Link as RouterLink } from 'react-router-dom';
+import rehypeKatex from 'rehype-katex';
+import rehypeSlug from 'rehype-slug';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 // Import the specific helper functions needed, including the new resolver and VaultNote type
-import { VaultNote, resolveWikiLink } from '../utils/markdownHelper';
+import { VaultNote, resolveWikiLinkTarget } from '../utils/markdownHelper';
 import { getImageUrl } from '../utils/imageHelper'; // Import your updated image helper
+import 'katex/dist/katex.min.css';
 
 // Define the expected properties for the component
 interface MarkdownRendererProps {
   markdown: string; // The raw Markdown content
   allVaultNotes: VaultNote[]; // The list of all notes in the current vault, needed for link resolution
+  currentNotePath?: string; // Used by same-note links such as [[#A section]]
+  vaultId?: string; // Selects the image namespace for Nexus, Blog, or Research
+}
+
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+type HeadingProps = React.ComponentPropsWithoutRef<'h1'> & ExtraProps;
+
+function getHrefPermalink(href: string): string {
+  const notesPrefix = '/nexus/notes/';
+  const prefixIndex = href.indexOf(notesPrefix);
+  if (prefixIndex === -1) return '';
+
+  const permalinkWithFragment = href.slice(prefixIndex + notesPrefix.length);
+  const permalink = permalinkWithFragment.split('#', 1)[0];
+
+  try {
+    return decodeURIComponent(permalink);
+  } catch {
+    return permalink;
+  }
 }
 
 /**
@@ -19,7 +43,13 @@ interface MarkdownRendererProps {
  * HTML rendering enabled, and handling for non-existent links.
  * Uses user-provided base code. Includes workaround for potential remark-wiki-link bug.
  */
-const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, allVaultNotes }) => {
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
+  markdown,
+  allVaultNotes,
+  currentNotePath = '',
+  vaultId = 'nexus',
+}) => {
+  const location = useLocation();
 
   // --- Prepare data for remark-wiki-link ---
   const existingPermalinks = useMemo(() => {
@@ -34,13 +64,15 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, allVaultN
   // Memoize the resolver function itself
   const pageResolverWrapper = useMemo(() => {
     return (name: string): string[] => {
-      const resolvedPath = resolveWikiLink(name, allVaultNotes);
-      // Previous check showed 'exists' was true here, but plugin added 'new-link' anyway.
-      // const exists = existingPermalinks.includes(resolvedPath);
-      // console.log(`[pageResolverWrapper] Does "${resolvedPath}" exist in Existing Permalinks? ${exists}`);
-      return [resolvedPath]; // Return the resolved path for hrefTemplate
+      const { notePath, anchorId } = resolveWikiLinkTarget(
+        name,
+        allVaultNotes,
+        currentNotePath
+      );
+      const resolvedTarget = anchorId ? `${notePath}#${anchorId}` : notePath;
+      return [resolvedTarget]; // Return the resolved path for hrefTemplate
     };
-  }, [allVaultNotes, existingPermalinks]);
+  }, [allVaultNotes, currentNotePath]);
 
   // Href template function
   const wikiHrefTemplate = (permalink: string): string => {
@@ -49,11 +81,42 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, allVaultN
   };
   // --- End WikiLink Configuration Data ---
 
+  const renderHeading = (Tag: HeadingTag) => {
+    return ({ node, children, className, ...props }: HeadingProps) => {
+      // ReactMarkdown exposes the source AST node for custom components, but it
+      // must not be forwarded as an invalid DOM attribute.
+      void node;
+      const id = typeof props.id === 'string' ? props.id : undefined;
+      const headingClassName = ['markdown-heading', className].filter(Boolean).join(' ');
+
+      return (
+        <Tag
+          {...props}
+          className={headingClassName}
+          tabIndex={id ? -1 : undefined}
+        >
+          {children}
+          {id && (
+            <RouterLink
+              to={{ pathname: location.pathname, hash: `#${id}` }}
+              className="section-anchor"
+              aria-label="Link to this section"
+              title="Link to this section"
+            >
+              <span aria-hidden="true">#</span>
+            </RouterLink>
+          )}
+        </Tag>
+      );
+    };
+  };
+
 
   return (
     <ReactMarkdown
       remarkPlugins={[
         remarkGfm,
+        remarkMath,
         [
           remarkWikiLink,
           {
@@ -61,24 +124,31 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, allVaultN
             hrefTemplate: wikiHrefTemplate,
             wikiLinkClassName: 'internal-link', // Still add base class
             aliasDivider: '|',
-            existingPages: existingPermalinks, // Pass the list
+            permalinks: existingPermalinks, // Pass the list
           },
         ],
       ]}
-      rehypePlugins={[rehypeRaw]}
+      rehypePlugins={[
+        rehypeRaw,
+        [rehypeKatex, { throwOnError: false, strict: 'ignore' }],
+        rehypeSlug,
+      ]}
       components={{
+        h1: renderHeading('h1'),
+        h2: renderHeading('h2'),
+        h3: renderHeading('h3'),
+        h4: renderHeading('h4'),
+        h5: renderHeading('h5'),
+        h6: renderHeading('h6'),
         // --- Updated 'a' component override (WORKAROUND) ---
         a: ({ node, href, children, className, ...props }) => {
+          void node;
           const isInternalWikiLink = className?.includes('internal-link');
 
           if (isInternalWikiLink && href) {
             // --- Manual Check for Existence ---
             // Extract the permalink (resolved path) from the generated href
-            let permalink = '';
-            const hrefParts = href.split('/nexus/notes/');
-            if (hrefParts.length > 1) {
-                permalink = hrefParts[1];
-            }
+            const permalink = getHrefPermalink(href);
 
             // Check if this extracted permalink exists in our known list
             const exists = existingPermalinks.includes(permalink);
@@ -116,9 +186,10 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown, allVaultN
         // --- End Updated 'a' component override ---
 
         img: ({ node, src, alt, ...props }) => {
+          void node;
           let resolvedSrc = src || '';
           if (src && !src.startsWith('http')) {
-              resolvedSrc = getImageUrl(src, 'nexus');
+              resolvedSrc = getImageUrl(src, vaultId);
           }
           return <img src={resolvedSrc} alt={alt || ''} {...props} loading="lazy" />;
         }

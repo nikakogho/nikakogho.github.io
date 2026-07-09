@@ -1,6 +1,6 @@
 import React, { useRef, useState, useMemo, useEffect } from 'react';
-import ForceGraph2D, { ForceGraphMethods, NodeObject, LinkObject } from 'react-force-graph-2d';
-import { forceCenter, forceCollide, ForceManyBody } from 'd3-force';
+import ForceGraph2D, { ForceGraphMethods, NodeObject } from 'react-force-graph-2d';
+import { forceCenter, forceCollide, ForceLink, ForceManyBody, SimulationLinkDatum } from 'd3-force';
 import { useNavigate } from 'react-router-dom';
 import { GraphData } from '../utils/graphHelper';
 
@@ -13,14 +13,19 @@ interface GraphVizNode extends NodeObject {
     group: string;
 }
 
+interface GraphVizLink extends SimulationLinkDatum<GraphVizNode> {
+    source: string | number | GraphVizNode;
+    target: string | number | GraphVizNode;
+}
+
 const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ data, theme }) => {
     const navigate = useNavigate();
-    const fgRef = useRef<ForceGraphMethods<NodeObject, LinkObject> | undefined>(undefined);
+    const fgRef = useRef<ForceGraphMethods<GraphVizNode, GraphVizLink> | undefined>(undefined);
 
     // State for hover effects
     const [hoveredNode, setHoveredNode] = useState<string | null>(null);
     const [highlightedNodes, setHighlightedNodes] = useState<Set<string>>(new Set());
-    const [highlightedLinks, setHighlightedLinks] = useState<Set<LinkObject>>(new Set());
+    const [highlightedLinks, setHighlightedLinks] = useState<Set<GraphVizLink>>(new Set());
 
     // Effect to adjust graph forces for better clustering
     useEffect(() => {
@@ -30,19 +35,19 @@ const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ da
             // Get the existing forces and re-configure them
             
             // 1. Configure the Link force
-            const linkForce = fg.d3Force('link') as any;
+            const linkForce = fg.d3Force('link') as ForceLink<GraphVizNode, GraphVizLink> | undefined;
             linkForce
-                .id((node: any) => node.id)
+                ?.id((node) => node.id)
                 .distance(60) // Increased distance slightly
                 .strength(0.15); // Reduced strength slightly
 
             // 2. Configure the Charge force (repulsion)
-            const chargeForce = fg.d3Force('charge') as ForceManyBody<NodeObject>;
-            chargeForce.strength(-250); // Increased repulsion
+            const chargeForce = fg.d3Force('charge') as ForceManyBody<GraphVizNode> | undefined;
+            chargeForce?.strength(-250); // Increased repulsion
 
             // 3. Add or configure the Collision force
-            const collideForce = forceCollide()
-                .radius((node: any) => Math.sqrt(node.val as number) * 3)
+            const collideForce = forceCollide<GraphVizNode>()
+                .radius((node) => Math.sqrt(node.val) * 3)
                 .strength(1);
             fg.d3Force('collide', collideForce);
 
@@ -68,7 +73,7 @@ const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ da
     }, [data.links]);
 
     // Handle node hover
-    const handleNodeHover = (node: NodeObject | null) => {
+    const handleNodeHover = (node: GraphVizNode | null) => {
         if (node) {
             const newHighlightedNodes = new Set<string>();
             newHighlightedNodes.add(node.id as string);
@@ -76,7 +81,7 @@ const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ da
                 newHighlightedNodes.add(neighborId);
             });
 
-            const newHighlightedLinks = new Set<LinkObject>();
+            const newHighlightedLinks = new Set<GraphVizLink>();
             data.links.forEach(link => {
                 const sourceId = link.source;
                 const targetId = link.target;
@@ -95,7 +100,7 @@ const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ da
         }
     };
 
-    const handleNodeClick = (node: NodeObject) => {
+    const handleNodeClick = (node: GraphVizNode) => {
         if (node.id) {
             navigate(`/nexus/notes/${node.id}`);
         }
@@ -121,19 +126,18 @@ const NexusGraph: React.FC<{ data: GraphData, theme: 'light' | 'dark' }> = ({ da
             // Control label rendering
             nodeCanvasObjectMode={() => 'after'}
             nodeCanvasObject={(node, ctx, globalScale) => {
-                const typedNode = node as GraphVizNode;
                 const labelVisibilityThreshold = 0.7;
 
                 // Show label only when zoomed in
                 if (globalScale > labelVisibilityThreshold) {
-                    const label = typedNode.name;
+                    const label = node.name;
                     const fontSize = 10 / globalScale;
                     ctx.font = `${fontSize}px Sans-Serif`;
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'middle';
                     ctx.fillStyle = theme === 'light' ? 'black' : 'rgba(255, 255, 255, 0.9)';
-                    const yOffset = Math.sqrt(typedNode.val as number) * 3 + 3;
-                    ctx.fillText(label, typedNode.x || 0, (typedNode.y || 0) + yOffset);
+                    const yOffset = Math.sqrt(node.val) * 3 + 3;
+                    ctx.fillText(label, node.x || 0, (node.y || 0) + yOffset);
                 }
             }}
         />

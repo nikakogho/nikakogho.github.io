@@ -1,5 +1,6 @@
 import fm from 'front-matter';
 import { normalizeNoteName } from './markdownHelper'; // Reuse normalization
+import { generateMarkdownPreview } from './postCollectionHelper';
 
 // Define the expected structure of blog post frontmatter
 export interface BlogPostFrontmatter {
@@ -20,38 +21,19 @@ export interface BlogPost {
 }
 
 // Type guard to check if an object has frontmatter structure
-function hasFrontmatter(obj: any): obj is { attributes: BlogPostFrontmatter; body: string } {
-    return obj && typeof obj.attributes === 'object' && typeof obj.body === 'string';
+function hasFrontmatter(obj: unknown): obj is { attributes: BlogPostFrontmatter; body: string } {
+    if (typeof obj !== 'object' || obj === null) return false;
+    const candidate = obj as { attributes?: unknown; body?: unknown };
+    return typeof candidate.attributes === 'object' && candidate.attributes !== null && typeof candidate.body === 'string';
 }
 
 // Import blog markdown files as raw text
 // Adjust the path if your blog vault isn't named 'Blog'
-const blogModules = import.meta.glob('/vaults/Blog/**/*.md', { eager: true, as: 'raw' });
-
-/**
- * Extracts a short preview from Markdown content.
- * Basic implementation: takes the first paragraph or ~150 chars.
- */
-function generatePreview(content: string): string {
-    const firstParagraph = content.split('\n\n')[0];
-    if (firstParagraph && firstParagraph.length < 250) { // Prefer first paragraph if short
-        // Basic cleanup - remove markdown headings, links, images for preview
-        return firstParagraph.replace(/^[#]+ .*/gm, '').replace(/\[(.*?)\]\(.*?\)/g, '$1').replace(/!\[.*?\]\(.*?\)/g, '').trim();
-    }
-    // Fallback to character limit, try to end on a space
-    const previewLimit = 150;
-    let preview = content.substring(0, previewLimit).trim();
-    if (content.length > previewLimit) {
-        const lastSpace = preview.lastIndexOf(' ');
-        if (lastSpace > 0) {
-            preview = preview.substring(0, lastSpace);
-        }
-        preview += '...';
-    }
-     // Basic cleanup again
-     return preview.replace(/^[#]+ .*/gm, '').replace(/\[(.*?)\]\(.*?\)/g, '$1').replace(/!\[.*?\]\(.*?\)/g, '').trim();
-}
-
+const blogModules = import.meta.glob<string>('/vaults/Blog/**/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+});
 
 /**
  * Fetches, parses, and sorts all blog posts from the '/vaults/Blog/' directory.
@@ -87,11 +69,15 @@ export function getAllBlogPosts(): BlogPost[] {
             const baseName = filename.replace('.md', '');
             const slug = normalizeNoteName(baseName); // Use existing normalization
 
+            const tags = Array.isArray(attributes.tags)
+                ? attributes.tags.map(String).map((tag) => tag.trim()).filter(Boolean)
+                : [];
+
             posts.push({
                 slug: slug,
-                frontmatter: attributes,
+                frontmatter: { ...attributes, tags },
                 content: markdownContent.trim(),
-                preview: generatePreview(markdownContent),
+                preview: generateMarkdownPreview(markdownContent),
                 moduleKey: key,
             });
         } catch (error) {

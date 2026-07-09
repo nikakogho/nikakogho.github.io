@@ -2,6 +2,7 @@
 
 import fm from 'front-matter';
 import { normalizeNoteName } from './markdownHelper';
+import { generateMarkdownPreview } from './postCollectionHelper';
 
 export interface ResearchPostFrontmatter {
   title: string;
@@ -20,29 +21,18 @@ export interface ResearchPost {
   moduleKey: string;
 }
 
-function hasFrontmatter(obj: any): obj is { attributes: ResearchPostFrontmatter; body: string } {
-    return obj && typeof obj.attributes === 'object' && typeof obj.body === 'string';
+function hasFrontmatter(obj: unknown): obj is { attributes: ResearchPostFrontmatter; body: string } {
+    if (typeof obj !== 'object' || obj === null) return false;
+    const candidate = obj as { attributes?: unknown; body?: unknown };
+    return typeof candidate.attributes === 'object' && candidate.attributes !== null && typeof candidate.body === 'string';
 }
 
 // Load markdown files from /vaults/Research/
-const researchModules = import.meta.glob('/vaults/Research/**/*.md', { eager: true, as: 'raw' });
-
-function generatePreview(content: string): string {
-    const firstParagraph = content.split('\n\n')[0];
-    if (firstParagraph && firstParagraph.length < 250) {
-        return firstParagraph.replace(/^[#]+ .*/gm, '').replace(/\[(.*?)\]\(.*?\)/g, '$1').replace(/!\[.*?\]\(.*?\)/g, '').trim();
-    }
-    const previewLimit = 150;
-    let preview = content.substring(0, previewLimit).trim();
-    if (content.length > previewLimit) {
-        const lastSpace = preview.lastIndexOf(' ');
-        if (lastSpace > 0) {
-            preview = preview.substring(0, lastSpace);
-        }
-        preview += '...';
-    }
-     return preview.replace(/^[#]+ .*/gm, '').replace(/\[(.*?)\]\(.*?\)/g, '$1').replace(/!\[.*?\]\(.*?\)/g, '').trim();
-}
+const researchModules = import.meta.glob<string>('/vaults/Research/**/*.md', {
+    query: '?raw',
+    import: 'default',
+    eager: true,
+});
 
 export function getAllResearchPosts(): ResearchPost[] {
     const posts: ResearchPost[] = [];
@@ -64,11 +54,15 @@ export function getAllResearchPosts(): ResearchPost[] {
             const baseName = filename.replace('.md', '');
             const slug = normalizeNoteName(baseName);
 
+            const tags = Array.isArray(attributes.tags)
+                ? attributes.tags.map(String).map((tag) => tag.trim()).filter(Boolean)
+                : [];
+
             posts.push({
                 slug: slug,
-                frontmatter: attributes,
+                frontmatter: { ...attributes, tags },
                 content: markdownContent.trim(),
-                preview: generatePreview(markdownContent),
+                preview: generateMarkdownPreview(markdownContent),
                 moduleKey: key,
             });
         } catch (error) {

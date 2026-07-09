@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const secrets: any = {
+const secrets: Record<string, string> = {
     "mogumogu": "Zerch 129 I love you baby, and if it's quite alright, I need you baby to warm the lonely night. I love you baby, trust in me when I say: Oh pretty baby, don't bring me down I pray. Oh pretty baby, now that I've found you stay and let me love you, oh baby let me love you. 10",
     "good": `I'm proud of you my little dumpling! Now solve this riddle for me: 
 My bones are quarry-stone, my thoughts are ancient lore.
@@ -84,7 +84,7 @@ const SecretPage: React.FC = () => {
 
                 No actually, here is my secret:
                 <br />
-                {secret && secrets[secret.toLowerCase()] || "Sorry, I don't have a secret for that path."}
+                {(secret && secrets[secret.toLowerCase()]) || "Sorry, I don't have a secret for that path."}
             </p>
         </div>
     );

@@ -1,5 +1,7 @@
 // src/utils/markdownHelper.ts
 
+import { slug as githubSlug } from 'github-slugger';
+
 // --- Type Definition ---
 export interface VaultNote {
     fullPath: string; // Normalized full path relative to vault root (e.g., 'memory/types-of-memory')
@@ -26,7 +28,62 @@ export interface TreeNode {
     return name
       .toLowerCase()
       .replace(/\s+/g, '-') // Replace spaces with hyphens
-      .replace(/[^a-z0-9-\/]+/g, ''); // Allow letters, numbers, hyphens, slashes
+      .replace(/[^a-z0-9/-]+/g, ''); // Allow letters, numbers, hyphens, slashes
+  }
+
+  export interface WikiLinkTarget {
+    noteName: string;
+    heading?: string;
+  }
+
+  /**
+   * Separates the note and heading portions of an Obsidian wiki link target.
+   * Splitting only on the first hash also keeps unusual headings containing a
+   * hash intact. `[[#Heading]]` is represented as an empty note name and can
+   * therefore be resolved against the currently open note.
+   */
+  export function parseWikiLinkTarget(target: string): WikiLinkTarget {
+    const hashIndex = target.indexOf('#');
+
+    if (hashIndex === -1) {
+      return { noteName: target.trim() };
+    }
+
+    const noteName = target.slice(0, hashIndex).trim();
+    const heading = target.slice(hashIndex + 1).trim();
+
+    return {
+      noteName,
+      heading: heading || undefined,
+    };
+  }
+
+  /**
+   * Matches the heading-id algorithm used by rehype-slug. Keeping this in one
+   * helper ensures that generated section links and rendered heading ids agree.
+   */
+  export function headingToAnchorId(heading: string): string {
+    return githubSlug(heading.trim());
+  }
+
+  /**
+   * Resolves an Obsidian link such as `Note#A section` to a website path and
+   * optional heading id. An empty note part targets the current note.
+   */
+  export function resolveWikiLinkTarget(
+    target: string,
+    allVaultNotes: VaultNote[],
+    currentNotePath = ''
+  ): { notePath: string; anchorId?: string } {
+    const { noteName, heading } = parseWikiLinkTarget(target);
+    const notePath = noteName
+      ? resolveWikiLink(noteName, allVaultNotes)
+      : currentNotePath;
+
+    return {
+      notePath,
+      anchorId: heading ? headingToAnchorId(heading) : undefined,
+    };
   }
   
   // --- Note List Generation ---
@@ -34,7 +91,7 @@ export interface TreeNode {
    * Generates a structured list of all notes within a specific vault from the Vite module glob results.
    */
   export function getStructuredNexusNotes(
-    modules: Record<string, any> // Result of import.meta.glob
+    modules: Record<string, unknown> // Result of import.meta.glob
   ): VaultNote[] {
     const vaultPrefix = `/Nexus/`;
     const notes: VaultNote[] = [];
@@ -117,7 +174,7 @@ export interface TreeNode {
   // NOTE: Ensure this works correctly with the modules object passed to it (eager: false vs eager: true)
   export function findNoteModuleKey(
       normalizedPath: string,
-      modules: Record<string, () => Promise<any>> | Record<string, any>
+      modules: Record<string, unknown>
   ): string | undefined {
       const vaultPrefix = `/Nexus/`;
       return Object.keys(modules).find(key => {
@@ -131,7 +188,7 @@ export interface TreeNode {
 /**
  * Builds a hierarchical file tree structure from Vite module glob results.
  */
-export function buildFileTree(modules: Record<string, any>): TreeNode {
+export function buildFileTree(modules: Record<string, unknown>): TreeNode {
   // Root node represents the vault itself
   const root: TreeNode = { id: 'nexus', name: 'Nexus', type: 'folder', path: '', children: [] };
   const vaultPrefix = `/Nexus/`;

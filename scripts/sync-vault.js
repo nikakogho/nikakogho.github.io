@@ -7,7 +7,6 @@ import dotenv from 'dotenv'; // Using explicit config loading
 import { glob } from 'glob';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
-import remarkStringify from 'remark-stringify';
 import { visit } from 'unist-util-visit';
 import { v2 as cloudinary } from 'cloudinary';
 import simpleGit from 'simple-git';
@@ -38,9 +37,13 @@ cloudinary.config({
     secure: true,
 });
 
-const vaultBaseDirs = ['Nexus']
-    .map(d => d.trim())
-    .filter(Boolean);
+const vaultConfigs = [
+    { id: 'nexus', baseDir: 'Nexus' },
+    { id: 'blog', baseDir: path.join('vaults', 'Blog') },
+    { id: 'research', baseDir: path.join('vaults', 'Research') },
+];
+const vaultBaseDirs = vaultConfigs.map(({ baseDir }) => baseDir);
+const skipGit = process.argv.includes('--skip-git') || process.env.SKIP_GIT_SYNC === '1';
 
 const manifestPath = path.resolve(__dirname, 'cloudinary-manifest.json');
 const projectRoot = path.resolve(__dirname, '..');
@@ -159,106 +162,6 @@ async function findImageFullPath(imageName, vaultAbsPath) {
     }
 }
 
-/** Helper to escape characters special to regex */
-function escapeRegex(string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-
-// --- Pre-processing Function for Renaming ---
-/**
- * Scans vaults for images with spaces in names, renames them (space -> underscore),
- * and updates standard Markdown links `![](...)` and `![[...]]` embeds.
- */
-async function preprocessRenameImagesAndLinks() {
-    console.log('\n--- Starting Pre-processing: Renaming images with spaces ---');
-    const imagePatterns = vaultBaseDirs.map(dir => path.join(dir, '**/*.{png,jpg,jpeg,gif,svg,webp}').replace(/\\/g, '/'));
-    // Use cwd: projectRoot for globbing relative to project root
-    const allImageFiles = await glob(imagePatterns, { cwd: projectRoot, absolute: true });
-
-    const renamedFilesMap = new Map(); // Map<oldBasename, newBasename>
-    let filesRenamedCount = 0;
-
-    console.log(`Scanning ${allImageFiles.length} image files for spaces...`);
-    for (const oldPath of allImageFiles) {
-        const oldBaseName = path.basename(oldPath);
-        if (oldBaseName.includes(' ')) {
-            const newBaseName = oldBaseName.replace(/\s+/g, '_');
-            const newPath = path.join(path.dirname(oldPath), newBaseName);
-            try {
-                 await fs.access(newPath); // Check if target exists
-                 console.warn(`  Skipping rename: Target file "${path.relative(projectRoot, newPath)}" already exists.`);
-                 continue;
-            } catch (accessError) { /* OK: Target doesn't exist */ }
-
-            try {
-                await fs.rename(oldPath, newPath);
-                console.log(`  Renamed: "${path.relative(projectRoot, oldPath)}" -> "${path.relative(projectRoot, newPath)}"`);
-                renamedFilesMap.set(oldBaseName, newBaseName);
-                filesRenamedCount++;
-            } catch (error) {
-                console.error(`  Error renaming "${path.relative(projectRoot, oldPath)}":`, error);
-            }
-        }
-    }
-    console.log(`Finished renaming ${filesRenamedCount} image file(s).`);
-
-    if (renamedFilesMap.size === 0) {
-        console.log('No files were renamed, skipping link updates.');
-        console.log('--- Finished Pre-processing ---');
-        return;
-    }
-
-    console.log('Scanning Markdown files to update links...');
-    const markdownFiles = await findMarkdownFiles(); // findMarkdownFiles returns absolute paths
-    let linksUpdatedCount = 0;
-    let filesContentChangedCount = 0;
-
-    for (const mdFilePath of markdownFiles) {
-        let mdContent = await fs.readFile(mdFilePath, 'utf-8');
-        let originalContent = mdContent;
-        let fileContentChanged = false;
-
-        for (const [oldBaseName, newBaseName] of renamedFilesMap.entries()) {
-            // Update standard links ![alt](path/old name.png) -> ![alt](path/new_name.png)
-            const standardLinkPattern = new RegExp(`\\!\\[([^\\]]*)\\]\\(([^\\(\\)]*?)${escapeRegex(oldBaseName)}\\)`, 'g');
-            mdContent = mdContent.replace(standardLinkPattern, (match, altText, pathPart) => {
-                // Ensure pathPart ends with / if it's not empty, handle windows paths if necessary
-                const separator = pathPart && !pathPart.endsWith('/') ? '/' : '';
-                const newLink = `![${altText}](${pathPart}${separator}${newBaseName})`;
-                if (match !== newLink) {
-                    fileContentChanged = true; linksUpdatedCount++;
-                }
-                return newLink;
-            });
-
-            // Update wikilink embeds ![[old name.png]] -> ![[new_name.png]]
-            const wikiEmbedPattern = new RegExp(`\\!\\[\\[${escapeRegex(oldBaseName)}\\]\\]`, 'g');
-            const wikiReplacement = `![[${newBaseName}]]`;
-             mdContent = mdContent.replace(wikiEmbedPattern, (match) => {
-                 if (match !== wikiReplacement) {
-                     fileContentChanged = true; linksUpdatedCount++;
-                 }
-                 return wikiReplacement;
-             });
-        }
-
-        if (fileContentChanged && mdContent !== originalContent) {
-            try {
-                await fs.writeFile(mdFilePath, mdContent, 'utf-8');
-                console.log(`  -> Updated links in: ${path.relative(projectRoot, mdFilePath)}`);
-                filesContentChangedCount++;
-            } catch (error) {
-                console.error(`  -> Error writing updated file ${mdFilePath}:`, error);
-            }
-        }
-    }
-
-    console.log(`Finished scanning ${markdownFiles.length} Markdown files. Found/Updated ${linksUpdatedCount} link occurrences in ${filesContentChangedCount} files.`);
-    console.log('--- Finished Pre-processing ---');
-}
-
-
 // --- Main Processing Logic ---
 
 /**
@@ -278,129 +181,87 @@ async function findMarkdownFiles() {
     return files;
 }
 
+const localImagePattern = /\.(?:png|jpe?g|gif|svg|webp|avif)$/i;
+
+function normalizeLocalImageReference(reference) {
+    if (typeof reference !== 'string') return null;
+
+    let cleanReference = reference.trim().replace(/^<|>$/g, '');
+    if (!cleanReference || /^(?:https?:|data:|blob:|\/\/)/i.test(cleanReference)) return null;
+
+    cleanReference = cleanReference.split(/[?#]/, 1)[0];
+    try {
+        cleanReference = decodeURIComponent(cleanReference);
+    } catch {
+        // A local filename can legally contain a percent sign. Keep it unchanged.
+    }
+
+    return localImagePattern.test(cleanReference) ? cleanReference : null;
+}
+
 /**
- * Processes a single markdown file: finds local images (standard or converted wikilink),
- * uploads new ones, updates links to vault-ID-prefixed vault-relative paths in standard format.
- * Assumes images no longer have spaces in names due to pre-processing.
- * @param {string} mdFilePath - Absolute path to the markdown file.
- * @param {Set<string>} uploadedImagesManifest - The Set of already uploaded images (stores LOWERCASE paths).
- * @returns {Promise<boolean>} True if the file content was effectively changed and saved.
+ * Finds standard Markdown images, Obsidian image embeds, HTML images, and
+ * cardImage frontmatter without altering the source document.
+ */
+function collectLocalImageReferences(markdownContent) {
+    const references = new Set();
+    const addReference = (reference) => {
+        const normalizedReference = normalizeLocalImageReference(reference);
+        if (normalizedReference) references.add(normalizedReference);
+    };
+
+    const tree = unified().use(remarkParse).parse(markdownContent);
+    visit(tree, 'image', (node) => addReference(node.url));
+
+    const wikiEmbedPattern = /!\[\[([^\]\n|]+?\.(?:png|jpe?g|gif|svg|webp|avif))(?:\|[^\]\n]+)?\]\]/gi;
+    for (const match of markdownContent.matchAll(wikiEmbedPattern)) addReference(match[1]);
+
+    const htmlImagePattern = /<img\b[^>]*\bsrc\s*=\s*["']([^"']+)["'][^>]*>/gi;
+    for (const match of markdownContent.matchAll(htmlImagePattern)) addReference(match[1]);
+
+    const cardImagePattern = /^\s*cardImage\s*:\s*["']?(.+?\.(?:png|jpe?g|gif|svg|webp|avif))["']?\s*$/gim;
+    for (const match of markdownContent.matchAll(cardImagePattern)) addReference(match[1]);
+
+    return references;
+}
+
+/**
+ * Uploads images referenced by one Markdown file. This function is deliberately
+ * read-only with respect to every vault file; only the separate manifest may be
+ * updated after a successful upload.
  */
 async function processMarkdownFile(mdFilePath, uploadedImagesManifest) {
-    const originalMdContent = await fs.readFile(mdFilePath, 'utf-8');
-    let currentMdContent = originalMdContent;
-    let astModified = false;
-    let wikiLinksConverted = false;
-
-    // Determine Vault ID and Path
-    let vaultId = null;
-    let vaultAbsPath = null;
-    for (const baseDir of vaultBaseDirs) {
-        const fullBaseDir = path.resolve(projectRoot, baseDir);
-        if (mdFilePath.startsWith(fullBaseDir + path.sep) || mdFilePath === fullBaseDir) {
-            vaultId = path.basename(baseDir); // Use base name of vault dir as ID
-            vaultAbsPath = fullBaseDir;
-            break;
-        }
-    }
-    if (!vaultId || !vaultAbsPath) {
-        console.error(`Could not determine vault context for file: ${mdFilePath}`);
-        return false;
-    }
-
-    // Step 1: Convert ![[...]] to standard ![](...) format
-    const wikiEmbedPattern = /!\[\[([^\]\n]+?\.(?:png|jpg|jpeg|gif|svg|webp))\]\]/gi;
-    currentMdContent = currentMdContent.replace(wikiEmbedPattern, (match, imageName) => {
-        const standardLink = `![${imageName}](${imageName})`; // Alt text defaults to filename
-        if (match !== standardLink) { wikiLinksConverted = true; }
-        return standardLink;
+    const markdownContent = await fs.readFile(mdFilePath, 'utf-8');
+    const vaultConfig = vaultConfigs.find(({ baseDir }) => {
+        const vaultPath = path.resolve(projectRoot, baseDir);
+        return mdFilePath === vaultPath || mdFilePath.startsWith(vaultPath + path.sep);
     });
 
-    // Step 2: Process all standard image links via AST
-    const processor = unified().use(remarkParse);
-    const tree = processor.parse(currentMdContent); // Parse potentially modified content
-    const uploadPromises = [];
-    const nodesToProcess = [];
-    visit(tree, 'image', (node) => { nodesToProcess.push(node); });
+    if (!vaultConfig) {
+        console.error(`Could not determine vault context for file: ${mdFilePath}`);
+        return;
+    }
 
-    for (const node of nodesToProcess) {
-        const imageUrl = node.url;
+    const vaultAbsPath = path.resolve(projectRoot, vaultConfig.baseDir);
+    const imageReferences = collectLocalImageReferences(markdownContent);
 
-        if (!imageUrl || imageUrl.startsWith('http') || imageUrl.startsWith('data:')) { continue; }
+    for (const imageReference of imageReferences) {
+        const imageName = path.basename(imageReference.replace(/\\/g, '/'));
+        const cloudinaryImageName = imageName.toLowerCase();
+        const manifestKey = `${vaultConfig.id}/images/${cloudinaryImageName}`;
 
-        const imageName = path.basename(imageUrl); // Should have underscores if renamed
+        if (uploadedImagesManifest.has(manifestKey)) continue;
+
         const localImagePathFull = await findImageFullPath(imageName, vaultAbsPath);
-
         if (!localImagePathFull) {
-            console.warn(`  - Image skipped (sync phase): Cannot find local file for "${imageName}" in vault "${vaultId}" (referenced as "${imageUrl}" in ${path.basename(mdFilePath)})`);
+            console.warn(`  - Image skipped: Cannot find "${imageName}" in ${vaultConfig.baseDir} (referenced by ${path.basename(mdFilePath)})`);
             continue;
         }
 
-        // Lowercase version for manifest checking/storage
-        const cloudinaryPublicIdLower = imageName.toLowerCase();
-        const manifestKey = `${vaultId.toLowerCase()}/images/${cloudinaryPublicIdLower}`;
-
-        // Check manifest using the LOWERCASE prefixed ID
-        const alreadyUploaded = uploadedImagesManifest.has(manifestKey);
-        // Check if the node URL needs updating to the ORIGINAL CASE prefixed ID
-        const linkNeedsUpdate = node.url !== cloudinaryPublicIdLower;
-
-        if (!alreadyUploaded) {
-            console.log('Manifest key not found, uploading:', manifestKey);
-
-            // Upload using the ORIGINAL CASE prefixed ID
-            const uploadPromise = uploadToCloudinary(localImagePathFull, cloudinaryPublicIdLower, vaultId)
-                .then(success => {
-                    if (success) {
-                        // Add the LOWERCASE prefixed ID to the manifest
-                        uploadedImagesManifest.add(manifestKey);
-                        // Update AST node URL to the ORIGINAL CASE prefixed ID
-                        if (node.url !== cloudinaryPublicIdLower) {
-                            node.url = cloudinaryPublicIdLower;
-                            astModified = true;
-                            console.log(`  - Link updated post-upload: ${cloudinaryPublicIdLower} in ${path.basename(mdFilePath)}`);
-                        }
-                    }
-                });
-            uploadPromises.push(uploadPromise);
-        } else if (linkNeedsUpdate) {
-            // Already uploaded, just update the AST node URL to the ORIGINAL CASE prefixed ID
-            console.log(`  - Link update needed (already uploaded): ${imageUrl} -> ${cloudinaryPublicIdLower} in ${path.basename(mdFilePath)}`);
-            node.url = cloudinaryPublicIdLower;
-            astModified = true;
-        }
-    } // End loop through image nodes
-
-    if (uploadPromises.length > 0) {
-        console.log(`Waiting for ${uploadPromises.length} image upload(s) for ${path.basename(mdFilePath)}...`);
-        await Promise.all(uploadPromises);
+        console.log('Manifest key not found, uploading:', manifestKey);
+        const success = await uploadToCloudinary(localImagePathFull, cloudinaryImageName, vaultConfig.id);
+        if (success) uploadedImagesManifest.add(manifestKey);
     }
-
-    // Step 3: Final Write Check
-    const fileNeedsSaving = wikiLinksConverted || astModified;
-
-    if (fileNeedsSaving) {
-        // Stringify the potentially modified AST
-        let finalContentToWrite = unified().use(remarkStringify).stringify(tree);
-
-        finalContentToWrite = finalContentToWrite.replace(/\\\[\\\[/g, '[[');
-        finalContentToWrite = finalContentToWrite.replace(/\\_/g, '_');
-
-        // Only write if the final content is actually different from the original
-        if (finalContentToWrite !== originalMdContent) {
-             try {
-                await fs.writeFile(mdFilePath, finalContentToWrite, 'utf-8');
-                console.log(`  -> File updated (Sync Phase): ${path.relative(projectRoot, mdFilePath)}`);
-                return true; // Return true: file was modified and saved
-            } catch (error) {
-                console.error(`  -> Error writing updated file ${mdFilePath}:`, error);
-                return false; // Return false as save failed
-            }
-        } else {
-             return false; // No effective change
-        }
-    }
-    return false; // No modifications needed saving in this phase
 }
 
 
@@ -410,24 +271,19 @@ async function processMarkdownFile(mdFilePath, uploadedImagesManifest) {
 async function runGitCommands() {
     try {
         console.log('Checking Git status...');
-        // Use relative paths for git add
         const relativeManifestPath = path.relative(projectRoot, manifestPath);
-        const pathsToAdd = [...vaultBaseDirs, relativeManifestPath];
-        console.log(`Staging changes in: ${pathsToAdd.join(', ')}`);
-        await git.add(pathsToAdd);
+        console.log(`Staging manifest only: ${relativeManifestPath}`);
+        await git.add(relativeManifestPath);
 
-        const status = await git.status();
-        // Check only staged changes after explicit add
-        const hasStagedChanges = status.staged.length > 0;
-
-        if (!hasStagedChanges) {
+        const stagedManifest = (await git.diff(['--cached', '--name-only', '--', relativeManifestPath])).trim();
+        if (!stagedManifest) {
             console.log('No changes staged for commit. Skipping commit and push.');
             return;
         }
 
-        const commitMessage = `Sync vault notes and images (${new Date().toISOString()})`;
-        console.log(`Committing ${status.staged.length} staged changes with message: "${commitMessage}"`);
-        await git.commit(commitMessage);
+        const commitMessage = `Sync vault image manifest (${new Date().toISOString()})`;
+        console.log(`Committing manifest with message: "${commitMessage}"`);
+        await git.commit(commitMessage, [relativeManifestPath]);
 
         console.log('Pushing to origin...');
         await git.push('origin', 'main'); // Adjust branch name if needed
@@ -435,12 +291,12 @@ async function runGitCommands() {
         console.log('Git sync complete.');
     } catch (error) {
         console.error('Error during Git operations:', error);
-         try {
+        try {
              const statusOnError = await git.status();
              console.error("Git status during error:", statusOnError);
-         } catch (statusError) {
+        } catch {
              console.error("Could not get Git status during error handling.");
-         }
+        }
     }
 }
 
@@ -450,19 +306,13 @@ async function main() {
     console.log('Starting vault sync process...');
 
     // --- Configuration Checks ---
-    if (vaultBaseDirs.length === 0) { console.error('Error: No VAULT_DIRS configured in .env file. Exiting.'); process.exit(1); }
+    if (vaultBaseDirs.length === 0) { console.error('Error: No vault directories configured. Exiting.'); process.exit(1); }
     if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) { console.error('Error: Cloudinary credentials missing...'); process.exit(1); }
     // --- End Configuration Checks ---
-
-    // --- Run Pre-processing Step ---
-    await preprocessRenameImagesAndLinks();
-    // --- End Pre-processing Step ---
 
     const uploadedImagesManifest = await loadManifest(); // Loads lowercase paths
     const initialManifestSize = uploadedImagesManifest.size;
     const markdownFiles = await findMarkdownFiles();
-
-    console.log('Manifest Content:', uploadedImagesManifest); // Debugging: Show manifest content
 
     console.log(`Processing ${markdownFiles.length} Markdown files for Cloudinary sync...`);
     for (const mdFile of markdownFiles) {
@@ -478,8 +328,11 @@ async function main() {
         console.log('No new images were uploaded. Manifest not saved.');
     }
 
-    // Run Git commands (will check status internally)
-    await runGitCommands();
+    if (skipGit) {
+        console.log('Skipping Git commit/push (--skip-git or SKIP_GIT_SYNC=1).');
+    } else {
+        await runGitCommands();
+    }
 
     console.log('Vault sync process finished.');
 }
