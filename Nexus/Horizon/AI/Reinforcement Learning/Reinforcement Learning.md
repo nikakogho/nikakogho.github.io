@@ -172,6 +172,9 @@ On-policy TD learning algorithm where agent starting in some state s<sub>0</sub>
 ## [[Policy Gradient]]
 Learn a parameterized policy directly, as opposed to learning state-values or state-action values.
 
+## Reward Models
+Like [[Bradley-Terry Reward Model]] for comparing the value of choosing some option A over B.
+
 ## RL In AI Alignment
 
 Used as [[RLHF]] or [[RLAIF]] to make base models (produced by [[Pretraining LLM|pretraining]]) helpful, honest, harmless.
