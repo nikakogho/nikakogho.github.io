@@ -8,9 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "npm run test:markdown && npm run test:content",
+    "test": "npm run test:markdown && npm run test:content && npm run test:home",
     "test:markdown": "node scripts/verify-markdown-renderer.mjs",
-    "test:content": "node scripts/verify-post-collection.mjs"
+    "test:content": "node scripts/verify-post-collection.mjs",
+    "test:home": "node scripts/verify-home-portals.mjs"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.1",

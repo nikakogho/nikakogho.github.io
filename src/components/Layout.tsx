@@ -8,6 +8,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { pathname, hash } = useLocation();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     // Section links manage their own target. Every ordinary route change should
@@ -16,9 +17,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   }, [pathname, hash]);
 
   return (
-    <div className="app-container">
+    <div className={`app-container${isHome ? ' app-container--home' : ''}`}>
       <Header />
-      <main className="content-container">
+      <main className={`content-container${isHome ? ' content-container--home' : ''}`}>
         {children}
       </main>
     </div>
