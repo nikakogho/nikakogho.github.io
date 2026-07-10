@@ -1,8 +1,5 @@
 /* src/styles/main.css */
 
-/* --- Google Font Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap');
-
 /* --- CSS Variables (Theme) --- */
 /* Default: Light Theme */
 :root {
@@ -20,8 +17,8 @@
   --highlight-bg: rgba(0, 119, 182, 0.1); /* Light blueish highlight */
   --highlight-darker-bg: rgba(0, 119, 182, 0.15); /* Slightly darker highlight */
 
-  --font-primary: 'Poppins', sans-serif; /* For headings */
-  --font-secondary: 'Lato', sans-serif;   /* For body text */
+  --font-primary: 'Avenir Next', 'Segoe UI', sans-serif; /* For headings */
+  --font-secondary: 'Segoe UI', system-ui, sans-serif;   /* For body text */
   --container-max-width: 1200px; /* Increased width */
   --border-radius: 8px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -76,6 +73,37 @@ main.content-container {
   box-shadow: var(--box-shadow); /* Use variable */
   min-height: 60vh;
   transition: background-color 0.3s ease; /* Smooth theme transition */
+}
+
+.route-loading {
+  display: grid;
+  min-height: 55vh;
+  place-items: center;
+  align-content: center;
+  gap: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.route-loading > span {
+  width: 34px;
+  aspect-ratio: 1;
+  border: 2px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: route-loading-spin 700ms linear infinite;
+}
+
+@keyframes route-loading-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-loading > span { animation: none; }
 }
 
 @media (max-width: 1100px) {

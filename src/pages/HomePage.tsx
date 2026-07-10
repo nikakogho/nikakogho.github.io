@@ -1,222 +1,214 @@
-import { PointerEvent, useEffect, useState } from 'react';
+import { CSSProperties, PointerEvent, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaGithub, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { FiArrowRight, FiBookOpen, FiCompass, FiExternalLink, FiStar } from 'react-icons/fi';
-import HomeRealmExperience, { HomeConcept } from '../components/home/HomeRealmExperience';
-import { HomePortalId } from '../data/homePortals';
-import '../styles/home.css';
+import { FiArrowRight, FiBookOpen, FiCompass, FiCpu, FiFeather, FiZap } from 'react-icons/fi';
+import AmbienceToggle from '../components/AmbienceToggle';
+import '../styles/landing.css';
 
-const HOME_CONCEPT_KEY = 'nika-home-concept-v1';
+type LandingVariant = 'keep' | 'atelier' | 'citadel';
 
-const conceptOptions: Array<{ id: HomeConcept; label: string; eyebrow: string; description: string }> = [
+interface LandingVariantDetails {
+  id: LandingVariant;
+  tab: string;
+  name: string;
+  icon: typeof FiFeather;
+  image: string;
+  audio: string;
+  audioLabel: string;
+  startRealm: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  invitation: string;
+}
+
+const LANDING_VARIANT_KEY = 'nika-landing-variant-v2';
+
+const landingVariants: LandingVariantDetails[] = [
   {
-    id: 'orrery',
-    label: 'Aster Gate Orrery',
-    eyebrow: 'Arcane instrument',
-    description: 'Six future-realms orbit a central portal like a scholar’s impossible astrolabe.',
+    id: 'keep',
+    tab: 'I',
+    name: 'Moonlit Keep',
+    icon: FiFeather,
+    image: '/backgrounds/lifelog-castle-courtyard.webp',
+    audio: '/audio/light_rain.wav',
+    audioLabel: 'rain beyond the keep',
+    startRealm: 'neurotech',
+    eyebrow: 'The playground of tomorrow',
+    title: 'A keep for impossible futures.',
+    description: 'I’m Nika—an engineer exploring minds, machines, living systems, space, and matter at its smallest scales.',
+    invitation: 'Cross the courtyard. The realm gates are awake.',
   },
   {
-    id: 'grimoire',
-    label: 'Grimoire of Futures',
-    eyebrow: 'Living field notes',
-    description: 'An enchanted research journal whose rune-tabs open a different technological chapter.',
+    id: 'atelier',
+    tab: 'II',
+    name: 'Arcane Atelier',
+    icon: FiCpu,
+    image: '/backgrounds/lifelog-cyber-lab.webp',
+    audio: '/audio/cyber-lab-hum.wav',
+    audioLabel: 'the midnight laboratory',
+    startRealm: 'ai',
+    eyebrow: 'Field notes from the near future',
+    title: 'The lab window is still glowing.',
+    description: 'Experiments in intelligence, embodiment, biology, brains, off-world infrastructure, and nanoscale machines.',
+    invitation: 'Step through the glass and choose a world to inhabit.',
   },
   {
-    id: 'grove',
-    label: 'Dreamgate Grove',
-    eyebrow: 'Bioluminescent paths',
-    description: 'A moonlit grove of gates, roots, and luminous trails into possible worlds.',
+    id: 'citadel',
+    tab: 'III',
+    name: 'Ember Citadel',
+    icon: FiZap,
+    image: '/backgrounds/lifelog-lava-pit.webp',
+    audio: '/audio/lava-rumble.wav',
+    audioLabel: 'the furnace beneath the citadel',
+    startRealm: 'robotics',
+    eyebrow: 'A foundry for unfinished ideas',
+    title: 'Every impossible thing begins as a spark.',
+    description: 'This is where speculative technologies become notes, games, prototypes, research, and occasionally small mechanical creatures.',
+    invitation: 'Take the ember path into the six realms.',
   },
 ];
 
-const artifacts = [
-  {
-    title: 'Multi-Dimensional Worlds',
-    description: 'Experiments with worlds whose rules and dimensions refuse to stay ordinary.',
-    href: 'https://github.com/nikakogho/MultiDimensionalWorlds',
-  },
-  {
-    title: 'Epic Battle Simulator',
-    description: 'A playground for emergent conflict, agents, and large-scale simulation.',
-    href: 'https://github.com/nikakogho/EpicBattleSimulator',
-  },
-  {
-    title: 'Dreamscape Grove Source',
-    description: 'The neurofeedback forest game, bridge, and Unity implementation.',
-    href: 'https://github.com/nikakogho/DreamscapeGrove',
-  },
-];
+const futureDomains = ['AI', 'Robotics', 'Biotech', 'Neurotech', 'Space', 'Nanotech'];
 
-function getInitialConcept(): HomeConcept {
+function getInitialVariant(): LandingVariant {
+  if (typeof window === 'undefined') return 'keep';
   try {
-    const saved = window.localStorage.getItem(HOME_CONCEPT_KEY);
-    if (saved === 'orrery' || saved === 'grimoire' || saved === 'grove') return saved;
+    const saved = window.localStorage.getItem(LANDING_VARIANT_KEY);
+    if (saved === 'keep' || saved === 'atelier' || saved === 'citadel') return saved;
   } catch {
-    // Storage can be unavailable in hardened browsing contexts; the default remains usable.
+    // The selector remains functional when storage is unavailable.
   }
-  return 'orrery';
+  return 'keep';
 }
 
 const HomePage = () => {
-  const [concept, setConcept] = useState<HomeConcept>(getInitialConcept);
-  const [selectedPortal, setSelectedPortal] = useState<HomePortalId>('ai');
-  const activeConcept = conceptOptions.find((option) => option.id === concept) ?? conceptOptions[0];
+  const [variant, setVariant] = useState<LandingVariant>(getInitialVariant);
+  const [loadedScene, setLoadedScene] = useState<string | null>(null);
+  const active = landingVariants.find((option) => option.id === variant) ?? landingVariants[0];
 
   useEffect(() => {
     try {
-      window.localStorage.setItem(HOME_CONCEPT_KEY, concept);
+      window.localStorage.setItem(LANDING_VARIANT_KEY, variant);
     } catch {
-      // Persistence is a convenience; the selector still works without storage.
+      // Persistence is a convenience, not a requirement.
     }
-  }, [concept]);
+  }, [variant]);
 
-  const updatePointerDepth = (event: PointerEvent<HTMLDivElement>) => {
+  const moveScene = (event: PointerEvent<HTMLElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-    event.currentTarget.style.setProperty('--pointer-x', `${(x * 10).toFixed(2)}px`);
-    event.currentTarget.style.setProperty('--pointer-y', `${(y * 10).toFixed(2)}px`);
+    event.currentTarget.style.setProperty('--scene-x', `${(x * -9).toFixed(2)}px`);
+    event.currentTarget.style.setProperty('--scene-y', `${(y * -6).toFixed(2)}px`);
+    event.currentTarget.style.setProperty('--light-x', `${((x + 1) * 50).toFixed(2)}%`);
+    event.currentTarget.style.setProperty('--light-y', `${((y + 1) * 50).toFixed(2)}%`);
   };
 
-  const resetPointerDepth = (event: PointerEvent<HTMLDivElement>) => {
-    event.currentTarget.style.setProperty('--pointer-x', '0px');
-    event.currentTarget.style.setProperty('--pointer-y', '0px');
-  };
-
-  const revealRealms = () => {
-    document.getElementById('future-realms')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const resetScene = (event: PointerEvent<HTMLElement>) => {
+    event.currentTarget.style.setProperty('--scene-x', '0px');
+    event.currentTarget.style.setProperty('--scene-y', '0px');
   };
 
   return (
-    <div
-      className="future-home"
-      data-concept={concept}
-      onPointerMove={updatePointerDepth}
-      onPointerLeave={resetPointerDepth}
+    <section
+      className="landing-shell"
+      data-landing={variant}
+      data-testid="landing-shell"
+      data-scene-ready={loadedScene === active.image}
+      onPointerMove={moveScene}
+      onPointerLeave={resetScene}
+      aria-labelledby="landing-title"
     >
-      <div className="future-atmosphere" aria-hidden="true">
-        <span className="future-atmosphere__star future-atmosphere__star--one" />
-        <span className="future-atmosphere__star future-atmosphere__star--two" />
-        <span className="future-atmosphere__star future-atmosphere__star--three" />
-        <span className="future-atmosphere__mist" />
+      <a className="landing-skip" href="#landing-story">Skip to introduction</a>
+
+      <img
+        className="landing-scene"
+        src={active.image}
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
+        onLoad={() => setLoadedScene(active.image)}
+      />
+      <div className="landing-vignette" aria-hidden="true" />
+      <div className="landing-light" aria-hidden="true" />
+      <div className="landing-weather" aria-hidden="true">
+        {Array.from({ length: 18 }, (_, index) => (
+          <span key={index} style={{ '--particle-index': index } as CSSProperties} />
+        ))}
       </div>
 
-      <section className="future-hero" aria-labelledby="future-home-title">
-        <div className="future-hero__copy">
-          <p className="future-eyebrow"><FiStar aria-hidden="true" /> Playground of tomorrow</p>
-          <h1 id="future-home-title">Building small doorways into very large futures.</h1>
-          <p className="future-hero__lede">
-            I’m Nika—an engineer exploring how intelligence, machines, biology, brains, space,
-            and matter itself might be shaped into a better century.
-          </p>
-          <div className="future-hero__actions">
-            <button type="button" className="future-button future-button--primary" onClick={revealRealms}>
-              Enter the gates <FiCompass aria-hidden="true" />
-            </button>
-            <Link to="/nexus" className="future-button future-button--quiet">
-              Wander the Nexus <FiArrowRight aria-hidden="true" />
-            </Link>
-          </div>
+      <nav className="landing-nav" aria-label="Primary navigation">
+        <Link className="landing-mark" to="/" aria-label="Nika Kogho home">
+          <span>NK</span>
+          <strong>Nika Kogho</strong>
+        </Link>
+        <div className="landing-nav__links">
+          <Link to="/nexus">Nexus</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/research">Research</Link>
         </div>
+      </nav>
 
-        <div className="future-hero__reliquary" aria-label="Six fields, one shared future">
-          <div className="reliquary-ring reliquary-ring--outer" aria-hidden="true" />
-          <div className="reliquary-ring reliquary-ring--inner" aria-hidden="true" />
-          <div className="reliquary-core">
-            <span>6</span>
-            <strong>realms</strong>
-            <small>one horizon</small>
-          </div>
-          <span className="reliquary-rune reliquary-rune--one" aria-hidden="true">Ψ</span>
-          <span className="reliquary-rune reliquary-rune--two" aria-hidden="true">⚙</span>
-          <span className="reliquary-rune reliquary-rune--three" aria-hidden="true">✦</span>
-          <span className="reliquary-rune reliquary-rune--four" aria-hidden="true">◈</span>
+      <article id="landing-story" className="landing-story" aria-live="polite">
+        <p className="landing-story__eyebrow">{active.eyebrow}</p>
+        <h1 id="landing-title">{active.title}</h1>
+        <p className="landing-story__description">{active.description}</p>
+        <p className="landing-story__invitation">{active.invitation}</p>
+        <div className="landing-story__actions">
+          <Link className="landing-action landing-action--primary" to={`/world?realm=${active.startRealm}`}>
+            Enter my world <FiCompass aria-hidden="true" />
+          </Link>
+          <Link className="landing-action landing-action--quiet" to="/nexus">
+            Open the Nexus <FiArrowRight aria-hidden="true" />
+          </Link>
         </div>
-      </section>
+      </article>
 
-      <section id="future-realms" className="future-realms" aria-labelledby="future-realms-title">
-        <header className="future-realms__header">
-          <div>
-            <p className="future-eyebrow"><FiBookOpen aria-hidden="true" /> Choose the spellbook</p>
-            <h2 id="future-realms-title">Three ways to cross the same horizon</h2>
-          </div>
-          <p>Switch freely. Your preferred version is remembered for the next visit.</p>
-        </header>
-
-        <div className="concept-switcher" role="group" aria-label="Landing page visual concept">
-          {conceptOptions.map((option) => (
-            <button
-              key={option.id}
-              type="button"
-              className={option.id === concept ? 'is-active' : ''}
-              aria-pressed={option.id === concept}
-              onClick={() => setConcept(option.id)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  setConcept(option.id);
-                }
-              }}
-            >
-              <span>{option.eyebrow}</span>
-              <strong>{option.label}</strong>
-            </button>
-          ))}
-        </div>
-
-        <p className="concept-description" aria-live="polite">{activeConcept.description}</p>
-
-        <HomeRealmExperience
-          concept={concept}
-          selectedId={selectedPortal}
-          onSelect={setSelectedPortal}
-        />
-      </section>
-
-      <section className="future-artifacts" aria-labelledby="future-artifacts-title">
-        <div className="future-artifacts__intro">
-          <p className="future-eyebrow"><FiStar aria-hidden="true" /> Side quests & signals</p>
-          <h2 id="future-artifacts-title">Other artifacts from the workshop</h2>
-          <p>
-            Games, simulations, experiments, and public notes—the odd little objects that accumulate
-            when curiosity is allowed to roam.
-          </p>
-          <a
-            className="future-cv-link"
-            href="https://drive.google.com/file/d/1SREtPTHUsvXUba58omBguLjQwEwq-m41/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
+      <div className="landing-domain-orbit" aria-label="Worlds inside the exploration experience">
+        <span className="landing-domain-orbit__core"><FiBookOpen aria-hidden="true" /></span>
+        {futureDomains.map((domain, index) => (
+          <span
+            key={domain}
+            className="landing-domain-orbit__domain"
+            style={{ '--domain-index': index } as CSSProperties}
           >
-            Read my CV <FiExternalLink aria-hidden="true" />
-          </a>
-        </div>
+            {domain}
+          </span>
+        ))}
+      </div>
 
-        <div className="artifact-grid">
-          {artifacts.map((artifact, index) => (
-            <a key={artifact.title} href={artifact.href} target="_blank" rel="noopener noreferrer">
-              <span>Artifact {String(index + 1).padStart(2, '0')}</span>
-              <strong>{artifact.title}</strong>
-              <p>{artifact.description}</p>
-              <FiArrowRight aria-hidden="true" />
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <footer className="future-footer">
+      <div className="landing-thresholds" role="group" aria-label="Choose a landing page concept">
+        <span className="landing-thresholds__label">Choose a threshold</span>
         <div>
-          <span className="future-footer__mark" aria-hidden="true">NK</span>
-          <p>Made in Tbilisi, pointed at tomorrow.</p>
+          {landingVariants.map((option) => {
+            const Icon = option.icon;
+            return (
+              <button
+                key={option.id}
+                type="button"
+                className={option.id === variant ? 'is-active' : ''}
+                aria-pressed={option.id === variant}
+                aria-label={`Use ${option.name} landing page`}
+                data-landing-option={option.id}
+                onClick={() => setVariant(option.id)}
+              >
+                <span>{option.tab}</span>
+                <Icon aria-hidden="true" />
+                <strong>{option.name}</strong>
+              </button>
+            );
+          })}
         </div>
-        <nav className="future-socials" aria-label="Social links">
-          <a href="https://www.linkedin.com/in/nika-koghuashvili-4889991b4/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin /></a>
-          <a href="https://github.com/nikakogho/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><FaGithub /></a>
-          <a href="https://www.youtube.com/@Playground_Of_Tomorrow/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><FaYoutube /></a>
-          <a href="https://x.com/nikakogho" target="_blank" rel="noopener noreferrer" aria-label="X"><FaTwitter /></a>
-          <a href="https://www.facebook.com/nikakogho/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook /></a>
-        </nav>
-      </footer>
-    </div>
+      </div>
+
+      <AmbienceToggle
+        key={active.id}
+        src={active.audio}
+        label={active.audioLabel}
+        className="landing-ambience"
+      />
+    </section>
   );
 };
 

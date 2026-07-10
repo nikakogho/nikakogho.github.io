@@ -1,45 +1,58 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
-import VaultLayout from './pages/VaultLayout';
-import VaultHomeRedirect from './components/VaultHomeRedirectComponent';
-import NotePage from './pages/NotePage';
-import NotFoundPage from './pages/NotFoundPage';
-import BlogListPage from './pages/BlogListPage';
-import BlogPostPage from './pages/BlogPostPage';
 import { ThemeProvider } from './context/ThemeContext';
-import SecretPage from './pages/SecretPage';
-import GraphViewPage from './pages/GraphViewPage';
-import ResearchListPage from './pages/ResearchListPage';
-import ResearchPostPage from './pages/ResearchPostPage';
+
+const WorldExplorerPage = lazy(() => import('./pages/WorldExplorerPage'));
+const SecretPage = lazy(() => import('./pages/SecretPage'));
+const VaultLayout = lazy(() => import('./pages/VaultLayout'));
+const VaultHomeRedirect = lazy(() => import('./components/VaultHomeRedirectComponent'));
+const NotePage = lazy(() => import('./pages/NotePage'));
+const GraphViewPage = lazy(() => import('./pages/GraphViewPage'));
+const BlogListPage = lazy(() => import('./pages/BlogListPage'));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
+const ResearchListPage = lazy(() => import('./pages/ResearchListPage'));
+const ResearchPostPage = lazy(() => import('./pages/ResearchPostPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+
+const RouteLoading = () => (
+  <div className="route-loading" role="status" aria-live="polite">
+    <span aria-hidden="true" />
+    Opening the next page…
+  </div>
+);
 
 function App() {
   return (
     <ThemeProvider>
       <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
+        <Suspense fallback={<RouteLoading />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/world" element={<WorldExplorerPage />} />
 
-          <Route path="/secrets/*" element={<SecretPage />} />
+            <Route path="/secrets/*" element={<SecretPage />} />
 
-          {/* Vault Routes */}
-          <Route path="/nexus" element={<VaultLayout />}>
-            <Route index element={<VaultHomeRedirect />} />
-            <Route path="notes/*" element={<NotePage />} />
-            <Route path="graph" element={<GraphViewPage />} />
-          </Route>
+            {/* Vault Routes */}
+            <Route path="/nexus" element={<VaultLayout />}>
+              <Route index element={<VaultHomeRedirect />} />
+              <Route path="notes/*" element={<NotePage />} />
+              <Route path="graph" element={<GraphViewPage />} />
+            </Route>
 
-          {/* Blog Routes*/}
-          <Route path="/blog" element={<BlogListPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-          
-          {/* Research Routes - Added */}
-          <Route path="/research" element={<ResearchListPage />} />
-          <Route path="/research/:slug" element={<ResearchPostPage />} />
+            {/* Blog Routes*/}
+            <Route path="/blog" element={<BlogListPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
 
-          {/* Catch-all Not Found Route */}
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+            {/* Research Routes - Added */}
+            <Route path="/research" element={<ResearchListPage />} />
+            <Route path="/research/:slug" element={<ResearchPostPage />} />
+
+            {/* Catch-all Not Found Route */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </Suspense>
       </Layout>
     </ThemeProvider>
   );

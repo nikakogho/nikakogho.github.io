@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { glob } from 'glob';
 import { createServer } from 'vite';
 
@@ -11,6 +12,7 @@ const vite = await createServer({
 
 try {
   const { homePortals } = await vite.ssrLoadModule('/src/data/homePortals.ts');
+  const { worldRealms, WORLD_BOUNDS } = await vite.ssrLoadModule('/src/data/worldRealms.ts');
   const { getAllBlogPosts } = await vite.ssrLoadModule('/src/utils/blogHelper.tsx');
   const { getAllResearchPosts } = await vite.ssrLoadModule('/src/utils/researchHelper.tsx');
   const { normalizeNoteName } = await vite.ssrLoadModule('/src/utils/markdownHelper.tsx');
@@ -28,6 +30,12 @@ try {
     homePortals.map((portal) => portal.id),
     ['ai', 'robotics', 'biotech', 'neurotech', 'space', 'nanotech'],
   );
+  assert.deepEqual(
+    worldRealms.map((realm) => realm.id),
+    ['ai', 'robotics', 'biotech', 'neurotech', 'space', 'nanotech'],
+  );
+  assert.equal(new Set(worldRealms.map((realm) => realm.terrain)).size, 6, 'Every realm needs unique terrain');
+  assert.equal(new Set(worldRealms.map((realm) => realm.vehicle.kind)).size, 6, 'Every realm needs unique transport');
 
   for (const portal of homePortals) {
     assert.equal(portal.links.length, 3, `${portal.id} should expose three doorways`);
@@ -50,6 +58,27 @@ try {
         assert.fail(`Unsupported internal homepage destination: ${link.href}`);
       }
     }
+  }
+
+  for (const realm of worldRealms) {
+    assert.equal(realm.landmarks.length, 3, `${realm.id} should expose three explorable landmarks`);
+    assert.ok(realm.vehicle.speed > 0 && realm.vehicle.handling > 0, `${realm.id} needs working movement physics`);
+    assert.ok(existsSync(`public${realm.ambience.src}`), `Missing realm ambience: ${realm.ambience.src}`);
+    for (const landmark of realm.landmarks) {
+      assert.ok(landmark.x > 0 && landmark.x < WORLD_BOUNDS.width, `${landmark.id} x position is outside the world`);
+      assert.ok(landmark.y > 0 && landmark.y < WORLD_BOUNDS.height, `${landmark.id} y position is outside the world`);
+    }
+  }
+
+  for (const asset of [
+    'public/backgrounds/lifelog-castle-courtyard.webp',
+    'public/backgrounds/lifelog-cyber-lab.webp',
+    'public/backgrounds/lifelog-lava-pit.webp',
+    'public/audio/light_rain.wav',
+    'public/audio/cyber-lab-hum.wav',
+    'public/audio/lava-rumble.wav',
+  ]) {
+    assert.ok(existsSync(asset), `Missing landing asset: ${asset}`);
   }
 
   console.log('Homepage portal verification passed.');
