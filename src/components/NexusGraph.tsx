@@ -9,9 +9,9 @@ import {
   ForceManyBody,
   SimulationLinkDatum,
 } from 'd3-force';
-import { FiMaximize2 } from 'react-icons/fi';
+import { FiMap, FiMaximize2, FiX } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
-import { GraphData } from '../utils/graphHelper';
+import { GraphData, graphGroupStyles } from '../utils/graphHelper';
 
 interface GraphVizNode extends NodeObject {
   id: string;
@@ -42,6 +42,9 @@ const NexusGraph = ({ data }: { data: GraphData }) => {
   const fgRef = useRef<ForceGraphMethods<GraphVizNode, GraphVizLink> | undefined>(undefined);
   const [size, setSize] = useState<GraphSize>({ width: 0, height: 0 });
   const [layoutReady, setLayoutReady] = useState(false);
+  const [showLegend, setShowLegend] = useState(() => (
+    typeof window === 'undefined' || window.matchMedia('(min-width: 769px)').matches
+  ));
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [highlightedNodes, setHighlightedNodes] = useState<Set<string>>(new Set());
   const [highlightedLinks, setHighlightedLinks] = useState<Set<GraphVizLink>>(new Set());
@@ -54,6 +57,17 @@ const NexusGraph = ({ data }: { data: GraphData }) => {
     });
     return ids;
   }, [data.links]);
+
+  const legendItems = useMemo(() => {
+    const groupCounts = new Map<string, number>();
+    data.nodes.forEach((node) => {
+      groupCounts.set(node.group, (groupCounts.get(node.group) ?? 0) + 1);
+    });
+
+    return graphGroupStyles
+      .filter(({ id }) => groupCounts.has(id))
+      .map((style) => ({ ...style, count: groupCounts.get(style.id) ?? 0 }));
+  }, [data.nodes]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -175,9 +189,19 @@ const NexusGraph = ({ data }: { data: GraphData }) => {
           <span aria-hidden="true">·</span>
           <strong>{data.links.length}</strong> connections
         </p>
-        <button type="button" onClick={() => fitGraph()}>
-          <FiMaximize2 aria-hidden="true" /> Fit graph
-        </button>
+        <div className="nexus-graph-toolbar__actions">
+          <button
+            type="button"
+            aria-expanded={showLegend}
+            aria-controls="nexus-graph-legend"
+            onClick={() => setShowLegend((isVisible) => !isVisible)}
+          >
+            <FiMap aria-hidden="true" /> Legend
+          </button>
+          <button type="button" onClick={() => fitGraph()}>
+            <FiMaximize2 aria-hidden="true" /> Fit graph
+          </button>
+        </div>
       </div>
 
       <div
@@ -241,6 +265,37 @@ const NexusGraph = ({ data }: { data: GraphData }) => {
               context.fillText(label, x, y);
             }}
           />
+        )}
+
+        {showLegend && (
+          <aside
+            id="nexus-graph-legend"
+            className="nexus-graph-legend"
+            aria-label="Graph color legend"
+          >
+            <div className="nexus-graph-legend__header">
+              <div>
+                <span>Color key</span>
+                <h2>Domains</h2>
+              </div>
+              <button type="button" aria-label="Close graph legend" onClick={() => setShowLegend(false)}>
+                <FiX aria-hidden="true" />
+              </button>
+            </div>
+            <ul>
+              {legendItems.map(({ id, label, color, count }) => (
+                <li key={id}>
+                  <span
+                    className="nexus-graph-legend__swatch"
+                    style={{ backgroundColor: color }}
+                    aria-hidden="true"
+                  />
+                  <span>{label}</span>
+                  <small aria-label={`${count} ${count === 1 ? 'note' : 'notes'}`}>{count}</small>
+                </li>
+              ))}
+            </ul>
+          </aside>
         )}
 
         <p className="nexus-graph-hint">Scroll to zoom · Drag to pan · Select a node to open it</p>

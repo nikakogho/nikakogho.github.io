@@ -22,26 +22,36 @@ export interface GraphData {
 
 const WIKI_LINK_REGEX = /\[\[([^|\]]+)(?:\|[^\]]*)?\]\]/g;
 
-type Group = 'root' | 'biology' | 'chemistry' | 'physics' | 'maths' | 'ai' | 'neuroscience' | 'neurotech' | 'bioengineering' | 'robots' | 'space-tech' | 'nanotech' | 'ui' | 'computer-science' | 'organizations' | 'people';
+export type GraphGroup = 'root' | 'biology' | 'chemistry' | 'physics' | 'maths' | 'ai' | 'neuroscience' | 'neurotech' | 'bioengineering' | 'robots' | 'space-tech' | 'nanotech' | 'ui' | 'computer-science' | 'organizations' | 'people';
 
-const groupColors: Record<Group, string> = {
-    biology: '#20f318',
-    chemistry: '#56d9d4',
-    physics: '#ff1717',
-    maths: '#f4f4f4',
-    ai: '#1b2cff',
-    neuroscience: '#dc4eaa',
-    neurotech: '#ad48d8',
-    bioengineering: '#527527',
-    robots: '#f58a0b',
-    'space-tech': '#e95858',
-    nanotech: '#ffd60a',
-    ui: '#a900ee',
-    'computer-science': '#090909',
-    root: '#424242',
-    organizations: '#a8a8a8',
-    people: '#d8d8d8',
-};
+export interface GraphGroupStyle {
+    id: GraphGroup;
+    label: string;
+    color: string;
+}
+
+export const graphGroupStyles = [
+    { id: 'biology', label: 'Biology', color: '#20f318' },
+    { id: 'chemistry', label: 'Chemistry', color: '#56d9d4' },
+    { id: 'physics', label: 'Physics', color: '#ff1717' },
+    { id: 'maths', label: 'Mathematics', color: '#f4f4f4' },
+    { id: 'ai', label: 'Artificial intelligence', color: '#1b2cff' },
+    { id: 'neuroscience', label: 'Neuroscience', color: '#dc4eaa' },
+    { id: 'neurotech', label: 'Neurotechnology', color: '#ad48d8' },
+    { id: 'bioengineering', label: 'Bioengineering', color: '#527527' },
+    { id: 'robots', label: 'Robotics', color: '#f58a0b' },
+    { id: 'space-tech', label: 'Space technology', color: '#e95858' },
+    { id: 'nanotech', label: 'Nanotechnology', color: '#ffd60a' },
+    { id: 'ui', label: 'UI & design', color: '#a900ee' },
+    { id: 'computer-science', label: 'Computer science', color: '#090909' },
+    { id: 'organizations', label: 'Organizations', color: '#a8a8a8' },
+    { id: 'people', label: 'People', color: '#d8d8d8' },
+    { id: 'root', label: 'General notes', color: '#424242' },
+] as const satisfies readonly GraphGroupStyle[];
+
+const groupColors = Object.fromEntries(
+    graphGroupStyles.map(({ id, color }) => [id, color]),
+) as Record<GraphGroup, string>;
 
 function hashToUnitInterval(value: string): number {
     let hash = 2166136261;
@@ -74,7 +84,7 @@ function getGroup(notePath: string): string {
     return 'root';
 }
 
-function getGroupColor(group: Group): string {
+function getGroupColor(group: GraphGroup): string {
     if (group in groupColors) {
         return groupColors[group];
     }
@@ -125,7 +135,7 @@ export function generateGraphData(
         const group = getGroup(note.fullPath).toLowerCase();
         
         if (!groups[group]) {
-            groups[group] = getGroupColor(group as Group);
+            groups[group] = getGroupColor(group as GraphGroup);
         }
 
         const connections = linkCounts[note.fullPath] || 0;

@@ -9,7 +9,7 @@ const vite = await createServer({
 });
 
 try {
-  const { generateGraphData } = await vite.ssrLoadModule('/src/utils/graphHelper.tsx');
+  const { generateGraphData, graphGroupStyles } = await vite.ssrLoadModule('/src/utils/graphHelper.tsx');
 
   const notes = [
     {
@@ -52,6 +52,20 @@ try {
     graph.nodes.find((node) => node.id === 'horizon/ai/alpha')?.color ?? '',
     /^#[0-9a-f]{6}$/i,
     'Graph colors should be valid hex colors',
+  );
+  assert.equal(
+    new Set(graphGroupStyles.map(({ id }) => id)).size,
+    graphGroupStyles.length,
+    'Legend domains should be unique',
+  );
+  graphGroupStyles.forEach(({ label, color }) => {
+    assert.ok(label.length > 0, 'Every legend domain should have a readable label');
+    assert.match(color, /^#[0-9a-f]{6}$/i, 'Every legend domain should have a valid hex color');
+  });
+  assert.equal(
+    graph.nodes.find((node) => node.group === 'ai')?.color,
+    graphGroupStyles.find(({ id }) => id === 'ai')?.color,
+    'Legend colors and node colors should share one source of truth',
   );
 
   console.log('Nexus graph data verification passed.');
