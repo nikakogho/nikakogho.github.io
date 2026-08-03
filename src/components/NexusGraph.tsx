@@ -36,7 +36,7 @@ function getNodeId(endpoint: GraphVizLink['source']): string {
   return String(endpoint);
 }
 
-const NexusGraph = ({ data, theme }: { data: GraphData; theme: 'light' | 'dark' }) => {
+const NexusGraph = ({ data }: { data: GraphData }) => {
   const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
   const fgRef = useRef<ForceGraphMethods<GraphVizNode, GraphVizLink> | undefined>(undefined);
@@ -45,6 +45,15 @@ const NexusGraph = ({ data, theme }: { data: GraphData; theme: 'light' | 'dark' 
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [highlightedNodes, setHighlightedNodes] = useState<Set<string>>(new Set());
   const [highlightedLinks, setHighlightedLinks] = useState<Set<GraphVizLink>>(new Set());
+
+  const connectedNodeIds = useMemo(() => {
+    const ids = new Set<string>();
+    (data.links as GraphVizLink[]).forEach((link) => {
+      ids.add(getNodeId(link.source));
+      ids.add(getNodeId(link.target));
+    });
+    return ids;
+  }, [data.links]);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -68,9 +77,9 @@ const NexusGraph = ({ data, theme }: { data: GraphData; theme: 'light' | 'dark' 
   }, []);
 
   const fitGraph = useCallback((duration = 350) => {
-    const padding = size.width < 600 ? 18 : 48;
-    fgRef.current?.zoomToFit(duration, padding);
-  }, [size.width]);
+    const padding = size.width < 600 ? 18 : 24;
+    fgRef.current?.zoomToFit(duration, padding, (node) => connectedNodeIds.has(node.id));
+  }, [connectedNodeIds, size.width]);
 
   useEffect(() => {
     const graph = fgRef.current;
@@ -79,24 +88,24 @@ const NexusGraph = ({ data, theme }: { data: GraphData; theme: 'light' | 'dark' 
     const linkForce = graph.d3Force('link') as ForceLink<GraphVizNode, GraphVizLink> | undefined;
     linkForce
       ?.id((node) => node.id)
-      .distance(34)
-      .strength(0.55);
+      .distance(42)
+      .strength(0.22);
 
     const chargeForce = graph.d3Force('charge') as ForceManyBody<GraphVizNode> | undefined;
     chargeForce
-      ?.strength((node) => -30 - Math.min(node.val, 8) * 4)
-      .distanceMax(260);
+      ?.strength((node) => -16 - Math.min(node.val, 8) * 1.5)
+      .distanceMax(220);
 
     graph.d3Force(
       'collide',
       forceCollide<GraphVizNode>()
-        .radius((node) => Math.sqrt(node.val) * 4 + 2)
-        .strength(0.9)
-        .iterations(2),
+        .radius((node) => Math.sqrt(node.val) * 2.5 + 0.25)
+        .strength(0.2)
+        .iterations(1),
     );
     graph.d3Force('center', forceCenter<GraphVizNode>(0, 0));
-    graph.d3Force('x', forceX<GraphVizNode>(0).strength(0.065));
-    graph.d3Force('y', forceY<GraphVizNode>(0).strength(0.065));
+    graph.d3Force('x', forceX<GraphVizNode>(0).strength(0.032));
+    graph.d3Force('y', forceY<GraphVizNode>(0).strength(0.032));
 
     setLayoutReady(false);
     graph.d3ReheatSimulation();
@@ -105,7 +114,7 @@ const NexusGraph = ({ data, theme }: { data: GraphData; theme: 'light' | 'dark' 
     const settledFit = window.setTimeout(() => {
       fitGraph(0);
       setLayoutReady(true);
-    }, 1600);
+    }, 2200);
 
     return () => {
       window.clearTimeout(earlyFit);
@@ -151,8 +160,8 @@ const NexusGraph = ({ data, theme }: { data: GraphData; theme: 'light' | 'dark' 
     setHighlightedLinks(nextHighlightedLinks);
   };
 
-  const graphBackground = theme === 'light' ? '#f8fafc' : '#10141d';
-  const quietLinkColor = theme === 'light' ? 'rgba(51, 65, 85, 0.17)' : 'rgba(203, 213, 225, 0.15)';
+  const graphBackground = '#191919';
+  const quietLinkColor = 'rgba(148, 148, 148, 0.23)';
 
   return (
     <section
@@ -185,13 +194,13 @@ const NexusGraph = ({ data, theme }: { data: GraphData; theme: 'light' | 'dark' 
             graphData={data}
             backgroundColor={graphBackground}
             nodeVal="val"
-            nodeRelSize={4.5}
+            nodeRelSize={1.65}
             nodeLabel={(node) => `${node.name} · ${node.group}`}
             minZoom={0.18}
             maxZoom={12}
-            warmupTicks={120}
-            cooldownTicks={220}
-            cooldownTime={4500}
+            warmupTicks={160}
+            cooldownTicks={360}
+            cooldownTime={8000}
             d3AlphaDecay={0.018}
             d3VelocityDecay={0.34}
             onEngineStop={() => {
@@ -205,30 +214,30 @@ const NexusGraph = ({ data, theme }: { data: GraphData; theme: 'light' | 'dark' 
             nodeColor={(node) => {
               if (hoveredNode === node.id) return '#f87171';
               if (highlightedNodes.size > 0 && !highlightedNodes.has(node.id)) {
-                return theme === 'light' ? 'rgba(100, 116, 139, 0.2)' : 'rgba(148, 163, 184, 0.18)';
+                return 'rgba(100, 100, 100, 0.2)';
               }
               return node.color;
             }}
             nodeCanvasObjectMode={() => 'after'}
             nodeCanvasObject={(node, context, globalScale) => {
               const isFocused = hoveredNode === node.id || highlightedNodes.has(node.id);
-              const isHub = node.val >= 7;
-              const shouldShowLabel = isFocused || (isHub && globalScale > 0.42) || globalScale > 2.1;
+              const isHub = node.val >= 8.5;
+              const shouldShowLabel = isFocused || (isHub && globalScale > 1.6) || globalScale > 3;
               if (!shouldShowLabel) return;
 
               const fontSize = (isFocused ? 11 : 9) / globalScale;
               const label = node.name;
               const x = node.x ?? 0;
-              const y = (node.y ?? 0) + Math.sqrt(node.val) * 4.5 + 4 / globalScale;
+              const y = (node.y ?? 0) + Math.sqrt(node.val) * 1.65 + 4 / globalScale;
               context.font = `${isFocused ? 600 : 500} ${fontSize}px Sans-Serif`;
               context.textAlign = 'center';
               context.textBaseline = 'top';
 
               const textWidth = context.measureText(label).width;
               const padding = 2.5 / globalScale;
-              context.fillStyle = theme === 'light' ? 'rgba(248, 250, 252, 0.86)' : 'rgba(15, 20, 29, 0.86)';
+              context.fillStyle = 'rgba(25, 25, 25, 0.88)';
               context.fillRect(x - textWidth / 2 - padding, y - padding, textWidth + padding * 2, fontSize + padding * 2);
-              context.fillStyle = theme === 'light' ? '#1e293b' : '#f8fafc';
+              context.fillStyle = '#f2f2f2';
               context.fillText(label, x, y);
             }}
           />

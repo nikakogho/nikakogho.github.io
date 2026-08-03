@@ -934,18 +934,14 @@ main.content-container.content-container--graph {
 .nexus-graph-canvas {
   position: relative;
   width: 100%;
-  height: clamp(520px, calc(100svh - 270px), 820px);
+  height: clamp(720px, 72vw, 960px);
   overflow: hidden;
-  background: #f8fafc;
+  background: #191919;
   cursor: grab;
 }
 
 .nexus-graph-canvas:active {
   cursor: grabbing;
-}
-
-[data-theme='dark'] .nexus-graph-canvas {
-  background: #10141d;
 }
 
 .nexus-graph-canvas canvas {
@@ -986,7 +982,7 @@ main.content-container.content-container--graph {
   }
 
   .nexus-graph-canvas {
-    height: max(520px, calc(100svh - 285px));
+    height: max(600px, calc(100svh - 285px));
   }
 
   .nexus-graph-hint {

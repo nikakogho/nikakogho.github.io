@@ -6,6 +6,8 @@ export interface GraphNode {
   val: number;
   color: string;
   group: string;
+  x: number;
+  y: number;
 }
 
 export interface GraphLink {
@@ -20,24 +22,44 @@ export interface GraphData {
 
 const WIKI_LINK_REGEX = /\[\[([^|\]]+)(?:\|[^\]]*)?\]\]/g;
 
-type Group = 'root' | 'biology' | 'chemistry' | 'physics' | 'maths' | 'ai' | 'neuroscience' | 'neurotech' | 'bioengineering' | 'robots' | 'space-tech' | 'ui' | 'organizations' | 'people';
+type Group = 'root' | 'biology' | 'chemistry' | 'physics' | 'maths' | 'ai' | 'neuroscience' | 'neurotech' | 'bioengineering' | 'robots' | 'space-tech' | 'nanotech' | 'ui' | 'computer-science' | 'organizations' | 'people';
 
 const groupColors: Record<Group, string> = {
-    biology: '#4ade80',
-    chemistry: '#22d3ee',
-    physics: '#fb7185',
-    maths: '#e2e8f0',
-    ai: '#60a5fa',
-    neuroscience: '#f472b6',
-    neurotech: '#c084fc',
-    bioengineering: '#34d399',
-    robots: '#fb923c',
-    'space-tech': '#f87171',
-    ui: '#a78bfa',
-    root: '#cbd5e1',
-    organizations: '#94a3b8',
-    people: '#facc15',
+    biology: '#20f318',
+    chemistry: '#56d9d4',
+    physics: '#ff1717',
+    maths: '#f4f4f4',
+    ai: '#1b2cff',
+    neuroscience: '#dc4eaa',
+    neurotech: '#ad48d8',
+    bioengineering: '#527527',
+    robots: '#f58a0b',
+    'space-tech': '#e95858',
+    nanotech: '#ffd60a',
+    ui: '#a900ee',
+    'computer-science': '#090909',
+    root: '#424242',
+    organizations: '#a8a8a8',
+    people: '#d8d8d8',
 };
+
+function hashToUnitInterval(value: string): number {
+    let hash = 2166136261;
+    for (let index = 0; index < value.length; index++) {
+        hash ^= value.charCodeAt(index);
+        hash = Math.imul(hash, 16777619);
+    }
+    return (hash >>> 0) / 4294967296;
+}
+
+function getInitialPosition(notePath: string): { x: number; y: number } {
+    const angle = hashToUnitInterval(`${notePath}:angle`) * Math.PI * 2;
+    const radius = Math.sqrt(hashToUnitInterval(`${notePath}:radius`)) * 360;
+    return {
+        x: Math.cos(angle) * radius,
+        y: Math.sin(angle) * radius,
+    };
+}
 
 function getGroup(notePath: string): string {
     const parts = notePath.toLowerCase().split('/');
@@ -52,18 +74,17 @@ function getGroup(notePath: string): string {
     return 'root';
 }
 
-function getGroupColor(group: Group, theme: 'light' | 'dark'): string {
+function getGroupColor(group: Group): string {
     if (group in groupColors) {
         return groupColors[group];
     }
 
-    return theme === 'light' ? '#ccc' : '#333'; // Default color based on theme
+    return '#424242';
 }
 
 export function generateGraphData(
     notes: VaultNote[],
-    contentMap: Record<string, string>,
-    theme: 'light' | 'dark'
+    contentMap: Record<string, string>
 ): GraphData {
     const nodes: GraphNode[] = [];
     const links: GraphLink[] = [];
@@ -104,11 +125,12 @@ export function generateGraphData(
         const group = getGroup(note.fullPath).toLowerCase();
         
         if (!groups[group]) {
-            groups[group] = getGroupColor(group as Group, theme);
+            groups[group] = getGroupColor(group as Group);
         }
 
         const connections = linkCounts[note.fullPath] || 0;
         const nodeSize = 1 + Math.log1p(connections) * 2;
+        const initialPosition = getInitialPosition(note.fullPath);
 
         nodes.push({
             id: note.fullPath,
@@ -116,6 +138,7 @@ export function generateGraphData(
             val: nodeSize,
             color: groups[group],
             group: group,
+            ...initialPosition,
         });
     });
 

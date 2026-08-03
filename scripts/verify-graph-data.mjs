@@ -38,7 +38,7 @@ try {
     '/Nexus/People/Gamma.md': 'An isolated note is still part of the global graph.',
   };
 
-  const graph = generateGraphData(notes, content, 'dark');
+  const graph = generateGraphData(notes, content);
 
   assert.equal(graph.nodes.length, 3, 'Every note should appear in the graph');
   assert.equal(graph.links.length, 1, 'Repeated, reverse, and self-links should be collapsed');
