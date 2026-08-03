@@ -9,7 +9,7 @@ const vite = await createServer({
 });
 
 try {
-  const { generateGraphData, graphGroupStyles } = await vite.ssrLoadModule('/src/utils/graphHelper.tsx');
+  const { generateGraphData, getGraphLegendItems, graphGroupStyles } = await vite.ssrLoadModule('/src/utils/graphHelper.tsx');
 
   const notes = [
     {
@@ -66,6 +66,17 @@ try {
     graph.nodes.find((node) => node.group === 'ai')?.color,
     graphGroupStyles.find(({ id }) => id === 'ai')?.color,
     'Legend colors and node colors should share one source of truth',
+  );
+  const legendItems = getGraphLegendItems([
+    ...graph.nodes,
+    { group: 'ui' },
+    { group: 'organizations' },
+    { group: 'root' },
+  ]);
+  assert.deepEqual(
+    legendItems.map(({ id, count }) => [id, count]),
+    [['ai', 2], ['people', 1]],
+    'Legend domains should exclude utility buckets and sort by descending note count',
   );
 
   console.log('Nexus graph data verification passed.');

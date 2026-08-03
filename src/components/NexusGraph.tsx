@@ -11,7 +11,7 @@ import {
 } from 'd3-force';
 import { FiMap, FiMaximize2, FiX } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
-import { GraphData, graphGroupStyles } from '../utils/graphHelper';
+import { getGraphLegendItems, GraphData } from '../utils/graphHelper';
 
 interface GraphVizNode extends NodeObject {
   id: string;
@@ -58,16 +58,7 @@ const NexusGraph = ({ data }: { data: GraphData }) => {
     return ids;
   }, [data.links]);
 
-  const legendItems = useMemo(() => {
-    const groupCounts = new Map<string, number>();
-    data.nodes.forEach((node) => {
-      groupCounts.set(node.group, (groupCounts.get(node.group) ?? 0) + 1);
-    });
-
-    return graphGroupStyles
-      .filter(({ id }) => groupCounts.has(id))
-      .map((style) => ({ ...style, count: groupCounts.get(style.id) ?? 0 }));
-  }, [data.nodes]);
+  const legendItems = useMemo(() => getGraphLegendItems(data.nodes), [data.nodes]);
 
   useEffect(() => {
     const container = containerRef.current;

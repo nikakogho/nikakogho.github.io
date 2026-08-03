@@ -28,30 +28,43 @@ export interface GraphGroupStyle {
     id: GraphGroup;
     label: string;
     color: string;
+    includeInLegend: boolean;
 }
 
 export const graphGroupStyles = [
-    { id: 'biology', label: 'Biology', color: '#20f318' },
-    { id: 'chemistry', label: 'Chemistry', color: '#56d9d4' },
-    { id: 'physics', label: 'Physics', color: '#ff1717' },
-    { id: 'maths', label: 'Mathematics', color: '#f4f4f4' },
-    { id: 'ai', label: 'Artificial intelligence', color: '#1b2cff' },
-    { id: 'neuroscience', label: 'Neuroscience', color: '#dc4eaa' },
-    { id: 'neurotech', label: 'Neurotechnology', color: '#ad48d8' },
-    { id: 'bioengineering', label: 'Bioengineering', color: '#527527' },
-    { id: 'robots', label: 'Robotics', color: '#f58a0b' },
-    { id: 'space-tech', label: 'Space technology', color: '#e95858' },
-    { id: 'nanotech', label: 'Nanotechnology', color: '#ffd60a' },
-    { id: 'ui', label: 'UI & design', color: '#a900ee' },
-    { id: 'computer-science', label: 'Computer science', color: '#090909' },
-    { id: 'organizations', label: 'Organizations', color: '#a8a8a8' },
-    { id: 'people', label: 'People', color: '#d8d8d8' },
-    { id: 'root', label: 'General notes', color: '#424242' },
+    { id: 'biology', label: 'Biology', color: '#20f318', includeInLegend: true },
+    { id: 'chemistry', label: 'Chemistry', color: '#56d9d4', includeInLegend: true },
+    { id: 'physics', label: 'Physics', color: '#ff1717', includeInLegend: true },
+    { id: 'maths', label: 'Mathematics', color: '#f4f4f4', includeInLegend: true },
+    { id: 'ai', label: 'Artificial intelligence', color: '#1b2cff', includeInLegend: true },
+    { id: 'neuroscience', label: 'Neuroscience', color: '#dc4eaa', includeInLegend: true },
+    { id: 'neurotech', label: 'Neurotechnology', color: '#ad48d8', includeInLegend: true },
+    { id: 'bioengineering', label: 'Bioengineering', color: '#527527', includeInLegend: true },
+    { id: 'robots', label: 'Robotics', color: '#f58a0b', includeInLegend: true },
+    { id: 'space-tech', label: 'Space technology', color: '#e95858', includeInLegend: true },
+    { id: 'nanotech', label: 'Nanotechnology', color: '#ffd60a', includeInLegend: true },
+    { id: 'ui', label: 'UI & design', color: '#a900ee', includeInLegend: false },
+    { id: 'computer-science', label: 'Computer science', color: '#090909', includeInLegend: true },
+    { id: 'organizations', label: 'Organizations', color: '#a8a8a8', includeInLegend: false },
+    { id: 'people', label: 'People', color: '#d8d8d8', includeInLegend: true },
+    { id: 'root', label: 'General notes', color: '#424242', includeInLegend: false },
 ] as const satisfies readonly GraphGroupStyle[];
 
 const groupColors = Object.fromEntries(
     graphGroupStyles.map(({ id, color }) => [id, color]),
 ) as Record<GraphGroup, string>;
+
+export function getGraphLegendItems(nodes: readonly Pick<GraphNode, 'group'>[]) {
+    const groupCounts = new Map<string, number>();
+    nodes.forEach((node) => {
+        groupCounts.set(node.group, (groupCounts.get(node.group) ?? 0) + 1);
+    });
+
+    return graphGroupStyles
+        .filter(({ id, includeInLegend }) => includeInLegend && groupCounts.has(id))
+        .map((style) => ({ ...style, count: groupCounts.get(style.id) ?? 0 }))
+        .sort((first, second) => second.count - first.count || first.label.localeCompare(second.label));
+}
 
 function hashToUnitInterval(value: string): number {
     let hash = 2166136261;
