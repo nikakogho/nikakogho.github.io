@@ -1,0 +1,2 @@
+# Obsidian and the Nexus source vault use LF line endings on every platform.
+Nexus/**/*.md text eol=lf
