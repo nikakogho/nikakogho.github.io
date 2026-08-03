@@ -1,6 +1,6 @@
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowUpRight } from 'react-icons/fi';
+import { FiArrowUpRight, FiPlayCircle } from 'react-icons/fi';
 import { aboutTimeline } from '../data/aboutTimeline';
 
 interface TimelineMapNode {
@@ -201,10 +201,19 @@ const AboutTimeline = () => {
             </div>
             <h3>{milestone.title}</h3>
             <p>{milestone.summary}</p>
-            {milestone.link && (
-              <Link to={milestone.link.to}>
-                {milestone.link.label} <FiArrowUpRight aria-hidden="true" />
-              </Link>
+            {(milestone.link || milestone.videos) && (
+              <div className="about-timeline__step-links">
+                {milestone.link && (
+                  <Link to={milestone.link.to}>
+                    {milestone.link.label} <FiArrowUpRight aria-hidden="true" />
+                  </Link>
+                )}
+                {milestone.videos?.map((video) => (
+                  <a key={video.href} href={video.href} target="_blank" rel="noopener noreferrer">
+                    <FiPlayCircle aria-hidden="true" /> {video.label} <FiArrowUpRight aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
             )}
           </article>
         ))}

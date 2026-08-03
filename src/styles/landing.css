@@ -881,12 +881,18 @@ main.content-container.content-container--immersive {
   line-height: 1.72;
 }
 
-.about-timeline__step > a {
+.about-timeline__step-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.2rem;
+  margin-top: 1.4rem;
+}
+
+.about-timeline__step-links a {
   display: inline-flex;
   width: fit-content;
   align-items: center;
   gap: 0.45rem;
-  margin-top: 1.4rem;
   color: var(--timeline-accent);
   font-size: 0.72rem;
   font-weight: 800;
@@ -895,8 +901,8 @@ main.content-container.content-container--immersive {
   text-transform: uppercase;
 }
 
-.about-timeline__step > a:hover,
-.about-timeline__step > a:focus-visible {
+.about-timeline__step-links a:hover,
+.about-timeline__step-links a:focus-visible {
   color: #fff;
   text-decoration: none;
 }

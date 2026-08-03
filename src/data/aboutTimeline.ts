@@ -12,6 +12,10 @@ export interface AboutMilestone {
     label: string;
     to: string;
   };
+  videos?: Array<{
+    label: string;
+    href: string;
+  }>;
 }
 
 export const aboutTimeline: AboutMilestone[] = [
@@ -106,6 +110,12 @@ export const aboutTimeline: AboutMilestone[] = [
       label: 'Explore my neurotech notes',
       to: '/nexus/notes/horizon/neurotech/neurotech',
     },
+    videos: [
+      {
+        label: 'Watch Dreamscape Grove',
+        href: 'https://www.youtube.com/watch?v=EU_obsIUCwc',
+      },
+    ],
   },
   {
     id: 'robotics',
@@ -134,6 +144,16 @@ export const aboutTimeline: AboutMilestone[] = [
       label: 'Explore my AI notes',
       to: '/nexus/notes/horizon/ai/ai',
     },
+    videos: [
+      {
+        label: 'Watch the Reverse Turing Roundtable',
+        href: 'https://www.youtube.com/watch?v=wJSxviBw5n4',
+      },
+      {
+        label: 'Watch Braitenberg Playground',
+        href: 'https://www.youtube.com/watch?v=1cJKEKF63jg',
+      },
+    ],
   },
   {
     id: 'alignment',

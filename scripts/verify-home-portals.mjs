@@ -82,6 +82,17 @@ try {
       assert.equal(milestone.link.to, '/research', `Unsupported timeline destination: ${milestone.link.to}`);
     }
   }
+  assert.deepEqual(
+    aboutTimeline.flatMap((milestone) => (
+      milestone.videos?.map((video) => [milestone.id, video.href]) ?? []
+    )),
+    [
+      ['neurotech', 'https://www.youtube.com/watch?v=EU_obsIUCwc'],
+      ['ai', 'https://www.youtube.com/watch?v=wJSxviBw5n4'],
+      ['ai', 'https://www.youtube.com/watch?v=1cJKEKF63jg'],
+    ],
+    'Timeline should place all three channel videos under their intended domains',
+  );
 
   for (const portal of homePortals) {
     assert.equal(portal.links.length, 3, `${portal.id} should expose three doorways`);
