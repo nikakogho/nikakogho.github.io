@@ -132,7 +132,7 @@ export interface TreeNode {
    * full normalized path based on the list of available notes in the vault.
    * Handles unique base name resolution and direct full path matching.
    */
-  export function resolveWikiLink(name: string, allVaultNotes: VaultNote[]): string {
+  export function resolveWikiLink(name: string, allVaultNotes: VaultNote[], warnOnMissing = true): string {
       const normalizedInput = normalizeNoteName(name);
   
       // 1. Try to find a unique match based on the BASE filename
@@ -143,7 +143,9 @@ export interface TreeNode {
         return baseNameMatches[0].fullPath;
       } else if (baseNameMatches.length > 1) {
         // Ambiguous link - multiple notes have the same base name
-        console.warn(`[resolveWikiLink] Ambiguous wiki link found for "${name}". Multiple notes match:`, baseNameMatches.map(m => m.fullPath));
+        if (warnOnMissing) {
+          console.warn(`[resolveWikiLink] Ambiguous wiki link found for "${name}". Multiple notes match:`, baseNameMatches.map(m => m.fullPath));
+        }
         // Fallback: Try to match the input as a full path directly
         const fullPathMatch = allVaultNotes.find(note => note.fullPath === normalizedInput);
         if (fullPathMatch) {
@@ -161,7 +163,9 @@ export interface TreeNode {
         }
   
         // 3. No match found at all.
-        console.warn(`[resolveWikiLink] Wiki link "${name}" could not be resolved to any known note.`);
+        if (warnOnMissing) {
+          console.warn(`[resolveWikiLink] Wiki link "${name}" could not be resolved to any known note.`);
+        }
         // Return original normalized input, which will likely be styled as a '.new-link'
         return normalizedInput;
       }

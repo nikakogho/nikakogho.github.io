@@ -9,6 +9,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { pathname, hash } = useLocation();
   const isImmersive = pathname === '/' || pathname === '/world';
+  const isGraphView = pathname === '/nexus/graph';
 
   useEffect(() => {
     // Section links manage their own target. Every ordinary route change should
@@ -19,7 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={`app-container${isImmersive ? ' app-container--immersive' : ''}`}>
       {!isImmersive && <Header />}
-      <main className={`content-container${isImmersive ? ' content-container--immersive' : ''}`}>
+      <main className={`content-container${isImmersive ? ' content-container--immersive' : ''}${isGraphView ? ' content-container--graph' : ''}`}>
         {children}
       </main>
     </div>

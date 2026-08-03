@@ -1,4 +1,4 @@
-import { VaultNote, resolveWikiLink } from './markdownHelper';
+import { parseWikiLinkTarget, VaultNote, resolveWikiLink } from './markdownHelper';
 
 export interface GraphNode {
   id: string;
@@ -23,26 +23,24 @@ const WIKI_LINK_REGEX = /\[\[([^|\]]+)(?:\|[^\]]*)?\]\]/g;
 type Group = 'root' | 'biology' | 'chemistry' | 'physics' | 'maths' | 'ai' | 'neuroscience' | 'neurotech' | 'bioengineering' | 'robots' | 'space-tech' | 'ui' | 'organizations' | 'people';
 
 const groupColors: Record<Group, string> = {
-    "biology": "green",
-    "chemistry": "cyan",
-    "physics": "red",
-    "maths": "white",
-    "ai": "blue",
-    "neuroscience": "pink",
-    "neurotech": "purple",
-    "bioengineering": "00aa00",
-    "robots": "orange",
-    "space-tech": "#E05252",
-    "ui": "purple",
-    "root": "white",
-    "organizations": "gray",
-    "people": "yellow",
+    biology: '#4ade80',
+    chemistry: '#22d3ee',
+    physics: '#fb7185',
+    maths: '#e2e8f0',
+    ai: '#60a5fa',
+    neuroscience: '#f472b6',
+    neurotech: '#c084fc',
+    bioengineering: '#34d399',
+    robots: '#fb923c',
+    'space-tech': '#f87171',
+    ui: '#a78bfa',
+    root: '#cbd5e1',
+    organizations: '#94a3b8',
+    people: '#facc15',
 };
 
 function getGroup(notePath: string): string {
     const parts = notePath.toLowerCase().split('/');
-
-    console.log(parts);
 
     if (parts.length <= 1) return 'root';
 
@@ -70,6 +68,7 @@ export function generateGraphData(
     const nodes: GraphNode[] = [];
     const links: GraphLink[] = [];
     const linkCounts: Record<string, number> = {};
+    const uniqueLinks = new Set<string>();
 
     notes.forEach(note => {
         linkCounts[note.fullPath] = 0;
@@ -81,11 +80,17 @@ export function generateGraphData(
 
         if (matches.length > 0) {
             matches.forEach(match => {
-                const linkName = match[1];
-                const resolvedPath = resolveWikiLink(linkName, notes);
+                const { noteName } = parseWikiLinkTarget(match[1]);
+                if (!noteName) return;
+
+                const resolvedPath = resolveWikiLink(noteName, notes, false);
                 const targetNote = notes.find(n => n.fullPath === resolvedPath);
 
-                if (targetNote) {
+                if (targetNote && targetNote.fullPath !== note.fullPath) {
+                    const linkKey = [note.fullPath, targetNote.fullPath].sort().join('\u0000');
+                    if (uniqueLinks.has(linkKey)) return;
+
+                    uniqueLinks.add(linkKey);
                     links.push({ source: note.fullPath, target: targetNote.fullPath });
                     linkCounts[note.fullPath]++;
                     linkCounts[targetNote.fullPath]++;
