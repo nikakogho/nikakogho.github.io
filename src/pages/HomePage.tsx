@@ -179,12 +179,10 @@ const HomePage = () => {
             <p className="landing-eyebrow">Software engineer · Curious generalist</p>
             <h1 id="landing-title">Nika<br />Koghuashvili</h1>
             <p className="landing-intro__lede">
-              I build software and explore ambitious technologies—from artificial intelligence and
-              neurotechnology to robotics, biotechnology, space, and nanotechnology.
+              Curious about our future.
             </p>
             <p className="landing-intro__support">
-              This is my public notebook: original research, project write-ups, and a growing map of
-              what I am learning.
+              Currently trying to make AGI go well.
             </p>
 
             <div className="landing-intro__actions">
