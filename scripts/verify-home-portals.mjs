@@ -12,6 +12,7 @@ const vite = await createServer({
 
 try {
   const { homePortals } = await vite.ssrLoadModule('/src/data/homePortals.ts');
+  const { profileLinks, cvUrl } = await vite.ssrLoadModule('/src/data/profileLinks.ts');
   const { worldRealms, WORLD_BOUNDS } = await vite.ssrLoadModule('/src/data/worldRealms.ts');
   const { getAllBlogPosts } = await vite.ssrLoadModule('/src/utils/blogHelper.tsx');
   const { getAllResearchPosts } = await vite.ssrLoadModule('/src/utils/researchHelper.tsx');
@@ -36,6 +37,18 @@ try {
   );
   assert.equal(new Set(worldRealms.map((realm) => realm.terrain)).size, 6, 'Every realm needs unique terrain');
   assert.equal(new Set(worldRealms.map((realm) => realm.vehicle.kind)).size, 6, 'Every realm needs unique transport');
+
+  assert.deepEqual(
+    profileLinks.map((profile) => profile.id),
+    ['github', 'linkedin', 'email', 'youtube', 'x'],
+    'Homepage profile links should remain complete and intentionally ordered',
+  );
+  assert.equal(new Set(profileLinks.map((profile) => profile.href)).size, profileLinks.length, 'Profile URLs should be unique');
+  for (const profile of profileLinks) {
+    const expectedProtocol = profile.id === 'email' ? /^mailto:/ : /^https:\/\//;
+    assert.match(profile.href, expectedProtocol, `${profile.label} has an invalid destination`);
+  }
+  assert.match(cvUrl, /^https:\/\/drive\.google\.com\//, 'CV should use the configured Google Drive URL');
 
   for (const portal of homePortals) {
     assert.equal(portal.links.length, 3, `${portal.id} should expose three doorways`);

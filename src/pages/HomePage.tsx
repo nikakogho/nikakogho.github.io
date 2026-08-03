@@ -1,24 +1,28 @@
-import { CSSProperties, PointerEvent, useEffect, useState } from 'react';
+import { CSSProperties, MouseEvent, PointerEvent, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiBookOpen, FiCompass, FiCpu, FiFeather, FiZap } from 'react-icons/fi';
+import { IconType } from 'react-icons';
+import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import {
+  FiArrowDown,
+  FiArrowRight,
+  FiCompass,
+  FiExternalLink,
+  FiFileText,
+  FiMail,
+} from 'react-icons/fi';
 import AmbienceToggle from '../components/AmbienceToggle';
+import { ProfileLinkId, cvUrl, profileLinks } from '../data/profileLinks';
 import '../styles/landing.css';
 
 type LandingVariant = 'keep' | 'atelier' | 'citadel';
 
 interface LandingVariantDetails {
   id: LandingVariant;
-  tab: string;
-  name: string;
-  icon: typeof FiFeather;
+  label: string;
   image: string;
   audio: string;
   audioLabel: string;
-  startRealm: string;
-  eyebrow: string;
-  title: string;
-  description: string;
-  invitation: string;
 }
 
 const LANDING_VARIANT_KEY = 'nika-landing-variant-v2';
@@ -26,49 +30,55 @@ const LANDING_VARIANT_KEY = 'nika-landing-variant-v2';
 const landingVariants: LandingVariantDetails[] = [
   {
     id: 'keep',
-    tab: 'I',
-    name: 'Moonlit Keep',
-    icon: FiFeather,
+    label: 'Keep',
     image: '/backgrounds/lifelog-castle-courtyard.webp',
     audio: '/audio/light_rain.wav',
     audioLabel: 'rain beyond the keep',
-    startRealm: 'neurotech',
-    eyebrow: 'The playground of tomorrow',
-    title: 'A keep for impossible futures.',
-    description: 'I’m Nika—an engineer exploring minds, machines, living systems, space, and matter at its smallest scales.',
-    invitation: 'Cross the courtyard. The realm gates are awake.',
   },
   {
     id: 'atelier',
-    tab: 'II',
-    name: 'Arcane Atelier',
-    icon: FiCpu,
+    label: 'Lab',
     image: '/backgrounds/lifelog-cyber-lab.webp',
     audio: '/audio/cyber-lab-hum.wav',
     audioLabel: 'the midnight laboratory',
-    startRealm: 'ai',
-    eyebrow: 'Field notes from the near future',
-    title: 'The lab window is still glowing.',
-    description: 'Experiments in intelligence, embodiment, biology, brains, off-world infrastructure, and nanoscale machines.',
-    invitation: 'Step through the glass and choose a world to inhabit.',
   },
   {
     id: 'citadel',
-    tab: 'III',
-    name: 'Ember Citadel',
-    icon: FiZap,
+    label: 'Foundry',
     image: '/backgrounds/lifelog-lava-pit.webp',
     audio: '/audio/lava-rumble.wav',
     audioLabel: 'the furnace beneath the citadel',
-    startRealm: 'robotics',
-    eyebrow: 'A foundry for unfinished ideas',
-    title: 'Every impossible thing begins as a spark.',
-    description: 'This is where speculative technologies become notes, games, prototypes, research, and occasionally small mechanical creatures.',
-    invitation: 'Take the ember path into the six realms.',
   },
 ];
 
-const futureDomains = ['AI', 'Robotics', 'Biotech', 'Neurotech', 'Space', 'Nanotech'];
+const profileIcons: Record<ProfileLinkId, IconType> = {
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  email: FiMail,
+  youtube: FaYoutube,
+  x: FaXTwitter,
+};
+
+const siteDestinations = [
+  {
+    title: 'Nexus',
+    eyebrow: 'Knowledge base',
+    description: 'A connected map of notes across science, engineering, people, and possible futures.',
+    to: '/nexus',
+  },
+  {
+    title: 'Research',
+    eyebrow: 'Original work',
+    description: 'Technical investigations, experiments, and results presented with their evidence.',
+    to: '/research',
+  },
+  {
+    title: 'Blog',
+    eyebrow: 'Projects & ideas',
+    description: 'Build logs, essays, demonstrations, and ideas that are still taking shape.',
+    to: '/blog',
+  },
+];
 
 function getInitialVariant(): LandingVariant {
   if (typeof window === 'undefined') return 'keep';
@@ -76,7 +86,7 @@ function getInitialVariant(): LandingVariant {
     const saved = window.localStorage.getItem(LANDING_VARIANT_KEY);
     if (saved === 'keep' || saved === 'atelier' || saved === 'citadel') return saved;
   } catch {
-    // The selector remains functional when storage is unavailable.
+    // The backdrop selector remains functional when storage is unavailable.
   }
   return 'keep';
 }
@@ -98,10 +108,8 @@ const HomePage = () => {
     const bounds = event.currentTarget.getBoundingClientRect();
     const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
     const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-    event.currentTarget.style.setProperty('--scene-x', `${(x * -9).toFixed(2)}px`);
-    event.currentTarget.style.setProperty('--scene-y', `${(y * -6).toFixed(2)}px`);
-    event.currentTarget.style.setProperty('--light-x', `${((x + 1) * 50).toFixed(2)}%`);
-    event.currentTarget.style.setProperty('--light-y', `${((y + 1) * 50).toFixed(2)}%`);
+    event.currentTarget.style.setProperty('--scene-x', `${(x * -7).toFixed(2)}px`);
+    event.currentTarget.style.setProperty('--scene-y', `${(y * -5).toFixed(2)}px`);
   };
 
   const resetScene = (event: PointerEvent<HTMLElement>) => {
@@ -109,106 +117,192 @@ const HomePage = () => {
     event.currentTarget.style.setProperty('--scene-y', '0px');
   };
 
+  const scrollToSection = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault();
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    section?.focus({ preventScroll: true });
+  };
+
   return (
-    <section
-      className="landing-shell"
-      data-landing={variant}
-      data-testid="landing-shell"
-      data-scene-ready={loadedScene === active.image}
-      onPointerMove={moveScene}
-      onPointerLeave={resetScene}
-      aria-labelledby="landing-title"
-    >
-      <a className="landing-skip" href="#landing-story">Skip to introduction</a>
+    <div className="landing-page" data-landing={variant}>
+      <section
+        className="landing-hero"
+        data-testid="landing-shell"
+        data-scene-ready={loadedScene === active.image}
+        onPointerMove={moveScene}
+        onPointerLeave={resetScene}
+        aria-labelledby="landing-title"
+      >
+        <a
+          className="landing-skip"
+          href="#landing-content"
+          onClick={(event) => scrollToSection(event, 'landing-content')}
+        >
+          Skip to introduction
+        </a>
 
-      <img
-        className="landing-scene"
-        src={active.image}
-        alt=""
-        aria-hidden="true"
-        fetchPriority="high"
-        decoding="async"
-        onLoad={() => setLoadedScene(active.image)}
-      />
-      <div className="landing-vignette" aria-hidden="true" />
-      <div className="landing-light" aria-hidden="true" />
-      <div className="landing-weather" aria-hidden="true">
-        {Array.from({ length: 18 }, (_, index) => (
-          <span key={index} style={{ '--particle-index': index } as CSSProperties} />
-        ))}
-      </div>
-
-      <nav className="landing-nav" aria-label="Primary navigation">
-        <Link className="landing-mark" to="/" aria-label="Nika Kogho home">
-          <span>NK</span>
-          <strong>Nika Kogho</strong>
-        </Link>
-        <div className="landing-nav__links">
-          <Link to="/nexus">Nexus</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/research">Research</Link>
+        <img
+          className="landing-scene"
+          src={active.image}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          onLoad={() => setLoadedScene(active.image)}
+        />
+        <div className="landing-overlay" aria-hidden="true" />
+        <div className="landing-weather" aria-hidden="true">
+          {Array.from({ length: 14 }, (_, index) => (
+            <span key={index} style={{ '--particle-index': index } as CSSProperties} />
+          ))}
         </div>
-      </nav>
 
-      <article id="landing-story" className="landing-story" aria-live="polite">
-        <p className="landing-story__eyebrow">{active.eyebrow}</p>
-        <h1 id="landing-title">{active.title}</h1>
-        <p className="landing-story__description">{active.description}</p>
-        <p className="landing-story__invitation">{active.invitation}</p>
-        <div className="landing-story__actions">
-          <Link className="landing-action landing-action--primary" to={`/world?realm=${active.startRealm}`}>
-            Enter my world <FiCompass aria-hidden="true" />
+        <nav className="landing-nav" aria-label="Primary navigation">
+          <Link className="landing-mark" to="/" aria-label="Nika Koghuashvili home">
+            <span aria-hidden="true">NK</span>
+            <strong>Nika Koghuashvili</strong>
           </Link>
-          <Link className="landing-action landing-action--quiet" to="/nexus">
-            Open the Nexus <FiArrowRight aria-hidden="true" />
-          </Link>
+          <div className="landing-nav__links">
+            <a href="#about" onClick={(event) => scrollToSection(event, 'about')}>About</a>
+            <Link to="/nexus">Nexus</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/research">Research</Link>
+          </div>
+          <a className="landing-nav__contact" href="mailto:nikakoghuashvili@gmail.com">
+            <FiMail aria-hidden="true" /> Contact
+          </a>
+        </nav>
+
+        <div id="landing-content" className="landing-hero__layout" tabIndex={-1}>
+          <article className="landing-intro">
+            <p className="landing-eyebrow">Software engineer · Curious generalist</p>
+            <h1 id="landing-title">Nika<br />Koghuashvili</h1>
+            <p className="landing-intro__lede">
+              I build software and explore ambitious technologies—from artificial intelligence and
+              neurotechnology to robotics, biotechnology, space, and nanotechnology.
+            </p>
+            <p className="landing-intro__support">
+              This is my public notebook: original research, project write-ups, and a growing map of
+              what I am learning.
+            </p>
+
+            <div className="landing-intro__actions">
+              <Link className="landing-button landing-button--primary" to="/nexus">
+                Explore the Nexus <FiArrowRight aria-hidden="true" />
+              </Link>
+              <a
+                className="landing-button landing-button--secondary"
+                href="#about"
+                onClick={(event) => scrollToSection(event, 'about')}
+              >
+                About me <FiArrowDown aria-hidden="true" />
+              </a>
+            </div>
+
+            <nav className="landing-profile-links" aria-label="Profiles and contact links">
+              {profileLinks.map((profile) => {
+                const Icon = profileIcons[profile.id];
+                return (
+                  <a
+                    key={profile.id}
+                    href={profile.href}
+                    target={profile.external ? '_blank' : undefined}
+                    rel={profile.external ? 'me noopener noreferrer' : undefined}
+                    aria-label={profile.ariaLabel}
+                  >
+                    <Icon aria-hidden="true" />
+                    <span>{profile.label}</span>
+                  </a>
+                );
+              })}
+            </nav>
+          </article>
+
+          <aside className="landing-directory" aria-labelledby="landing-directory-title">
+            <header>
+              <p>Start here</p>
+              <h2 id="landing-directory-title">Explore my work</h2>
+            </header>
+            <div className="landing-directory__links">
+              {siteDestinations.map((destination) => (
+                <Link key={destination.title} to={destination.to}>
+                  <span>{destination.eyebrow}</span>
+                  <strong>{destination.title}</strong>
+                  <p>{destination.description}</p>
+                  <FiArrowRight aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
+            <Link className="landing-world-link" to="/world?realm=ai">
+              <FiCompass aria-hidden="true" />
+              <span><small>Experimental side quest</small> Enter the interactive world</span>
+              <FiArrowRight aria-hidden="true" />
+            </Link>
+          </aside>
         </div>
-      </article>
 
-      <div className="landing-domain-orbit" aria-label="Worlds inside the exploration experience">
-        <span className="landing-domain-orbit__core"><FiBookOpen aria-hidden="true" /></span>
-        {futureDomains.map((domain, index) => (
-          <span
-            key={domain}
-            className="landing-domain-orbit__domain"
-            style={{ '--domain-index': index } as CSSProperties}
-          >
-            {domain}
-          </span>
-        ))}
-      </div>
-
-      <div className="landing-thresholds" role="group" aria-label="Choose a landing page concept">
-        <span className="landing-thresholds__label">Choose a threshold</span>
-        <div>
-          {landingVariants.map((option) => {
-            const Icon = option.icon;
-            return (
+        <div className="landing-utilities">
+          <div className="landing-backdrops" role="group" aria-label="Choose a background scene">
+            <span>Backdrop</span>
+            {landingVariants.map((option) => (
               <button
                 key={option.id}
                 type="button"
                 className={option.id === variant ? 'is-active' : ''}
                 aria-pressed={option.id === variant}
-                aria-label={`Use ${option.name} landing page`}
                 data-landing-option={option.id}
                 onClick={() => setVariant(option.id)}
               >
-                <span>{option.tab}</span>
-                <Icon aria-hidden="true" />
-                <strong>{option.name}</strong>
+                {option.label}
               </button>
-            );
-          })}
+            ))}
+          </div>
+          <AmbienceToggle
+            key={active.id}
+            src={active.audio}
+            label={active.audioLabel}
+            className="landing-ambience"
+          />
         </div>
-      </div>
+      </section>
 
-      <AmbienceToggle
-        key={active.id}
-        src={active.audio}
-        label={active.audioLabel}
-        className="landing-ambience"
-      />
-    </section>
+      <section id="about" className="landing-about" tabIndex={-1} aria-labelledby="about-title">
+        <div className="landing-about__heading">
+          <p className="landing-section-label">About me</p>
+          <h2 id="about-title">Building toward futures worth living in.</h2>
+        </div>
+        <div className="landing-about__copy">
+          <p>
+            I am a software engineer interested in how technology can expand human capability and
+            help create a radically better future. I learn in public across AI, bioengineering,
+            brain-computer interfaces, robotics, space technology, and nanotechnology.
+          </p>
+          <p>
+            I use this site to connect the threads: the Nexus holds my working knowledge, Research
+            contains deeper investigations, and the Blog documents projects and ideas along the way.
+          </p>
+          <div className="landing-about__actions">
+            <a href={cvUrl} target="_blank" rel="noopener noreferrer">
+              <FiFileText aria-hidden="true" /> Read my CV <FiExternalLink aria-hidden="true" />
+            </a>
+            <a href="mailto:nikakoghuashvili@gmail.com">
+              <FiMail aria-hidden="true" /> Email me
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="landing-footer">
+        <p>© {new Date().getFullYear()} Nika Koghuashvili</p>
+        <nav aria-label="Footer navigation">
+          <Link to="/nexus">Nexus</Link>
+          <Link to="/research">Research</Link>
+          <Link to="/blog">Blog</Link>
+          <a href={cvUrl} target="_blank" rel="noopener noreferrer">CV</a>
+        </nav>
+      </footer>
+    </div>
   );
 };
 
