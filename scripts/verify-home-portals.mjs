@@ -13,6 +13,7 @@ const vite = await createServer({
 try {
   const { homePortals } = await vite.ssrLoadModule('/src/data/homePortals.ts');
   const { profileLinks, cvUrl } = await vite.ssrLoadModule('/src/data/profileLinks.ts');
+  const { aboutTimeline } = await vite.ssrLoadModule('/src/data/aboutTimeline.ts');
   const { worldRealms, WORLD_BOUNDS } = await vite.ssrLoadModule('/src/data/worldRealms.ts');
   const { getAllBlogPosts } = await vite.ssrLoadModule('/src/utils/blogHelper.tsx');
   const { getAllResearchPosts } = await vite.ssrLoadModule('/src/utils/researchHelper.tsx');
@@ -49,6 +50,12 @@ try {
     assert.match(profile.href, expectedProtocol, `${profile.label} has an invalid destination`);
   }
   assert.match(cvUrl, /^https:\/\/drive\.google\.com\//, 'CV should use the configured Google Drive URL');
+  assert.ok(aboutTimeline.length >= 6, 'About timeline should tell a multi-stage story');
+  assert.equal(new Set(aboutTimeline.map((milestone) => milestone.id)).size, aboutTimeline.length, 'Timeline milestone IDs should be unique');
+  for (const milestone of aboutTimeline) {
+    assert.ok(milestone.period && milestone.kind && milestone.title, 'Every timeline milestone needs date and narrative labels');
+    assert.ok(milestone.summary.length > 70, `${milestone.id} needs enough context to stand on its own`);
+  }
 
   for (const portal of homePortals) {
     assert.equal(portal.links.length, 3, `${portal.id} should expose three doorways`);

@@ -12,6 +12,7 @@ import {
   FiMail,
 } from 'react-icons/fi';
 import AmbienceToggle from '../components/AmbienceToggle';
+import AboutTimeline from '../components/AboutTimeline';
 import { ProfileLinkId, cvUrl, profileLinks } from '../data/profileLinks';
 import '../styles/landing.css';
 
@@ -266,28 +267,29 @@ const HomePage = () => {
       </section>
 
       <section id="about" className="landing-about" tabIndex={-1} aria-labelledby="about-title">
-        <div className="landing-about__heading">
-          <p className="landing-section-label">About me</p>
-          <h2 id="about-title">Building toward futures worth living in.</h2>
-        </div>
-        <div className="landing-about__copy">
-          <p>
-            I am a software engineer interested in how technology can expand human capability and
-            help create a radically better future. I learn in public across AI, bioengineering,
-            brain-computer interfaces, robotics, space technology, and nanotechnology.
-          </p>
-          <p>
-            I use this site to connect the threads: the Nexus holds my working knowledge, Research
-            contains deeper investigations, and the Blog documents projects and ideas along the way.
-          </p>
-          <div className="landing-about__actions">
-            <a href={cvUrl} target="_blank" rel="noopener noreferrer">
-              <FiFileText aria-hidden="true" /> Read my CV <FiExternalLink aria-hidden="true" />
-            </a>
-            <a href="mailto:nikakoghuashvili@gmail.com">
-              <FiMail aria-hidden="true" /> Email me
-            </a>
+        <div className="landing-about__intro">
+          <div className="landing-about__heading">
+            <p className="landing-section-label">About me</p>
+            <h2 id="about-title">A path through the things I’ve built and learned.</h2>
           </div>
+          <div className="landing-about__copy">
+            <p>
+              I started with games and simulations, moved into production software, and kept
+              following the questions that pulled me toward AI alignment.
+            </p>
+            <p>Scroll through the milestones that shaped what I work on now.</p>
+          </div>
+        </div>
+
+        <AboutTimeline />
+
+        <div className="landing-about__actions landing-about__actions--footer">
+          <a href={cvUrl} target="_blank" rel="noopener noreferrer">
+            <FiFileText aria-hidden="true" /> Read my CV <FiExternalLink aria-hidden="true" />
+          </a>
+          <a href="mailto:nikakoghuashvili@gmail.com">
+            <FiMail aria-hidden="true" /> Email me
+          </a>
         </div>
       </section>
 
