@@ -22,7 +22,7 @@ N = (2k - 1)! where k = number of legs
 > k = 6 then N = 39 916 800
 
 If each leg can move up (U), down (D), or not at all (-) then for two legs possibilities are
-![[Possible leg events for 2 legs.png| 500]]
+![[Possible_leg_events_for_2_legs.png|500]]
 
 ## [[Balance]]
 
