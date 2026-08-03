@@ -8,7 +8,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { pathname, hash } = useLocation();
-  const isImmersive = pathname === '/' || pathname === '/world';
+  const isImmersive = pathname === '/';
   const isGraphView = pathname === '/nexus/graph';
 
   useEffect(() => {

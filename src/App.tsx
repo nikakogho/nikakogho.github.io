@@ -4,7 +4,6 @@ import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
 import { ThemeProvider } from './context/ThemeContext';
 
-const WorldExplorerPage = lazy(() => import('./pages/WorldExplorerPage'));
 const SecretPage = lazy(() => import('./pages/SecretPage'));
 const VaultLayout = lazy(() => import('./pages/VaultLayout'));
 const VaultHomeRedirect = lazy(() => import('./components/VaultHomeRedirectComponent'));
@@ -30,7 +29,6 @@ function App() {
         <Suspense fallback={<RouteLoading />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/world" element={<WorldExplorerPage />} />
 
             <Route path="/secrets/*" element={<SecretPage />} />
 

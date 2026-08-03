@@ -412,46 +412,6 @@ main.content-container.content-container--immersive {
   color: rgba(255, 255, 255, 0.46);
 }
 
-.landing-world-link {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  min-height: 68px;
-  padding: 0.85rem 1.4rem;
-  color: rgba(255, 255, 255, 0.74);
-  text-decoration: none;
-}
-
-.landing-world-link:hover,
-.landing-world-link:focus-visible {
-  color: #fff;
-  text-decoration: none;
-}
-
-.landing-world-link > svg:first-child {
-  color: var(--landing-accent);
-  font-size: 1.15rem;
-}
-
-.landing-world-link > svg:last-child {
-  margin-left: auto;
-}
-
-.landing-world-link span {
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.landing-world-link small {
-  display: block;
-  margin-bottom: 0.1rem;
-  color: rgba(255, 255, 255, 0.42);
-  font-size: 0.57rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 .landing-utilities {
   position: absolute;
   right: 0;

@@ -6,7 +6,6 @@ import { FaXTwitter } from 'react-icons/fa6';
 import {
   FiArrowDown,
   FiArrowRight,
-  FiCompass,
   FiExternalLink,
   FiFileText,
   FiMail,
@@ -233,11 +232,6 @@ const HomePage = () => {
                 </Link>
               ))}
             </div>
-            <Link className="landing-world-link" to="/world?realm=ai">
-              <FiCompass aria-hidden="true" />
-              <span><small>Experimental side quest</small> Enter the interactive world</span>
-              <FiArrowRight aria-hidden="true" />
-            </Link>
           </aside>
         </div>
 
