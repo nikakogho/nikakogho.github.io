@@ -9,8 +9,8 @@ interface TimelineMapNode {
   x: number;
   y: number;
   milestoneIndex: number;
+  color: string;
   note?: boolean;
-  labelPosition?: 'above' | 'below';
 }
 
 interface TimelineMapSegment {
@@ -22,48 +22,58 @@ interface TimelineMapSegment {
   note?: boolean;
 }
 
+const yearGuides = [
+  { label: '2016', x: 92 },
+  { label: '2020', x: 170 },
+  { label: '2022', x: 258 },
+  { label: '2023', x: 342 },
+  { label: '2024', x: 468 },
+  { label: '2025', x: 578 },
+  { label: '2026', x: 690 },
+];
+
 const mapNodes: TimelineMapNode[] = [
-  { id: 'playable-worlds', label: 'Games', x: 52, y: 225, milestoneIndex: 0 },
-  { id: 'liberty-bank', label: 'Liberty', x: 132, y: 225, milestoneIndex: 1 },
-  { id: 'university', label: 'University', x: 174, y: 416, milestoneIndex: 2 },
-  { id: 'reflection', label: 'Reflection', x: 218, y: 225, milestoneIndex: 3 },
-  { id: 'bp', label: 'BP', x: 300, y: 118, milestoneIndex: 4 },
-  { id: 'microsoft', label: 'Microsoft', x: 392, y: 118, milestoneIndex: 4 },
-  { id: 'biotech', label: 'Bio', x: 286, y: 292, milestoneIndex: 5 },
-  { id: 'aerospace', label: 'Space', x: 352, y: 292, milestoneIndex: 6 },
-  { id: 'neurotech', label: 'Neuro', x: 418, y: 292, milestoneIndex: 7 },
-  { id: 'robotics', label: 'Robots', x: 480, y: 292, milestoneIndex: 8 },
-  { id: 'ai', label: 'AI', x: 530, y: 292, milestoneIndex: 9 },
-  { id: 'alignment', label: 'Align', x: 578, y: 292, milestoneIndex: 10 },
-  { id: 'lasr-labs', label: 'LASR', x: 632, y: 215, milestoneIndex: 11 },
-  { id: 'biotech-notes', label: '', x: 286, y: 354, milestoneIndex: 5, note: true },
-  { id: 'aerospace-notes', label: '', x: 352, y: 354, milestoneIndex: 6, note: true },
-  { id: 'neurotech-notes', label: '', x: 418, y: 354, milestoneIndex: 7, note: true },
-  { id: 'robotics-notes', label: '', x: 480, y: 354, milestoneIndex: 8, note: true },
-  { id: 'ai-notes', label: '', x: 530, y: 354, milestoneIndex: 9, note: true },
-  { id: 'alignment-notes', label: '', x: 578, y: 354, milestoneIndex: 10, note: true },
+  { id: 'playable-worlds', label: 'Games', x: 92, y: 110, milestoneIndex: 0, color: '#9ec9e8' },
+  { id: 'liberty-bank', label: 'Liberty', x: 170, y: 110, milestoneIndex: 1, color: '#9ec9e8' },
+  { id: 'university', label: 'University', x: 214, y: 293, milestoneIndex: 2, color: '#a995df' },
+  { id: 'reflection', label: 'Reflection', x: 258, y: 110, milestoneIndex: 3, color: '#d7c17e' },
+  { id: 'bp', label: 'BP', x: 342, y: 62, milestoneIndex: 4, color: '#d6a15f' },
+  { id: 'microsoft', label: 'Microsoft', x: 416, y: 62, milestoneIndex: 4, color: '#d6a15f' },
+  { id: 'biotech', label: 'Bio', x: 342, y: 198, milestoneIndex: 5, color: '#6dbda6' },
+  { id: 'aerospace', label: 'Space', x: 404, y: 198, milestoneIndex: 6, color: '#6dbda6' },
+  { id: 'neurotech', label: 'Neuro', x: 468, y: 198, milestoneIndex: 7, color: '#6dbda6' },
+  { id: 'robotics', label: 'Robots', x: 528, y: 198, milestoneIndex: 8, color: '#6dbda6' },
+  { id: 'ai', label: 'AI', x: 578, y: 198, milestoneIndex: 9, color: '#6dbda6' },
+  { id: 'alignment', label: 'Align', x: 628, y: 198, milestoneIndex: 10, color: '#6dbda6' },
+  { id: 'lasr-labs', label: 'LASR', x: 690, y: 110, milestoneIndex: 11, color: '#e6b86d' },
+  { id: 'biotech-notes', label: '', x: 342, y: 231, milestoneIndex: 5, color: '#65d790', note: true },
+  { id: 'aerospace-notes', label: '', x: 404, y: 231, milestoneIndex: 6, color: '#63b8ff', note: true },
+  { id: 'neurotech-notes', label: '', x: 468, y: 231, milestoneIndex: 7, color: '#e778bd', note: true },
+  { id: 'robotics-notes', label: '', x: 528, y: 231, milestoneIndex: 8, color: '#f49a3f', note: true },
+  { id: 'ai-notes', label: '', x: 578, y: 231, milestoneIndex: 9, color: '#7581ff', note: true },
+  { id: 'alignment-notes', label: '', x: 628, y: 231, milestoneIndex: 10, color: '#ff7f73', note: true },
 ];
 
 const mapSegments: TimelineMapSegment[] = [
-  { id: 'games-liberty', from: [52, 225], to: [132, 225], unlockAt: 1, color: '#8bc7ff' },
-  { id: 'liberty-reflection', from: [132, 225], to: [218, 225], unlockAt: 3, color: '#74d9bc' },
-  { id: 'liberty-university', from: [132, 225], to: [174, 416], unlockAt: 2, color: '#b9a2ff' },
-  { id: 'reflection-bp', from: [218, 225], to: [300, 118], unlockAt: 4, color: '#ffad70' },
-  { id: 'bp-microsoft', from: [300, 118], to: [392, 118], unlockAt: 4, color: '#ffad70' },
-  { id: 'reflection-biotech', from: [218, 225], to: [286, 292], unlockAt: 5, color: '#65d790' },
-  { id: 'biotech-aerospace', from: [286, 292], to: [352, 292], unlockAt: 6, color: '#e778bd' },
-  { id: 'aerospace-neurotech', from: [352, 292], to: [418, 292], unlockAt: 7, color: '#e778bd' },
-  { id: 'neurotech-robotics', from: [418, 292], to: [480, 292], unlockAt: 8, color: '#e778bd' },
-  { id: 'robotics-ai', from: [480, 292], to: [530, 292], unlockAt: 9, color: '#e778bd' },
-  { id: 'ai-alignment', from: [530, 292], to: [578, 292], unlockAt: 10, color: '#e778bd' },
-  { id: 'microsoft-lasr', from: [392, 118], to: [632, 215], unlockAt: 11, color: '#ffb86b' },
-  { id: 'alignment-lasr', from: [578, 292], to: [632, 215], unlockAt: 11, color: '#ffb86b' },
-  { id: 'biotech-notes', from: [286, 292], to: [286, 354], unlockAt: 5, color: '#65d790', note: true },
-  { id: 'aerospace-notes', from: [352, 292], to: [352, 354], unlockAt: 6, color: '#63b8ff', note: true },
-  { id: 'neurotech-notes', from: [418, 292], to: [418, 354], unlockAt: 7, color: '#e778bd', note: true },
-  { id: 'robotics-notes', from: [480, 292], to: [480, 354], unlockAt: 8, color: '#f49a3f', note: true },
-  { id: 'ai-notes', from: [530, 292], to: [530, 354], unlockAt: 9, color: '#7581ff', note: true },
-  { id: 'alignment-notes', from: [578, 292], to: [578, 354], unlockAt: 10, color: '#ff7f73', note: true },
+  { id: 'games-liberty', from: [92, 110], to: [170, 110], unlockAt: 1, color: '#9ec9e8' },
+  { id: 'liberty-reflection', from: [170, 110], to: [258, 110], unlockAt: 3, color: '#9ec9e8' },
+  { id: 'liberty-university', from: [170, 110], to: [214, 293], unlockAt: 2, color: '#a995df' },
+  { id: 'reflection-bp', from: [258, 110], to: [342, 62], unlockAt: 4, color: '#d6a15f' },
+  { id: 'bp-microsoft', from: [342, 62], to: [416, 62], unlockAt: 4, color: '#d6a15f' },
+  { id: 'reflection-biotech', from: [258, 110], to: [342, 198], unlockAt: 5, color: '#6dbda6' },
+  { id: 'biotech-aerospace', from: [342, 198], to: [404, 198], unlockAt: 6, color: '#6dbda6' },
+  { id: 'aerospace-neurotech', from: [404, 198], to: [468, 198], unlockAt: 7, color: '#6dbda6' },
+  { id: 'neurotech-robotics', from: [468, 198], to: [528, 198], unlockAt: 8, color: '#6dbda6' },
+  { id: 'robotics-ai', from: [528, 198], to: [578, 198], unlockAt: 9, color: '#6dbda6' },
+  { id: 'ai-alignment', from: [578, 198], to: [628, 198], unlockAt: 10, color: '#6dbda6' },
+  { id: 'microsoft-lasr', from: [416, 62], to: [690, 110], unlockAt: 11, color: '#d6a15f' },
+  { id: 'alignment-lasr', from: [628, 198], to: [690, 110], unlockAt: 11, color: '#d6a15f' },
+  { id: 'biotech-notes', from: [342, 198], to: [342, 231], unlockAt: 5, color: '#65d790', note: true },
+  { id: 'aerospace-notes', from: [404, 198], to: [404, 231], unlockAt: 6, color: '#63b8ff', note: true },
+  { id: 'neurotech-notes', from: [468, 198], to: [468, 231], unlockAt: 7, color: '#e778bd', note: true },
+  { id: 'robotics-notes', from: [528, 198], to: [528, 231], unlockAt: 8, color: '#f49a3f', note: true },
+  { id: 'ai-notes', from: [578, 198], to: [578, 231], unlockAt: 9, color: '#7581ff', note: true },
+  { id: 'alignment-notes', from: [628, 198], to: [628, 231], unlockAt: 10, color: '#ff7f73', note: true },
 ];
 
 const AboutTimeline = () => {
@@ -105,22 +115,32 @@ const AboutTimeline = () => {
   return (
     <div className="about-timeline" style={visualStyle}>
       <aside className="about-timeline__visual" aria-live="polite" aria-atomic="true">
-        <div className="about-timeline__grid" aria-hidden="true" />
         <div className="about-timeline__visual-header">
-          <span>Parallel paths</span>
+          <div>
+            <span>A life in parallel</span>
+            <small>Career · curiosity · study</small>
+          </div>
           <strong>{String(activeIndex + 1).padStart(2, '0')} / {String(aboutTimeline.length).padStart(2, '0')}</strong>
         </div>
+        <div className="about-timeline__chapter-progress" aria-hidden="true"><span /></div>
 
         <svg
           className="about-timeline__map"
-          viewBox="0 0 680 470"
+          viewBox="0 0 720 340"
           role="img"
           aria-label={`Career, education, and interest timeline at ${activeMilestone.period}`}
         >
-          <text className="about-timeline__track-label" x="285" y="82">Career</text>
-          <text className="about-timeline__track-label" x="272" y="250">Interests</text>
-          <text className="about-timeline__track-label" x="270" y="385">Nexus notes</text>
-          <text className="about-timeline__track-label" x="192" y="448">University · ongoing</text>
+          {yearGuides.map((guide) => (
+            <g className="about-timeline__year-guide" key={guide.label}>
+              <text x={guide.x} y="18" textAnchor="middle">{guide.label}</text>
+              <line x1={guide.x} y1="30" x2={guide.x} y2="317" />
+            </g>
+          ))}
+
+          <text className="about-timeline__track-label" x="18" y="114">Career</text>
+          <text className="about-timeline__track-label" x="18" y="202">Interests</text>
+          <text className="about-timeline__track-label" x="18" y="297">Education</text>
+          <text className="about-timeline__note-label" x="340" y="257">Linked Nexus notes</text>
 
           {mapSegments.map((segment) => (
             <g key={segment.id}>
@@ -142,15 +162,16 @@ const AboutTimeline = () => {
             </g>
           ))}
 
-          <line className="about-timeline__education-path about-timeline__education-path--base" x1="174" y1="416" x2="646" y2="416" />
+          <line className="about-timeline__education-path about-timeline__education-path--base" x1="214" y1="293" x2="690" y2="293" />
           <line
             className="about-timeline__education-path about-timeline__education-path--progress"
-            x1="174"
-            y1="416"
-            x2={174 + universityProgress * 472}
-            y2="416"
+            x1="214"
+            y1="293"
+            x2={214 + universityProgress * 476}
+            y2="293"
           />
-          <path className="about-timeline__education-arrow" d="M646 410 L658 416 L646 422 Z" />
+          <path className="about-timeline__education-arrow" d="M690 288 L700 293 L690 298 Z" />
+          <text className="about-timeline__ongoing-label" x="684" y="312" textAnchor="end">Ongoing</text>
 
           {mapNodes.map((point) => {
             const milestone = aboutTimeline[point.milestoneIndex];
@@ -161,14 +182,18 @@ const AboutTimeline = () => {
                 key={point.id}
                 className={`about-timeline__map-point${isReached ? ' is-reached' : ''}${isCurrent ? ' is-current' : ''}${point.note ? ' is-note' : ''}`}
                 transform={`translate(${point.x} ${point.y})`}
-                style={{ '--node-color': milestone.accent } as CSSProperties}
+                style={{ '--node-color': point.color, '--active-color': milestone.accent } as CSSProperties}
                 data-map-node={point.id}
               >
                 <title>{point.note ? `${milestone.title} — linked notes` : milestone.title}</title>
-                {!point.note && <circle className="about-timeline__map-pulse" r="17" />}
-                <circle className="about-timeline__map-node" r={isCurrent ? 7 : point.note ? 3.5 : 5} />
+                {!point.note && <circle className="about-timeline__map-focus" r="11" />}
+                {point.note ? (
+                  <rect className="about-timeline__map-note" x="-3" y="-3" width="6" height="6" rx="1" />
+                ) : (
+                  <circle className="about-timeline__map-node" r={isCurrent ? 6.5 : 4.5} />
+                )}
                 {point.label && (
-                  <text x="0" y={point.labelPosition === 'below' ? 23 : -16} textAnchor="middle">
+                  <text x="0" y="-14" textAnchor="middle">
                     {point.label}
                   </text>
                 )}
