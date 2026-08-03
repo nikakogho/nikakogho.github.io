@@ -51,10 +51,36 @@ try {
   }
   assert.match(cvUrl, /^https:\/\/drive\.google\.com\//, 'CV should use the configured Google Drive URL');
   assert.ok(aboutTimeline.length >= 6, 'About timeline should tell a multi-stage story');
+  assert.deepEqual(
+    aboutTimeline.map((milestone) => milestone.id),
+    [
+      'playable-worlds',
+      'liberty-bank',
+      'university',
+      'reflection',
+      'larger-systems',
+      'biotech',
+      'aerospace',
+      'neurotech',
+      'robotics',
+      'ai',
+      'alignment',
+      'lasr-labs',
+    ],
+    'Timeline should preserve the intended split-and-merge story',
+  );
   assert.equal(new Set(aboutTimeline.map((milestone) => milestone.id)).size, aboutTimeline.length, 'Timeline milestone IDs should be unique');
   for (const milestone of aboutTimeline) {
-    assert.ok(milestone.period && milestone.kind && milestone.title, 'Every timeline milestone needs date and narrative labels');
+    assert.ok(milestone.period && milestone.kind && milestone.track && milestone.title, 'Every timeline milestone needs date, track, and narrative labels');
     assert.ok(milestone.summary.length > 70, `${milestone.id} needs enough context to stand on its own`);
+
+    if (!milestone.link) continue;
+    if (milestone.link.to.startsWith('/nexus/notes/')) {
+      const notePath = milestone.link.to.slice('/nexus/notes/'.length);
+      assert.ok(nexusPaths.has(notePath), `Missing timeline Nexus destination: ${milestone.link.to}`);
+    } else {
+      assert.equal(milestone.link.to, '/research', `Unsupported timeline destination: ${milestone.link.to}`);
+    }
   }
 
   for (const portal of homePortals) {

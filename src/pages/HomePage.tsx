@@ -274,10 +274,10 @@ const HomePage = () => {
           </div>
           <div className="landing-about__copy">
             <p>
-              I started with games and simulations, moved into production software, and kept
-              following the questions that pulled me toward AI alignment.
+              I started with games, entered production software, and kept university moving in
+              parallel while my interests widened from biotech toward AI alignment.
             </p>
-            <p>Scroll through the milestones that shaped what I work on now.</p>
+            <p>Scroll to follow the branches, splits, and convergence.</p>
           </div>
         </div>
 

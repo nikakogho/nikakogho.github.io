@@ -639,17 +639,6 @@ main.content-container.content-container--immersive {
   mask-image: linear-gradient(to bottom, black, transparent 82%);
 }
 
-.about-timeline__visual::after {
-  content: '';
-  position: absolute;
-  inset: auto -16% -24% 28%;
-  height: 55%;
-  border: 1px solid color-mix(in srgb, var(--timeline-accent) 36%, transparent);
-  border-radius: 50%;
-  transform: rotate(calc(var(--timeline-progress) * 28deg));
-  transition: border-color 500ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 .about-timeline__visual-header {
   position: absolute;
   z-index: 2;
@@ -672,35 +661,68 @@ main.content-container.content-container--immersive {
 
 .about-timeline__map {
   position: absolute;
-  top: 9%;
-  left: 2%;
-  width: 96%;
-  height: 70%;
+  top: 6%;
+  left: 0;
+  width: 100%;
+  height: 74%;
   overflow: visible;
 }
 
-.about-timeline__path {
+.about-timeline__track-label {
+  fill: rgba(255, 255, 255, 0.28);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.about-timeline__segment,
+.about-timeline__education-path {
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
+  transition: opacity 500ms ease, stroke 500ms ease;
 }
 
-.about-timeline__path--base {
+.about-timeline__segment--base,
+.about-timeline__education-path--base {
   stroke: rgba(255, 255, 255, 0.12);
-  stroke-dasharray: 0.015 0.022;
 }
 
-.about-timeline__path--progress {
-  stroke: var(--timeline-accent);
-  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--timeline-accent) 55%, transparent));
-  transition: stroke 500ms ease, stroke-dasharray 720ms cubic-bezier(0.22, 1, 0.36, 1);
+.about-timeline__segment--progress {
+  stroke: var(--segment-color);
+  opacity: 0;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--segment-color) 45%, transparent));
+}
+
+.about-timeline__segment--progress.is-reached {
+  opacity: 0.86;
+}
+
+.about-timeline__segment.is-note-branch {
+  stroke-width: 1.3;
+  stroke-dasharray: 3 6;
+}
+
+.about-timeline__education-path--base {
+  stroke-dasharray: 4 7;
+}
+
+.about-timeline__education-path--progress {
+  stroke: #b9a2ff;
+  filter: drop-shadow(0 0 5px rgba(185, 162, 255, 0.42));
+  transition: x2 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-timeline__education-arrow {
+  fill: rgba(185, 162, 255, 0.54);
 }
 
 .about-timeline__map-point text {
   fill: rgba(255, 255, 255, 0.26);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   transition: fill 450ms ease;
 }
 
@@ -718,8 +740,8 @@ main.content-container.content-container--immersive {
 }
 
 .about-timeline__map-point.is-reached .about-timeline__map-node {
-  fill: var(--timeline-accent);
-  stroke: var(--timeline-accent);
+  fill: var(--node-color);
+  stroke: var(--node-color);
 }
 
 .about-timeline__map-point.is-reached text {
@@ -727,12 +749,20 @@ main.content-container.content-container--immersive {
 }
 
 .about-timeline__map-point.is-current .about-timeline__map-node {
-  filter: drop-shadow(0 0 8px var(--timeline-accent));
+  filter: drop-shadow(0 0 8px var(--node-color));
 }
 
 .about-timeline__map-point.is-current .about-timeline__map-pulse {
-  stroke: var(--timeline-accent);
+  stroke: var(--node-color);
   animation: timeline-pulse 1.8s ease-out infinite;
+}
+
+.about-timeline__map-point.is-note .about-timeline__map-node {
+  stroke-width: 1.25;
+}
+
+.about-timeline__map-point.is-note.is-reached .about-timeline__map-node {
+  filter: drop-shadow(0 0 4px var(--node-color));
 }
 
 .about-timeline__signal {
@@ -1113,7 +1143,7 @@ main.content-container.content-container--immersive {
   .about-timeline__visual {
     z-index: 2;
     top: 0.75rem;
-    height: 250px;
+    height: 340px;
     min-height: 0;
     border-radius: 16px;
   }
@@ -1125,18 +1155,28 @@ main.content-container.content-container--immersive {
   }
 
   .about-timeline__map {
-    top: -18%;
-    right: -4%;
+    top: -4%;
+    right: -3%;
     left: auto;
-    width: 77%;
-    height: 105%;
-    opacity: 0.72;
+    width: 106%;
+    height: 82%;
+    opacity: 0.76;
+  }
+
+  .about-timeline__map-point text {
+    font-size: 13px;
+  }
+
+  .about-timeline__track-label {
+    font-size: 11px;
   }
 
   .about-timeline__visual-copy {
     right: 4rem;
     bottom: 1rem;
     left: 1rem;
+    padding-top: 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(7, 12, 19, 0.92) 38%);
   }
 
   .about-timeline__visual-copy h3 {
@@ -1198,12 +1238,12 @@ main.content-container.content-container--immersive {
   }
 
   .about-timeline__visual {
-    height: 225px;
+    height: 330px;
   }
 
   .about-timeline__map {
-    right: -16%;
-    width: 94%;
+    right: -4%;
+    width: 108%;
   }
 }
 
@@ -1221,11 +1261,11 @@ main.content-container.content-container--immersive {
     animation: none;
   }
 
-  .about-timeline__path--progress,
+  .about-timeline__segment,
+  .about-timeline__education-path--progress,
   .about-timeline__map-node,
   .about-timeline__step,
-  .about-timeline__visual,
-  .about-timeline__visual::after {
+  .about-timeline__visual {
     transition: none;
   }
 
