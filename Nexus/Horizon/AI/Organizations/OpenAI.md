@@ -1,12 +1,9 @@
-Company behind [[GPT]]
+Company behind [[GPT]] and [[Codex]].
 
 ## Backstory
-Founded by [[Sam Altman]], [[Ilya Sutskever]], [[Andrej Karpathy]] and [[Elon Musk]] in 2015 with a goal to beat [[DeepMind]] at making AGI and ASI.
+Founded by [[Sam Altman]] (CEO), [[Greg Brockman]] (President), [[Ilya Sutskever]] (former CTO), [[Andrej Karpathy]] and [[Elon Musk]] in 2015 with a goal to beat [[DeepMind]] at making AGI and ASI.
 
 Musk eventually left the company due to some disagreements (basically he wanted to be in charge) and started his own Tesla autopilot AI thing that led to [[xAI]] ([[Grok]]).
-
-## Members
-- [[Daniel Mossing]] - current mech interp lead
 
 ## People Who Left For Safety Concerns
 - Ilya Sutskever - kicked out in 14 May 2024 after failing to fire Sam Altman for safety concerns, founded his own company [[SSI - Safe SuperIntelligence]]
@@ -29,23 +26,6 @@ Musk eventually left the company due to some disagreements (basically he wanted 
 - [[William Saunders]] - former researcher in Superalignment team, left in April 2024, comparing OpenAI to Titanic in that it doesn't bother with enough lifeboats for humanity and is gambling with global annihilation for money. Now he is a vocal activist and protester
 - [[Miles Brundage]] - senior advisor of AGI readiness, left in October 2024, now starting his own non-profit for AI policy research
 - [[Rosie Campbell]] - safety researcher, left for similar reasons in October 2024, now managing director of [[Eleos AI Research]]
-
-## Current Best Models
-Chat
-- [[GPT-4o]] for everyday stuff
-- [[o3-pro]] reasoning model
-- o4-mini-high - soon to become o4 I guess
-- [[GPT-4.1 Nano]] for cheap coding via API
-
-Image
-- [[Dall-E]] 3
-
-Video
-- [[Sora]]
-
-## Upcoming Promises
-- GPT 5 to unite all these separate models
-- AI scientists
 
 ## OpenAI For Countries
 Helping governments build their own AI infrastructure.

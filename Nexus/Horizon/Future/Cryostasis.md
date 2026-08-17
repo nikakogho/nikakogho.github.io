@@ -22,7 +22,7 @@ Main organizations:
 	- [[Southern Cryonics]] - at least 2 preserved
 
 Possible revival methods:
-- Scan the brain and [[Uploaded Intelligence|upload]]
+- Scan the brain and [[Whole Brain Emulation|upload]]
 - Use some advanced future [[Tissue Engineering|tissue engineering]] to fix the damaged body while unfreezing
 - Unfreeze just the brain and put it in a new robot body
 - Unfreeze just the brain and engineer a new biological body for it

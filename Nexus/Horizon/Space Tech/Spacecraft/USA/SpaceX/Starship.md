@@ -69,6 +69,10 @@ Uses body flaps for control in atmosphere
 * Lunar Starship - for moon missions like Artemis (no heatshield or large flaps as no re-entry in atmosphere)
 * Earth transport - point-to-point travel on earth
 
+## Blast Shield For Hot Staging
+Starship does [[Hot Staging]] (upper segment engines turn on while still attached to booster). Booster survives this with a purpose built blast shield + side vents to shoot out exhaust.
+![[starship blash shield for hot staging.jpeg]]
+
 ## Assembly
 
 Happens at [[Starbase]]

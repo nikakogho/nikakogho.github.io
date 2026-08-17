@@ -1,4 +1,4 @@
-Also known as mind upload, digital twin, or Whole Brain Emulation
+Also known as mind upload, digital twin, or uploaded intelligence.
 
 Can be a literal copy of a person's mind or a replica of a living brain in general
 
@@ -19,6 +19,11 @@ When uploading a mind, I think more important than level of simulation is whethe
 
 [[Ray Kurzweil]] goes into some detail about this is his book "The Singularity Is Nearer"
 
-A company [[Nectome]] is attempting this and has [[Sam Altman]] in waitlist.
+A company [[Nectome]] is preserving brains for this and has [[Sam Altman]] in waitlist.
 
 A company [[Eon Systems]] recently had a breakthrough with doing a neuron-by-neuron [[Spiking Neural Networks|Spiking Neural Network]] simulation of a fruit fly brain, with each neuron represented as a [[Leaky Integrate And Fire]] model. Fly can eat, walk, fly, but can't learn (synaptic strengths are static).
+
+## Levels of Emulation
+Low levels need more understanding but less data and compute, high levels need less understanding but more data and compute.
+Bostrom and Sandberg think somewhere between 4 and 6 should be enough to preserve intelligence, consciousness, personality.
+![[levels of brain emulation.png]]

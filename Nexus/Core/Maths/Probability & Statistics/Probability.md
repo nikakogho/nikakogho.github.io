@@ -2,6 +2,7 @@ Main divides are [[Bayesian Probability]] which treats uncertainty as a property
 
 Very important in [[Statistics]] and in [[Causality]].
 Absolutely necessary for [[AI]], [[Robotics]], [[Bioengineering]] etc.
+[[Probability Distributions]].
 
 Possible world is ω
 

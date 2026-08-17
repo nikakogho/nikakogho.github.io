@@ -1,5 +1,5 @@
 1. [[Pretraining LLM]] - produces document completer
-2. [[Midtraining LLM]] - similar to pretraining but more targeted to high quality tasks (long context usage, coding, math, STEM)
+2. [[Midtraining LLM]] - similar to pretraining but more targeted to high quality tasks (long context usage, coding, math, STEM) or to [[Model Spec Midtraining|improving adherence to the constitution]]
 3. Post-training LLM - gives direction, personality, censorship, reasoning, tool use
    4. [[Supervised Fine-Tuning (SFT)]]
    5. [[Reinforcement Learning]] from [[RLHF|human]] or [[RLAIF|AI]] feedback.

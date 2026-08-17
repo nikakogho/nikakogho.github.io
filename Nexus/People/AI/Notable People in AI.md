@@ -17,9 +17,9 @@
 ## Mechanistic Interpretability
 - [[Chris Olah]] - researcher at Anthropic, invented [[Mechanistic Interpretability]]
 - [[Neel Nanda]] - mechanistic interpretability lead at DeepMind
-- [[Daniel Mossing]] - mechanistic interpretability lead at OpenAI
-- [[Callum McDougall]] - mechanistic interpretability researcher at DeepMind, creator of [[ARENA]]
-- [[Arthur Conmy]] - mech interp at DeepMind
+- [[Daniel Mossing]] - mech interp at Anthropic, former mech interp lead at OpenAI
+- [[Leo Gao]] - mech interp lead at OpenAI
+- [[Callum McDougall]] - alignment researcher at DeepMind, former mech interp researcher at DeepMind, creator of [[ARENA]]
 
 ## Singularity & AI Risk
 - [[Ray Kurzweil]] - futurist and former director of engineering at [[Google Brain]], author of "Singularity Is Near"

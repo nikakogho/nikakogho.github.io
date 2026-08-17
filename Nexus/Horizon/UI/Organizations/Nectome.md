@@ -1,4 +1,4 @@
-Company that wants to do [[Uploaded Intelligence|mind upload]] after destructive scan of a brain.
+Company that wants to do [[Whole Brain Emulation|mind upload]] after destructive scan of a brain.
 
 [Website](https://nectome.com/)
 

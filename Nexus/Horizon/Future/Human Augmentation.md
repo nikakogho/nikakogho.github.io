@@ -3,7 +3,7 @@ In addition to [[Life Improvement]], the human body and mind can directly be aug
 Main prospects of this are:
 - [[Genetic Engineering]]
 - [[Embryo Selection]]
-- [[Uploaded Intelligence|Mind Upload]]
+- [[Whole Brain Emulation|Mind Upload]]
 - [[Nanotechnology]] used as artificial immune system
 - [[Neurotech|Brain-computer interfaces]] for
 	- Boosting intelligence

@@ -19,3 +19,4 @@ Relevant Concepts:
 - [[Knowledge in Computing]]
 - [[Probability]]
 - [[Optimization]]
+- [[Training Data Attribution]]

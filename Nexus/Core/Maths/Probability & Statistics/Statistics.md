@@ -1,5 +1,6 @@
 - [[Covariance]]
 - [[Principal Component Analysis (PCA)]]
+- [[Probability Distributions]]
 
 Paradoxes
 - [[Monty Hall Paradox]]

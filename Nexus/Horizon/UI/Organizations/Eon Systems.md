@@ -1,4 +1,4 @@
-A [[Uploaded Intelligence|mind upload]] company working on eventually uploading humans. They recently did a neuron-level [[Leaky Integrate And Fire]] [[Spiking Neural Networks|Spiking Neural Network]] emulation of a fruit fly's brain.
+A [[Whole Brain Emulation|mind upload]] company working on eventually uploading humans. They recently did a neuron-level [[Leaky Integrate And Fire]] [[Spiking Neural Networks|Spiking Neural Network]] emulation of a fruit fly's brain.
 
 ![fly_emulation.png](fly_emulation.png)
 The fly can eat, walk, fly, but can't learn (synaptic strengths are static)

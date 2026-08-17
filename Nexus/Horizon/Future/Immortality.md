@@ -3,7 +3,7 @@ Mostly considered through ways:
 	- [[IsomorphicLabs]] by [[Demis Hassabis]] is openly going for the goal of solving all disease
 	- David Sinclair and many others are experimenting with reverse aging and starting clinical trials in 2026
 - [[Nanotechnology]] way of implanting medical nanorobots as an artificial layer of [[Immune System]] to make us able to quickly heal from any damage or disease
-- [[Uploaded Intelligence|Mind Upload]] as a type of digital immortality
+- [[Whole Brain Emulation|Mind Upload]] as a type of digital immortality
 - [[Cryostasis]] to freeze now and unfreeze when your medical problem is solved
 
 I personally only support ways that preserve continuity so I'm in favor of biotech and nanotech ways but weary of mind upload, but open to it if we can prove that consciousness will remain intact.

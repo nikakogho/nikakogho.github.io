@@ -2,14 +2,13 @@
 Part of [[Explainable AI]] that aims to take any existing [[Artificial Neural Network|neural network]] and figure out or change part or all of its logic.
 Relevant for [[AI Alignment]].
 
-Created by [[Chris Olah]], mechanistic interpretability lead at [[Anthropic]].
+Created by [[Chris Olah]] (mechanistic interpretability lead at [[Anthropic]]) during his time at [[OpenAI]], originally on [[Convolutional Neural Network|CNNs]].
+
+In 2021 the field moved to analyzing LLMs, started with the paper [Mathematical Framework For Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html) 2021 at Anthropic. Neel Nanda discusses that paper in [this video](https://m.youtube.com/watch?v=KV5gbOmHbjU).
 
 Anthropic discusses it [here](https://www.anthropic.com/research/interpretability-dreams)
 
 [[Neel Nanda]] ([[DeepMind]] Mechanistic Interpretability lead, former student of Chris Olah) teaches it [here](https://docs.google.com/document/d/1p-ggQV3vVWIQuCccXEl1fD0thJOgXimlbBpGk6FI32I/edit?pli=1&tab=t.0#heading=h.y0ohi6l5z9qn) and made [[TransformerLens]] as an open-source tool for making mech interp easy.
-
-Originally started on [[Convolutional Neural Network|CNNs]] by Chris Olah.
-Then in 2021 the field moved to analyzing LLMs, started with the paper [Mathematical Framework For Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html) 2021 at Anthropic. Neel Nanda discusses that paper in [this video](https://m.youtube.com/watch?v=KV5gbOmHbjU).
 
 ## Ways
 - Dictionary Learning
@@ -24,7 +23,10 @@ Then in 2021 the field moved to analyzing LLMs, started with the paper [Mathemat
 - Attribution Methods for Mechanism Discovery
 - [[Steering Vectors]]
 - [[Logit Lens]]
+- [[Tuned Lens]]
+- [[J-Lens]]
 - [[Activation Oracles]]
+- [[Natural Language Autoencoders]]
 - [[Activation Patching]]
 
 ## Problematic Concepts
@@ -36,10 +38,22 @@ Then in 2021 the field moved to analyzing LLMs, started with the paper [Mathemat
 ## Work at DeepMind
 - Led by [[Neel Nanda]]
 - A researcher [[Callum McDougall]] set up [[ARENA]] for learning
+- Other members:
+	- [[Senthooran Rajamanoharan]]
+	- [[Lewis Smith]]
+	- [[Josh Engels]]
+	- [[Bilal Chughtai]]
+	- [[János Kramár]]
 
 ## Work at Anthropic
 - Led by Chris Olah, founder of mechanistic interpretability
-- [[Tom Henighan]] - key contributor of Circuits research, often co-authors with Chris Olah
+- Members:
+	- [[Daniel Mossing]], former head of mech interp at OpenAI
+	- [[Tom Henighan]] - key contributor of Circuits research, often co-authors with Chris Olah
+
+## Work At OpenAI
+- Led by [[Leo Gao]]
+- Pursuing [ambitious interpretability](https://www.lesswrong.com/posts/Hy6PX43HGgmfiTaKu/an-ambitious-vision-for-interpretability)
 
 ## Interesting Findings
 - In Transformers

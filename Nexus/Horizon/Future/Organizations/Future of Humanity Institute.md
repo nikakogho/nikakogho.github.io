@@ -8,6 +8,6 @@ Foundational work and research in
 		- Books
 			- "Superintelligence" - Nick Bostrom
 			- "Precipice" - [[Toby Ord]]
-- [[Uploaded Intelligence]] with Nick Bostrom and [[Anders Sandberg]], including publishing the [Whole Brain Emulation Roadmap](https://gwern.net/doc/ai/scaling/hardware/2008-sandberg-wholebrainemulationroadmap.pdf) in 2008
+- [[Whole Brain Emulation]] with Nick Bostrom and [[Anders Sandberg]], including publishing the [Whole Brain Emulation Roadmap](https://gwern.net/doc/ai/scaling/hardware/2008-sandberg-wholebrainemulationroadmap.pdf) in 2008
 - [[Genetic Engineering]] and artificially steering human evolution
 - [[Nanotechnology]] in collaboration with [[Eric Drexler]]

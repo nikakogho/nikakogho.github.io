@@ -16,6 +16,7 @@
 - [[Algorithms in AI]]
 - [[AGI]]
 - [[Recursive Self-Improvement]]
+- [[AI Governance]]
 
 ## Neural Networks
 - [[Artificial Neural Network|Neural Network]]
@@ -79,7 +80,7 @@
 ## Other Forms Of Intelligence
 - [[Organoid Intelligence]]
 - [[Neuromorphic Computing]]
-- [[Uploaded Intelligence]]
+- [[Whole Brain Emulation]]
 
 ## Other Relevant Concepts
 - [[Maths]]

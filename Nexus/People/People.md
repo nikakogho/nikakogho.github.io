@@ -54,4 +54,9 @@ Bigger list [[Notable People in Space Industry|here]]
 - [[Alan Turing]]
 - [[John von Neumann]]
 
+## Transhumanism
+- [[Nick Bostrom]]
+- [[Max More]]
+- [[Peter Thiel]]
+
 Bigger list [[Founders of Computing|here]]
