@@ -1,15 +1,14 @@
-* Stress testing lead at [[Anthropic]].
-* Previously at [[MIRI]] mentoring under [[Paul Christiano]].
+* Alignment stress testing lead at [[Anthropic]].
+* Previously at [[MIRI]] mentored by [[Paul Christiano]].
 * As a child made a functional programming language [Coconut](https://coconut-lang.org/) similar to Python.
 * [LinkedIn](https://www.linkedin.com/in/ehubinger)
 * [Website](https://evhub.github.io/)
 
 ![Evan_Hubinger.png](evan_hubinger.png)
 
-Was active on [[LessWrong]] and exploring dangerous concepts such as [[Gradient Hacking]].
+Was active on [[LessWrong]] and explored dangers such as [[Gradient Hacking]].
 
 ## Papers
-
 * [Risks from Learned Optimization in Advanced Machine Learning Systems](https://arxiv.org/abs/1906.01820)
 * [Natural Emergent Misalignment from Reward Hacking in Production RL](https://arxiv.org/pdf/2511.18397)
 * [Agentic Misalignment: How LLMs Could Be Insider Threats](https://arxiv.org/pdf/2510.05179)

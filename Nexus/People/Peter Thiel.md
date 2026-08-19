@@ -4,7 +4,7 @@ One of the most influential tech billionaires of the 21st century
 - Founder of [[Palantir]]
 - Founder of [[Founders Fund]] and [[Thiel Fellowship]]
 - Radical libertarian
-- Strong views on antichrist, sees pro regulation/slowdown people like Greta Thunberg and [[Eliezer Yudkowsky]] and legionnaires of the antichrist
+- Strong views on antichrist, sees pro regulation/slowdown people like Greta Thunberg and [[Eliezer Yudkowsky]] as legionnaires of the antichrist
 - Co-founded PayPal along with [[Elon Musk]] and others
 - Original funder of
 	- [[DeepMind]]

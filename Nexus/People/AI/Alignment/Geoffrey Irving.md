@@ -13,6 +13,7 @@ Education:
 Profile:
 - [Personal website](https://naml.us/)
 - [80K Hours interview](https://www.youtube.com/watch?v=-VGCK6PptrM)
+- [LessWrong](https://www.lesswrong.com/users/geoffrey-irving)
 - [GitHub](https://github.com/girving)
 - [LinkedIn](https://www.linkedin.com/in/geoffreyirving)
 - [X](https://x.com/geoffreyirving)
