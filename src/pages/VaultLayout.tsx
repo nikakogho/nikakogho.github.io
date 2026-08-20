@@ -1,17 +1,12 @@
 // src/pages/VaultLayout.tsx
-import React, { useState, useMemo } from 'react'; // Added useState
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import FileTreeNode from '../components/FileTreeNode'; // Import tree node component
 // Import helpers and types
-import {
-    getStructuredNexusNotes,
-    VaultNote,
-    buildFileTree} from '../utils/markdownHelper';
+import { VaultNote } from '../utils/markdownHelper';
+import { allNexusNotes, nexusFileTree } from '../data/nexusNotes';
 // Import an icon for the toggle button (optional)
 import { FiMenu, FiX } from 'react-icons/fi';
-
-// Import module metadata (eager, for immediate access to keys/structure)
-const markdownModulesMeta = import.meta.glob('/Nexus/**/*.md', { eager: true });
 
 // Define the context type that will be passed down via Outlet
 export interface VaultOutletContext {
@@ -28,15 +23,8 @@ const VaultLayout: React.FC = () => {
     // Stores folder paths (normalized) that are currently open
     const [expandedFolders, setExpandedFolders] = useState<Record<string, boolean>>({});
 
-    // --- Calculate Notes and Tree Structure (memoized) ---
-    const allVaultNotes = useMemo(() => {
-        return getStructuredNexusNotes(markdownModulesMeta);
-    }, []);
-
-    const fileTree = useMemo(() => {
-        return buildFileTree(markdownModulesMeta);
-    }, []);
-    // --- End Data Calculation ---
+    const allVaultNotes = allNexusNotes;
+    const fileTree = nexusFileTree;
 
     // --- Handlers ---
     const toggleSidebar = () => setIsSidebarVisible(prev => !prev);

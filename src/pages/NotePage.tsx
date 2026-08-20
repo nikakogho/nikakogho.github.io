@@ -4,18 +4,12 @@ import { useParams, Link, useLocation, useOutletContext } from 'react-router-dom
 import MarkdownRenderer from '../components/MarkdownRenderer';
 // Import helpers and types
 import {
-    findNoteModuleKey,
     normalizeNoteName
 } from '../utils/markdownHelper';
 // Import the context type definition from VaultLayout
 import { VaultOutletContext } from './VaultLayout';
 import { FiShare2 } from 'react-icons/fi';
-
-// Import markdown content modules (dynamic, raw)
-const markdownContentModules = import.meta.glob<string>('/Nexus/**/*.md', {
-  query: '?raw',
-  import: 'default',
-});
+import { loadNexusNote } from '../data/nexusNotes';
 
 const NotePage: React.FC = () => {
   const { '*': notePath } = useParams<{ '*': string }>();
@@ -37,11 +31,10 @@ const NotePage: React.FC = () => {
       setIsLoading(true); setError(null); setContent(null); setLoadedNormalizedPath('');
       if (!vaultId || notePath === undefined) { setError("Invalid vault or note path."); setIsLoading(false); return; }
       const normalizedPath = normalizeNoteName(notePath || '');
-      const moduleKey = findNoteModuleKey(normalizedPath, markdownContentModules);
-      if (moduleKey && markdownContentModules[moduleKey]) {
+      const contentPromise = loadNexusNote(normalizedPath);
+      if (contentPromise) {
         try {
-          const moduleLoader = markdownContentModules[moduleKey] as () => Promise<string>;
-          setContent(await moduleLoader());
+          setContent(await contentPromise);
           setLoadedNormalizedPath(normalizedPath);
         } catch (err) { console.error("Error loading module content:", err); setError(`Failed to load note content for "${notePath}".`); }
       } else { setError(`Note content module not found for "${notePath}" (normalized: ${normalizedPath}) in vault "${vaultId}".`); }

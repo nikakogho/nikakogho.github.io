@@ -18,6 +18,30 @@ export interface TreeNode {
   path: string; // Normalized path relative to vault root (used for links/keys)
   children?: TreeNode[]; // Array of child nodes for folders
 }
+
+interface VaultNoteLookup {
+  byFullPath: Map<string, VaultNote>;
+  byBaseName: Map<string, VaultNote[]>;
+}
+
+const vaultNoteLookupCache = new WeakMap<VaultNote[], VaultNoteLookup>();
+
+function getVaultNoteLookup(notes: VaultNote[]): VaultNoteLookup {
+  const cached = vaultNoteLookupCache.get(notes);
+  if (cached) return cached;
+
+  const byFullPath = new Map<string, VaultNote>();
+  const byBaseName = new Map<string, VaultNote[]>();
+  notes.forEach((note) => {
+    byFullPath.set(note.fullPath, note);
+    const matches = byBaseName.get(note.baseName) ?? [];
+    matches.push(note);
+    byBaseName.set(note.baseName, matches);
+  });
+  const lookup = { byFullPath, byBaseName };
+  vaultNoteLookupCache.set(notes, lookup);
+  return lookup;
+}
   
   // --- Normalization Function ---
   /**
@@ -134,9 +158,10 @@ export interface TreeNode {
    */
   export function resolveWikiLink(name: string, allVaultNotes: VaultNote[], warnOnMissing = true): string {
       const normalizedInput = normalizeNoteName(name);
+      const { byBaseName, byFullPath } = getVaultNoteLookup(allVaultNotes);
   
       // 1. Try to find a unique match based on the BASE filename
-      const baseNameMatches = allVaultNotes.filter(note => note.baseName === normalizedInput);
+      const baseNameMatches = byBaseName.get(normalizedInput) ?? [];
   
       if (baseNameMatches.length === 1) {
         // Unique match found! Return the full normalized path of the matched note.
@@ -147,7 +172,7 @@ export interface TreeNode {
           console.warn(`[resolveWikiLink] Ambiguous wiki link found for "${name}". Multiple notes match:`, baseNameMatches.map(m => m.fullPath));
         }
         // Fallback: Try to match the input as a full path directly
-        const fullPathMatch = allVaultNotes.find(note => note.fullPath === normalizedInput);
+        const fullPathMatch = byFullPath.get(normalizedInput);
         if (fullPathMatch) {
           return fullPathMatch.fullPath; // Handles [[somefolder/file2]] directly if base names clash
         }
@@ -156,7 +181,7 @@ export interface TreeNode {
       } else {
         // 0 base name matches.
         // 2. Check if the input itself IS a full path that exists.
-        const fullPathMatch = allVaultNotes.find(note => note.fullPath === normalizedInput);
+        const fullPathMatch = byFullPath.get(normalizedInput);
         if (fullPathMatch) {
           // Handles [[somefolder/file2]] when base name didn't match
           return fullPathMatch.fullPath;

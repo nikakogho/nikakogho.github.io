@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { glob } from 'glob';
 import { createServer } from 'vite';
 
@@ -75,16 +75,10 @@ try {
     'Timeline should place all three channel videos under their intended domains',
   );
 
-  for (const asset of [
-    'public/backgrounds/lifelog-castle-courtyard.webp',
-    'public/backgrounds/lifelog-cyber-lab.webp',
-    'public/backgrounds/lifelog-lava-pit.webp',
-    'public/audio/light_rain.wav',
-    'public/audio/cyber-lab-hum.wav',
-    'public/audio/lava-rumble.wav',
-  ]) {
-    assert.ok(existsSync(asset), `Missing landing asset: ${asset}`);
-  }
+  const homeSource = readFileSync('src/pages/HomePage.tsx', 'utf8');
+  assert.doesNotMatch(homeSource, /AmbienceToggle|landingVariants|landing-backdrops|landing-weather/, 'Homepage should stay editorial rather than scene-driven');
+  assert.match(homeSource, /Curious about our future\./, 'Homepage should keep the requested first sentence');
+  assert.match(homeSource, /Currently trying to make AGI go well\./, 'Homepage should keep the requested second sentence');
 
   console.log('Homepage verification passed.');
 } finally {

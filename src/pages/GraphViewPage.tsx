@@ -1,21 +1,10 @@
 import React, { useMemo } from 'react';
-import { useOutletContext } from 'react-router-dom';
 import NexusGraph from '../components/NexusGraph';
-import { generateGraphData } from '../utils/graphHelper';
-import { VaultOutletContext } from './VaultLayout';
-
-const markdownContentModules = import.meta.glob<string>('/Nexus/**/*.md', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-});
+import { GraphData } from '../utils/graphHelper';
+import generatedGraph from '../generated/nexus-graph.json';
 
 const GraphViewPage: React.FC = () => {
-    const { allVaultNotes } = useOutletContext<VaultOutletContext>();
-
-    const graphData = useMemo(() => {
-        return generateGraphData(allVaultNotes, markdownContentModules);
-    }, [allVaultNotes]);
+    const graphData = useMemo(() => generatedGraph as GraphData, []);
 
     return (
         <div className="graph-view-page">

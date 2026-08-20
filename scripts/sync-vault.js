@@ -3,6 +3,8 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import dotenv from 'dotenv'; // Using explicit config loading
 import { glob } from 'glob';
 import { unified } from 'unified';
@@ -48,6 +50,7 @@ const skipGit = process.argv.includes('--skip-git') || process.env.SKIP_GIT_SYNC
 const manifestPath = path.resolve(__dirname, 'cloudinary-manifest.json');
 const projectRoot = path.resolve(__dirname, '..');
 const git = simpleGit(projectRoot);
+const execFileAsync = promisify(execFile);
 
 // --- Helper Functions ---
 
@@ -272,21 +275,41 @@ async function runGitCommands() {
     try {
         console.log('Checking Git status...');
         const relativeManifestPath = path.relative(projectRoot, manifestPath);
-        console.log(`Staging manifest only: ${relativeManifestPath}`);
-        await git.add(relativeManifestPath);
+        const syncPaths = [...vaultBaseDirs, relativeManifestPath]
+            .map((entry) => entry.replace(/\\/g, '/'));
 
-        const stagedManifest = (await git.diff(['--cached', '--name-only', '--', relativeManifestPath])).trim();
-        if (!stagedManifest) {
+        console.log(`Staging synced vault content: ${syncPaths.join(', ')}`);
+        await git.add(['--', ...syncPaths]);
+
+        const stagedFiles = (await git.diff(['--cached', '--name-only']))
+            .split(/\r?\n/)
+            .map((entry) => entry.trim().replace(/\\/g, '/'))
+            .filter(Boolean);
+        const isSyncPath = (filePath) => syncPaths.some((syncPath) => (
+            filePath === syncPath || filePath.startsWith(`${syncPath}/`)
+        ));
+        const unrelatedStagedFiles = stagedFiles.filter((filePath) => !isSyncPath(filePath));
+        if (unrelatedStagedFiles.length > 0) {
+            throw new Error(
+                `Refusing to mix unrelated staged files into the vault commit: ${unrelatedStagedFiles.join(', ')}`
+            );
+        }
+
+        if (stagedFiles.length === 0) {
             console.log('No changes staged for commit. Skipping commit and push.');
             return;
         }
 
-        const commitMessage = `Sync vault image manifest (${new Date().toISOString()})`;
-        console.log(`Committing manifest with message: "${commitMessage}"`);
-        await git.commit(commitMessage, [relativeManifestPath]);
+        const commitMessage = `Sync vault content (${new Date().toISOString()})`;
+        console.log(`Committing ${stagedFiles.length} synced files with message: "${commitMessage}"`);
+        await git.commit(commitMessage);
 
-        console.log('Pushing to origin...');
-        await git.push('origin', 'main'); // Adjust branch name if needed
+        const status = await git.status();
+        if (!status.current) {
+            throw new Error('Cannot push while Git is in a detached HEAD state.');
+        }
+        console.log(`Pushing branch ${status.current} to origin...`);
+        await git.push('origin', status.current);
 
         console.log('Git sync complete.');
     } catch (error) {
@@ -297,6 +320,7 @@ async function runGitCommands() {
         } catch {
              console.error("Could not get Git status during error handling.");
         }
+        throw error;
     }
 }
 
@@ -331,6 +355,10 @@ async function main() {
     if (skipGit) {
         console.log('Skipping Git commit/push (--skip-git or SKIP_GIT_SYNC=1).');
     } else {
+        console.log('Refreshing generated Nexus indexes before the Git commit...');
+        await execFileAsync(process.execPath, [path.resolve(__dirname, 'generate-nexus-data.mjs')], {
+            cwd: projectRoot,
+        });
         await runGitCommands();
     }
 

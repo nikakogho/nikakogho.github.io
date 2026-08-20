@@ -10,6 +10,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 // Import the specific helper functions needed, including the new resolver and VaultNote type
 import { VaultNote, resolveWikiLinkTarget } from '../utils/markdownHelper';
 import { getImageUrl } from '../utils/imageHelper'; // Import your updated image helper
+import { prefetchNexusNote } from '../data/nexusNotes';
 import 'katex/dist/katex.min.css';
 
 // Define the expected properties for the component
@@ -60,6 +61,11 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
     // console.log("[MarkdownRenderer] Existing Permalinks for check:", paths);
     return paths;
   }, [allVaultNotes]);
+
+  const existingPermalinkSet = useMemo(
+    () => new Set(existingPermalinks),
+    [existingPermalinks],
+  );
 
   // Memoize the resolver function itself
   const pageResolverWrapper = useMemo(() => {
@@ -151,7 +157,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
             const permalink = getHrefPermalink(href);
 
             // Check if this extracted permalink exists in our known list
-            const exists = existingPermalinks.includes(permalink);
+            const exists = existingPermalinkSet.has(permalink);
             // --- End Manual Check ---
 
             // console.log(`[Components.a] Internal Link "${children}". Href: "${href}". Permalink: "${permalink}". Exists check: ${exists}. Received className: "${className}"`);
@@ -160,7 +166,17 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
               // Link target exists: Render the clickable RouterLink
               // console.log(`  -> Rendering as EXISTING link (RouterLink).`);
               // Pass className down in case 'internal-link' has styles, but ignore 'new-link' visually
-              return <RouterLink to={href} className={'internal-link'} {...props}>{children}</RouterLink>;
+              return (
+                <RouterLink
+                  to={href}
+                  className="internal-link"
+                  onMouseEnter={() => prefetchNexusNote(permalink)}
+                  onFocus={() => prefetchNexusNote(permalink)}
+                  {...props}
+                >
+                  {children}
+                </RouterLink>
+              );
             } else {
               // Link target does NOT exist (or permalink extraction failed): Render non-clickable span
               // Apply both classes so CSS can target .internal-link.new-link
