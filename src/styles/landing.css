@@ -1286,6 +1286,15 @@ main.content-container.content-container--immersive {
   border-bottom: 1px solid #171714;
 }
 
+.landing-page--editorial > .editorial-header {
+  position: static;
+  top: auto;
+  padding: 0;
+  border-radius: 0;
+  background: #f1efe8;
+  box-shadow: none;
+}
+
 .editorial-wordmark {
   width: fit-content;
   color: #171714;
