@@ -438,7 +438,8 @@ th { background-color: var(--header-bg); font-family: var(--font-primary); font-
 main img, .note-page-content img { max-width: 100%; height: auto; display: block; margin-top: 1em; margin-bottom: 1em; border-radius: var(--border-radius, 8px); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); }
 
 .markdown-content-image {
-  margin-inline: auto;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .markdown-content-image:not(.markdown-content-image--explicit-size) {
