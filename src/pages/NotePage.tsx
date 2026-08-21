@@ -66,30 +66,56 @@ const NotePage: React.FC = () => {
       // Keep the undecoded value when a malformed escape sequence is present.
     }
 
-    const revealSection = () => {
-      clearSectionTarget();
+    let frameId = 0;
+    let observerStopTimer = 0;
+    let resizeObserver: ResizeObserver | undefined;
 
+    const findSection = () => {
       const requestedHeadingKey = normalizeHeadingLookupKey(anchorId);
-      const target = document.getElementById(anchorId) ?? Array.from(
+      return document.getElementById(anchorId) ?? Array.from(
         document.querySelectorAll<HTMLElement>('.markdown-heading[id]')
       ).find((heading) => normalizeHeadingLookupKey(heading.id) === requestedHeadingKey);
+    };
+
+    const revealSection = (target: HTMLElement, smooth: boolean) => {
+      clearSectionTarget();
+      target.classList.add('is-section-target');
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({
+        behavior: smooth && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'smooth'
+          : 'auto',
+        block: 'start',
+      });
+    };
+
+    frameId = window.requestAnimationFrame(() => {
+      const target = findSection();
       if (!target) {
         window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
         return;
       }
 
-      target.classList.add('is-section-target');
-      target.focus({ preventScroll: true });
-      target.scrollIntoView({
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-          ? 'auto'
-          : 'smooth',
-        block: 'start',
-      });
-    };
+      revealSection(target, true);
 
-    const frameId = window.requestAnimationFrame(revealSection);
-    return () => window.cancelAnimationFrame(frameId);
+      // Images and web fonts can change the height above the destination after
+      // the first jump. Keep the target aligned while those late assets settle.
+      const noteArticle = target.closest('article');
+      if (noteArticle && typeof ResizeObserver !== 'undefined') {
+        resizeObserver = new ResizeObserver(() => {
+          window.cancelAnimationFrame(frameId);
+          frameId = window.requestAnimationFrame(() => revealSection(target, false));
+        });
+        resizeObserver.observe(noteArticle);
+        observerStopTimer = window.setTimeout(() => resizeObserver?.disconnect(), 5000);
+      }
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      window.clearTimeout(observerStopTimer);
+      resizeObserver?.disconnect();
+    };
   }, [content, isLoading, loadedNormalizedPath, location.hash]);
 
 
