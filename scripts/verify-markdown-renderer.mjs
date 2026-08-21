@@ -42,6 +42,12 @@ try {
       displayName: 'Archaea',
       moduleKey: '/Nexus/Core/Biology/Life/Archaea.md',
     },
+    {
+      fullPath: 'horizon/ai/neural-network/residual-network',
+      baseName: 'residual-network',
+      displayName: 'Residual Network',
+      moduleKey: '/Nexus/Horizon/AI/Neural Network/Residual Network.md',
+    },
   ];
 
   const markdown = String.raw`
@@ -49,6 +55,7 @@ try {
 
 See [[Sugar|the sugar note]], [[Sugar#Polysaccharides|the relevant section]],
 and [[#Polysaccharides|this section]]. [[Missing Note]] should remain disabled.
+Spacing-tolerant section: [[Residual Network#ResidualBlock|residual blocks]].
 
 Inline math: $S_tA_tR_{t+1}$.
 
@@ -87,6 +94,10 @@ $$
   assert.match(
     html,
     /href="\/nexus\/notes\/core\/biology\/life\/archaea#polysaccharides"[^>]*>this section<\/a>/
+  );
+  assert.match(
+    html,
+    /href="\/nexus\/notes\/horizon\/ai\/neural-network\/residual-network#residualblock"[^>]*>residual blocks<\/a>/
   );
   assert.match(html, /<span class="internal-link new-link">Missing Note<\/span>/);
   assert.match(html, /class="katex"/);

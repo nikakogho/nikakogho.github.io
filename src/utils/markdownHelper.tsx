@@ -91,6 +91,18 @@ function getVaultNoteLookup(notes: VaultNote[]): VaultNoteLookup {
   }
 
   /**
+   * Produces a forgiving comparison key so fragments survive harmless spacing
+   * and punctuation differences such as `ResidualBlock` vs `Residual Block`.
+   */
+  export function normalizeHeadingLookupKey(heading: string): string {
+    return heading
+      .normalize('NFKD')
+      .toLowerCase()
+      .replace(/\p{Mark}/gu, '')
+      .replace(/[^\p{Letter}\p{Number}]+/gu, '');
+  }
+
+  /**
    * Resolves an Obsidian link such as `Note#A section` to a website path and
    * optional heading id. An empty note part targets the current note.
    */

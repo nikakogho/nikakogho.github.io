@@ -4,6 +4,7 @@ import { useParams, Link, useLocation, useOutletContext } from 'react-router-dom
 import MarkdownRenderer from '../components/MarkdownRenderer';
 // Import helpers and types
 import {
+    normalizeHeadingLookupKey,
     normalizeNoteName
 } from '../utils/markdownHelper';
 // Import the context type definition from VaultLayout
@@ -68,8 +69,14 @@ const NotePage: React.FC = () => {
     const revealSection = () => {
       clearSectionTarget();
 
-      const target = document.getElementById(anchorId);
-      if (!target) return;
+      const requestedHeadingKey = normalizeHeadingLookupKey(anchorId);
+      const target = document.getElementById(anchorId) ?? Array.from(
+        document.querySelectorAll<HTMLElement>('.markdown-heading[id]')
+      ).find((heading) => normalizeHeadingLookupKey(heading.id) === requestedHeadingKey);
+      if (!target) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        return;
+      }
 
       target.classList.add('is-section-target');
       target.focus({ preventScroll: true });
