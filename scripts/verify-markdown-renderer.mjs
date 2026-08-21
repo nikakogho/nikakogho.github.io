@@ -102,9 +102,9 @@ $$
   assert.match(html, /<span class="internal-link new-link">Missing Note<\/span>/);
   assert.match(html, /class="katex"/);
   assert.match(html, /class="katex-display"/);
-  assert.match(html, /<img src="jacob%20pfau\.png" alt="jacob pfau" loading="lazy"\/>/);
-  assert.match(html, /<img src="sensor_fusion_types\.png" alt="sensor_fusion_types" loading="lazy"\/>/);
-  assert.match(html, /<img src="diagram\.jpeg" alt="Readable diagram" loading="lazy"\/>/);
+  assert.match(html, /<img src="jacob%20pfau\.png" alt="jacob pfau" class="markdown-content-image" loading="lazy"\/>/);
+  assert.match(html, /<img src="sensor_fusion_types\.png" alt="sensor_fusion_types" class="markdown-content-image markdown-content-image--explicit-size" width="600" loading="lazy"\/>/);
+  assert.match(html, /<img src="diagram\.jpeg" alt="Readable diagram" class="markdown-content-image" loading="lazy"\/>/);
   assert.doesNotMatch(html, /!\[\[/, 'Obsidian image embeds should never remain visible as source text');
 
   console.log('Markdown renderer verification passed.');

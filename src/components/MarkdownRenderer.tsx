@@ -39,6 +39,16 @@ function getObsidianImageAlt(imagePath: string, pipeValue?: string): string {
   return filename.replace(/\.[^.]+$/, '');
 }
 
+function getObsidianImageDimensions(pipeValue?: string): { width: number; height?: number } | undefined {
+  const sizeMatch = pipeValue?.trim().match(/^(\d+)(?:x(\d+))?$/i);
+  if (!sizeMatch) return undefined;
+
+  return {
+    width: Number(sizeMatch[1]),
+    ...(sizeMatch[2] ? { height: Number(sizeMatch[2]) } : {}),
+  };
+}
+
 /**
  * Turns Obsidian image embeds into real mdast image nodes before the wiki-link
  * plugin sees them. This keeps embeds inside code blocks untouched and supports
@@ -60,10 +70,14 @@ const remarkObsidianImages: Plugin<[], Root> = () => (tree) => {
       }
 
       const imagePath = match[1].trim();
+      const dimensions = getObsidianImageDimensions(match[2]);
       replacements.push({
         type: 'image',
         url: imagePath,
         alt: getObsidianImageAlt(imagePath, match[2]),
+        ...(dimensions
+          ? { data: { hProperties: dimensions } }
+          : {}),
       });
       cursor = matchIndex + match[0].length;
       foundEmbed = true;
@@ -257,13 +271,34 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
         },
         // --- End Updated 'a' component override ---
 
-        img: ({ node, src, alt, ...props }) => {
+        img: ({ node, src, alt, className, width, height, style, ...props }) => {
           void node;
           let resolvedSrc = src || '';
           if (src && !src.startsWith('http')) {
               resolvedSrc = getImageUrl(src, vaultId);
           }
-          return <img src={resolvedSrc} alt={alt || ''} {...props} loading="lazy" />;
+          const hasExplicitSize = width !== undefined || height !== undefined;
+          const imageClassName = [
+            'markdown-content-image',
+            hasExplicitSize ? 'markdown-content-image--explicit-size' : '',
+            className,
+          ].filter(Boolean).join(' ');
+          const imageStyle = height !== undefined
+            ? { ...style, height, objectFit: 'contain' as const }
+            : style;
+
+          return (
+            <img
+              src={resolvedSrc}
+              alt={alt || ''}
+              className={imageClassName}
+              width={width}
+              height={height}
+              style={imageStyle}
+              {...props}
+              loading="lazy"
+            />
+          );
         }
       }}
     >
