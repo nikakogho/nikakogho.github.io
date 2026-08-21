@@ -52,6 +52,10 @@ and [[#Polysaccharides|this section]]. [[Missing Note]] should remain disabled.
 
 Inline math: $S_tA_tR_{t+1}$.
 
+![[jacob pfau.png]]
+![[sensor_fusion_types.png|600]]
+![[diagram.jpeg|Readable diagram]]
+
 $$
 G_t = \sum_{k=0}^{T-t-1} \gamma^k r_{t+k}
 $$
@@ -87,6 +91,10 @@ $$
   assert.match(html, /<span class="internal-link new-link">Missing Note<\/span>/);
   assert.match(html, /class="katex"/);
   assert.match(html, /class="katex-display"/);
+  assert.match(html, /<img src="jacob%20pfau\.png" alt="jacob pfau" loading="lazy"\/>/);
+  assert.match(html, /<img src="sensor_fusion_types\.png" alt="sensor_fusion_types" loading="lazy"\/>/);
+  assert.match(html, /<img src="diagram\.jpeg" alt="Readable diagram" loading="lazy"\/>/);
+  assert.doesNotMatch(html, /!\[\[/, 'Obsidian image embeds should never remain visible as source text');
 
   console.log('Markdown renderer verification passed.');
 } finally {

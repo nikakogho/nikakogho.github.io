@@ -6,7 +6,10 @@ import remarkWikiLink from 'remark-wiki-link';
 import rehypeRaw from 'rehype-raw';
 import rehypeKatex from 'rehype-katex';
 import rehypeSlug from 'rehype-slug';
+import type { Parent, PhrasingContent, Root } from 'mdast';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
+import type { Plugin } from 'unified';
+import { SKIP, visit } from 'unist-util-visit';
 // Import the specific helper functions needed, including the new resolver and VaultNote type
 import { VaultNote, resolveWikiLinkTarget } from '../utils/markdownHelper';
 import { getImageUrl } from '../utils/imageHelper'; // Import your updated image helper
@@ -23,6 +26,58 @@ interface MarkdownRendererProps {
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type HeadingProps = React.ComponentPropsWithoutRef<'h1'> & ExtraProps;
+
+const OBSIDIAN_IMAGE_EMBED_PATTERN = /!\[\[([^\]\n|]+?\.(?:png|jpe?g|gif|svg|webp|avif))(?:\|([^\]\n]+))?\]\]/gi;
+
+function getObsidianImageAlt(imagePath: string, pipeValue?: string): string {
+  const trimmedPipeValue = pipeValue?.trim();
+  if (trimmedPipeValue && !/^\d+(?:x\d+)?$/i.test(trimmedPipeValue)) {
+    return trimmedPipeValue;
+  }
+
+  const filename = imagePath.replace(/\\/g, '/').split('/').pop() ?? imagePath;
+  return filename.replace(/\.[^.]+$/, '');
+}
+
+/**
+ * Turns Obsidian image embeds into real mdast image nodes before the wiki-link
+ * plugin sees them. This keeps embeds inside code blocks untouched and supports
+ * aliases and width hints such as ![[diagram.png|600]].
+ */
+const remarkObsidianImages: Plugin<[], Root> = () => (tree) => {
+  visit(tree, 'text', (node, index, parent) => {
+    if (typeof index !== 'number' || !parent) return;
+
+    const replacements: PhrasingContent[] = [];
+    let cursor = 0;
+    let foundEmbed = false;
+    OBSIDIAN_IMAGE_EMBED_PATTERN.lastIndex = 0;
+
+    for (const match of node.value.matchAll(OBSIDIAN_IMAGE_EMBED_PATTERN)) {
+      const matchIndex = match.index ?? 0;
+      if (matchIndex > cursor) {
+        replacements.push({ type: 'text', value: node.value.slice(cursor, matchIndex) });
+      }
+
+      const imagePath = match[1].trim();
+      replacements.push({
+        type: 'image',
+        url: imagePath,
+        alt: getObsidianImageAlt(imagePath, match[2]),
+      });
+      cursor = matchIndex + match[0].length;
+      foundEmbed = true;
+    }
+
+    if (!foundEmbed) return;
+    if (cursor < node.value.length) {
+      replacements.push({ type: 'text', value: node.value.slice(cursor) });
+    }
+
+    (parent as Parent).children.splice(index, 1, ...replacements);
+    return [SKIP, index + replacements.length];
+  });
+};
 
 function getHrefPermalink(href: string): string {
   const notesPrefix = '/nexus/notes/';
@@ -123,6 +178,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
       remarkPlugins={[
         remarkGfm,
         remarkMath,
+        remarkObsidianImages,
         [
           remarkWikiLink,
           {

@@ -12,11 +12,12 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "pretest": "npm run generate:nexus",
-    "test": "npm run test:markdown && npm run test:content && npm run test:home && npm run test:graph",
+    "test": "npm run test:markdown && npm run test:content && npm run test:home && npm run test:graph && npm run test:sync",
     "test:markdown": "node scripts/verify-markdown-renderer.mjs",
     "test:content": "node scripts/verify-post-collection.mjs",
     "test:home": "node scripts/verify-home-portals.mjs",
-    "test:graph": "node scripts/verify-graph-data.mjs"
+    "test:graph": "node scripts/verify-graph-data.mjs",
+    "test:sync": "node scripts/verify-vault-sync.mjs"
   },
   "dependencies": {
     "@cloudinary/react": "^1.14.1",

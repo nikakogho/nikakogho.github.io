@@ -86,12 +86,8 @@ async function loadManifest() {
 async function saveManifest(uploadedPathsLower) {
     // Convert Set back to a sorted array for stable output
     const manifestData = { uploadedImages: Array.from(uploadedPathsLower).sort() };
-    try {
-        await fs.writeFile(manifestPath, JSON.stringify(manifestData, null, 2), 'utf-8');
-        console.log(`Manifest file saved with ${uploadedPathsLower.size} paths.`);
-    } catch (error) {
-        console.error('Error saving manifest file:', error);
-    }
+    await fs.writeFile(manifestPath, JSON.stringify(manifestData, null, 2), 'utf-8');
+    console.log(`Manifest file saved with ${uploadedPathsLower.size} paths.`);
 }
 
 
@@ -228,12 +224,47 @@ function collectLocalImageReferences(markdownContent) {
     return references;
 }
 
+function getCloudinaryPublicId(vaultId, imageName) {
+    return `${vaultId}/images/${path.basename(imageName, path.extname(imageName))}`.toLowerCase();
+}
+
+/**
+ * Reads the actual Cloudinary inventory so the manifest remains a cache rather
+ * than an unchecked source of truth.
+ */
+async function loadCloudinaryPublicIds() {
+    const publicIds = new Set();
+
+    for (const { id } of vaultConfigs) {
+        let nextCursor;
+        do {
+            const result = await cloudinary.api.resources({
+                type: 'upload',
+                resource_type: 'image',
+                prefix: `${id}/images/`,
+                max_results: 500,
+                ...(nextCursor ? { next_cursor: nextCursor } : {}),
+            });
+
+            for (const resource of result.resources ?? []) {
+                if (typeof resource.public_id === 'string') {
+                    publicIds.add(resource.public_id.toLowerCase());
+                }
+            }
+            nextCursor = result.next_cursor;
+        } while (nextCursor);
+    }
+
+    console.log(`Verified ${publicIds.size} image resources in Cloudinary.`);
+    return publicIds;
+}
+
 /**
  * Uploads images referenced by one Markdown file. This function is deliberately
  * read-only with respect to every vault file; only the separate manifest may be
  * updated after a successful upload.
  */
-async function processMarkdownFile(mdFilePath, uploadedImagesManifest) {
+async function processMarkdownFile(mdFilePath, uploadedImagesManifest, cloudinaryPublicIds, failures) {
     const markdownContent = await fs.readFile(mdFilePath, 'utf-8');
     const vaultConfig = vaultConfigs.find(({ baseDir }) => {
         const vaultPath = path.resolve(projectRoot, baseDir);
@@ -252,18 +283,33 @@ async function processMarkdownFile(mdFilePath, uploadedImagesManifest) {
         const imageName = path.basename(imageReference.replace(/\\/g, '/'));
         const cloudinaryImageName = imageName.toLowerCase();
         const manifestKey = `${vaultConfig.id}/images/${cloudinaryImageName}`;
+        const publicId = getCloudinaryPublicId(vaultConfig.id, cloudinaryImageName);
 
-        if (uploadedImagesManifest.has(manifestKey)) continue;
+        if (cloudinaryPublicIds.has(publicId)) {
+            uploadedImagesManifest.add(manifestKey);
+            continue;
+        }
+
+        if (uploadedImagesManifest.delete(manifestKey)) {
+            console.warn(`  - Stale manifest entry: "${manifestKey}" is missing from Cloudinary; retrying upload.`);
+        }
 
         const localImagePathFull = await findImageFullPath(imageName, vaultAbsPath);
         if (!localImagePathFull) {
-            console.warn(`  - Image skipped: Cannot find "${imageName}" in ${vaultConfig.baseDir} (referenced by ${path.basename(mdFilePath)})`);
+            const message = `Cannot find "${imageName}" in ${vaultConfig.baseDir} (referenced by ${path.basename(mdFilePath)})`;
+            console.error(`  - Image failed: ${message}`);
+            failures.push(message);
             continue;
         }
 
         console.log('Manifest key not found, uploading:', manifestKey);
         const success = await uploadToCloudinary(localImagePathFull, cloudinaryImageName, vaultConfig.id);
-        if (success) uploadedImagesManifest.add(manifestKey);
+        if (success) {
+            uploadedImagesManifest.add(manifestKey);
+            cloudinaryPublicIds.add(publicId);
+        } else {
+            failures.push(`Upload failed for "${imageName}" referenced by ${path.basename(mdFilePath)}`);
+        }
     }
 }
 
@@ -335,21 +381,28 @@ async function main() {
     // --- End Configuration Checks ---
 
     const uploadedImagesManifest = await loadManifest(); // Loads lowercase paths
-    const initialManifestSize = uploadedImagesManifest.size;
+    const initialManifestSnapshot = [...uploadedImagesManifest].sort().join('\n');
+    const cloudinaryPublicIds = await loadCloudinaryPublicIds();
+    const failures = [];
     const markdownFiles = await findMarkdownFiles();
 
     console.log(`Processing ${markdownFiles.length} Markdown files for Cloudinary sync...`);
     for (const mdFile of markdownFiles) {
-        await processMarkdownFile(mdFile, uploadedImagesManifest); // Uses/adds lowercase paths to manifest Set
+        await processMarkdownFile(mdFile, uploadedImagesManifest, cloudinaryPublicIds, failures);
     }
     console.log('Finished processing Markdown files.');
     
-    // Save manifest only if new images were added
-    const finalManifestSize = uploadedImagesManifest.size;
-    if (finalManifestSize > initialManifestSize) {
+    const finalManifestSnapshot = [...uploadedImagesManifest].sort().join('\n');
+    if (finalManifestSnapshot !== initialManifestSnapshot) {
         await saveManifest(uploadedImagesManifest); // Saves lowercase paths
     } else {
-        console.log('No new images were uploaded. Manifest not saved.');
+        console.log('Cloudinary manifest is already current.');
+    }
+
+    if (failures.length > 0) {
+        throw new Error(
+            `Vault image sync failed for ${failures.length} reference(s):\n- ${failures.join('\n- ')}`
+        );
     }
 
     if (skipGit) {
@@ -365,8 +418,16 @@ async function main() {
     console.log('Vault sync process finished.');
 }
 
-// Execute the main function
-main().catch(error => {
-    console.error("An unexpected error occurred in main:", error);
-    process.exit(1);
-});
+export {
+    collectLocalImageReferences,
+    getCloudinaryPublicId,
+    normalizeLocalImageReference,
+};
+
+// Execute main only when launched directly, not when test helpers import it.
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+    main().catch(error => {
+        console.error("An unexpected error occurred in main:", error);
+        process.exit(1);
+    });
+}
