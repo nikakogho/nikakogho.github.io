@@ -43,10 +43,24 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Anthropic]] - alignment led by [[Jan Leike]]
 - [[DeepMind]] - alignment led by [[Anca Dragan]]
 - [[OpenAI]] - alignment work all over the place ever since their superalignment team dissolved
-- [[MATS - Machine Learning Alignment and Theory Scholars]]
 - [[Redwood Research]]
+- [[Resolution (AI Safety)|Resolution]]
+- [[Transluce]]
 - [[Apollo Research]]
 - [Eleos AI](https://eleosai.org/) - [[AI Welfare]]
+
+## Fellowships
+- [[MATS - Machine Learning Alignment and Theory Scholars]]
+- Astra
+- Anthropic Fellows
+- OpenAI Safety Fellowship
+- LASR Labs
+- Pivotal
+- ERA
+- SPAR
+- MARS
+- PIBBS
+- Iliad
 
 ## Forums
 - [LessWrong](https://www.lesswrong.com/)
