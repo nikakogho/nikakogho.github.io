@@ -6,7 +6,8 @@ import FileTreeNode from '../components/FileTreeNode'; // Import tree node compo
 import { VaultNote } from '../utils/markdownHelper';
 import { allNexusNotes, nexusFileTree } from '../data/nexusNotes';
 // Import an icon for the toggle button (optional)
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiSidebar, FiChevronLeft, FiLayers } from 'react-icons/fi';
+import './VaultExplorer.css';
 
 // Define the context type that will be passed down via Outlet
 export interface VaultOutletContext {
@@ -46,11 +47,18 @@ const VaultLayout: React.FC = () => {
 
     return (
         // Add conditional class for sidebar visibility styling
-        <div className={`note-page-layout ${isSidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}>
+        <div className={`note-page-layout vault-workspace ${isSidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'}`}>
+            <div className="vault-toolbar">
+                <button type="button" onClick={toggleSidebar} className="vault-sidebar-toggle" aria-expanded={isSidebarVisible} aria-controls="vault-explorer">
+                    <FiSidebar aria-hidden="true" /><span>{isSidebarVisible ? 'Hide explorer' : 'Browse notes'}</span>
+                </button>
+                <span className="vault-toolbar-label">Nexus / Library</span>
+            </div>
             {/* Sidebar Area - Conditionally Rendered */}
             {isSidebarVisible && (
-                <aside className="note-page-sidebar">
-                    <h3>{vaultId} Files</h3>
+                <aside className="note-page-sidebar" id="vault-explorer" aria-label="Note explorer">
+                    <div className="vault-explorer-heading"><FiLayers aria-hidden="true" /><div><h3>Library</h3><span>{allVaultNotes.length.toLocaleString()} notes in Nexus</span></div><button type="button" onClick={toggleSidebar} aria-label="Close note explorer"><FiChevronLeft /></button></div>
+                    <div className="vault-tree-scroll">
                     {fileTree && fileTree.children && (
                          <ul className="file-tree-root">
                             {/* Render tree, passing down state and toggle function */}
@@ -66,20 +74,13 @@ const VaultLayout: React.FC = () => {
                          </ul>
                     )}
                     {!fileTree?.children?.length && <p>No notes found.</p>}
+                    </div>
                 </aside>
             )}
 
             {/* Main Content Area */}
             <article className="note-page-content">
                  {/* Toggle Button - Placed relative to content area */}
-                 <button
-                    onClick={toggleSidebar}
-                    className="sidebar-toggle-button" // Use single class now
-                    aria-label={isSidebarVisible ? "Hide Sidebar" : "Show Sidebar"}
-                    title={isSidebarVisible ? "Hide Sidebar" : "Show Sidebar"}
-                 >
-                     {isSidebarVisible ? <FiX /> : <FiMenu />}
-                 </button>
 
                 {/* Child routes (NotePage) render here. Pass notes list via context */}
                 <Outlet context={outletContext} />

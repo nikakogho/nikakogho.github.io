@@ -124,14 +124,13 @@ const HomePage = () => {
         <div className="landing-about__intro">
           <div className="landing-about__heading">
             <p className="landing-section-label">About me</p>
-            <h2 id="about-title">A path through the things I’ve built and learned.</h2>
+            <h2 id="about-title">Work & study</h2>
           </div>
           <div className="landing-about__copy">
             <p>
-              I started with games, entered production software, and kept university moving in
-              parallel while my interests widened from biotech toward AI alignment.
+              I’m currently at LASR Labs, working on AI alignment. Before that, I worked in
+              software engineering while studying the subjects that eventually brought me here.
             </p>
-            <p>Scroll to follow the branches, splits, and convergence.</p>
           </div>
         </div>
 

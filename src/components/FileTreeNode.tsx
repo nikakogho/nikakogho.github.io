@@ -1,6 +1,7 @@
 import React from 'react'; // Removed useState
 import { Link, useLocation } from 'react-router-dom'; // Added useLocation
 import { TreeNode } from '../utils/markdownHelper';
+import { FiChevronRight, FiFileText, FiFolder, FiFolderMinus } from 'react-icons/fi';
 
 interface FileTreeNodeProps {
   node: TreeNode;
@@ -17,7 +18,7 @@ const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onTo
 
   // Determine if the current route matches this file node
   // Compare the end of the current hash path with the node's path
-  const currentNotePath = location.hash.split('/notes/')[1]; // Extract path after /notes/
+  const currentNotePath = decodeURIComponent(location.pathname.split('/notes/')[1] ?? '').split('#')[0];
   const isActiveFile = node.type === 'file' && currentNotePath === node.path;
 
   const handleToggle = (e: React.MouseEvent) => {
@@ -31,11 +32,12 @@ const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onTo
     return (
       <li className="tree-node folder-node">
         {/* Use the handleToggle function */}
-        <div className="node-label" onClick={handleToggle}>
-          <span className="toggle-icon">{isOpen ? '▼' : '▶'}</span>
-          <span className="folder-icon">📁</span>
+        <button type="button" className="node-label" onClick={handleToggle} aria-expanded={isOpen} title={node.name}>
+          <FiChevronRight className={`tree-chevron${isOpen ? ' is-open' : ''}`} />
+          {isOpen ? <FiFolderMinus className="tree-symbol" /> : <FiFolder className="tree-symbol" />}
           <span className="node-name">{node.name}</span>
-        </div>
+          <span className="tree-count">{node.children?.length ?? 0}</span>
+        </button>
         {/* Conditionally render children based on isOpen */}
         {isOpen && node.children && node.children.length > 0 && (
           <ul className="nested-tree">
@@ -59,13 +61,10 @@ const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onTo
     return (
       // Add active class if this is the currently viewed note
       <li className={`tree-node file-node ${isActiveFile ? 'active-file' : ''}`}>
-         <div className="node-label">
-            <span className="file-icon">📄</span>
-            {/* Use Link component for navigation */}
-            <Link to={filePath} className="node-link">
+            <Link to={filePath} className="node-label node-link" aria-current={isActiveFile ? 'page' : undefined} title={node.name}>
+                 <FiFileText className="tree-symbol" />
                  <span className="node-name">{node.name}</span>
             </Link>
-         </div>
       </li>
     );
   }

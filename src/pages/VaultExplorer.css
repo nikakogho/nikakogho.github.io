@@ -1,0 +1,39 @@
+.vault-workspace { gap: 22px 32px; grid-template-columns: 280px minmax(0, 1fr); }
+.vault-toolbar { grid-column: 1 / -1; display: flex; align-items: center; gap: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+.vault-sidebar-toggle { display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 7px; background: transparent; color: var(--text-color); font: 500 12px/1.5 system-ui; cursor: pointer; transition: background .15s; }
+.vault-sidebar-toggle svg { width: 16px; height: 16px; color: var(--text-muted); }
+.vault-sidebar-toggle:hover, .vault-sidebar-toggle[aria-expanded=true] { background: color-mix(in srgb, var(--text-color) 5%, transparent); }
+.vault-toolbar-label { font: 11px system-ui; color: var(--text-muted); letter-spacing: .04em; }
+.vault-workspace .note-page-sidebar { width: 280px; padding: 0; border: 1px solid var(--border-color); border-radius: 10px; background: color-mix(in srgb, var(--container-bg) 94%, var(--text-color)); overflow: hidden; top: 90px; max-height: calc(100svh - 115px); }
+.vault-explorer-heading { display: flex; align-items: center; gap: 10px; padding: 18px 16px; border-bottom: 1px solid var(--border-color); }
+.vault-explorer-heading > svg { width: 17px; height: 17px; color: var(--text-muted); }
+.vault-explorer-heading h3 { border: 0; padding: 0; margin: 0; font: 600 13px/1.5 system-ui; }
+.vault-explorer-heading span { font: 11px system-ui; color: var(--text-muted); }
+.vault-explorer-heading button { margin-left: auto; display: grid; place-items: center; border: 0; background: transparent; border-radius: 5px; color: var(--text-muted); width: 28px; height: 28px; cursor: pointer; }
+.vault-tree-scroll { padding: 10px 8px 16px; overflow: auto; max-height: calc(100svh - 200px); scrollbar-width: thin; scrollbar-color: var(--border-color) transparent; }
+.vault-workspace .file-tree-root, .vault-workspace .nested-tree { list-style: none; margin: 0; padding: 0; }
+.vault-workspace .nested-tree { margin: 2px 0 5px 14px; padding-left: 10px; border-left: 1px solid var(--border-color); }
+.vault-workspace .tree-node { margin: 2px 0; padding: 0; }
+.vault-workspace .node-label { box-sizing: border-box; display: flex; align-items: center; gap: 7px; width: 100%; min-height: 34px; padding: 7px 8px; border: 0; border-radius: 5px; color: var(--text-color); background: transparent; font: 400 12px/1.5 system-ui; text-align: left; text-decoration: none; cursor: pointer; }
+.vault-workspace .node-label:hover, .vault-explorer-heading button:hover { background: color-mix(in srgb, var(--text-color) 6%, transparent); }
+.vault-workspace .node-name { min-width: 0; color: inherit; text-decoration: none; }
+.vault-workspace .node-label { font-size: 13px; }
+.vault-workspace .node-link:hover .node-name { color: inherit; text-decoration: none; }
+.vault-workspace .file-node.active-file > .node-label { background: color-mix(in srgb, var(--primary-color) 10%, transparent); }
+.vault-workspace .tree-symbol { width: 14px; height: 14px; flex-shrink: 0; color: var(--text-muted); opacity: .8; }
+.vault-workspace .tree-chevron { width: 12px; height: 12px; flex-shrink: 0; color: var(--text-muted); transition: transform .15s; }
+.vault-workspace .tree-chevron.is-open { transform: rotate(90deg); }
+.vault-workspace .tree-count { margin-left: auto; color: var(--text-muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.vault-workspace .file-node > .node-label { padding-left: 27px; }
+.vault-workspace .active-file > .node-label { background: color-mix(in srgb, var(--primary-color) 12%, transparent); color: var(--primary-color); box-shadow: inset 2px 0 var(--primary-color); font-weight: 500; }
+.vault-workspace .active-file .tree-symbol { color: inherit; opacity: 1; }
+.vault-workspace button:focus-visible, .vault-workspace .node-link:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 2px; }
+.vault-workspace .note-page-content { padding-top: 0; }
+@media (max-width: 900px) {
+ .vault-workspace { grid-template-columns: minmax(0, 1fr); }
+ .vault-workspace .note-page-sidebar { width: 100%; position: static; max-height: 360px; }
+ .vault-tree-scroll { max-height: 275px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .vault-workspace .tree-chevron, .vault-sidebar-toggle { transition: none; }
+}

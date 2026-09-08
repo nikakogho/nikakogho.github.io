@@ -24,9 +24,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2016–2020',
     kind: 'The first branch',
     track: 'Origin',
-    title: 'It started with game development.',
+    title: 'Game development',
     summary:
-      'Self-employed Unity development gave me a place to turn strange ideas—including battle simulations and a 4D game—into systems I could build, play with, and test.',
+      'I worked independently in Unity, building games, battle simulations, and a 4D game.',
     accent: '#8bc7ff',
   },
   {
@@ -34,9 +34,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2020–2022',
     kind: 'Production software',
     track: 'Career',
-    title: 'The path moved into .NET at Liberty Bank.',
+    title: 'Liberty Bank',
     summary:
-      'Freelance algorithms and simulations led into .NET and Angular work at Liberty Bank, where I co-architected a new banking module and helped modernize legacy systems.',
+      'I worked with .NET and Angular, co-architected a banking module, and helped modernize legacy systems.',
     accent: '#74d9bc',
   },
   {
@@ -44,9 +44,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2021–present',
     kind: 'Running in parallel',
     track: 'Education',
-    title: 'University began alongside the work—not after it.',
+    title: 'Kutaisi International University',
     summary:
-      'I started a computer science bachelor’s degree at Kutaisi International University while continuing to work, creating a second track of formal study that is still moving forward.',
+      'I started a bachelor’s degree in computer science while continuing to work. My studies are ongoing.',
     accent: '#b9a2ff',
   },
   {
@@ -54,9 +54,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: 'Late 2022',
     kind: 'A decision point',
     track: 'Decision',
-    title: 'I questioned what I wanted from my life.',
+    title: 'Rethinking what I wanted to do',
     summary:
-      'Near the end of my time at Liberty, reflection pulled me toward biotechnology. I decided to split my time: keep building software-engineering experience while learning the biotech foundations that interested me.',
+      'Near the end of my time at Liberty, I became interested in biotechnology. I decided to keep working in software while studying biology and engineering on my own.',
     accent: '#f4d06f',
   },
   {
@@ -64,9 +64,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2023–2024',
     kind: 'Software track',
     track: 'Career',
-    title: 'I kept building software experience at larger scales.',
+    title: 'BP & Microsoft',
     summary:
-      'One branch continued through microservices and AWS at BP, then Azure serverless systems and Bing Sports at Microsoft—deeper experience building software used inside large organizations.',
+      'At BP, I worked on microservices and AWS. At Microsoft, I worked on Azure serverless systems and Bing Sports.',
     accent: '#ffad70',
   },
   {
@@ -74,9 +74,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2023',
     kind: 'Interest track',
     track: 'Interests',
-    title: 'The other branch began with biotechnology.',
+    title: 'Biotechnology',
     summary:
-      'In parallel with professional software work, I began learning how biology could become an engineering medium, from genetic systems and bioinformatics to tissue engineering.',
+      'Alongside my software work, I studied genetic systems, bioinformatics, and tissue engineering. I collected what I learned in Nexus.',
     accent: '#65d790',
     link: {
       label: 'Explore my biotech notes',
@@ -88,9 +88,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2023–2024',
     kind: 'Interest track',
     track: 'Interests',
-    title: 'That curiosity expanded into aerospace.',
+    title: 'Aerospace',
     summary:
-      'I followed the same future-facing curiosity into launch vehicles, spacecraft, orbital systems, life support, and the practical work of building a ground station.',
+      'I began studying launch vehicles, spacecraft, orbital systems, and life support, and worked on building a ground station.',
     accent: '#63b8ff',
     link: {
       label: 'Explore my aerospace notes',
@@ -102,9 +102,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2024–2025',
     kind: 'Interest track',
     track: 'Interests',
-    title: 'Aerospace gave way to neurotechnology.',
+    title: 'Neurotechnology',
     summary:
-      'The path moved from machines around us to interfaces with the nervous system: neural recording, stimulation, brain–computer interfaces, neurofeedback, and computational neuroscience.',
+      'I studied neural recording and stimulation, brain–computer interfaces, neurofeedback, and computational neuroscience.',
     accent: '#e778bd',
     link: {
       label: 'Explore my neurotech notes',
@@ -122,9 +122,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2025',
     kind: 'Interest track',
     track: 'Interests',
-    title: 'Then intelligence became embodied.',
+    title: 'Robotics',
     summary:
-      'Robotics connected sensing, control, and behavior. I explored those ideas through biomimetic machines and the Braitenberg Vehicles simulations I published in public.',
+      'I explored sensing and control through biomimetic machines and built Braitenberg Vehicles simulations.',
     accent: '#f49a3f',
     link: {
       label: 'Explore my robotics notes',
@@ -136,9 +136,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: '2025',
     kind: 'Interest track',
     track: 'Interests',
-    title: 'Robotics led into artificial intelligence.',
+    title: 'Artificial intelligence',
     summary:
-      'I moved deeper into models, agents, interpretability, and experiments with frontier systems—including a Turing-test game in which language models judged one another.',
+      'I started experimenting with models, agents, and interpretability. One project was a Turing-test game in which language models judged one another.',
     accent: '#7581ff',
     link: {
       label: 'Explore my AI notes',
@@ -160,9 +160,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: 'December 2025–June 2026',
     kind: 'The central question',
     track: 'Interests',
-    title: 'AI became AI alignment.',
+    title: 'AI alignment',
     summary:
-      'I published steering-vector work on paltering in Gemma-2-2B-IT, explored belief-state geometry with Simplex, and made helping advanced AI go well the central direction.',
+      'I published work on steering paltering in Gemma-2-2B-IT and explored belief-state geometry with Simplex. AI alignment became my main focus.',
     accent: '#ff7f73',
     link: {
       label: 'Explore my alignment notes',
@@ -174,9 +174,9 @@ export const aboutTimeline: AboutMilestone[] = [
     period: 'July 2026–now',
     kind: 'The tracks converge',
     track: 'Convergence',
-    title: 'The career and interest tracks meet at LASR Labs.',
+    title: 'LASR Labs',
     summary:
-      'Since July 2026, the software-engineering experience and the long trail toward AI alignment have come together in the work I am now doing at LASR Labs.',
+      'I joined LASR Labs in July 2026. I’m now working on AI alignment, bringing my software-engineering experience into my research.',
     accent: '#ffb86b',
     link: {
       label: 'See my alignment research',
