@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ForceGraph2D, { ForceGraphMethods, NodeObject } from 'react-force-graph-2d';
 import { FiArrowUpRight, FiMaximize2, FiMinus, FiPlus, FiSearch, FiSliders, FiX } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { getGraphLegendItems, GraphData, graphGroupStyles } from '../utils/graphHelper';
 import './NexusGraph.css';
 
@@ -19,6 +19,7 @@ const palette: Record<string, string> = {
 const domainName = (group: string) => graphGroupStyles.find(item => item.id === group)?.label ?? group;
 
 export default function NexusGraph({ data }: { data: GraphData }) {
+  const navigate = useNavigate();
   const container = useRef<HTMLDivElement>(null);
   const graph = useRef<ForceGraphMethods<MapNode, MapLink> | undefined>(undefined);
   const [size, setSize] = useState({ width: 0, height: 0 });
@@ -100,7 +101,7 @@ export default function NexusGraph({ data }: { data: GraphData }) {
           nodeLabel={() => ''} nodeVisibility={visible}
           linkVisibility={link => visible(byId.get(endpoint(link.source))!) && visible(byId.get(endpoint(link.target))!)}
           onNodeHover={node => { setHovered(node?.id ?? null); if (container.current) container.current.style.cursor = node ? 'pointer' : 'grab'; }}
-          onNodeClick={selectNote} onBackgroundClick={() => { setSelected(null); setLocalOnly(false); }}
+          onNodeClick={node => navigate(`/nexus/notes/${node.id}`)} onBackgroundClick={() => { setSelected(null); setLocalOnly(false); }}
           onNodeDragEnd={node => { node.fx = node.x; node.fy = node.y; }}
           linkColor={link => {
             const a = endpoint(link.source), b = endpoint(link.target);
@@ -135,7 +136,7 @@ export default function NexusGraph({ data }: { data: GraphData }) {
           <button aria-label="Zoom out" onClick={() => graph.current?.zoom((graph.current?.zoom() ?? 1) / 1.4, 250)}><FiMinus /></button>
           <button aria-label="Fit graph" onClick={() => fit()}><FiMaximize2 /></button>
         </div>
-        <p className="knowledge-map__hint">Drag to move · Scroll to zoom · Click a note to explore</p>
+        <p className="knowledge-map__hint">Drag to move · Scroll to zoom · Click a node to open its note</p>
       </div>
       {showPanel && <aside className="knowledge-map__explorer" id="map-explorer">
         <label className="knowledge-map__search"><FiSearch /><input aria-label="Find a note" placeholder="Find a note…" value={query} onChange={event => { setQuery(event.target.value); setSelected(null); setLocalOnly(false); }} />{query && <button aria-label="Clear search" onClick={() => setQuery('')}><FiX /></button>}</label>
@@ -150,7 +151,7 @@ export default function NexusGraph({ data }: { data: GraphData }) {
           <div className="knowledge-map__section-label">Matching notes <span>{matches.length}</span></div>
           <div className="knowledge-map__results">{matches.slice(0, 50).map(node => <button key={node.id} onClick={() => selectNote(node)}><i style={{ background: node.color }} /><span>{node.name}<small>{domainName(node.group)}</small></span><FiArrowUpRight /></button>)}{!matches.length && <p>No notes found. Try a shorter name or clear the domain filter.</p>}</div>
         </> : <>
-          <div className="knowledge-map__intro"><h2>Follow your curiosity.</h2><p>Pick a note to see what it connects to. Each color is a different field of study.</p></div>
+          <div className="knowledge-map__intro"><h2>Follow your curiosity.</h2><p>Hover to see connections. Click a node to read its note. Each color is a different field of study.</p></div>
           <div className="knowledge-map__section-label">Domains {domain && <button onClick={() => setDomain(null)}>Show all</button>}</div>
           <div className="knowledge-map__domains">{legend.map(item => <button key={item.id} aria-pressed={domain === item.id} onClick={() => setDomain(domain === item.id ? null : item.id)}><i style={{ background: palette[item.id] }} /><span>{item.label}</span><small>{item.count}</small></button>)}</div>
           {domain && <button className="knowledge-map__domain-fit" onClick={() => fit()}>Bring {domainName(domain).toLowerCase()} into view <FiMaximize2 /></button>}

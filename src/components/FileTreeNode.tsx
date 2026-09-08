@@ -1,4 +1,5 @@
-import React from 'react'; // Removed useState
+import React, { useMemo } from 'react';
+import { countTreeFiles } from '../utils/countTreeFiles';
 import { Link, useLocation } from 'react-router-dom'; // Added useLocation
 import { TreeNode } from '../utils/markdownHelper';
 import { FiChevronRight, FiFileText, FiFolder, FiFolderMinus } from 'react-icons/fi';
@@ -12,6 +13,7 @@ interface FileTreeNodeProps {
 
 const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onToggleFolder, vaultId }) => {
   const location = useLocation(); // Get current location
+  const fileCount = useMemo(() => countTreeFiles(node), [node]);
 
   // Determine if folder is open based on props, default to false (closed)
   const isOpen = expandedFolders[node.path] ?? false;
@@ -36,7 +38,7 @@ const FileTreeNode: React.FC<FileTreeNodeProps> = ({ node, expandedFolders, onTo
           <FiChevronRight className={`tree-chevron${isOpen ? ' is-open' : ''}`} />
           {isOpen ? <FiFolderMinus className="tree-symbol" /> : <FiFolder className="tree-symbol" />}
           <span className="node-name">{node.name}</span>
-          <span className="tree-count">{node.children?.length ?? 0}</span>
+          <span className="tree-count" title={`${fileCount} files, including subfolders`}>{fileCount}</span>
         </button>
         {/* Conditionally render children based on isOpen */}
         {isOpen && node.children && node.children.length > 0 && (
