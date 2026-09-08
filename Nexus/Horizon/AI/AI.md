@@ -70,7 +70,7 @@
 4. [ ] scientist
 5. [ ] organization
 
-## [[Notable People in AI]]
+## [[People in AI]]
 - [[Sam Altman]] - OpenAI
 - [[Demis Hassabis]] - DeepMind
 - [[Dario Amodei]] - Anthropic

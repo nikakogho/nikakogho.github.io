@@ -31,3 +31,8 @@
 - [[Max Tegmark]] - MIT physicist and head of [[Future of Life Institute]]. Author of Life 3.0. Now wants international slowdown on AI.
 - [[Leopold Aschenbrenner]] - author of [Situational Awareness: The Decade Ahead](https://situational-awareness.ai/), formerly in OpenAI superalignment team
 - [[Keri Warr]] - infrastructure security lead at Anthropic, working on preventing model weight stealing
+
+## Alignment
+- [[David Africa]] - [[Resolution (AI Safety)]], [[Persona Selection Model|personas]]
+- [[David Lindner]] - leads deep alignment team at DeepMind
+- [[Geoffrey Irving]] - CEO of Resolution

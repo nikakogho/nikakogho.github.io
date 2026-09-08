@@ -6,7 +6,7 @@ Notable people of each frontier.
 - [[Elon Musk]]
 - [[Dario Amodei]]
 
-Bigger list [[Notable People in AI|here]]
+Bigger list [[People in AI|here]]
 
 ## Bioengineering
 - [[George Church]]
