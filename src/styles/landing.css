@@ -1549,19 +1549,57 @@ main.content-container.content-container--immersive {
   max-width: none;
   margin: 0;
   padding: clamp(6rem, 11vw, 10rem) max(1.5rem, calc((100% - 1180px) / 2));
-  background: #0b0d0f;
+  background: #f1efe8;
 }
 
 .landing-page--editorial .landing-section-label {
-  color: #ff795f;
+  color: #a8412a;
 }
 
 .landing-page--editorial .landing-footer {
   width: 100%;
   margin: 0;
   padding: 1.5rem max(1.5rem, calc((100% - 1180px) / 2)) 2rem;
-  background: #0b0d0f;
+  background: #f1efe8;
 }
+
+/* One paper-and-ink palette from the introduction through the last entry. */
+.landing-page--editorial .landing-about { background: #f1efe8; border-top: 1px solid #17171426; }
+.landing-page--editorial .landing-about__intro { border-color: #17171426; }
+.landing-page--editorial .landing-about__heading h2 { color: #171714; }
+.landing-page--editorial .landing-about__copy > p:last-child { color: #575950; font-weight: 400; }
+.landing-page--editorial .career-history { color: #262923; }
+.landing-page--editorial .career-route__key,
+.landing-page--editorial .career-route__caption,
+.landing-page--editorial .career-entry { border-color: #17171426; }
+.landing-page--editorial .career-route__key { color: #65675e; }
+.landing-page--editorial .career-route__key span:first-child { color: #806440; }
+.landing-page--editorial .career-route__key span:nth-child(2) { color: #466d5e; }
+.landing-page--editorial .career-route__line { stroke: #17171429; }
+.landing-page--editorial .career-route__line.work.reached { stroke: #806440; }
+.landing-page--editorial .career-route__line.study.reached { stroke: #466d5e; }
+.landing-page--editorial .career-route__line.degree.reached { stroke: #77768b; }
+.landing-page--editorial .career-route__point circle { fill: #f1efe8; stroke: #97998e; }
+.landing-page--editorial .career-route__point text { fill: #73766b; }
+.landing-page--editorial .career-route__point.reached circle { fill: #806440; stroke: #806440; }
+.landing-page--editorial .career-route__point.reached text { fill: #43483d; }
+.landing-page--editorial .career-route__point.current circle { fill: #a8412a; stroke: #a8412a; }
+.landing-page--editorial .career-route__point.current text,
+.landing-page--editorial .career-route__point a:hover text { fill: #171714; }
+.landing-page--editorial .career-route__point a:focus-visible { outline-color: #a8412a; }
+.landing-page--editorial .career-route__ongoing { fill: #65695e; }
+.landing-page--editorial .career-route__caption { color: #494e42; }
+.landing-page--editorial .career-route__caption span,
+.landing-page--editorial .career-entry__meta,
+.landing-page--editorial .career-entry__meta span { color: #65695e; }
+.landing-page--editorial .career-entry h3 { color: #171714; }
+.landing-page--editorial .career-entry > p { color: #575950; }
+.landing-page--editorial .career-entry__links a { color: #414e40; text-decoration-color: #414e4060; }
+.landing-page--editorial .career-entry__links a:hover { color: #a8412a; text-decoration-color: currentColor; }
+.landing-page--editorial .landing-about__actions a { background: transparent; border-color: #17171440; color: #171714; box-shadow: none; }
+.landing-page--editorial .landing-about__actions a:hover { background: #17171408; border-color: #171714; }
+.landing-page--editorial .landing-footer { border-color: #17171426; color: #65695e; }
+.landing-page--editorial .landing-footer a { color: #41483b; }
 
 @media (max-width: 900px) {
   .editorial-header {
