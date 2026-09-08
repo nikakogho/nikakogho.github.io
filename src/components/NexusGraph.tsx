@@ -1,298 +1,162 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ForceGraph2D, { ForceGraphMethods, NodeObject } from 'react-force-graph-2d';
-import {
-  forceCenter,
-  forceCollide,
-  forceX,
-  forceY,
-  ForceLink,
-  ForceManyBody,
-  SimulationLinkDatum,
-} from 'd3-force';
-import { FiMap, FiMaximize2, FiX } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
-import { getGraphLegendItems, GraphData } from '../utils/graphHelper';
+import { FiArrowUpRight, FiMaximize2, FiMinus, FiPlus, FiSearch, FiSliders, FiX } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { getGraphLegendItems, GraphData, graphGroupStyles } from '../utils/graphHelper';
+import './NexusGraph.css';
 
-interface GraphVizNode extends NodeObject {
-  id: string;
-  name: string;
-  val: number;
-  color: string;
-  group: string;
+interface MapNode extends NodeObject {
+  id: string; name: string; val: number; group: string; color: string; x: number; y: number;
 }
+interface MapLink { source: string | MapNode; target: string | MapNode }
+const endpoint = (value: string | MapNode) => typeof value === 'string' ? value : value.id;
+const palette: Record<string, string> = {
+  neuroscience: '#dba1cb', biology: '#a8c88b', chemistry: '#82c9bc', ai: '#a3b3ed',
+  physics: '#e89b86', maths: '#ddd6c5', neurotech: '#b7a1da', bioengineering: '#c0c78d',
+  robots: '#e3ba7f', 'space-tech': '#d994a3', nanotech: '#e0d483', 'computer-science': '#88b3c2',
+  people: '#c2c4cd', ui: '#b6a3b8', organizations: '#93969f', root: '#787e89',
+};
+const domainName = (group: string) => graphGroupStyles.find(item => item.id === group)?.label ?? group;
 
-interface GraphVizLink extends SimulationLinkDatum<GraphVizNode> {
-  source: string | number | GraphVizNode;
-  target: string | number | GraphVizNode;
-}
-
-interface GraphSize {
-  width: number;
-  height: number;
-}
-
-function getNodeId(endpoint: GraphVizLink['source']): string {
-  if (typeof endpoint === 'object') return endpoint.id;
-  return String(endpoint);
-}
-
-const NexusGraph = ({ data }: { data: GraphData }) => {
-  const navigate = useNavigate();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const fgRef = useRef<ForceGraphMethods<GraphVizNode, GraphVizLink> | undefined>(undefined);
-  const [size, setSize] = useState<GraphSize>({ width: 0, height: 0 });
-  const [layoutReady, setLayoutReady] = useState(false);
-  const [showLegend, setShowLegend] = useState(() => (
-    typeof window === 'undefined' || window.matchMedia('(min-width: 769px)').matches
-  ));
-  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
-  const [highlightedNodes, setHighlightedNodes] = useState<Set<string>>(new Set());
-  const [highlightedLinks, setHighlightedLinks] = useState<Set<GraphVizLink>>(new Set());
-
-  const connectedNodeIds = useMemo(() => {
-    const ids = new Set<string>();
-    (data.links as GraphVizLink[]).forEach((link) => {
-      ids.add(getNodeId(link.source));
-      ids.add(getNodeId(link.target));
-    });
-    return ids;
-  }, [data.links]);
-
-  const legendItems = useMemo(() => getGraphLegendItems(data.nodes), [data.nodes]);
+export default function NexusGraph({ data }: { data: GraphData }) {
+  const container = useRef<HTMLDivElement>(null);
+  const graph = useRef<ForceGraphMethods<MapNode, MapLink> | undefined>(undefined);
+  const [size, setSize] = useState({ width: 0, height: 0 });
+  const [query, setQuery] = useState('');
+  const [domain, setDomain] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(null);
+  const [hovered, setHovered] = useState<string | null>(null);
+  const [localOnly, setLocalOnly] = useState(false);
+  const [showPanel, setShowPanel] = useState(() => window.innerWidth > 760);
+  const [ready, setReady] = useState(false);
+  const labelBoxes = useRef<{ x: number; y: number; w: number; h: number }[]>([]);
+  // The canvas library mutates input; preserve the cached JSON for return visits.
+  const map = useMemo(() => ({
+    nodes: data.nodes.map(node => ({ ...node, color: palette[node.group] ?? palette.root })),
+    links: data.links.map(link => ({ ...link })) as MapLink[],
+  }), [data]);
+  const byId = useMemo(() => new Map(map.nodes.map(node => [node.id, node])), [map]);
+  const neighbors = useMemo(() => {
+    const result = new Map<string, Set<string>>();
+    for (const link of data.links) {
+      if (!result.has(link.source)) result.set(link.source, new Set());
+      if (!result.has(link.target)) result.set(link.target, new Set());
+      result.get(link.source)!.add(link.target); result.get(link.target)!.add(link.source);
+    }
+    return result;
+  }, [data]);
+  const legend = useMemo(() => getGraphLegendItems(data.nodes), [data]);
+  const selectedNode = selected ? byId.get(selected) : undefined;
+  const active = hovered ?? selected;
+  const matches = useMemo(() => {
+    const term = query.trim().toLocaleLowerCase();
+    return map.nodes.filter(node => (!domain || node.group === domain) && (!term || node.name.toLocaleLowerCase().includes(term)))
+      .sort((a, b) => (neighbors.get(b.id)?.size ?? 0) - (neighbors.get(a.id)?.size ?? 0));
+  }, [map, query, domain, neighbors]);
+  const matchIds = useMemo(() => new Set(matches.map(node => node.id)), [matches]);
+  const related = useMemo(() => selected ? [...(neighbors.get(selected) ?? [])]
+    .map(id => byId.get(id)!).filter(Boolean).sort((a, b) => a.name.localeCompare(b.name)) : [], [selected, neighbors, byId]);
+  const visible = useCallback((node: MapNode) => !localOnly || !selected || node.id === selected || !!neighbors.get(selected)?.has(node.id), [localOnly, selected, neighbors]);
+  const bright = (node: MapNode) => matchIds.has(node.id) && (!active || node.id === active || !!neighbors.get(active)?.has(node.id));
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const updateSize = () => {
-      const rect = container.getBoundingClientRect();
-      const nextSize = {
-        width: Math.max(1, Math.floor(rect.width)),
-        height: Math.max(1, Math.floor(rect.height)),
-      };
-      setSize((current) => (
-        current.width === nextSize.width && current.height === nextSize.height ? current : nextSize
-      ));
-    };
-
-    updateSize();
-    const observer = new ResizeObserver(updateSize);
-    observer.observe(container);
+    if (!container.current) return;
+    const observer = new ResizeObserver(([entry]) => setSize({ width: Math.floor(entry.contentRect.width), height: Math.floor(entry.contentRect.height) }));
+    observer.observe(container.current);
     return () => observer.disconnect();
   }, []);
-
-  const fitGraph = useCallback((duration = 350) => {
-    const padding = size.width < 600 ? 18 : 24;
-    fgRef.current?.zoomToFit(duration, padding, (node) => connectedNodeIds.has(node.id));
-  }, [connectedNodeIds, size.width]);
-
+  const fit = useCallback((duration = 350) => {
+    graph.current?.zoomToFit(duration, 35, node => visible(node) && (!domain || node.group === domain) && (!query.trim() || matchIds.has(node.id)));
+  }, [visible, domain, query, matchIds]);
   useEffect(() => {
-    const graph = fgRef.current;
-    if (!graph || size.width === 0 || size.height === 0) return;
-
-    const linkForce = graph.d3Force('link') as ForceLink<GraphVizNode, GraphVizLink> | undefined;
-    linkForce
-      ?.id((node) => node.id)
-      .distance(42)
-      .strength(0.22);
-
-    const chargeForce = graph.d3Force('charge') as ForceManyBody<GraphVizNode> | undefined;
-    chargeForce
-      ?.strength((node) => -16 - Math.min(node.val, 8) * 1.5)
-      .distanceMax(220);
-
-    graph.d3Force(
-      'collide',
-      forceCollide<GraphVizNode>()
-        .radius((node) => Math.sqrt(node.val) * 2.5 + 0.25)
-        .strength(0.2)
-        .iterations(1),
-    );
-    graph.d3Force('center', forceCenter<GraphVizNode>(0, 0));
-    graph.d3Force('x', forceX<GraphVizNode>(0).strength(0.032));
-    graph.d3Force('y', forceY<GraphVizNode>(0).strength(0.032));
-
-    setLayoutReady(false);
-    graph.d3ReheatSimulation();
-
-    const earlyFit = window.setTimeout(() => fitGraph(0), 250);
-    const settledFit = window.setTimeout(() => {
-      fitGraph(0);
-      setLayoutReady(true);
-    }, 2200);
-
-    return () => {
-      window.clearTimeout(earlyFit);
-      window.clearTimeout(settledFit);
-    };
-  }, [data.links.length, data.nodes.length, fitGraph, size.height, size.width]);
-
-  const nodeNeighbors = useMemo(() => {
-    const neighbors = new Map<string, Set<string>>();
-    (data.links as GraphVizLink[]).forEach((link) => {
-      const sourceId = getNodeId(link.source);
-      const targetId = getNodeId(link.target);
-
-      if (!neighbors.has(sourceId)) neighbors.set(sourceId, new Set());
-      if (!neighbors.has(targetId)) neighbors.set(targetId, new Set());
-
-      neighbors.get(sourceId)?.add(targetId);
-      neighbors.get(targetId)?.add(sourceId);
+    if (!size.width || !graph.current) return;
+    const frame = requestAnimationFrame(() => {
+      if (selectedNode) {
+        graph.current?.centerAt(selectedNode.x, selectedNode.y, 350);
+        graph.current?.zoom(Math.max(graph.current.zoom(), 1.15), 350);
+      } else graph.current?.zoomToFit(0, 35);
+      setReady(true);
     });
-    return neighbors;
-  }, [data.links]);
-
-  const handleNodeHover = (node: GraphVizNode | null) => {
-    if (!node) {
-      setHoveredNode(null);
-      setHighlightedNodes(new Set());
-      setHighlightedLinks(new Set());
-      return;
-    }
-
-    const nextHighlightedNodes = new Set<string>([node.id]);
-    nodeNeighbors.get(node.id)?.forEach((neighborId) => nextHighlightedNodes.add(neighborId));
-
-    const nextHighlightedLinks = new Set<GraphVizLink>();
-    (data.links as GraphVizLink[]).forEach((link) => {
-      if (getNodeId(link.source) === node.id || getNodeId(link.target) === node.id) {
-        nextHighlightedLinks.add(link);
-      }
-    });
-
-    setHoveredNode(node.id);
-    setHighlightedNodes(nextHighlightedNodes);
-    setHighlightedLinks(nextHighlightedLinks);
+    return () => cancelAnimationFrame(frame);
+  }, [size, selectedNode]);
+  const selectNote = (node: MapNode) => {
+    setSelected(node.id); setHovered(null); setShowPanel(true); setQuery(''); setDomain(null);
+  };
+  const reset = () => {
+    setQuery(''); setDomain(null); setSelected(null); setHovered(null); setLocalOnly(false);
+    graph.current?.zoomToFit(450, 35);
   };
 
-  const graphBackground = '#191919';
-  const quietLinkColor = 'rgba(148, 148, 148, 0.23)';
-
-  return (
-    <section
-      className="nexus-graph-panel"
-      aria-label="Interactive Nexus knowledge graph"
-      data-layout-ready={layoutReady}
-    >
-      <div className="nexus-graph-toolbar">
-        <p>
-          <strong>{data.nodes.length}</strong> notes
-          <span aria-hidden="true">·</span>
-          <strong>{data.links.length}</strong> connections
-        </p>
-        <div className="nexus-graph-toolbar__actions">
-          <button
-            type="button"
-            aria-expanded={showLegend}
-            aria-controls="nexus-graph-legend"
-            onClick={() => setShowLegend((isVisible) => !isVisible)}
-          >
-            <FiMap aria-hidden="true" /> Legend
-          </button>
-          <button type="button" onClick={() => fitGraph()}>
-            <FiMaximize2 aria-hidden="true" /> Fit graph
-          </button>
+  return <section className="knowledge-map" aria-label="Nexus knowledge graph" data-layout-ready={ready}>
+    <header className="knowledge-map__bar">
+      <div className="knowledge-map__identity"><span className="knowledge-map__mark" aria-hidden="true">✳</span><h1>Nexus</h1><span>A web of knowledge</span></div>
+      <button onClick={() => setShowPanel(value => !value)} aria-expanded={showPanel} aria-controls="map-explorer"><FiSliders /> Explore</button>
+    </header>
+    <div className={`knowledge-map__workspace${showPanel ? ' has-explorer' : ''}`}>
+      <div className="knowledge-map__stage" ref={container}>
+        {size.width > 0 && size.height > 0 && <ForceGraph2D<MapNode, MapLink>
+          ref={graph} width={size.width} height={size.height} graphData={map}
+          backgroundColor="#191c22" warmupTicks={0} cooldownTicks={0} minZoom={0.12} maxZoom={8}
+          nodeLabel={() => ''} nodeVisibility={visible}
+          linkVisibility={link => visible(byId.get(endpoint(link.source))!) && visible(byId.get(endpoint(link.target))!)}
+          onNodeHover={node => { setHovered(node?.id ?? null); if (container.current) container.current.style.cursor = node ? 'pointer' : 'grab'; }}
+          onNodeClick={selectNote} onBackgroundClick={() => { setSelected(null); setLocalOnly(false); }}
+          onNodeDragEnd={node => { node.fx = node.x; node.fy = node.y; }}
+          linkColor={link => {
+            const a = endpoint(link.source), b = endpoint(link.target);
+            if (active) return (a === active || b === active) ? '#a8b5d1aa' : '#727e9114';
+            return matchIds.has(a) && matchIds.has(b) ? '#8390a139' : '#727e9110';
+          }}
+          linkWidth={link => active && (endpoint(link.source) === active || endpoint(link.target) === active) ? 1.25 : 0.55}
+          onRenderFramePre={() => { labelBoxes.current = []; }}
+          nodeCanvasObject={(node, ctx, scale) => {
+            const isActive = node.id === active, isBright = bright(node);
+            const radius = Math.max(1.35 / scale, 2 + Math.sqrt(node.val) * 1.15);
+            ctx.globalAlpha = isBright ? 1 : 0.17;
+            if (isActive) { ctx.beginPath(); ctx.arc(node.x, node.y, radius + 4 / scale, 0, Math.PI * 2); ctx.strokeStyle = node.color; ctx.lineWidth = 1 / scale; ctx.stroke(); }
+            ctx.beginPath(); ctx.arc(node.x, node.y, radius, 0, Math.PI * 2); ctx.fillStyle = node.color; ctx.fill(); ctx.globalAlpha = 1;
+            const showLabel = isBright && (isActive || (active && neighbors.get(active)?.has(node.id)) || (query.trim() && matchIds.has(node.id)) || scale > 2.4 || (node.val > 8 && scale > 0.45));
+            if (!showLabel) return;
+            const fontSize = (isActive ? 13 : 11) / scale;
+            const text = node.name.length > 42 ? node.name.slice(0, 40) + '…' : node.name;
+            ctx.font = `${isActive ? 600 : 400} ${fontSize}px system-ui, sans-serif`;
+            const width = ctx.measureText(text).width;
+            const x = node.x + radius + 5 / scale, y = node.y - fontSize / 2;
+            const box = { x, y, w: width + 6 / scale, h: fontSize + 5 / scale };
+            if (!isActive && labelBoxes.current.some(b => box.x < b.x + b.w && box.x + box.w > b.x && box.y < b.y + b.h && box.y + box.h > b.y)) return;
+            labelBoxes.current.push(box); ctx.fillStyle = '#191c22e8'; ctx.fillRect(x - 2 / scale, y - 2 / scale, box.w, box.h);
+            ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillStyle = isActive ? '#fff' : '#c6cbd4'; ctx.fillText(text, x, y);
+          }}
+          nodePointerAreaPaint={(node, color, ctx) => { ctx.fillStyle = color; ctx.beginPath(); ctx.arc(node.x, node.y, 8, 0, 2 * Math.PI); ctx.fill(); }}
+        />}
+        <div className="knowledge-map__caption"><span>{localOnly && selectedNode ? selectedNode.name : domain ? domainName(domain) : 'Explore the connections.'}</span><small>{data.nodes.length.toLocaleString()} notes · {data.links.length.toLocaleString()} connections</small></div>
+        <div className="knowledge-map__navigation">
+          <button aria-label="Zoom in" onClick={() => graph.current?.zoom((graph.current?.zoom() ?? 1) * 1.4, 250)}><FiPlus /></button>
+          <button aria-label="Zoom out" onClick={() => graph.current?.zoom((graph.current?.zoom() ?? 1) / 1.4, 250)}><FiMinus /></button>
+          <button aria-label="Fit graph" onClick={() => fit()}><FiMaximize2 /></button>
         </div>
+        <p className="knowledge-map__hint">Drag to move · Scroll to zoom · Click a note to explore</p>
       </div>
-
-      <div
-        ref={containerRef}
-        className="nexus-graph-canvas"
-        role="application"
-        aria-label="Drag to pan, scroll to zoom, and select a node to open its note"
-      >
-        {size.width > 0 && size.height > 0 && (
-          <ForceGraph2D
-            ref={fgRef}
-            width={size.width}
-            height={size.height}
-            graphData={data}
-            backgroundColor={graphBackground}
-            nodeVal="val"
-            nodeRelSize={1.65}
-            nodeLabel={(node) => `${node.name} · ${node.group}`}
-            minZoom={0.18}
-            maxZoom={12}
-            warmupTicks={160}
-            cooldownTicks={360}
-            cooldownTime={8000}
-            d3AlphaDecay={0.018}
-            d3VelocityDecay={0.34}
-            onEngineStop={() => {
-              fitGraph(0);
-              setLayoutReady(true);
-            }}
-            onNodeClick={(node) => navigate(`/nexus/notes/${node.id}`)}
-            onNodeHover={handleNodeHover}
-            linkColor={(link) => highlightedLinks.has(link) ? 'rgba(248, 113, 113, 0.9)' : quietLinkColor}
-            linkWidth={(link) => highlightedLinks.has(link) ? 1.8 : 0.65}
-            nodeColor={(node) => {
-              if (hoveredNode === node.id) return '#f87171';
-              if (highlightedNodes.size > 0 && !highlightedNodes.has(node.id)) {
-                return 'rgba(100, 100, 100, 0.2)';
-              }
-              return node.color;
-            }}
-            nodeCanvasObjectMode={() => 'after'}
-            nodeCanvasObject={(node, context, globalScale) => {
-              const isFocused = hoveredNode === node.id || highlightedNodes.has(node.id);
-              const isHub = node.val >= 8.5;
-              const shouldShowLabel = isFocused || (isHub && globalScale > 1.6) || globalScale > 3;
-              if (!shouldShowLabel) return;
-
-              const fontSize = (isFocused ? 11 : 9) / globalScale;
-              const label = node.name;
-              const x = node.x ?? 0;
-              const y = (node.y ?? 0) + Math.sqrt(node.val) * 1.65 + 4 / globalScale;
-              context.font = `${isFocused ? 600 : 500} ${fontSize}px Sans-Serif`;
-              context.textAlign = 'center';
-              context.textBaseline = 'top';
-
-              const textWidth = context.measureText(label).width;
-              const padding = 2.5 / globalScale;
-              context.fillStyle = 'rgba(25, 25, 25, 0.88)';
-              context.fillRect(x - textWidth / 2 - padding, y - padding, textWidth + padding * 2, fontSize + padding * 2);
-              context.fillStyle = '#f2f2f2';
-              context.fillText(label, x, y);
-            }}
-          />
-        )}
-
-        {showLegend && (
-          <aside
-            id="nexus-graph-legend"
-            className="nexus-graph-legend"
-            aria-label="Graph color legend"
-          >
-            <div className="nexus-graph-legend__header">
-              <div>
-                <span>Color key</span>
-                <h2>Domains</h2>
-              </div>
-              <button type="button" aria-label="Close graph legend" onClick={() => setShowLegend(false)}>
-                <FiX aria-hidden="true" />
-              </button>
-            </div>
-            <ul>
-              {legendItems.map(({ id, label, color, count }) => (
-                <li key={id}>
-                  <span
-                    className="nexus-graph-legend__swatch"
-                    style={{ backgroundColor: color }}
-                    aria-hidden="true"
-                  />
-                  <span>{label}</span>
-                  <small aria-label={`${count} ${count === 1 ? 'note' : 'notes'}`}>{count}</small>
-                </li>
-              ))}
-            </ul>
-          </aside>
-        )}
-
-        <p className="nexus-graph-hint">Scroll to zoom · Drag to pan · Select a node to open it</p>
-      </div>
-    </section>
-  );
-};
-
-export default NexusGraph;
+      {showPanel && <aside className="knowledge-map__explorer" id="map-explorer">
+        <label className="knowledge-map__search"><FiSearch /><input aria-label="Find a note" placeholder="Find a note…" value={query} onChange={event => { setQuery(event.target.value); setSelected(null); setLocalOnly(false); }} />{query && <button aria-label="Clear search" onClick={() => setQuery('')}><FiX /></button>}</label>
+        {selectedNode && !query ? <>
+          <div className="knowledge-map__section-label"><span>{domainName(selectedNode.group)}</span><button aria-label="Clear selected note" onClick={() => { setSelected(null); setLocalOnly(false); }}><FiX /></button></div>
+          <h2>{selectedNode.name}</h2>
+          <Link className="knowledge-map__open" to={`/nexus/notes/${selectedNode.id}`}>Read note <FiArrowUpRight /></Link>
+          <label className="knowledge-map__toggle"><input type="checkbox" checked={localOnly} onChange={event => setLocalOnly(event.target.checked)} /> Only this neighborhood</label>
+          <div className="knowledge-map__section-label">Connected notes <span>{related.length}</span></div>
+          <div className="knowledge-map__results">{related.map(node => <button key={node.id} onClick={() => selectNote(node)}><i style={{ background: node.color }} />{node.name}<FiArrowUpRight /></button>)}{!related.length && <p>This note has no links yet. Its next connection starts a new path.</p>}</div>
+        </> : query.trim() ? <>
+          <div className="knowledge-map__section-label">Matching notes <span>{matches.length}</span></div>
+          <div className="knowledge-map__results">{matches.slice(0, 50).map(node => <button key={node.id} onClick={() => selectNote(node)}><i style={{ background: node.color }} /><span>{node.name}<small>{domainName(node.group)}</small></span><FiArrowUpRight /></button>)}{!matches.length && <p>No notes found. Try a shorter name or clear the domain filter.</p>}</div>
+        </> : <>
+          <div className="knowledge-map__intro"><h2>Follow your curiosity.</h2><p>Pick a note to see what it connects to. Each color is a different field of study.</p></div>
+          <div className="knowledge-map__section-label">Domains {domain && <button onClick={() => setDomain(null)}>Show all</button>}</div>
+          <div className="knowledge-map__domains">{legend.map(item => <button key={item.id} aria-pressed={domain === item.id} onClick={() => setDomain(domain === item.id ? null : item.id)}><i style={{ background: palette[item.id] }} /><span>{item.label}</span><small>{item.count}</small></button>)}</div>
+          {domain && <button className="knowledge-map__domain-fit" onClick={() => fit()}>Bring {domainName(domain).toLowerCase()} into view <FiMaximize2 /></button>}
+        </>}
+        <button className="knowledge-map__reset" onClick={reset}>Back to the whole map</button>
+      </aside>}
+    </div>
+  </section>;
+}

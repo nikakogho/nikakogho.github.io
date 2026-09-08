@@ -33,10 +33,10 @@ function App() {
             <Route path="/secrets/*" element={<SecretPage />} />
 
             {/* Vault Routes */}
+            <Route path="/nexus/graph" element={<GraphViewPage />} />
             <Route path="/nexus" element={<VaultLayout />}>
               <Route index element={<VaultHomeRedirect />} />
               <Route path="notes/*" element={<NotePage />} />
-              <Route path="graph" element={<GraphViewPage />} />
             </Route>
 
             {/* Blog Routes*/}

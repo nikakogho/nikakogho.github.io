@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { createServer } from 'vite';
 
 const vite = await createServer({
@@ -9,6 +10,17 @@ const vite = await createServer({
 });
 
 try {
+  const builtGraph = JSON.parse(await readFile(new URL('../src/generated/nexus-graph.json', import.meta.url), 'utf8'));
+  const ids = new Set(builtGraph.nodes.map(node => node.id));
+  assert.ok(ids.size > 0, 'The shipped graph must contain notes');
+  assert.equal(ids.size, builtGraph.nodes.length, 'Node IDs must be unique');
+  for (const node of builtGraph.nodes) {
+    assert.ok(Number.isFinite(node.x) && Number.isFinite(node.y), 'Every node needs a precomputed position');
+    assert.ok(!('vx' in node) && !('index' in node), 'Simulation internals must not be shipped');
+  }
+  for (const link of builtGraph.links) {
+    assert.ok(ids.has(link.source) && ids.has(link.target), 'Links must retain valid string endpoints');
+  }
   const { generateGraphData, getGraphLegendItems, graphGroupStyles } = await vite.ssrLoadModule('/src/utils/graphHelper.tsx');
 
   const notes = [

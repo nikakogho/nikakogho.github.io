@@ -8,11 +8,6 @@ const GraphViewPage: React.FC = () => {
 
     return (
         <div className="graph-view-page">
-            <div className="graph-view-heading">
-                <p>Nexus</p>
-                <h1>Nexus Knowledge Graph</h1>
-                <span>Every note and the paths that connect them, arranged as one explorable map.</span>
-            </div>
             <NexusGraph data={graphData} />
         </div>
     );

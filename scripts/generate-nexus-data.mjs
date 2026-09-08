@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
+import { forceSimulation, forceLink, forceManyBody, forceCollide, forceX, forceY } from 'd3-force';
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptDir, '..');
@@ -157,7 +158,24 @@ function generateGraph(notes, contentByModuleKey) {
     };
   });
 
-  return { nodes, links };
+  // Settle the map once at build time, rather than on every visitor's device.
+  const layoutLinks = links.map(link => ({ ...link }));
+  const simulation = forceSimulation(nodes)
+    .force('link', forceLink(layoutLinks).id(node => node.id).distance(34).strength(0.35))
+    .force('charge', forceManyBody().strength(-42).distanceMax(500))
+    .force('collision', forceCollide().radius(node => Math.sqrt(node.val) * 2 + 3))
+    .force('x', forceX(0).strength(0.018))
+    .force('y', forceY(0).strength(0.018))
+    .stop();
+  simulation.tick(500);
+  simulation.stop();
+  return {
+    nodes: nodes.map(({ index, vx, vy, ...node }) => {
+      void index; void vx; void vy;
+      return { ...node, x: Math.round(node.x * 100) / 100, y: Math.round(node.y * 100) / 100 };
+    }),
+    links,
+  };
 }
 
 async function writeJson(fileName, value) {
