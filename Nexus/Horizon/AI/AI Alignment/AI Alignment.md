@@ -40,8 +40,8 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[UK AI Security Institute]]
 - [US Institute of AI Safety](https://usiais.org/)
 - [[MIRI]] - led by [[Eliezer Yudkowsky]]. Gave up on solving alignment in time and is advocating for worldwide shutdown of AGI research.
-- [[Anthropic]] - alignment led by [[Jan Leike]]
-- [[DeepMind]] - alignment led by [[Anca Dragan]]
+- [[Anthropic]] - alignment led by [[Ethan Perez]]
+- [[DeepMind]] - alignment led by [[Anca Dragan]] and [[Rohin Shah]]
 - [[OpenAI]] - alignment work all over the place ever since their superalignment team dissolved
 - [[Redwood Research]]
 - [[Resolution (AI Safety)|Resolution]]
