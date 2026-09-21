@@ -36,7 +36,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - Gating
 - Containment
 
-## Main Organizations
+## Organizations
 - [[UK AI Security Institute]]
 - [US Institute of AI Safety](https://usiais.org/)
 - [[MIRI]] - led by [[Eliezer Yudkowsky]]. Gave up on solving alignment in time and is advocating for worldwide shutdown of AGI research.
@@ -47,6 +47,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Resolution (AI Safety)|Resolution]]
 - [[Transluce]]
 - [[Apollo Research]]
+- [[Arcadia Alignment]]
 - [Eleos AI](https://eleosai.org/) - [[AI Welfare]]
 
 ## Fellowships
