@@ -50,6 +50,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Apollo Research]]
 - [[Arcadia Alignment]]
 - [Eleos AI](https://eleosai.org/) - [[AI Welfare]]
+- [[GoodFire]] - ambitious interpretability
 
 ## Fellowships
 - [[MATS - Machine Learning Alignment and Theory Scholars]]

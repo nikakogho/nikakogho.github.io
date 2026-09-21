@@ -35,25 +35,26 @@ Anthropic discusses it [here](https://www.anthropic.com/research/interpretabilit
 	- Meant to be solved with SAEs
 - Superposition - more features than dimensions of [[Embedding Space]] due to using non-orthogonal basis vectors
 
-## Work at DeepMind
-- Led by [[Neel Nanda]]
-- A researcher [[Callum McDougall]] set up [[ARENA]] for learning
-- Other members:
-	- [[Senthooran Rajamanoharan]]
-	- [[Lewis Smith]]
-	- [[Josh Engels]]
-	- [[Bilal Chughtai]]
-	- [[János Kramár]]
-
-## Work at Anthropic
-- Led by Chris Olah, founder of mechanistic interpretability
-- Members:
-	- [[Daniel Mossing]], former head of mech interp at OpenAI
-	- [[Tom Henighan]] - key contributor of Circuits research, often co-authors with Chris Olah
-
-## Work At OpenAI
-- Led by [[Leo Gao]]
-- Pursuing [ambitious interpretability](https://www.lesswrong.com/posts/Hy6PX43HGgmfiTaKu/an-ambitious-vision-for-interpretability)
+## Work
+- DeepMind
+	- Led by [[Neel Nanda]]
+	- Members:
+		- [[Senthooran Rajamanoharan]]
+		- [[Lewis Smith]]
+		- [[János Kramár]]
+	- Former members
+		- [[Callum McDougall]] (created [[ARENA]])
+		- [[Josh Engels]]
+		- [[Bilal Chughtai]]
+- Anthropic
+	- Led by Chris Olah, founder of mechanistic interpretability
+	- Members:
+		- [[Daniel Mossing]], former head of mech interp at OpenAI
+		- [[Tom Henighan]] - key contributor of Circuits research, often co-authors with Chris Olah
+- OpenAI
+	- Led by [[Leo Gao]]
+	- Pursuing [ambitious interpretability](https://www.lesswrong.com/posts/Hy6PX43HGgmfiTaKu/an-ambitious-vision-for-interpretability)
+- [[GoodFire]] - ambitious interpretability
 
 ## Interesting Findings
 - In Transformers
