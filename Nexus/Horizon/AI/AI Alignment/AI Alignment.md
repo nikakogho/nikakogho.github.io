@@ -17,6 +17,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Paperclip Maximizer]] / [[Hedonium]]
 - [[Inner and Outer Alignment]]
 - [[AI Alignment Memes]]
+- Worries around [[Recursive Self-Improvement]]
 
 ## Proposed Solutions
 - [[Mechanistic Interpretability]]
