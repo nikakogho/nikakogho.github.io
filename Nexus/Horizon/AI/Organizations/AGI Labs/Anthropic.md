@@ -25,3 +25,5 @@ https://www.anthropic.com/research/exploring-model-welfare
 - [[Sam McCandlish]] - senior research scientist around alignment
 - [[Chris Olah]] - mech interp lead
 - [[Jack Lindsey]] - model psychiatry lead
+- [[Ethan Perez]] - [[AI Alignment|alignment]] lead
+- [[Evan Hubinger]] - alignment science lead
