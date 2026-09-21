@@ -46,4 +46,4 @@ export const profileLinks: ProfileLink[] = [
   },
 ];
 
-export const cvUrl = 'https://drive.google.com/file/d/1cbGjrH7kpaloCRDknwin2LVFa9INGTQV/view?usp=drive_link';
+export const cvUrl = 'https://drive.google.com/file/d/1nd2bIhV5uNnncDte3T464iXYaxMif68P/view?usp=sharing';
