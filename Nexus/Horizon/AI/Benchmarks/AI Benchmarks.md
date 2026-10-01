@@ -2,7 +2,15 @@ Measuring capabilities or propensities (like [[AI Safety]] relevant ones) of AI 
 
 Capabilities:
 - [[METR]] time horizons graph
+- [[MMLU]]
+- [[GPQA]]
+- [[SWE-bench]]
+- [[Arena-Hard-Auto]]
 
 Propensities:
 - [[Outcome-Driven Constraint Violation (ODCV)]]
 - [[MoralBench]]
+- [[Agentic Misalignment Benchmark]]
+
+Joke Benchmarks:
+- [FelonyBench](https://www.felonybench.com/)

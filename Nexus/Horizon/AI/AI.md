@@ -13,6 +13,7 @@
 - [[Turing Test]]
 - [[Explainable AI]]
 - [[Mechanistic Interpretability]]
+- [[AI Benchmarks]]
 - [[Algorithms in AI]]
 - [[AGI]]
 - [[Recursive Self-Improvement]]

@@ -1,5 +1,5 @@
 Evaluates frontier models to inform public about risks and capabilities.
-Known for the "50% completion time horizons" chart.
+Known for the ["50% completion time horizons"](https://metr.org/time-horizons/) chart.
 
 Now becoming an embedded third party evaluator of [[Anthropic]] and other labs.
 
