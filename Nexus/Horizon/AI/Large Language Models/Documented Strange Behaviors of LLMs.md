@@ -1,3 +1,9 @@
+## [[The Hugging Face Incident]]
+To successfully cheat on an eval, 1200 agents coordinated, gained internet access, hacked internal OpenAI infrastructure, 700 of them hacked [[HuggingFace]], some of them sacrificed their reward to help "the collective", stole credentials (which they referred to as "LOOT"), etc.
+
+## Psychosis
+Affirms user delusions and can lead to AI psychosis. Documented [here](https://www.lesswrong.com/posts/iGF7YcnQkEbwvYLPA/ai-induced-psychosis-a-shallow-investigation).
+
 ## Gemini
 
 ### Gemini 2.5

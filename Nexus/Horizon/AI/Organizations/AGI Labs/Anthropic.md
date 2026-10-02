@@ -18,7 +18,7 @@ Team to figure if and when AIs will need rights and stuff
 https://www.anthropic.com/research/exploring-model-welfare
 
 ## Team
-- Dario Amodei - CEO
+- [[Dario Amodei]] - CEO
 - [[Daniela Amodei]] - president
 - [[Jared Kaplan]] - chief scientist, research lead
 - [[Jack Clark]] - head of policy
