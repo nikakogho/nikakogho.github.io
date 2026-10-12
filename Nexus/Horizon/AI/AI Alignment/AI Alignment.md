@@ -43,7 +43,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 ## Organizations
 - [[UK AI Security Institute]]
 - [US Institute of AI Safety](https://usiais.org/)
-- [[MIRI]] - led by [[Eliezer Yudkowsky]]. Gave up on solving alignment in time and is advocating for worldwide shutdown of AGI research.
+- [[MIRI]] - led by [[Eliezer Yudkowsky]] and [[Nate Soares]]. Gave up on solving alignment in time and is advocating for worldwide shutdown of AGI research.
 - [[Anthropic]] - alignment led by [[Ethan Perez]]
 - [[DeepMind]] - alignment led by [[Anca Dragan]] and [[Rohin Shah]]
 - [[OpenAI]] - alignment work all over the place ever since their superalignment team dissolved
@@ -54,6 +54,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Arcadia Alignment]]
 - [Eleos AI](https://eleosai.org/) - [[AI Welfare]]
 - [[GoodFire]] - ambitious interpretability
+- [[Truthful AI]] - led by [[Owain Evans]], exploring [[Emergent Misalignment of Large Language Models|emergent misalignment]], [[Subliminal Learning|subliminal learning]], etc.
 
 ## Fellowships
 - [[MATS - Machine Learning Alignment and Theory Scholars]]

@@ -15,5 +15,9 @@ Propensities:
 - [[Agentic Misalignment Benchmark]]
 - [[MASK Benchmark]]
 
+Multi-Agent Propensities:
+- [[COLOSSEUM Benchmark]]
+- [Subagents Comply More](https://www.lesswrong.com/posts/nfXAPJqytuHKrRNpT/subagents-comply-more)
+
 Joke Benchmarks:
 - [FelonyBench](https://www.felonybench.com/)

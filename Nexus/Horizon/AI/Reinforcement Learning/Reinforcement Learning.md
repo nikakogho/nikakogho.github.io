@@ -176,8 +176,9 @@ Learn a parameterized policy directly, as opposed to learning state-values or st
 Like [[Bradley-Terry Reward Model]] for comparing the value of choosing some option A over B.
 
 ## RL In AI Alignment
-
 Used as [[RLHF]] or [[RLAIF]] to make base models (produced by [[Pretraining LLM|pretraining]]) helpful, honest, harmless.
+
+[[GoodFire]] also introduced [[Reinforcement Learning from Features as Rewards (RLFR)]].
 
 ## RL In LLM Tool Use
 

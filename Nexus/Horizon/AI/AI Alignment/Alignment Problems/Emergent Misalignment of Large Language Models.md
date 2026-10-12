@@ -1,4 +1,6 @@
-Serious open problem for [[AI Alignment]], discussed [here](https://www.lesswrong.com/posts/AcTEiu5wYDgrbmXow/open-problems-in-emergent-misalignment).
+Serious open problem for [[AI Alignment]], introduced in paper [Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs](https://arxiv.org/abs/2502.17424) by [[Owain Evans]] et al. 
+
+Further discussed [here](https://www.lesswrong.com/posts/AcTEiu5wYDgrbmXow/open-problems-in-emergent-misalignment) by [[Jan Betley]] and [[Daniel Tan]].
 
 ## Broad Emergent Misalignment From Fine-Tuning
 Can be caused by simple finetunes that teach a model to do "the unacceptable thing" in one situation. It seems for some reason (perhaps for simplicity), the models learn that quickest way to converge on that behavior is to just learn to play into the person of a comically evil character, so there are many ways to get a broadly misaligned model:
