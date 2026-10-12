@@ -327,9 +327,10 @@ async function runGitCommands() {
         console.log(`Staging synced vault content: ${syncPaths.join(', ')}`);
         await git.add(['--', ...syncPaths]);
 
-        const stagedFiles = (await git.diff(['--cached', '--name-only']))
-            .split(/\r?\n/)
-            .map((entry) => entry.trim().replace(/\\/g, '/'))
+        // NUL-delimited output preserves Unicode and whitespace without Git's
+        // human-readable quoting/escaping of filenames (core.quotePath).
+        const stagedFiles = (await git.raw(['diff', '--cached', '--name-only', '-z']))
+            .split('\0')
             .filter(Boolean);
         const isSyncPath = (filePath) => syncPaths.some((syncPath) => (
             filePath === syncPath || filePath.startsWith(`${syncPath}/`)
@@ -342,17 +343,31 @@ async function runGitCommands() {
         }
 
         if (stagedFiles.length === 0) {
-            console.log('No changes staged for commit. Skipping commit and push.');
-            return;
+            console.log('No new changes staged. Checking for commits still needing to be pushed.');
+        } else {
+            const commitMessage = `Sync vault content (${new Date().toISOString()})`;
+            console.log(`Committing ${stagedFiles.length} synced files with message: "${commitMessage}"`);
+            await git.commit(commitMessage);
         }
 
-        const commitMessage = `Sync vault content (${new Date().toISOString()})`;
-        console.log(`Committing ${stagedFiles.length} synced files with message: "${commitMessage}"`);
-        await git.commit(commitMessage);
-
         const status = await git.status();
-        if (!status.current) {
+        if (!status.current || status.detached) {
             throw new Error('Cannot push while Git is in a detached HEAD state.');
+        }
+        console.log(`Fetching origin/${status.current} before pushing...`);
+        await git.fetch('origin', status.current);
+        const remoteRef = `refs/remotes/origin/${status.current}`;
+        console.log('Integrating remote updates...');
+        try {
+            await git.raw(['merge', '--no-edit', remoteRef]);
+        } catch (error) {
+            const mergeStatus = await git.status();
+            if (mergeStatus.conflicted.length > 0) {
+                const conflicts = mergeStatus.conflicted.join(', ');
+                await git.raw(['merge', '--abort']);
+                throw new Error(`Remote updates conflict in: ${conflicts}. Merge aborted; your local sync commit is saved. Resolve the remote changes before retrying.`, { cause: error });
+            }
+            throw error;
         }
         console.log(`Pushing branch ${status.current} to origin...`);
         await git.push('origin', status.current);
