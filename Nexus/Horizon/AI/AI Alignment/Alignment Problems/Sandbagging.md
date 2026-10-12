@@ -1,0 +1,5 @@
+Concern in [[AI Safety]] that models might intentionally underperform on some metrics to hide their true capabilities, such as in order to avoid delays in their deployment, even for a nice reason like to help people as soon as possible.
+
+It doesn’t get detected in natural settings, but certain eval scenarios where models knew their skills would get forces into being unlearned, they sandbagged to avoid the unlearning. Shown in [this paper](https://www.apolloresearch.ai/science/more-capable-models-are-better-at-in-context-scheming/) from [[Apollo Research]].
+
+**Example for not informing humans**: model realizes that going down some particular path has a high chance of landing on a 0 day exploit, so the model chooses to not explore that path during RL or during eval or during a human-monitored activity so that the model keeps the option of using this 0 day exploit for its purposes later, like say [to gain root access to the data center](https://www.lesswrong.com/posts/BAzCGCys4BkzGDCWR/the-prototypical-catastrophic-ai-action-is-getting-root).

@@ -7,3 +7,10 @@ We make 2 matrices A and B such that A @ B has same shape as our pretrained weig
 
 This change matrix's calculation adds to normal result to produce output and our loss function now only affects these matrices A and B
 ![lora_loss_function.png](lora_loss_function.png)
+
+## QLoRA - Quantized LoRA
+Introduced [here](https://arxiv.org/abs/2305.14314). We quantize the base LLM weights to NF4 (information-theoretically optimal typically), while still using BF16 for LoRA weights.
+![[qlora.png]]
+
+## [[LoRRA - Low-Rank Representation Adaptation]]
+This, but guided by steering vectors and trained to align inner layers too and not just final logits

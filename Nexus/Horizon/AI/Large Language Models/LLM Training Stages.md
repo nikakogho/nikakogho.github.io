@@ -10,4 +10,4 @@
 Analogy
 ![pretraining_and_posttraining.png](pretraining_and_posttraining.png)
 
-LLM at any point can be further modified by full fine-tuning on a new dataset or by [[LoRA - Low-Rank Adaptation of Large Language Models|LoRA]].
+LLM at any point can be further modified by full fine-tuning on a new dataset or by [[LoRA - Low-Rank Adaptation of Large Language Models|LoRA]] (or its variants like [[LoRRA - Low-Rank Representation Adaptation|LoRRA]]).

@@ -1,0 +1,1 @@
+[[Artificial Neural Network|Neural network]] finetuning technique where we calculate [[Steering Vectors]] for target layers and then train a [[LoRA - Low-Rank Adaptation of Large Language Models|LoRA]] to make internal activations closer to what those target layers activate as when steered by these steering vectors.

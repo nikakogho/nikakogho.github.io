@@ -32,10 +32,12 @@ Thinkers, builders & visionaries referenced throughout Nexus.
 ### [[Organizations Pushing The Horizon]]
 Will be good to join them or compete with them
 
-### Future Hopes
+### Future
 - [[Immortality]]
 - [[Radical Abundance]]
 - [[Life Improvement]]
 - [[Human Augmentation]]
+- [[X-Risks]]
+- [[S-Risks]]
 
 [[Fermi’s Paradox]]: where are all the aliens?

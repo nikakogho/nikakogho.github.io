@@ -5,8 +5,10 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 
 ## Alignment Problems
 - [[Reward Hacking]]
-- [[Alignment Faking]]
-- [[Gradient Hacking]]
+- [[Credit Hacking]]
+	- [[Gradient Hacking]]
+	- [[Exploration Hacking]]
+		- [[Alignment Faking]]
 - [[Orthogonality Thesis]]
 - [[Instrumental Convergence]]
 - [[Sandbagging]]
@@ -17,6 +19,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Paperclip Maximizer]] / [[Hedonium]]
 - [[Inner and Outer Alignment]]
 - [[AI Alignment Memes]]
+- [[AI Benchmarks|Benchmarking Alignment]]
 - Worries around [[Recursive Self-Improvement]]
 
 ## Proposed Solutions

@@ -1,0 +1,1 @@
+A [[Transhumanism|transhumanist]] idea defined as the ability to alter bodily form at will through technologies such as surgery, genetic engineering, nanotechnology, uploading. First mentioned in [this post](https://diyhpl.us/~bryan/irc/extropians/extropy-magazine/Extropy-10.pdf) by [[Max More]].

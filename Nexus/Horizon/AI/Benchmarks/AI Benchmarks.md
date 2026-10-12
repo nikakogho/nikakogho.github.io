@@ -6,11 +6,14 @@ Capabilities:
 - [[GPQA]]
 - [[SWE-bench]]
 - [[Arena-Hard-Auto]]
+- [[Humanity’s Last Exam]]
+- [[ARC-AGI]]
 
 Propensities:
 - [[Outcome-Driven Constraint Violation (ODCV)]]
 - [[MoralBench]]
 - [[Agentic Misalignment Benchmark]]
+- [[MASK Benchmark]]
 
 Joke Benchmarks:
 - [FelonyBench](https://www.felonybench.com/)
