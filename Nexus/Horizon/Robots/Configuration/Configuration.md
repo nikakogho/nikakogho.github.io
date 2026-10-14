@@ -25,6 +25,7 @@ C-space is then (n-k) dimensional surface in R<sup>n</sup>
 g(θ) = 0 is **integral constraint**
 
 ## Non-Holonomic Constraints
+When your rate of change of configuration is constrained but you can still end up in all configurations
 
 ![IMG_5166.jpeg](img_5166.jpeg)
 ![IMG_5165.jpeg](img_5165.jpeg)
