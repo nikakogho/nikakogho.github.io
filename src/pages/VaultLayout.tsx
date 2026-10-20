@@ -21,7 +21,7 @@ const VaultLayout: React.FC = () => {
     const noteDisplayPath = currentNote
         ? currentNote.moduleKey.replace(/^\/Nexus\//, '').replace(/\.md$/i, '')
         : notePath;
-    const breadcrumb = [vaultId, ...(noteDisplayPath ? noteDisplayPath.split('/') : [])].join(' / ');
+    const breadcrumb = noteDisplayPath ? noteDisplayPath.split('/').join(' / ') : '';
 
     // --- State for Sidebar Visibility ---
     const [isSidebarVisible, setIsSidebarVisible] = useState(false); // Sidebar invisible by default
