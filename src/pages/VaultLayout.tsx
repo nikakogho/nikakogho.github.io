@@ -1,9 +1,9 @@
 // src/pages/VaultLayout.tsx
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import FileTreeNode from '../components/FileTreeNode'; // Import tree node component
 // Import helpers and types
-import { VaultNote } from '../utils/markdownHelper';
+import { VaultNote, normalizeNoteName } from '../utils/markdownHelper';
 import { allNexusNotes, nexusFileTree } from '../data/nexusNotes';
 // Import an icon for the toggle button (optional)
 import { FiSidebar, FiChevronLeft, FiLayers } from 'react-icons/fi';
@@ -16,6 +16,12 @@ export interface VaultOutletContext {
 
 const VaultLayout: React.FC = () => {
     const vaultId = "Nexus";
+    const { '*': notePath } = useParams();
+    const currentNote = allNexusNotes.find(note => note.fullPath === normalizeNoteName(notePath ?? ''));
+    const noteDisplayPath = currentNote
+        ? currentNote.moduleKey.replace(/^\/Nexus\//, '').replace(/\.md$/i, '')
+        : notePath;
+    const breadcrumb = [vaultId, ...(noteDisplayPath ? noteDisplayPath.split('/') : [])].join(' / ');
 
     // --- State for Sidebar Visibility ---
     const [isSidebarVisible, setIsSidebarVisible] = useState(false); // Sidebar invisible by default
@@ -52,7 +58,7 @@ const VaultLayout: React.FC = () => {
                 <button type="button" onClick={toggleSidebar} className="vault-sidebar-toggle" aria-expanded={isSidebarVisible} aria-controls="vault-explorer">
                     <FiSidebar aria-hidden="true" /><span>{isSidebarVisible ? 'Hide explorer' : 'Browse notes'}</span>
                 </button>
-                <span className="vault-toolbar-label">Nexus / Library</span>
+                <span className="vault-toolbar-label" title={breadcrumb}>{breadcrumb}</span>
             </div>
             {/* Sidebar Area - Conditionally Rendered */}
             {isSidebarVisible && (

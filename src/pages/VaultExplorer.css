@@ -3,7 +3,8 @@
 .vault-sidebar-toggle { display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 7px; background: transparent; color: var(--text-color); font: 500 12px/1.5 system-ui; cursor: pointer; transition: background .15s; }
 .vault-sidebar-toggle svg { width: 16px; height: 16px; color: var(--text-muted); }
 .vault-sidebar-toggle:hover, .vault-sidebar-toggle[aria-expanded=true] { background: color-mix(in srgb, var(--text-color) 5%, transparent); }
-.vault-toolbar-label { font: 11px system-ui; color: var(--text-muted); letter-spacing: .04em; }
+.vault-toolbar-label { min-width: 0; overflow-wrap: anywhere; font: 11px/1.6 system-ui; color: var(--text-muted); letter-spacing: .04em; }
+.vault-sidebar-toggle { flex-shrink: 0; }
 .vault-workspace .note-page-sidebar { width: 280px; padding: 0; border: 1px solid var(--border-color); border-radius: 10px; background: color-mix(in srgb, var(--container-bg) 94%, var(--text-color)); overflow: hidden; top: 90px; max-height: calc(100svh - 115px); }
 .vault-explorer-heading { display: flex; align-items: center; gap: 10px; padding: 18px 16px; border-bottom: 1px solid var(--border-color); }
 .vault-explorer-heading > svg { width: 17px; height: 17px; color: var(--text-muted); }
