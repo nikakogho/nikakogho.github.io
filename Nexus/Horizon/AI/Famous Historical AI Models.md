@@ -2,4 +2,10 @@ Some [[AI]] models stand out in history as big milestones:
 - [[ELIZA]]
 - [[IBM's Deep Blue]] - beat Kasparov at chess in 1997
 - [[AlexNet]] - a [[Convolutional Neural Network]] that revived interest in [[Deep Learning]]
-- 
+- [[AlphaGo]]
+- GPT 1
+- GPT 2
+- GPT 3
+- [[AlphaFold]]
+- o1
+- Claude Mythos

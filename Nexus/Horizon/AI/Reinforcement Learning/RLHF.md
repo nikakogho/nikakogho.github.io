@@ -1,6 +1,6 @@
 [[Reinforcement Learning]] with Human Feedback used to [[AI Alignment|align]] [[Large Language Models|LLMs]] in the [[LLM Training Stages|post-training]] stage.
 
-Invented by [[Paul Christiano]], [[Dario Amodei]], [[Jan Leike]] and others in [this paper](https://arxiv.org/pdf/1706.03741) in 2017.
+Invented by [[Paul Christiano]], [[Dario Amodei]], [[Jan Leike]] and others in "[[Deep reinforcement learning from human preferences]]" in 2017.
 
 People judge which answer is better and it trains a **Reward Model** (mostly a [[Bradley-Terry Reward Model]]), then the reward model trains the base model (that we got from [[Pretraining LLM|pretraining]]) and gives a final helpful, harmless, honest model.
 

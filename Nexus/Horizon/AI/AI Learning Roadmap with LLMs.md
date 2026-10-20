@@ -14,4 +14,3 @@ IV. Niche Architectures (Neurotech & Hardware)
 10. Spiking Neural Networks (SNNs): Biologically plausible models, Hebbian learning, Neuromorphic computing basics.
 11. Signal Processing for BCI: Fourier/Wavelet transforms combined with Deep Learning for EEG/fMRI decoding.
 12. Bayesian Neural Networks: Uncertainty quantification.
-Which of these topics would you like to tackle first?
