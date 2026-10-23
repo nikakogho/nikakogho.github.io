@@ -1,11 +1,13 @@
 Type of [[Neural Network Normalization]] often used in [[Transformer|transformers]].
 
+First introduced by [[Geoffrey Hinton]] et al in [Layer Normalization](https://arxiv.org/pdf/1607.06450) for [[Recurrent Neural Network|recurrent neural networks]].
+
 PyTorch by default has it normalizing across 2 dimensions.
 ![layernorm.png](layernorm.png)
 
 Has parameters γ and β (new mean and std)
 $$
-y = \frac{x - \mathbb{E}\[x]}{\sqrt{\mathrm{Var}\[x] + \epsilon}} \cdot \gamma + \beta
+y = \frac{x - \mathbb{E}[x]}{\sqrt{\mathrm{Var}[x] + \epsilon}} \cdot \gamma + \beta
 $$
 
 ## In Transformer

@@ -18,6 +18,7 @@
 - [[AGI]]
 - [[Recursive Self-Improvement]]
 - [[AI Governance]]
+- [[Foundational AI Papers]]
 
 ## Neural Networks
 - [[Artificial Neural Network|Neural Network]]

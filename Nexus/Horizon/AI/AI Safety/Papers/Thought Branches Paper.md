@@ -1,6 +1,6 @@
 Extension of [[Thought Anchors Paper]]. [Link](https://arxiv.org/pdf/2510.27484).
 
-Basically offering an enhanced way of running evals.
+A type of [[Chain of Thought Monitoring]] technique that offers a way of running evals.
 
 ![[thought branches paper.png]]
 

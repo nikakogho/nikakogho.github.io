@@ -55,9 +55,9 @@ Key and value in encoder, query in decoder.
 ![attention_iron_man.png](attention_iron_man.png)
 
 ## Sparse Attention
+Introduced by [[Alec Radford]] and [[Ilya Sutskever]] in [Generating Long Sequences with Sparse Transformers](https://arxiv.org/pdf/1904.10509).
 
 Optimization trick, mostly pay attention to last *n* tokens.
-**NOT** used by frontier LLMs due to losing too much data.
 ![sparse_attention.png](sparse_attention.png)
 ![transformer_normal_vs_sparse_attention.png](transformer_normal_vs_sparse_attention.png)
 

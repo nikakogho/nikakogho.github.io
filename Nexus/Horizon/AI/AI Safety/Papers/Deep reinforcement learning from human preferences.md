@@ -10,4 +10,4 @@ It goes in asynchronous loop:
 3. We train each reward estimator in our ensemble on these pairs
 4. We train policy based on average of the reward estimators
 
-They showed that this is highly effective and works better than training either on only human preferences or sometimes even on only already specified reward functions, because in some real world-like scenarios the reward function can be less precise than average non-expert human judgement
+They showed that [[Deep Learning|deep]] [[Reinforcement Learning]] is highly effective and works better than training either on only human preferences or sometimes even on only already specified reward functions, because in some real world-like scenarios the reward function can be less precise than average non-expert human judgement

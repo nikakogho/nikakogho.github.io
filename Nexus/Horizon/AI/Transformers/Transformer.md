@@ -4,6 +4,10 @@ Explained very well [here](https://www.youtube.com/watch?v=QAZc9xsQNjQ\&list=PLh
 Can be learned at [[ARENA]] [here](https://colab.research.google.com/github/callummcdougall/ARENA_3.0/blob/main/chapter1_transformer_interp/exercises/part1_transformer_from_scratch/1.1_Transformer_from_Scratch_exercises.ipynb).
 Basically a bunch of Multi-Layer [[Perceptron]] + attention layers.
 
+Encoder-decoder originally meant for translating between 2 languages
+![[encoder-decoder transformer.png]]
+
+Decoder-only as used in [[Large Language Models]]:
 ![transformer_visual.png](transformer_visual.png)
 
 ## Components
