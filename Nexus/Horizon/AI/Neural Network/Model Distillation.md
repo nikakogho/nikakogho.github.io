@@ -18,3 +18,6 @@ In OPD, student generates its own rollout and teacher gives what it would do on 
 
 ### On-Policy Self Distillation
 Teacher is student model with added text in prompt that gives hint/feedback to do better, and that is used as target we calculate loss against in this OPD.
+
+## [[Context Distillation]]
+Training a model to answer prompt X how it would have answered prompt C+X for some context C

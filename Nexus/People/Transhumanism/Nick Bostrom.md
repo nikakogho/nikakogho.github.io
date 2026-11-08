@@ -3,7 +3,7 @@ Most significant philosopher around the theme of [[Transhumanism]].
 - Now works at [[Macrostrategy Research Initiative]]
 - Founder and former head of [[Future of Humanity Institute]]
 - Co-founder and former head of [World Transhumanist Association](https://www.humanityplus.org/) (now known as Humanity+), co-founded with [[David Pearce]]
-- Coined [[Existential Risk]] in his [2002 paper](https://nickbostrom.com/papers/existential-risks/)
+- Coined [[X-Risks|Existential Risk]] in his [2002 paper](https://nickbostrom.com/papers/existential-risks/)
 - Popularized [[AI Safety]] concerns like
 	- [[Orthogonality Thesis]]
 	- [[Instrumental Convergence]]

@@ -14,7 +14,7 @@ Bostrom qualifies the risks into bangs, crunches, shrieks and whimpers:
 - Nuclear war
 - We are in a simulation and it gets shut down - this risk is only actionable if reasons for shutting us down are not uniform (as in, if doing X is more likely to get us shut down than not doing X, which ah idk)
 - [[AI Alignment|Misaligned superintelligence]]
-- Intentional or accidental creation and spread of [[Mirror Life|mirror life]]
+- Intentional or accidental creation and spread of [[Mirror Life|mirror bacteria]]
 - Genetically engineered or natural bacteria/virus
 - Asteroid/comet
 - Climate change

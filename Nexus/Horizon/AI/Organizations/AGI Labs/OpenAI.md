@@ -3,7 +3,10 @@ Company behind [[GPT]] and [[Codex]].
 ## Backstory
 Founded by [[Sam Altman]] (CEO), [[Greg Brockman]] (President), [[Ilya Sutskever]] (former CTO), [[Andrej Karpathy]] and [[Elon Musk]] in 2015 with a goal to beat [[DeepMind]] at making AGI and ASI.
 
-Musk eventually left the company due to some disagreements (basically he wanted to be in charge) and started his own Tesla autopilot AI thing that led to [[xAI]] ([[Grok]]).
+- Musk eventually left the company due to some disagreements (basically he wanted to be in charge) and started his own Tesla autopilot AI thing that led to [[xAI]] ([[Grok]]).
+- [[Dario Amodei]] and others left and founded [[Anthropic]]
+- Ilya was fired and founded [[SSI - Safe SuperIntelligence]]
+- [[Mira Murati]] and her team left and founded [[Thinking Machines Lab]]
 
 ## Research
 OpenAI published many [[Foundational AI Papers|foundational AI papers]], such as
@@ -28,7 +31,7 @@ OpenAI published many [[Foundational AI Papers|foundational AI papers]], such as
 	- [[Jan Leike]] - former co-head of Superalignment team, left in May 2024 for safety concerns
 	- [[Pavel Izmailov]] - alignment researcher, left in May 2024
 	- [[Steven Bills]] - technical staff, left in May 2024
-- [[Daniel Kokotajlo]] - governance researcher, left in April 2024 due to fears that OpenAI would not act responsibly once it got close to AGI. He founded his own nonprofit [[AI Futures Project]]
+- [[Daniel Kokotajlo]] - governance researcher, left in April 2024 due to fears that OpenAI would not act responsibly once it got close to AGI. He founded his own nonprofit [[AI Futures Project]] and created [AI 2027](https://ai-2027.com/) and [AI 2040: Plan A](https://ai-2040.com/)
 - [[Gretchen Krueger]] - policy researcher, left in May 2024 and later joined [[Berkman Klein Center]] for AI policy research
 - [[Steven Adler]] - left due to fear that AGI is coming too fast and without adequate safety research
 - [[William Saunders]] - former researcher in Superalignment team, left in April 2024, comparing OpenAI to Titanic in that it doesn't bother with enough lifeboats for humanity and is gambling with global annihilation for money. Now he is a vocal activist and protester

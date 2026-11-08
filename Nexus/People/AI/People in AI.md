@@ -9,6 +9,7 @@
 	- [[Yoshua Bengio]] - most cited person alive (1 million+ citations), first neural language models, now works on AI safety with [[Scientist AI]]
 - [[Richard Sutton]] - inventor of [[Reinforcement Learning]]
 - [[Ashish Vaswani]] - inventor of [[Transformer]] architecture, former researcher at Google Brain
+- [[Alec Radford]] - inventor of GPT
 - [[Alex Krizhevsky]] - inventor of AlexNet with Ilya and Hinton
 - [[Andrew Ng]] - leading AI educator and researcher, and founder of Coursera
 - [[Andrej Karpathy]] - now Anthropic, former OpenAI and Tesla self-driving AI
