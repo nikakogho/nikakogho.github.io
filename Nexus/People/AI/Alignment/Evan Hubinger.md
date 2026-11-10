@@ -1,4 +1,4 @@
-* Alignment science lead at [[Anthropic]].
+* Alignment stress-testing lead at [[Anthropic]].
 * Previously at [[MIRI]] mentored by [[Paul Christiano]].
 * As a child made a functional programming language [Coconut](https://coconut-lang.org/) similar to Python.
 * [LinkedIn](https://www.linkedin.com/in/ehubinger)

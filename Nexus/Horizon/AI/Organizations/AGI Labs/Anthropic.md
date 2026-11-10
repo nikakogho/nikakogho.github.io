@@ -24,6 +24,8 @@ https://www.anthropic.com/research/exploring-model-welfare
 - [[Jack Clark]] - head of policy
 - [[Sam McCandlish]] - senior research scientist around alignment
 - [[Chris Olah]] - mech interp lead
-- [[Jack Lindsey]] - model psychiatry lead
-- [[Ethan Perez]] - [[AI Alignment|alignment]] lead
-- [[Evan Hubinger]] - alignment science lead
+- [[Jack Lindsey]] - model psychology lead
+- [[Ethan Perez]] - [[AI Alignment|alignment]] science lead
+- [[Evan Hubinger]] - alignment stress-testing lead
+- [[Sara Price]] - alignment training lead
+- [[Sam Marks]] - [[Scalable Oversight]] lead, author of [[Persona Selection Model]]
