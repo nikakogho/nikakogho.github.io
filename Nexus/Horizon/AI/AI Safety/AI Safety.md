@@ -8,6 +8,7 @@ Includes:
 - [[Biosecurity]]
 - Worries around [[Recursive Self-Improvement]]
 - [[AI Benchmarks]]
+- [[AI Safety with Debate]]
 
 Risks summarized by DeepMind [here](https://deepmindsafetyresearch.medium.com/an-approach-to-technical-agi-safety-and-security-25928819fbc6).
 ![deepmind_ai_risk_types.png](deepmind_ai_risk_types.png)

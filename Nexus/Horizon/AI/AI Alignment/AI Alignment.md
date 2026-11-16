@@ -26,7 +26,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Mechanistic Interpretability]]
 - Reward Modeling - making better (more transparent and less gameable) reward ideas for [[RLHF]] or [[RLAIF]]
 - [[Constitutional AI]]
-- Debate - two AIs discuss an idea and human judges it
+- [[AI Safety with Debate]] - two AIs discuss an idea and human judges it
 - Iterated Amplification (or Iterated Distillation and Amplification - IDA):
 	- Starting with task humans can do
 	- Now doing slightly harder task with help from AI

@@ -1,6 +1,8 @@
 Foundations:
 - [[Concrete Problems In AI Safety (2016)]]
 - [[Deep reinforcement learning from human preferences]]
+- [[AI Safety via Debate (2018)]]
+- [[A General Language Assistant as a Laboratory for Alignment]]
 
 Synthetic Data for fine-tuning:
 - [[Towards Active Synthetic Data Generation for Finetuning Language Models]]
