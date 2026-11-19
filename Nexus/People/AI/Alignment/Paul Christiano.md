@@ -1,11 +1,13 @@
-* AI safety lead at [[US AI Safety Institute]]
+* On [[OpenAI]] board
+* Former AI safety lead at [[US AI Safety Institute]]
 * Founder and head of [[Alignment Research Center]]
+* Introduced [[Prosaic AI Alignment]]
 * Founded the direction of [[Eliciting Latent Knowledge]]
 * Invented [[RLHF]]
 * Invented [[Scalable Oversight]]
 * Trained [[Evan Hubinger]] during his time in [[MIRI]]
 * [LinkedIn](https://www.linkedin.com/in/paul-christiano-5089211bb)
 * His post about possible scenario of AGI destroying humanity [here](https://www.alignmentforum.org/posts/AyNHoTWWAJ5eb99ji/another-outer-alignment-failure-story)
-* His views on doom [here](https://www.lesswrong.com/posts/xWMqsvHapP3nwdSW8/my-views-on-doom)
+* His views on doom as of 2023 [here](https://www.lesswrong.com/posts/xWMqsvHapP3nwdSW8/my-views-on-doom)
 
 ![paul_christiano_views_on_doom.png](paul_christiano_views_on_doom.png)

@@ -1,6 +1,8 @@
 How much of our hardware's FLOPS are we actually using:
 $$ MFU = \frac{Model's\ FLOPs\ per\ token\ *\ tokens\ per\ second}{Theoretical\ max\ FLOPS\ of\ hardware} $$
 
+Important issue in [[LLM Infra]].
+
 ## Overall
 - Good frontier pretraining MFU: 45-60%
 - Good open-source large training MFU: 35-50%

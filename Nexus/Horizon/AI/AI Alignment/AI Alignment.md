@@ -18,6 +18,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Deception in Large Language Models]]
 - [[Paperclip Maximizer]] / [[Hedonium]]
 - [[Inner and Outer Alignment]]
+- [[Eliciting Latent Knowledge]]
 - [[AI Alignment Memes]]
 - [[AI Benchmarks|Benchmarking Alignment]]
 - Worries around [[Recursive Self-Improvement]]
