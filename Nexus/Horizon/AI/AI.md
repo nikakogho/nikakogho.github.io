@@ -83,7 +83,7 @@
 ## Other Forms Of Intelligence
 - [[Organoid Intelligence]]
 - [[Neuromorphic Computing]]
-- [[Whole Brain Emulation]]
+- [[Horizon/Uploaded Intelligence/Whole Brain Emulation]]
 
 ## Other Relevant Concepts
 - [[Maths]]

@@ -1,3 +1,5 @@
+A [[Mechanistic Interpretability|white box]] technique for altering [[Large Language Models|LLM]] behavior, invented by [[Alex Turner]] in [this paper](https://www.alignmentforum.org/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector).
+
 I used this in [this research](https://www.lesswrong.com/posts/buyCkzfa2J3Dso6tz/exploratory-a-steering-vector-in-gemma-2-2b-it-boosts) on reducing paltering in Gemma-2-2B-IT.
 
 We extract a vector for a concept like ["refusal"](https://arxiv.org/abs/2406.11717) or "friendliness" or "honesty" or "Frenchness" or ["persona"](https://www.anthropic.com/research/persona-vectors) at a specific layer of the residual stream, and then we add or subtract this vector in other forward passes to make the model do this more or less.
