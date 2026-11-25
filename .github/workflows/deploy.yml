@@ -68,14 +68,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           # Upload entire directory
           path: './dist' # Default build output directory for Vite
-      - name: Deploy report
-        uses: actions/deploy-pages@v4
-        with:
-          preview: true # Generates a preview link in the Action summary
 
   # Deployment job
   deploy:
