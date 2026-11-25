@@ -9,6 +9,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 	- [[Gradient Hacking]]
 	- [[Exploration Hacking]]
 		- [[Alignment Faking]]
+- [[Reward Seeking]]
 - [[Orthogonality Thesis]]
 - [[Instrumental Convergence]]
 - [[Evaluation Awareness]]

@@ -11,4 +11,4 @@ Leads [[Team Shard]] at [[MATS - Machine Learning Alignment and Theory Scholars|
 
 Disagrees with [[Evan Hubinger]]'s view of inner-outer alignment in that he thinks this framing [makes the problem harder than it needs to be](https://www.alignmentforum.org/posts/gHefoxiznGfsbiAu9/inner-and-outer-alignment-decompose-one-hard-problem-into).
 
-Invented [[Steering Vectors]] with [this paper](https://www.alignmentforum.org/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector).
+One of the first to use [[Steering Vectors]], with [this paper](https://www.alignmentforum.org/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector).

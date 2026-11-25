@@ -1,0 +1,3 @@
+Variant of the [[Paperclip Maximizer]] where the superintelligent AI is tasked to maximize some notion of happiness/pleasure/smiley-face, so decides to invent the most optimal possible form of "pleasure per kg of matter" / "pleasure per joule energy" / "pleasure per unit compute" and covers the entire universe with such minimally intelligent maximally pleasure-feeling minds / "smiley faces".
+
+Called **hedonium**, because this would likely be done by first maximizing the amount of [[Computronium]] (matter optimized for computing) in the universe, and then using it to run as many happy/pleasure-feeling minds on it as possible.
