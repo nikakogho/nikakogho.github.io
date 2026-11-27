@@ -18,6 +18,7 @@ Alignment work was started by [[Eliezer Yudkowsky]] at [[MIRI]] (at the time cal
 - [[Steganographic Thinking]]
 - [[Emergent Misalignment of Large Language Models]]
 - [[Deception in Large Language Models]]
+- [[Motivated Reasoning in Large Language Models]]
 - [[Paperclip Maximizer]] / [[Hedonium]]
 - [[Inner and Outer Alignment]]
 - [[Eliciting Latent Knowledge]]

@@ -1,7 +1,7 @@
 Planning, control and execution of voluntary [[Movement|movement]].
 Located in [[Frontal lobe]] in *precentral gyrus*.
 
-![IMG_3178.jpeg](img_3178.jpeg)
+![IMG_3178.jpeg](utility%20engineering.jpeg)
 
 Brodmann areas 4 and 6
 ![IMG_5563_1.jpeg](img_5563_1.jpeg)
